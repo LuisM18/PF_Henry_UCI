@@ -7,8 +7,7 @@ Crowe Clinic, una importante clínica fundada en 1979, ha atendido a más de 3 m
 Por ello, le solicita a DataSight Consulting una solución tecnológica, empleando análisis de datos y machine learning, con el fin de poder prever lo necesario para atender mejor a los pacientes.
 El equipo debe presentar la solución final en un plazo de un mes y ser capaz de entregar avances cada semana.
 
-
-- Estructura de la carpeta
+Estructura de la carpeta
   - EDA.ipynb
   - Dataset
 El archivo EDA contiene el análisis exploratorio de todas las tablas.
