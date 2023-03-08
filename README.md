@@ -10,4 +10,5 @@ El equipo debe presentar la solución final en un plazo de un mes y ser capaz de
 Estructura de la carpeta
   - EDA.ipynb
   - Dataset
+
 El archivo EDA contiene el análisis exploratorio de todas las tablas.
