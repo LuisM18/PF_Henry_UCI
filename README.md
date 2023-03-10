@@ -12,4 +12,7 @@ Estructura de la carpeta
   - Dataset
 
 El archivo EDA contiene el análisis exploratorio de todas las tablas.
+
+Links importantes: 
+
 Trello : https://trello.com/invite/b/Ur0NLI9C/ATTIee3ec77cf29269e052cbdf9ad43ab2e8571ECE2F/proyecto-final-de-henry
