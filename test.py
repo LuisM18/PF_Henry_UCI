@@ -10,8 +10,10 @@ st.set_page_config(
     layout="wide",
 )
 
+
+######### Temporal ##########
 #leemos los datasets
-admissions = "./EDA_UCI/dataset/ADMISSIONS.csv"
+
 labevents = pd.read_csv("./EDA_UCI/dataset/LABEVENTS.csv")
 labitems = pd.read_csv("./EDA_UCI/dataset/D_LABITEMS.csv")
 drgcodes = pd.read_csv('./EDA_UCI/dataset/DRGCODES.csv')
@@ -19,11 +21,11 @@ labevents = pd.read_csv('./EDA_UCI/dataset/LABEVENTS.csv')
 micro = pd.read_csv('./EDA_UCI/dataset/MICROBIOLOGYEVENTS.csv')
 prescriptions = pd.read_csv('./EDA_UCI/dataset/PRESCRIPTIONS.csv')
 procedures = pd.read_csv('./EDA_UCI/dataset/PROCEDURES_ICD.csv')
-admissions = pd.read_csv('./EDA_UCI/dataset/Admissions.csv')
-callout = pd.read_csv('./EDA_UCI/dataset/callout.csv')
-icustays = pd.read_csv('./EDA_UCI/dataset/icustays.csv')
-patients = pd.read_csv('./EDA_UCI/dataset/patients.csv')
-services = pd.read_csv('./EDA_UCI/dataset/services.csv')
+admissions = pd.read_csv('./EDA_UCI/dataset/ADMISSIONS.csv')
+callout = pd.read_csv('./EDA_UCI/dataset/CALLOUT.csv')
+icustays = pd.read_csv('./EDA_UCI/dataset/ICUSTAYS.csv')
+patients = pd.read_csv('./EDA_UCI/dataset/PATIENTS.csv')
+services = pd.read_csv('./EDA_UCI/dataset/SERVICES.csv')
 caregivers = pd.read_csv('./EDA_UCI/dataset/CAREGIVERS.csv')
 chartevents = pd.read_csv('./EDA_UCI/dataset/CHARTEVENTS.csv')
 datetimeevents = pd.read_csv('./EDA_UCI/dataset/DATETIMEEVENTS.csv')
@@ -51,6 +53,8 @@ df = get_data()
 # dashboard title
 st.title("Análisis del área UCI de Crowe Clinic ")
 st.subheader(" Por DataSight Consulting")
+
+'''
 with open('./images/icu.jpg', "rb") as image_file:
     encoded_string = base64.b64encode(image_file.read())
 st.markdown(
@@ -65,6 +69,7 @@ st.markdown(
         """,
         unsafe_allow_html=True
     )
+'''
 
 # top-level filters
 st.subheader('KPIs')
@@ -78,25 +83,52 @@ etnia = st.multiselect(
 placeholder = st.empty()
 
 # dataframe filter
-df = df[df["admission_type"] == adm_filter ]
-df = df[df["insurance"] == insurance ]
-df = df[df["ethnicity"].isin(etnia)]
+df = df[(df["admission_type"] == adm_filter) & (df["insurance"] == insurance) & (df["ethnicity"].isin(etnia))]
+
 
 df["diagnosis_new"] = df["diagnosis"] * np.random.choice(range(1, 5))
 df["marital_status_new"] = df["marital_status"] * np.random.choice(range(1, 5))
 
-# creating KPIs
+# create KPIs
+
+################## Cambios en SQl
+admissions['dischtime'] = admissions.dischtime.apply(pd.to_datetime)
+
+icustays['intime'] = icustays.intime.apply(pd.to_datetime)
+icustays['outtime'] = icustays.outtime.apply(pd.to_datetime)
+
+
+## Tasa Mortalidad
+def tasa_mortalidad(admissions):
+    admissions['dischtime_year'] = admissions.dischtime.dt.year
+    admissions['dischtime_month'] = admissions.dischtime.dt.month
+
+    tasa = pd.DataFrame(admissions.groupby(['dischtime_year','dischtime_month'])['hospital_expire_flag'].apply(lambda x: (x.sum()/x.count())))
+    tasa.rename(columns={'hospital_expire_flag':'tasa_mortalidad'},inplace=True)
+
+    return tasa
+
+## Tiempo de estancia promedio
+def tiempo_estancia_promedio(icustay):
+    icustay['month_outtime'] = icustay.outtime.dt.month
+    icustay['year_outtime'] = icustay.outtime.dt.year
+
+    tiempo = pd.DataFrame(icustay.groupby(['year_outtime','month_outtime'])['los'].mean())
+    tiempo.rename(columns={'los':'tiempo_estancia_promedio'},inplace=True)
+
+    return tiempo
+
+## Top 5 diagnosticos
+def top5_diagnostico(admissions):
+    return pd.DataFrame(admissions.diagnosis.value_counts()).head(5)
+
+
 
 with placeholder.container():
 
     # creando los kpis
-    kpi1, kpi2, kpi3, kpi4 = st.columns(4)
+    kpi1, kpi2, kpi3 = st.columns(3)
 
-    # fill in those three columns with respective metrics or KPIs
-
-    # tasa de mortalidad
-    filtered = df[df['discharge_location'].str.contains('DEAD')]
-    death_ratio = filtered.shape[0] / df['discharge_location'].shape[0]
     # tasa de reingreso
     df.drop_duplicates(inplace=True)
     df['subject_id'].value_counts()
@@ -106,10 +138,11 @@ with placeholder.container():
     tasa_re = tasa_reingreso.value_counts()
     tasa_re_2 = tasa_re[tasa_re.index > 1].sum() / tasa_re.sum() * 100
 
+    mortalidad = tasa_mortalidad(admissions)
     kpi1.metric(
         label="Tasa de mortalidad",
-        value= f"{round(death_ratio*100,2)} % ",
-        delta=-10 + death_ratio,
+        value= f"{round(mortalidad.iloc[-1,-1]*100,2)} % ",
+        delta= 0
     )
 
     kpi2.metric(
@@ -117,30 +150,24 @@ with placeholder.container():
         value= f" {round(tasa_re_2,2)} %",
         delta=-10 + tasa_re_2,
     )
+
+    tiempo = tiempo_estancia_promedio(icustays)
     kpi3.metric(
-                label="Tiempo de estancia en la UCI",
-                value=f"{round(40,2)} % ",
-                delta=-round(40 / 100) * 100,
+                label="Tiempo de estancia promedio en la UCI",
+                value=f"{round(tiempo.iloc[-1,-1])} dias ",
+                delta= 0
             )
     
-    kpi4.metric(
-        label="Tasa de reinfecciones",
-        value=f" {round(60,2)} % ",
-        delta=-round(40 / 100) * 100,
-    )
 
     # create two columns for charts
-    fig_col1, fig_col2 = st.columns(2)
+    fig_col1, fig_col2 = st.columns([2,3])
     with fig_col1:
         st.markdown("### Top 5 de diagnósticos más frecuentes")
-        x = df["diagnosis"].value_counts().keys()
-        y =  df["diagnosis"].value_counts().values
-        top5_d = x[0:5]
-        top5_dy = y[0:5]
-        fig = px.bar(
-            data_frame=df, x=top5_d, y= top5_dy 
-        )
-        st.write(fig)
+        top5 = top5_diagnostico(admissions)
+
+        fig = px.bar(top5)
+        fig.update_layout(showlegend=False)
+        st.plotly_chart(fig,use_container_width=True)
         
     with fig_col2:
         st.markdown("### Resultados de las pruebas de laboratorio por paciente")
@@ -150,10 +177,10 @@ with placeholder.container():
         user_filter = st.selectbox("Selecciona el id del paciente", pd.unique(lab['subject_id']),key= count)
         count =+1
         filtered_data = lab[lab['subject_id'] == user_filter]
-        st.dataframe(filtered_data)
+        st.dataframe(use_container_width=True)
 
     st.header('Análisis descriptivo')
-    st.markdown("### -----------------------------------------------------------------------------")
+    st.markdown("---")
     fig3, fig4 = st.columns(2)
 
     with fig3:
@@ -162,7 +189,7 @@ with placeholder.container():
         x = patient['gender'].value_counts().keys()
         y = patient['gender'].value_counts().values
         fig3 = px.bar(data_frame=patient, x=x, y = y )
-        st.write(fig3)
+        st.plotly_chart(fig3,use_container_width=True)
 
     with fig4:
         st.markdown("### Pacientes por estado civil")
@@ -170,7 +197,7 @@ with placeholder.container():
         x = patient['marital_status'].value_counts().keys()
         y = patient['marital_status'].value_counts().values
         fig4 = px.bar(data_frame=patient, x=x, y =y )
-        st.write(fig4)
+        st.plotly_chart(fig4,use_container_width=True)
     
     fig5, fig6 = st.columns(2)
 
@@ -181,7 +208,7 @@ with placeholder.container():
         yearmu = pd.to_datetime(patient['dod'])
         patient['age'] = yearmu.dt.year - yearnac.dt.year
         fig5 = px.histogram(data_frame=patient, x="age")
-        st.write(fig5)
+        st.plotly_chart(fig5,use_container_width=True)
 
     with fig6:
         st.markdown("### Pacientes por admission_location")
@@ -189,10 +216,10 @@ with placeholder.container():
         x = patient['admission_location'].value_counts().keys()
         y = patient['admission_location'].value_counts().values
         fig6 = px.bar(data_frame=patient, x=x, y =y)
-        st.write(fig6)
+        st.plotly_chart(fig6,use_container_width=True)
 
     st.markdown("### Vista de la base de datos")
-    lista_de_tablas = ['admissions','labevents','chartevents']
+    lista_de_tablas = ['ADMISSIONS','LABEVENTS','CHARTEVENTS']
     selectedtable = st.selectbox("Selecciona la tabla", lista_de_tablas, key="4")
     dataframe = pd.read_csv('./EDA_UCI/dataset/'+selectedtable+ '.csv')
     st.dataframe(dataframe)
