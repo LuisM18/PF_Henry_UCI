@@ -16,32 +16,12 @@ st.set_page_config(
 
 labevents = pd.read_csv("./EDA_UCI/dataset/LABEVENTS.csv")
 labitems = pd.read_csv("./EDA_UCI/dataset/D_LABITEMS.csv")
-drgcodes = pd.read_csv('./EDA_UCI/dataset/DRGCODES.csv')
-labevents = pd.read_csv('./EDA_UCI/dataset/LABEVENTS.csv')
-micro = pd.read_csv('./EDA_UCI/dataset/MICROBIOLOGYEVENTS.csv')
-prescriptions = pd.read_csv('./EDA_UCI/dataset/PRESCRIPTIONS.csv')
-procedures = pd.read_csv('./EDA_UCI/dataset/PROCEDURES_ICD.csv')
 admissions = pd.read_csv('./EDA_UCI/dataset/ADMISSIONS.csv')
-callout = pd.read_csv('./EDA_UCI/dataset/CALLOUT.csv')
 icustays = pd.read_csv('./EDA_UCI/dataset/ICUSTAYS.csv')
-patients = pd.read_csv('./EDA_UCI/dataset/PATIENTS.csv')
-services = pd.read_csv('./EDA_UCI/dataset/SERVICES.csv')
-caregivers = pd.read_csv('./EDA_UCI/dataset/CAREGIVERS.csv')
-chartevents = pd.read_csv('./EDA_UCI/dataset/CHARTEVENTS.csv')
-datetimeevents = pd.read_csv('./EDA_UCI/dataset/DATETIMEEVENTS.csv')
-imputeventscv = pd.read_csv('./EDA_UCI/dataset/INPUTEVENTS_CV.csv')
-imputeventsmv = pd.read_csv('./EDA_UCI/dataset/INPUTEVENTS_MV.csv')
-transfers = pd.read_csv('./EDA_UCI/dataset/TRANSFERS.csv')
-dcpt = pd.read_csv('./EDA_UCI/dataset/D_CPT.csv')
-ddiagnoses = pd.read_csv('./EDA_UCI/dataset/D_ICD_DIAGNOSES.csv')
-dprocedures = pd.read_csv('./EDA_UCI/dataset/D_ICD_PROCEDURES.csv')
 ditems = pd.read_csv('./EDA_UCI/dataset/D_ITEMS.csv')
 dlabitems = pd.read_csv('./EDA_UCI/dataset/D_LABITEMS.csv')
-noteevents= pd.read_csv('./EDA_UCI/dataset/NOTEEVENTS.csv')
-outputevents= pd.read_csv('./EDA_UCI/dataset/OUTPUTEVENTS.csv')
-procedureevents_mv = pd.read_csv('./EDA_UCI/dataset/PROCEDUREEVENTS_MV.csv')
-cptevents = pd.read_csv('./EDA_UCI/dataset/CPTEVENTS.csv')
-diagnoses_icd = pd.read_csv('./EDA_UCI/dataset/DIAGNOSES_ICD.csv') 
+patients = pd.read_csv('./EDA_UCI/dataset/PATIENTS.csv')
+
 
 # read csv from a URL
 @st.cache_data
@@ -51,7 +31,7 @@ def get_data() -> pd.DataFrame:
 df = get_data()
 
 # dashboard title
-st.title("Análisis del área UCI de Crowe Clinic ")
+st.title(" Análisis del área UCI de Crowe Clinic ")
 st.subheader(" Por DataSight Consulting")
 
 '''
@@ -108,6 +88,15 @@ def tasa_mortalidad(admissions):
 
     return tasa
 
+## Tasa Reingreso
+df.drop_duplicates(inplace=True)
+df['subject_id'].value_counts()
+#¿Qué es el índice de reingreso?
+#El reingreso ha sido definido como todo ingreso con idéntico diagnóstico principal en los 30 días siguientes al alta.
+tasa_reingreso = df.groupby(['subject_id','diagnosis'])['subject_id'].count()
+tasa_re = tasa_reingreso.value_counts()
+tasa_re_2 = tasa_re[tasa_re.index > 1].sum() / tasa_re.sum() * 100
+
 ## Tiempo de estancia promedio
 def tiempo_estancia_promedio(icustay):
     icustay['month_outtime'] = icustay.outtime.dt.month
@@ -129,16 +118,7 @@ with placeholder.container():
     # creando los kpis
     kpi1, kpi2, kpi3 = st.columns(3)
 
-    # tasa de reingreso
-    df.drop_duplicates(inplace=True)
-    df['subject_id'].value_counts()
-    #¿Qué es el índice de reingreso?
-    #El reingreso ha sido definido como todo ingreso con idéntico diagnóstico principal en los 30 días siguientes al alta.
-    tasa_reingreso = df.groupby(['subject_id','diagnosis'])['subject_id'].count()
-    tasa_re = tasa_reingreso.value_counts()
-    tasa_re_2 = tasa_re[tasa_re.index > 1].sum() / tasa_re.sum() * 100
-
-    mortalidad = tasa_mortalidad(admissions)
+    mortalidad = tasa_mortalidad(df)
     kpi1.metric(
         label="Tasa de mortalidad",
         value= f"{round(mortalidad.iloc[-1,-1]*100,2)} % ",
@@ -148,7 +128,7 @@ with placeholder.container():
     kpi2.metric(
         label="Tasa de reingreso",
         value= f" {round(tasa_re_2,2)} %",
-        delta=-10 + tasa_re_2,
+        delta= 0,
     )
 
     tiempo = tiempo_estancia_promedio(icustays)
@@ -156,14 +136,13 @@ with placeholder.container():
                 label="Tiempo de estancia promedio en la UCI",
                 value=f"{round(tiempo.iloc[-1,-1])} dias ",
                 delta= 0
-            )
-    
+            )    
 
     # create two columns for charts
     fig_col1, fig_col2 = st.columns([2,3])
     with fig_col1:
         st.markdown("### Top 5 de diagnósticos más frecuentes")
-        top5 = top5_diagnostico(admissions)
+        top5 = top5_diagnostico(df)
 
         fig = px.bar(top5)
         fig.update_layout(showlegend=False)
