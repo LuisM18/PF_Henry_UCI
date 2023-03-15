@@ -1,12 +1,24 @@
 import pandas as pd  # 
 import plotly.express as px  # 
 import streamlit as st 
+import mysql.connector
 
 st.set_page_config(
     page_title="Pacientes",
     page_icon="🏥",
     layout="wide",
 )
+
+mydb = mysql.connector.connect(
+  host="proyectdb.mysql.database.azure.com",
+  user="administrador123",
+  password="pasword123.",
+  database="proyectdb"
+)
+
+admissions = pd.read_sql("""SELECT SUBJECT_ID
+                            FROM admissions2""",mydb)
+
 
 ############## Cargar Data ###################################
 labitems = pd.read_csv("./EDA_UCI/dataset/D_LABITEMS.csv")#
@@ -39,7 +51,6 @@ diagnoses_icd = pd.read_csv('./EDA_UCI/dataset/DIAGNOSES_ICD.csv')
 ###################################################################################
 
 st.markdown("# **Reporte de Paciente**")
-st.subheader()
 st.markdown("---")
 
 paciente = st.selectbox("Paciente",admissions['subject_id'])
@@ -60,5 +71,4 @@ st.markdown("---")
 st.subheader('Pruebas de Laboratorio')
 st.markdown("---")
 
-st.subheader('Costos del paciente')
-st.markdown("---")
+
