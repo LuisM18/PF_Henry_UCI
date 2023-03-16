@@ -10,6 +10,7 @@ st.set_page_config(
     layout="wide",
 )
 
+############## Cargar Data ###################################
 mydb = mysql.connector.connect(
   host="proyectdb.mysql.database.azure.com",
   user="administrador123",
@@ -23,7 +24,6 @@ admissions = pd.read_sql("""SELECT subject_id
 ###################################################################################
 
 st.markdown("# **Reporte de Paciente**")
-st.subheader()
 st.markdown("---")
 
 paciente = st.selectbox("Paciente",admissions['subject_id'].unique())
@@ -50,11 +50,12 @@ admission = pd.read_sql("""SELECT *
 
 st.dataframe(patient)
 st.dataframe(admission)
-st.dataframe(icustays)
+st.dataframe(icustays) #Esta informacion no se va mostrar
 
 ###################################################################################
 st.markdown('## Historial clinico en la UCI')
 st.markdown("---")
+
 
 diagnoses_icd = pd.read_sql("""SELECT d.seq_num, d.subject_id, d.hadm_id,dd.long_title 
                               FROM diagnoses_icd d
@@ -67,8 +68,6 @@ diagnoses_icd = pd.read_sql("""SELECT d.seq_num, d.subject_id, d.hadm_id,dd.long
 datetimeevents = pd.read_sql("""SELECT * 
                               FROM datetimeevents
                               WHERE subject_id = {paciente} AND icustay_id = {icustay}""".format(paciente=paciente,icustay=estancia),mydb)
-
-#hadm_id = datetimeevents.
 
 callout = pd.read_sql("""SELECT * 
                               FROM callout
@@ -84,17 +83,22 @@ transfers = pd.read_sql("""SELECT *
 
 st.subheader('Antecedentes')
 st.dataframe(diagnoses_icd)
-# Readmitido
+# Indicar tambien si el paciente fue readmitido
 
 st.subheader('UCI')
 st.dataframe(datetimeevents)
-st.dataframe(callout) #condicional
-st.dataframe(outputevents) # condicional
-st.dataframe(transfers)
 
-if callout.shape[0] == 0:
-    st.markdown('Salida de alta')
-    
+if outputevents.shape[0] > 0:
+  st.subheader('Producción de liquidos')
+  st.dataframe(outputevents) 
+
+if callout.shape[0] > 0:
+  st.subheader('Salida de alta')
+  st.dataframe(callout) 
+
+if transfers.shape[0] > 0:
+  st.subheader('Transferencias')
+  st.dataframe(transfers)  
 
 
 st.subheader("Cuidadores a cargo del paciente")
@@ -103,7 +107,7 @@ if datetimeevents.shape[0] > 0:
                               FROM caregivers
                               WHERE cgid IN {cgids} """.format(cgids=tuple(datetimeevents['cgid'].unique())),mydb)                  
 
-st.dataframe(caregivers)
+    st.dataframe(caregivers)
 
 ###################################################################################
 st.markdown('## Procedimientos')
@@ -113,9 +117,12 @@ services = pd.read_sql("""SELECT *
                               FROM services
                               WHERE subject_id = {paciente} AND hadm_id = {hadmid}""".format(paciente=paciente,hadmid=hadm_id),mydb)
 
-procedures_icd = pd.read_sql("""SELECT * 
-                              FROM procedures_icd
-                              WHERE subject_id = {paciente} AND hadm_id = {hadmid}""".format(paciente=paciente,hadmid=hadm_id),mydb)
+procedures_icd = pd.read_sql("""SELECT pro.seq_num ,dpro.short_title
+                              FROM procedures_icd pro
+                              JOIN d_icd_procedures dpro
+                              ON pro.icd9_code = dpro.icd9_code
+                              WHERE subject_id = {paciente} AND hadm_id = {hadmid}
+                              ORDER BY pro.seq_num""".format(paciente=paciente,hadmid=hadm_id),mydb)
 
 cptevents = pd.read_sql("""SELECT * 
                               FROM cptevents 
@@ -142,7 +149,10 @@ st.dataframe(procedures_icd) # Referente a antecedentes
 st.subheader('Aplicados en UCI')
 st.dataframe(cptevents) 
 st.dataframe(d_cpt)
-st.dataframe(proceduresevents_mv) # Condicional 
+
+if proceduresevents_mv.shape[0] > 0:
+  st.subheader('Ventilación Mecánica')
+  st.dataframe(proceduresevents_mv) # Condicional 
 
 ###################################################################################
 st.markdown('## Medicamentos')
@@ -161,13 +171,19 @@ inputevents_mv = pd.read_sql("""SELECT *
                               FROM inputevents_mv
                               WHERE subject_id = {paciente} AND icustay_id = {icustay}""".format(paciente=paciente,icustay=estancia),mydb)
 
-st.subheader('Anteriores a UCI')
+st.subheader('Fuera de la UCI')
 st.dataframe(prescriptions[prescriptions['ICUSTAY_ID'] == 0])
 
 st.subheader('Suministrados en UCI')
 st.dataframe(prescriptions[prescriptions['ICUSTAY_ID'] != 0])
-st.dataframe(inputevents_cv) #Intravenosos
-st.dataframe(inputevents_mv) # Ventilacion Mecanica
+
+if inputevents_cv.shape[0] > 0:
+  st.subheader('Via Intravenosa')
+  st.dataframe(inputevents_cv) #Intravenosos
+
+if inputevents_mv.shape[0] > 0:
+  st.subheader('Via Ventilación Mecánica')
+  st.dataframe(inputevents_mv) # Ventilacion Mecanica
 
 ###################################################################################
 st.markdown('## Pruebas de Laboratorio y microbiologicos')
@@ -186,6 +202,3 @@ st.dataframe(microbiologyevents)
 
 if st.button('Descargar'):#Centrar boton en el layout
   st.write(dt.datetime.now())
-   
- 
-
