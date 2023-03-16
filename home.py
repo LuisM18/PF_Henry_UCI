@@ -2,7 +2,8 @@ import base64
 import numpy as np  #
 import pandas as pd  # 
 import plotly.express as px  # 
-import streamlit as st  # 🎈 
+import streamlit as st
+from datetime import datetime
 
 st.set_page_config(
     page_title="Análisis del área UCI- Crowe Clinic",
@@ -53,26 +54,11 @@ st.markdown(
 
 # top-level filters
 st.subheader('KPIs')
-adm_filter = st.selectbox("Selecciona el tipo de admisión", pd.unique(df["admission_type"]),key="1")
-insurance = st.selectbox("Selecciona el seguro del paciente", pd.unique(df['insurance']),key="2")
-# selecciona la etnia
-etnia = st.multiselect(
-    'Selecciona la etnia del paciente', pd.unique(df["ethnicity"]), default = 'WHITE')
-
-# creating a single-element container
 placeholder = st.empty()
-
-# dataframe filter
-df = df[(df["admission_type"] == adm_filter) & (df["insurance"] == insurance) & (df["ethnicity"].isin(etnia))]
-
-
-df["diagnosis_new"] = df["diagnosis"] * np.random.choice(range(1, 5))
-df["marital_status_new"] = df["marital_status"] * np.random.choice(range(1, 5))
-
 # create KPIs
 
 ################## Cambios en SQl
-admissions['dischtime'] = admissions.dischtime.apply(pd.to_datetime)
+df['dischtime'] = df.dischtime.apply(pd.to_datetime)
 
 icustays['intime'] = icustays.intime.apply(pd.to_datetime)
 icustays['outtime'] = icustays.outtime.apply(pd.to_datetime)
@@ -111,16 +97,14 @@ def tiempo_estancia_promedio(icustay):
 def top5_diagnostico(admissions):
     return pd.DataFrame(admissions.diagnosis.value_counts()).head(5)
 
-
-
 with placeholder.container():
 
     # creando los kpis
     kpi1, kpi2, kpi3 = st.columns(3)
 
-    mortalidad = tasa_mortalidad(admissions)
+    mortalidad = tasa_mortalidad(df)
     kpi1.metric(
-        label="Tasa de mortalidad",
+        label="Tasa de mortalidad último mes",
         value= f"{round(mortalidad.iloc[-1,-1]*100,2)} % ",
         delta= 0
     )
@@ -133,69 +117,42 @@ with placeholder.container():
 
     tiempo = tiempo_estancia_promedio(icustays)
     kpi3.metric(
-                label="Tiempo de estancia promedio en la UCI",
-                value=f"{round(tiempo.iloc[-1,-1])} dias ",
+                label="Tiempo de estancia promedio en la UCI último mes",
+                value=f"{round(tiempo.iloc[-1,-1])} días ",
                 delta= 0
             )    
 
-    # create two columns for charts
-    fig_col1, fig_col2 = st.columns([2,3])
-    with fig_col1:
-        st.markdown("### Top 5 de diagnósticos más frecuentes")
-        top5 = top5_diagnostico(df)
+    st.markdown("### Top 5 de diagnósticos más frecuentes")
+    top5 = top5_diagnostico(df)
+    fig = px.bar(top5)
+    fig.update_layout(showlegend=False)
+    st.plotly_chart(fig,use_container_width=True)       
 
-        fig = px.bar(top5)
-        fig.update_layout(showlegend=False)
-        st.plotly_chart(fig,use_container_width=True)
-        
-    with fig_col2:
-        st.markdown("### Resultados de las pruebas de laboratorio por paciente")
-        lab = labevents.merge(labitems, left_on='itemid', right_on='itemid')
-        count = 0
-        lab.drop_duplicates(inplace=True)
-        user_filter = st.selectbox("Selecciona el id del paciente", pd.unique(lab['subject_id']),key= count)
-        count =+1
-        filtered_data = lab[lab['subject_id'] == user_filter]
-        st.dataframe(use_container_width=True)
-
-    st.header('Análisis descriptivo')
-    st.markdown("---")
-    fig3, fig4 = st.columns(2)
-
-    with fig3:
-        st.markdown("### Pacientes por sexo")
-        patient = patients.merge(df, left_on='subject_id', right_on='subject_id')
-        x = patient['gender'].value_counts().keys()
-        y = patient['gender'].value_counts().values
-        fig3 = px.bar(data_frame=patient, x=x, y = y )
-        st.plotly_chart(fig3,use_container_width=True)
-
-    with fig4:
-        st.markdown("### Pacientes por estado civil")
-        patient = patients.merge(df, left_on='subject_id', right_on='subject_id')
-        x = patient['marital_status'].value_counts().keys()
-        y = patient['marital_status'].value_counts().values
-        fig4 = px.bar(data_frame=patient, x=x, y =y )
-        st.plotly_chart(fig4,use_container_width=True)
+    st.markdown("### Tasa de mortalidad por mes y año")
+    max_value = df['dischtime'].max()
+    min_value = df['dischtime'].min()
+    mind, maxd  = st.date_input('Seleccione el rango de fecha', [min_value, max_value])
+    maxd = datetime.strptime(str(maxd), '%Y-%m-%d')
+    mind = datetime.strptime(str(mind), '%Y-%m-%d')
+    df = df[(df['dischtime'] > mind) & (df['dischtime'] < maxd)]
+    tasa = tasa_mortalidad(df)
+    y = tasa['tasa_mortalidad']
+    yearmonth = tasa.index.to_series().apply(lambda x: '{0}-{1}'.format(*x))
+    fig3 = px.line(x = yearmonth.values,y = y*100)
+    st.plotly_chart(fig3,use_container_width=True)
     
-    fig5, fig6 = st.columns(2)
-
-    with fig5:
-        st.markdown("### Pacientes por edad")
-        patient = patients.merge(df, left_on='subject_id', right_on='subject_id')
-        yearnac = pd.to_datetime(patient['dob'])
-        yearmu = pd.to_datetime(patient['dod'])
-        patient['age'] = yearmu.dt.year - yearnac.dt.year
-        fig5 = px.histogram(data_frame=patient, x="age")
-        st.plotly_chart(fig5,use_container_width=True)
-
-    with fig6:
-        st.markdown("### Pacientes por admission_location")
-        patient = patients.merge(df, left_on='subject_id', right_on='subject_id')
-        x = patient['admission_location'].value_counts().keys()
-        y = patient['admission_location'].value_counts().values
-        fig6 = px.bar(data_frame=patient, x=x, y =y)
-        st.plotly_chart(fig6,use_container_width=True)
+    st.markdown("### Tiempo promedio de estancia en UCI en días por mes y año")
+    max_value = icustays['outtime'].max()
+    min_value = icustays['outtime'].min()
+    mind, maxd  = st.date_input('Seleccione el rango de fecha', [min_value, max_value])
+    maxd = datetime.strptime(str(maxd), '%Y-%m-%d')
+    mind = datetime.strptime(str(mind), '%Y-%m-%d')
+    icustays = icustays[(icustays['outtime'] > mind) & (icustays['outtime'] < maxd)]
+    tiempo = tiempo_estancia_promedio(icustays)
+    y = tiempo['tiempo_estancia_promedio']
+    yearmonth = tiempo.index.to_series().apply(lambda x: '{0}-{1}'.format(*x))
+    fig4 = px.line(x = yearmonth.values,y = y)
+    st.plotly_chart(fig4,use_container_width=True)
 
     st.markdown("### Vista de la base de datos")
     lista_de_tablas = ['ADMISSIONS','LABEVENTS','CHARTEVENTS']
