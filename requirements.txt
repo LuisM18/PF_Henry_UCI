@@ -1,7 +1,6 @@
-!pip install --upgrade pip
 pandas
 plotly
-mysql
+mysql-connector-python
 datetime
 numpy
 
