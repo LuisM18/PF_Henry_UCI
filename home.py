@@ -5,6 +5,7 @@ import plotly.express as px  #
 import streamlit as st
 import mysql.connector
 from datetime import datetime
+import os
 
 st.set_page_config(
     page_title="Análisis del área UCI- Crowe Clinic",
