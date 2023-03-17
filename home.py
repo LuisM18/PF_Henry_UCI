@@ -5,7 +5,7 @@ import plotly.express as px  #
 import streamlit as st
 import mysql.connector
 from datetime import datetime
-import os
+
 
 st.set_page_config(
     page_title="Análisis del área UCI- Crowe Clinic",
@@ -14,9 +14,9 @@ st.set_page_config(
 )
 ############### Conexion SQL #######################
 mydb = mysql.connector.connect(
-  host= os.getenv("DB_HOST"),
-  user=os.getenv("DB_USER"),
-  password=os.getenv("DB_PASSWORD"),
+  host= st.secrets["DB_HOST"],
+  user=st.secrets["DB_USER"],
+  password=st.secrets["DB_PASSWORD"],
   database="proyectdb"
 )
 
