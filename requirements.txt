@@ -1,0 +1,6 @@
+pandas
+plotly
+mysql
+datetime
+numpy
+
