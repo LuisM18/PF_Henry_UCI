@@ -3,6 +3,7 @@ import plotly.express as px  #
 import streamlit as st 
 import mysql.connector
 import datetime as dt
+import os
 
 st.set_page_config(
     page_title="Pacientes",
@@ -12,9 +13,9 @@ st.set_page_config(
 
 ############## Cargar Data ###################################
 mydb = mysql.connector.connect(
-  host="proyectdb.mysql.database.azure.com",
-  user="administrador123",
-  password="pasword123.",
+  host= os.getenv("DB_HOST"),
+  user=os.getenv("DB_USER"),
+  password=os.getenv("DB_PASSWORD"),
   database="proyectdb"
 )
 

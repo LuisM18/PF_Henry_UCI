@@ -13,9 +13,9 @@ st.set_page_config(
 )
 ############### Conexion SQL #######################
 mydb = mysql.connector.connect(
-  host="proyectdb.mysql.database.azure.com",
-  user="administrador123",
-  password="pasword123.",
+  host= os.getenv("DB_HOST"),
+  user=os.getenv("DB_USER"),
+  password=os.getenv("DB_PASSWORD"),
   database="proyectdb"
 )
 
