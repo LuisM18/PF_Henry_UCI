@@ -1,4 +1,4 @@
-pip==23.0.1
+!pip install --upgrade pip
 pandas
 plotly
 mysql
