@@ -4,7 +4,6 @@ import streamlit as st
 import mysql.connector
 import datetime as dt
 
-
 st.set_page_config(
     page_title="Pacientes",
     page_icon="🏥",
@@ -106,7 +105,7 @@ st.subheader("Cuidadores a cargo del paciente")
 if datetimeevents.shape[0] > 0:
     caregivers = pd.read_sql("""SELECT * 
                               FROM caregivers
-                              WHERE cgid IN {cgids} """.format(cgids=tuple(datetimeevents['cgid'].unique())),mydb)                  
+                              WHERE cgid IN {cgids} """.format(cgids=tuple(datetimeevents['CGID'].unique())),mydb)                  
 
     st.dataframe(caregivers)
 

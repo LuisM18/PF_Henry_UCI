@@ -12,6 +12,22 @@ st.set_page_config(
     page_icon="🏥",
     layout="wide",
 )
+
+st.sidebar.markdown('### Links relacionados a la base de datos')
+
+url = 'https://github.com/LuisM18/PF_Henry_UCI'
+url2 = 'https://drive.google.com/drive/folders/19I8VMpCp3ylpVTRGGG0W4aGKt-4f664X'
+
+st.sidebar.markdown(f'''
+<a href={url}><button>GitHub</button></a>
+''',
+unsafe_allow_html=True)
+
+st.sidebar.markdown(f'''
+<a href={url2}><button>Base de Datos</button></a>
+''',
+unsafe_allow_html=True)
+
 ############### Conexion SQL #######################
 mydb = mysql.connector.connect(
   host= st.secrets["DB_HOST"],
