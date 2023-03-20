@@ -37,26 +37,30 @@ estancia = st.selectbox("Estancia en UCI",icustays['ICUSTAY_ID'].unique())
 hadm_id = icustays[icustays['ICUSTAY_ID'] == estancia]['HADM_ID'].values[0]
 ###################################################################################
 
-st.markdown('## Hoja de informe de la UCI')
 st.markdown("<h1 style='text-align: center; color: white;'> Hoja de informe de la UCI</h1>", unsafe_allow_html=True)
 st.markdown("---")
+
+#Traemos de la base de datos
+
 admitted = pd.read_sql("""SELECT admittime 
                               FROM admissions
                               WHERE subject_id = {paciente} AND hadm_id = {hadmid}
                               ORDER BY admittime DESC""".format(paciente=paciente,hadmid =hadm_id),mydb)
+admitted = pd.DataFrame(admitted)
+admitted= admitted['admittime'].values[0] 
 
 age = pd.read_sql("""SELECT (YEAR(DOD_HOSP)- YEAR(DOB)) as age 
                               FROM patient
-                              WHERE subject_id = {paciente} """.format(paciente=paciente),mydb)                            
+                              WHERE subject_id = {paciente} """.format(paciente=paciente),mydb)   
+age = pd.DataFrame(age)    
+age = age['age'].values[0]                 
 
 gender = pd.read_sql("""SELECT gender
                               FROM patient
                               WHERE subject_id = {paciente} """.format(paciente=paciente),mydb) 
 
-st.markdown("<text style='text-align: left; color: white;'> Admitted:{admitted}</text>".format(admitted= admitted), unsafe_allow_html=True)
-st.markdown("<text style='text-align: right; color: white;'> Age:{age}</text>".format(age= age), unsafe_allow_html=True)
-st.markdown("<text style='text-align: right; color: white;'> Gender:{gender}</text>".format(gender= gender), unsafe_allow_html=True)
-st.markdown("<text style='text-align: right; color: white;'> Patient Medical History</text>", unsafe_allow_html=True)
+gender = pd.DataFrame(gender)
+gender = gender['gender'].values[0]  
 
 diagnoses_long = pd.read_sql("""SELECT dd.long_title 
                               FROM diagnoses_icd d
@@ -65,87 +69,27 @@ diagnoses_long = pd.read_sql("""SELECT dd.long_title
                               WHERE subject_id = {paciente} AND hadm_id = {hadmid}
                               ORDER BY d.seq_num""".format(paciente=paciente,hadmid=hadm_id),mydb)
 
-st.table(diagnoses_long)
-
-st.markdown("<text style='text-align: right; color: white;'> Procedures</text>", unsafe_allow_html=True)
 patient = pd.read_sql("""SELECT * 
                               FROM patient
                               WHERE subject_id = {paciente} """.format(paciente=paciente),mydb)
+
+subject = pd.read_sql("""SELECT SUBJECT_ID 
+                              FROM patient
+                              WHERE subject_id = {paciente} """.format(paciente=paciente),mydb)
+subject = pd.DataFrame(subject)
+subject = subject['SUBJECT_ID'].values[0]  
 
 admission= pd.read_sql("""SELECT *
                               FROM admissions
                               WHERE subject_id = {paciente} AND hadm_id = {hadmid}
                               ORDER BY admittime DESC""".format(paciente=paciente,hadmid =hadm_id),mydb)
-st.dataframe(patient)
-st.dataframe(admission)
-st.dataframe(icustays) #Esta informacion no se va mostrar
 
-###################################################################################
-st.markdown('## Historial clinico en la UCI')
-st.markdown("---")
-
-
-diagnoses_icd = pd.read_sql("""SELECT d.seq_num, d.subject_id, d.hadm_id,dd.long_title 
-                              FROM diagnoses_icd d
-                              JOIN d_icd_diagnoses dd
-                              ON (d.icd9_code = dd.icd9_code) 
+discharge= pd.read_sql("""SELECT DISCHARGE_LOCATION 
+                              FROM admissions
                               WHERE subject_id = {paciente} AND hadm_id = {hadmid}
-                              ORDER BY d.seq_num""".format(paciente=paciente,hadmid=hadm_id),mydb)
+                              ORDER BY admittime DESC""".format(paciente=paciente,hadmid =hadm_id),mydb)
 
-
-datetimeevents = pd.read_sql("""SELECT * 
-                              FROM datetimeevents
-                              WHERE subject_id = {paciente} AND icustay_id = {icustay}""".format(paciente=paciente,icustay=estancia),mydb)
-
-callout = pd.read_sql("""SELECT * 
-                              FROM callout
-                              WHERE subject_id = {paciente} AND hadm_id = {hadmid}""".format(paciente=paciente,hadmid=hadm_id),mydb)
-
-outputevents = pd.read_sql("""SELECT * 
-                              FROM outputevents
-                              WHERE subject_id = {paciente} AND icustay_id = {icustay} AND hadm_id = {hadmid}""".format(paciente=paciente,icustay=estancia,hadmid=hadm_id),mydb)
-
-transfers = pd.read_sql("""SELECT * 
-                              FROM transfers
-                              WHERE subject_id = {paciente} AND icustay_id = {icustay}""".format(paciente=paciente,icustay=estancia),mydb)
-
-st.subheader('Antecedentes')
-st.dataframe(diagnoses_icd)
-# Indicar tambien si el paciente fue readmitido
-
-st.subheader('UCI')
-st.dataframe(datetimeevents)
-
-if outputevents.shape[0] > 0:
-  st.subheader('Producción de liquidos')
-  st.dataframe(outputevents) 
-
-if callout.shape[0] > 0:
-  st.subheader('Salida de alta')
-  st.dataframe(callout) 
-
-if transfers.shape[0] > 0:
-  st.subheader('Transferencias')
-  st.dataframe(transfers)  
-
-
-st.subheader("Cuidadores a cargo del paciente")
-if datetimeevents.shape[0] > 0:
-    caregivers = pd.read_sql("""SELECT * 
-                              FROM caregivers
-                              WHERE cgid IN {cgids} """.format(cgids=tuple(datetimeevents['cgid'].unique())),mydb)                  
-
-    st.dataframe(caregivers)
-
-###################################################################################
-st.markdown('## Procedimientos')
-st.markdown("---")
-
-services = pd.read_sql("""SELECT * 
-                              FROM services
-                              WHERE subject_id = {paciente} AND hadm_id = {hadmid}""".format(paciente=paciente,hadmid=hadm_id),mydb)
-
-procedures_icd = pd.read_sql("""SELECT pro.seq_num ,dpro.short_title
+procedures_ant = pd.read_sql("""SELECT dpro.short_title
                               FROM procedures_icd pro
                               JOIN d_icd_procedures dpro
                               ON pro.icd9_code = dpro.icd9_code
@@ -156,6 +100,38 @@ cptevents = pd.read_sql("""SELECT *
                               FROM cptevents 
                               WHERE subject_id = {paciente} AND hadm_id = {hadmid}""".format(paciente=paciente,hadmid=hadm_id),mydb)
 
+d_cpt2 = pd.DataFrame({})
+for i in cptevents['CPT_CD'].unique():
+  cpt = pd.read_sql("""SELECT subsectionheader 
+                              FROM d_cpt
+                              WHERE mincodeinsubsection <= {cptcode} AND maxcodeinsubsection >= {cptcode} """.format(cptcode=i),mydb)
+  d_cpt2= pd.concat([d_cpt2,cpt])
+
+value = pd.read_sql("""SELECT valuenum
+                              FROM labevents2
+                              WHERE subject_id = {paciente} AND hadm_id = {hadmid}""".format(paciente=paciente,hadmid=hadm_id),mydb)
+
+valueuom = pd.read_sql("""SELECT valueuom
+                              FROM labevents2
+                              WHERE subject_id = {paciente} AND hadm_id = {hadmid}""".format(paciente=paciente,hadmid=hadm_id),mydb)
+
+
+itemidlabs = pd.read_sql("""SELECT labevents2.itemid, D_LABITEMS.label
+                              FROM labevents2
+                              INNER JOIN D_LABITEMS ON D_LABITEMS.itemid=labevents2.itemid
+                              WHERE subject_id = {paciente} AND hadm_id = {hadmid}
+                              """.format(paciente=paciente,hadmid=hadm_id),mydb)
+
+proceduresevents_mv = pd.read_sql("""SELECT * 
+                              FROM procedureevents_mv
+                              WHERE subject_id = {paciente} AND icustay_id = {icustay}""".format(paciente=paciente,icustay=estancia),mydb)
+
+procedures_icd = pd.read_sql("""SELECT pro.seq_num ,dpro.short_title
+                              FROM procedures_icd pro
+                              JOIN d_icd_procedures dpro
+                              ON pro.icd9_code = dpro.icd9_code
+                              WHERE subject_id = {paciente} AND hadm_id = {hadmid}
+                              ORDER BY pro.seq_num""".format(paciente=paciente,hadmid=hadm_id),mydb)
 d_cpt = pd.DataFrame({})
 for i in cptevents['CPT_CD'].unique():
   cpt = pd.read_sql("""SELECT * 
@@ -164,69 +140,59 @@ for i in cptevents['CPT_CD'].unique():
   d_cpt = pd.concat([d_cpt,cpt])
 
 
-proceduresevents_mv = pd.read_sql("""SELECT * 
-                              FROM procedureevents_mv
-                              WHERE subject_id = {paciente} AND icustay_id = {icustay}""".format(paciente=paciente,icustay=estancia),mydb)
+#Reporte
 
+col2, col3, col4 = st.columns([3,1,1])
 
+with col2:
+  st.markdown('ADMITIDO: {admitted}'. format(admitted = admitted))
+with col3:
+  st.markdown('CÓDIGO: {subject}'. format(subject = subject))
 
-st.subheader('Anteriores a la estancia en UCI')
-st.dataframe(services)
-st.dataframe(procedures_icd) # Referente a antecedentes
+col5, col6, col7 = st.columns([3,2,2])
 
-st.subheader('Aplicados en UCI')
-st.dataframe(cptevents) 
-st.dataframe(d_cpt)
+with col5:
+  st.markdown('NOMBRE COMPLETO:') 
+with col6:
+  st.markdown('EDAD:{age}'.format(age = age)) 
+with col7:
+  st.markdown('SEXO:')
+  st.write(gender) 
+st.markdown('SITUACIÓN:')
+st.markdown('HISTORIA MÉDICA DEL PACIENTE')
+st.dataframe(diagnoses_long['long_title'])
 
-if proceduresevents_mv.shape[0] > 0:
-  st.subheader('Ventilación Mecánica')
-  st.dataframe(proceduresevents_mv) # Condicional 
+col8, col9 = st.columns([3,2])
 
-###################################################################################
-st.markdown('## Medicamentos')
-st.markdown("---")
+with col8:
+  st.markdown('TESTS AND IMAGING')
+  st.markdown('PROCEDIMIENTOS')
+  st.markdown('Anteriores a UCI')
+  st.dataframe(procedures_ant)
+  st.markdown('Durante UCI')
+  #st.dataframe(procedures_icd)
+  st.dataframe(cptevents) 
+  st.dataframe(d_cpt)     
 
+  if proceduresevents_mv.shape[0] > 0:
+    st.subheader('Ventilación Mecánica')
+    st.dataframe(proceduresevents_mv) # Condicional 
 
-prescriptions = pd.read_sql("""SELECT * 
-                              FROM prescriptions
-                              WHERE subject_id = {paciente} AND hadm_id = {hadmid}""".format(paciente=paciente,hadmid=hadm_id),mydb)
+with col9:
+  st.markdown('LABS')
+  valueslabs = pd.concat([itemidlabs, value,valueuom], axis=1)
+  st.dataframe(valueslabs)
 
-inputevents_cv = pd.read_sql("""SELECT * 
-                              FROM inputevents_cv
-                              WHERE subject_id = {paciente} AND icustay_id = {icustay}""".format(paciente=paciente,icustay=estancia),mydb)
+st.markdown('DESCARGO')
 
-inputevents_mv = pd.read_sql("""SELECT * 
-                              FROM inputevents_mv
-                              WHERE subject_id = {paciente} AND icustay_id = {icustay}""".format(paciente=paciente,icustay=estancia),mydb)
+discharge = pd.DataFrame(discharge)
 
-st.subheader('Fuera de la UCI')
-st.dataframe(prescriptions[prescriptions['ICUSTAY_ID'] == 0])
+st.markdown(discharge['DISCHARGE_LOCATION'].values[0])
 
-st.subheader('Suministrados en UCI')
-st.dataframe(prescriptions[prescriptions['ICUSTAY_ID'] != 0])
-
-if inputevents_cv.shape[0] > 0:
-  st.subheader('Via Intravenosa')
-  st.dataframe(inputevents_cv) #Intravenosos
-
-if inputevents_mv.shape[0] > 0:
-  st.subheader('Via Ventilación Mecánica')
-  st.dataframe(inputevents_mv) # Ventilacion Mecanica
-
-###################################################################################
-st.markdown('## Pruebas de Laboratorio y microbiologicos')
-st.markdown("---")
-
-labevents2 = pd.read_sql("""SELECT * 
-                              FROM labevents2
-                              WHERE subject_id = {paciente} AND hadm_id = {hadmid}""".format(paciente=paciente,hadmid=hadm_id),mydb)
-
-microbiologyevents = pd.read_sql("""SELECT * 
-                              FROM microbiologyevents
-                              WHERE subject_id = {paciente} AND hadm_id = {hadmid}""".format(paciente=paciente,hadmid=hadm_id),mydb)
-
-st.dataframe(labevents2)
-st.dataframe(microbiologyevents)
-
+#Descargar reporte
 if st.button('Descargar'):#Centrar boton en el layout
   st.write(dt.datetime.now())
+
+
+
+
