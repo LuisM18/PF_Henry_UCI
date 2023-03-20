@@ -73,12 +73,6 @@ patient = pd.read_sql("""SELECT *
                               FROM patient
                               WHERE subject_id = {paciente} """.format(paciente=paciente),mydb)
 
-subject = pd.read_sql("""SELECT SUBJECT_ID 
-                              FROM patient
-                              WHERE subject_id = {paciente} """.format(paciente=paciente),mydb)
-subject = pd.DataFrame(subject)
-subject = subject['SUBJECT_ID'].values[0]  
-
 admission= pd.read_sql("""SELECT *
                               FROM admissions
                               WHERE subject_id = {paciente} AND hadm_id = {hadmid}
@@ -147,7 +141,7 @@ col2, col3, col4 = st.columns([3,1,1])
 with col2:
   st.markdown('ADMITIDO: {admitted}'. format(admitted = admitted))
 with col3:
-  st.markdown('CÓDIGO: {subject}'. format(subject = subject))
+  st.markdown('CÓDIGO: {subject}'. format(subject = paciente))
 
 col5, col6, col7 = st.columns([3,2,2])
 
