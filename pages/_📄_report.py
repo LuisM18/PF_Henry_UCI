@@ -12,14 +12,14 @@ st.set_page_config(
 
 ############## Cargar Data ###################################
 mydb = mysql.connector.connect(
-  host="proyectdb.mysql.database.azure.com",
-  user="administrador123",
-  password="pasword123.",
+  host= st.secrets["DB_HOST"],
+  user=st.secrets["DB_USER"],
+  password=st.secrets["DB_PASSWORD"],
   database="proyectdb"
 )
 
 admissions = pd.read_sql("""SELECT subject_id
-                            FROM admissions""",mydb)
+                            FROM admissions_hechos""",mydb)
 
 ###################################################################################
 
@@ -43,7 +43,7 @@ st.markdown("---")
 #Traemos de la base de datos
 
 admitted = pd.read_sql("""SELECT admittime 
-                              FROM admissions
+                              FROM admissions_hechos
                               WHERE subject_id = {paciente} AND hadm_id = {hadmid}
                               ORDER BY admittime DESC""".format(paciente=paciente,hadmid =hadm_id),mydb)
 admitted = pd.DataFrame(admitted)

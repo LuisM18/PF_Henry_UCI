@@ -73,13 +73,14 @@ def tasa_mortalidad(admissions):
     return tasa
 
 ## Tasa Reingreso
-#df.drop_duplicates(inplace=True)
-#df['subject_id'].value_counts()
-#¿Qué es el índice de reingreso?
-#El reingreso ha sido definido como todo ingreso con idéntico diagnóstico principal en los 30 días siguientes al alta.
-#tasa_reingreso = df.groupby(['subject_id','diagnosis'])['subject_id'].count()
-#tasa_re = tasa_reingreso.value_counts()
-#tasa_re_2 = tasa_re[tasa_re.index > 1].sum() / tasa_re.sum() * 100
+def reingresos(admissions):
+    admissions['ADMITTIME_YEAR'] = admissions.admittime.dt.year
+    admissions['ADMITTIME_MONTH'] = admissions.admittime.dt.month
+
+    tasa = pd.DataFrame(admissions.groupby(['ADMITTIME_YEAR','ADMITTIME_MONTH'])['SUBJECT_ID'].apply(lambda x: x.count()-1))
+    tasa.rename(columns={'SUBJECT_ID':'reingresos'},inplace=True)
+
+    return tasa
 
 ## Tiempo de estancia promedio
 def tiempo_estancia_promedio(icustay):
@@ -103,7 +104,7 @@ with placeholder.container():
     kpi1, kpi2, kpi3 = st.columns(3)
 
     admissions = pd.read_sql("""SELECT *
-                             FROM admissions""",mydb,parse_dates=['DISCHTIME'])
+                             FROM admissions_hechos""",mydb,parse_dates=['ADMITTIME','DISCHTIME'])
 
 
     mortalidad = tasa_mortalidad(admissions)
@@ -113,10 +114,11 @@ with placeholder.container():
         delta= f"{round((mortalidad.iloc[-1,-1]-mortalidad.iloc[-2,-1]/mortalidad.iloc[-2,-1])*100,2)} % "
     )
 
+    reingresos(admissions)
     kpi2.metric(
-        label="Tasa de reingreso",
-        value= f" {round(2.8,2)} %",
-        delta= 0
+        label="Cantidad de reingresos",
+        value= f" {round(reingresos.iloc[-1,-1],2)} pacientes",
+        delta= f"{round((reingresos.iloc[-1,-1]-reingresos.iloc[-2,-1]/reingresos.iloc[-2,-1])*100,2)} % "
     )
 
 icustays = pd.read_sql("""SELECT *

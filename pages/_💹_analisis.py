@@ -3,16 +3,43 @@ import numpy as np  #
 import pandas as pd  # 
 import plotly.express as px  # 
 import streamlit as st  # 🎈
+import mysql.connector
 from datetime import datetime
 
-labevents = pd.read_csv("./EDA_UCI/dataset/LABEVENTS.csv")
-labitems = pd.read_csv("./EDA_UCI/dataset/D_LABITEMS.csv")
-admissions = pd.read_csv('./EDA_UCI/dataset/ADMISSIONS.csv')
-icustays = pd.read_csv('./EDA_UCI/dataset/ICUSTAYS.csv')
-ditems = pd.read_csv('./EDA_UCI/dataset/D_ITEMS.csv')
-dlabitems = pd.read_csv('./EDA_UCI/dataset/D_LABITEMS.csv')
-patients = pd.read_csv('./EDA_UCI/dataset/PATIENTS.csv')
-prescriptions = pd.read_csv('./EDA_UCI/dataset/PRESCRIPTIONS.csv')
+mydb = mysql.connector.connect(
+  host= st.secrets["DB_HOST"],
+  user=st.secrets["DB_USER"],
+  password=st.secrets["DB_PASSWORD"],
+  database="proyectdb"
+)
+
+################## Cargar Data ##########################
+admissions = pd.read_sql("""SELECT *
+                            FROM admissions_hechos""",mydb,parse_dates=['INTIME','OUTTIME'])
+
+icustays = pd.read_sql("""SELECT *
+                            FROM icustays""",mydb)
+
+patients = pd.read_sql("""SELECT *
+                            FROM patients""",mydb)
+
+prescriptions = pd.read_sql("""SELECT *
+                            FROM prescriptions""",mydb)
+
+inputevents_cv = pd.read_sql("""SELECT *
+                            FROM inputevents_cv""",mydb)
+
+inputevents_mv = pd.read_sql("""SELECT *
+                            FROM inputevents_mv""",mydb)
+
+outputevents = pd.read_sql("""SELECT *
+                            FROM outputevents""",mydb)
+
+proceduresevents_mv = pd.read_sql("""SELECT *
+                            FROM proceduresevents_mv""",mydb)
+
+
+###################################################################################
 
 st.sidebar.markdown("# Análisis descriptivo de las tablas")
 st.sidebar.markdown("# Seleccione las tablas")
