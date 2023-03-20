@@ -114,7 +114,7 @@ with placeholder.container():
         delta= f"{round((mortalidad.iloc[-1,-1]-mortalidad.iloc[-2,-1]/mortalidad.iloc[-2,-1])*100,2)} % "
     )
 
-    reingresos(admissions)
+    reingresos = reingresos(admissions)
     kpi2.metric(
         label="Cantidad de reingresos",
         value= f" {round(reingresos.iloc[-1,-1],2)} pacientes",
