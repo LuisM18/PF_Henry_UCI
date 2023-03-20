@@ -74,8 +74,8 @@ def tasa_mortalidad(admissions):
 
 ## Tasa Reingreso
 def reingresos(admissions):
-    admissions['ADMITTIME_YEAR'] = admissions.admittime.dt.year
-    admissions['ADMITTIME_MONTH'] = admissions.admittime.dt.month
+    admissions['ADMITTIME_YEAR'] = admissions['ADMITTIME'].dt.year
+    admissions['ADMITTIME_MONTH'] = admissions['ADMITTIME'].dt.month
 
     tasa = pd.DataFrame(admissions.groupby(['ADMITTIME_YEAR','ADMITTIME_MONTH'])['SUBJECT_ID'].apply(lambda x: x.count()-1))
     tasa.rename(columns={'SUBJECT_ID':'reingresos'},inplace=True)
