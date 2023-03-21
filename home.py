@@ -138,13 +138,6 @@ fig.update_layout(showlegend=False)
 st.plotly_chart(fig,use_container_width=True)       
 
 st.markdown("### Tasa de mortalidad por mes y año")
-max_value = admissions['DISCHTIME'].max()
-min_value = admissions['DISCHTIME'].min()
-mind, maxd  = st.date_input('Seleccione el rango de fecha', [min_value, max_value])
-maxd = datetime.strptime(str(maxd), '%Y-%m-%d')
-mind = datetime.strptime(str(mind), '%Y-%m-%d')
-admissions = admissions[(admissions['DISCHTIME'] > mind) & (admissions['DISCHTIME'] < maxd)]
-
 tasa = tasa_mortalidad(admissions)
 y = tasa['tasa_mortalidad']
 yearmonth = tasa.index.to_series().apply(lambda x: '{0}-{1}'.format(*x))
@@ -152,20 +145,14 @@ yearmonth = tasa.index.to_series().apply(lambda x: '{0}-{1}'.format(*x))
 fig3 = px.line(x = yearmonth.values,y = y,labels=dict(y='Porcentaje de Mortalidad',x='Fecha'))
 fig3.update_yaxes(tickformat=".2%")
 fig3.update_xaxes(tickformat='%b\n%Y')
+fig3.update_xaxes(rangeslider_visible=True)
 st.plotly_chart(fig3,use_container_width=True)
 
 st.markdown("### Tiempo promedio de estancia en UCI por mes y año")
-max_value = icustays['OUTTIME'].max()
-min_value = icustays['OUTTIME'].min()
-
-mind, maxd  = st.date_input('Seleccione el rango de fecha', [min_value, max_value])
-maxd = datetime.strptime(str(maxd), '%Y-%m-%d')
-mind = datetime.strptime(str(mind), '%Y-%m-%d')
-
-icustays = icustays[(icustays['OUTTIME'] > mind) & (icustays['OUTTIME'] < maxd)]
 y = tiempo['tiempo_estancia_promedio']
 yearmonth = tiempo.index.to_series().apply(lambda x: '{0}-{1}'.format(*x))
 fig4 = px.line(x = yearmonth.values,y = y,labels=dict(x='Fecha',y='Tiempo promedio (dias)'))
 fig4.update_xaxes(tickformat='%b\n%Y')
+fig4.update_xaxes(rangeslider_visible=True)
 st.plotly_chart(fig4,use_container_width=True)
 
