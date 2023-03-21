@@ -102,28 +102,28 @@ if tabla_seleccionada == 'prescriptions':
     fig5, fig6 = st.columns(2)
     with fig3:
         st.markdown("### Medicamentos más utilizados")
-        x = prescriptions['drug'].value_counts().keys()
-        y = prescriptions['drug'].value_counts().values
+        x = prescriptions['DRUG'].value_counts().keys()
+        y = prescriptions['DRUG'].value_counts().values
         fig3 = px.bar(data_frame=prescriptions, x=x, y = y )
         st.plotly_chart(fig3,use_container_width=True)
 
     with fig4:
         st.markdown("### Ruta de la medicación")
-        x = prescriptions['route'].value_counts().keys()
-        y = prescriptions['route'].value_counts().values
+        x = prescriptions['ROUTE'].value_counts().keys()
+        y = prescriptions['ROUTE'].value_counts().values
         fig4 = px.bar(data_frame=prescriptions, x=x, y =y )
         st.plotly_chart(fig4,use_container_width=True)
 
 
     st.markdown("### Medicamentos dados en el tiempo")
-    prescriptions['startdate'] = prescriptions.startdate.apply(pd.to_datetime)
-    prescriptions['month'] = prescriptions['startdate'].dt.to_period('M')
-    max_value = prescriptions['startdate'].max()
-    min_value = prescriptions['startdate'].min()
+    prescriptions['STARTDATE'] = prescriptions['STARTDATE'].apply(pd.to_datetime)
+    prescriptions['month'] = prescriptions['STARTDATE'].dt.to_period('M')
+    max_value = prescriptions['STARTDATE'].max()
+    min_value = prescriptions['STARTDATE'].min()
     mind, maxd  = st.date_input('Seleccione el rango de fecha', [min_value, max_value])
     maxd = datetime.strptime(str(maxd), '%Y-%m-%d')
     mind = datetime.strptime(str(mind), '%Y-%m-%d')
-    filtered_prescriptions = prescriptions[(prescriptions['startdate'] > mind) & (prescriptions['startdate'] < maxd)]
+    filtered_prescriptions = prescriptions[(prescriptions['STARTDATE'] > mind) & (prescriptions['STARTDATE'] < maxd)]
     #filtered_prescriptions = prescriptions[prescriptions['startdate'] > mind]
     y = filtered_prescriptions.groupby(['month'])['drug'].count().values
     x = filtered_prescriptions.groupby(['month'])['drug'].count().index
