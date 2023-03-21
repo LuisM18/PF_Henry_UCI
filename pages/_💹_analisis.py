@@ -18,7 +18,7 @@ admissions = pd.read_sql("""SELECT *
                             FROM admissions_hechos""",mydb,parse_dates=['INTIME','OUTTIME'])
 
 icustays = pd.read_sql("""SELECT *
-                            FROM icustays""",mydb)
+                            FROM icustays_hechos""",mydb)
 
 patients = pd.read_sql("""SELECT *
                             FROM patient""",mydb)
@@ -26,17 +26,9 @@ patients = pd.read_sql("""SELECT *
 prescriptions = pd.read_sql("""SELECT *
                             FROM prescriptions""",mydb)
 
-inputevents_cv = pd.read_sql("""SELECT *
-                            FROM inputevents_cv""",mydb)
-
 inputevents_mv = pd.read_sql("""SELECT *
                             FROM inputevents_mv""",mydb)
 
-outputevents = pd.read_sql("""SELECT *
-                            FROM outputevents""",mydb)
-
-proceduresevents_mv = pd.read_sql("""SELECT *
-                            FROM procedureevents_mv""",mydb)
 
 d_items = pd.read_sql("""SELECT *
                             FROM d_items""",mydb)
@@ -85,10 +77,12 @@ if tabla_seleccionada == 'Pacientes':
     
     with fig3:
         st.markdown("### Pacientes por sexo")
-        patient = patients.merge(admissions, left_on='SUBJECT_ID', right_on='SUBJECT_ID')
+        genero = pd.read_sql("""SELECT DISTINCT GENDER, COUNT(GENDER)
+                                FROM patient
+                                GROUP BY GENDER""",mydb)
         x = patients['GENDER'].value_counts().keys()
         y = patients['GENDER'].value_counts().values
-        fig3 = px.bar(x=x, y = y)#data_frame=patient, x=x, y = y
+        fig3 = px.bar(genero)
         st.plotly_chart(fig3,use_container_width=True)
 
     with fig4:
