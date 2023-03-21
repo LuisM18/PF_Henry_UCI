@@ -21,7 +21,7 @@ icustays = pd.read_sql("""SELECT *
                             FROM icustays""",mydb)
 
 patients = pd.read_sql("""SELECT *
-                            FROM patients""",mydb)
+                            FROM patient""",mydb)
 
 prescriptions = pd.read_sql("""SELECT *
                             FROM prescriptions""",mydb)
