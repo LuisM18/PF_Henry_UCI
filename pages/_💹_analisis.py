@@ -183,36 +183,36 @@ if tabla_seleccionada == 'Estancia en UCI':
 if tabla_seleccionada == 'Ventilación Mecánica':
     
     st.markdown("### Categorías de medicamentos utilizadas")
-    inpute = inputevents_mv.merge(d_items, left_on='itemid', right_on='itemid')
+    inpute = inputevents_mv.merge(d_items, left_on='ITEMID', right_on='ITEMID')
     x = inpute.category.value_counts(dropna=False).keys()
     y = inpute.category.value_counts(dropna=False).values
     fig3 = px.bar(data_frame=inpute, x = x, y = y )
     st.plotly_chart(fig3,use_container_width=True)
 
     st.markdown("### Cantidad histórica promedio de cada medicina")
-    #historical average amount of each med.
-    inpute['amount'].dropna(inplace=True)
-    inpute['amountuom'].dropna(inplace=True)
-    inpute['label'].dropna(inplace=True)
-    average = inpute.groupby(['label','amountuom'])['amount'].mean()
+    #historical average AMOUNT of each med.
+    inpute['AMOUNT'].dropna(inplace=True)
+    inpute['AMOUNTUOM'].dropna(inplace=True)
+    inpute['LABEL'].dropna(inplace=True)
+    average = inpute.groupby(['LABEL','AMOUNTUOM'])['AMOUNT'].mean()
     average = average.reset_index()
-    average.rename(columns={"amount": "average_amount","amountuom": "unit","label": "item"}, inplace = True)
+    average.rename(columns={"AMOUNT": "average_amount","AMOUNTUOM": "unit","LABEL": "item"}, inplace = True)
     st.dataframe(average)
 
     #Filtro por mes o año
     st.markdown("## Filtrar por mes o año")
 
-    inpute['starttime'] = inpute['starttime'].apply(pd.to_datetime)
-    inpute['start_year'] = inpute['starttime'].dt.year
-    inpute['start_month'] = inpute['starttime'].dt.month
+    inpute['STARTTIME'] = inpute['STARTTIME'].apply(pd.to_datetime)
+    inpute['start_year'] = inpute['STARTTIME'].dt.year
+    inpute['start_month'] = inpute['STARTTIME'].dt.month
 
     mes_año = st.radio('Selecciona filtro por mes y año', ('Mes','Año'))
     if mes_año == 'Mes':
         month = st.selectbox('Selecciona el mes', sorted(pd.unique(inpute['start_month'])))
         inpute = inpute[inpute['start_month'] == int(month)]
-        average_month = inpute.groupby(['label','amountuom'])['amount'].mean()
+        average_month = inpute.groupby(['LABEL','AMOUNTUOM'])['AMOUNT'].mean()
         average_month = average_month.reset_index()
-        average_month.rename(columns={"amount": "average_amount","label": "item","amountuom": "unit"}, inplace = True)
+        average_month.rename(columns={"AMOUNT": "average_AMOUNT","LABEL": "item","AMOUNTUOM": "unit"}, inplace = True)
         if average_month.empty:
             st.markdown('# No hay información para estos filtros')
         else:
@@ -222,9 +222,9 @@ if tabla_seleccionada == 'Ventilación Mecánica':
     if mes_año == 'Año':
         year= st.selectbox('Selecciona el año', sorted(pd.unique(inpute['start_year'])))
         inpute = inpute[inpute['start_year'] == int(year)]
-        average_year = inpute.groupby(['label','amountuom'])['amount'].mean()
+        average_year = inpute.groupby(['LABEL','AMOUNTUOM'])['AMOUNT'].mean()
         average_year = average_year.reset_index()
-        average_year.rename(columns={"amount": "average_amount","label": "item","amountuom": "unit"}, inplace = True)
+        average_year.rename(columns={"AMOUNT": "average_AMOUNT","LABEL": "item","AMOUNTUOM": "unit"}, inplace = True)
         if average_year.empty:
             st.markdown('No hay información para estos filtros')
         else:
@@ -236,9 +236,9 @@ if tabla_seleccionada == 'Ventilación Mecánica':
     value=(int(inpute['start_year'].max())-10,int(inpute['start_year'].max())), min_value= int(inpute['start_year'].min()), max_value=int(inpute['start_year'].max()))
 
     inpute2 = inpute[(inpute['start_year'] > int(rango_año[0])) & (inpute['start_year'] < int(rango_año[1]))]
-    average_year2 = inpute2.groupby(['label','amountuom'])['amount'].mean()
+    average_year2 = inpute2.groupby(['LABEL','AMOUNTUOM'])['AMOUNT'].mean()
     average_year2 = average_year2.reset_index()
-    average_year2.rename(columns={"amount": "average_amount","label": "item","amountuom": "unit"}, inplace = True)
+    average_year2.rename(columns={"AMOUNT": "average_AMOUNT","LABEL": "item","AMOUNTUOM": "unit"}, inplace = True)
     if average_year2.empty:
         st.markdown('No hay información para estos filtros')
     else:
