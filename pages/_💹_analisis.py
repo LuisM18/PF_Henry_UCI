@@ -86,26 +86,26 @@ if tabla_seleccionada == 'patients':
     with fig3:
         st.markdown("### Pacientes por sexo")
         patient = patients.merge(admissions, left_on='SUBJECT_ID', right_on='SUBJECT_ID')
-        x = patient['gender'].value_counts().keys()
-        y = patient['gender'].value_counts().values
+        x = patient['GENDER'].value_counts().keys()
+        y = patient['GENDER'].value_counts().values
         fig3 = px.bar(data_frame=patient, x=x, y = y )
         st.plotly_chart(fig3,use_container_width=True)
 
     with fig4:
         st.markdown("### Pacientes por estado civil")
         patient = patients.merge(admissions, left_on='SUBJECT_ID', right_on='SUBJECT_ID')
-        x = patient['marital_status'].value_counts().keys()
-        y = patient['marital_status'].value_counts().values
+        x = patient['MARITAL_STATUS'].value_counts().keys()
+        y = patient['MARITAL_STATUS'].value_counts().values
         fig4 = px.bar(data_frame=patient, x=x, y =y )
         st.plotly_chart(fig4,use_container_width=True)
 
     with fig5:
         st.markdown("### Pacientes por edad")
         patient = patients.merge(admissions, left_on='SUBJECT_ID', right_on='SUBJECT_ID')
-        yearnac = pd.to_datetime(patient['dob'])
-        yearmu = pd.to_datetime(patient['dod'])
-        patient['age'] = yearmu.dt.year - yearnac.dt.year
-        fig5 = px.histogram(data_frame=patient, x="age")
+        yearnac = pd.to_datetime(patient['DOB'])
+        yearmu = pd.to_datetime(patient['DOD'])
+        patient['AGE'] = yearmu.dt.year - yearnac.dt.year
+        fig5 = px.histogram(data_frame=patient, x="AGE")
         st.plotly_chart(fig5,use_container_width=True)
 
     with fig6:
@@ -144,8 +144,8 @@ if tabla_seleccionada == 'prescriptions':
     mind = datetime.strptime(str(mind), '%Y-%m-%d')
     filtered_prescriptions = prescriptions[(prescriptions['STARTDATE'] > mind) & (prescriptions['STARTDATE'] < maxd)]
     #filtered_prescriptions = prescriptions[prescriptions['startdate'] > mind]
-    y = filtered_prescriptions.groupby(['month'])['drug'].count().values
-    x = filtered_prescriptions.groupby(['month'])['drug'].count().index
+    y = filtered_prescriptions.groupby(['month'])['DRUG'].count().values
+    x = filtered_prescriptions.groupby(['month'])['DRUG'].count().index
     x = x.astype(str)
     #fig7 = px.line(data_frame=filtered_prescriptions, x=x, y = y)
     fig7 = px.line( x=x, y= y)
