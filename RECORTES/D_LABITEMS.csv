@@ -1,0 +1,151 @@
+,row_id,itemid,label,fluid,category,loinc_code
+603,604,51404,CD3,Other Body Fluid,Hematology,17826-9
+604,605,51405,CD33,Other Body Fluid,Hematology,51294-7
+605,606,51406,CD34,Other Body Fluid,Hematology,
+606,607,51407,CD38,Other Body Fluid,Hematology,51299-6
+607,608,51408,CD4,Other Body Fluid,Hematology,17822-8
+608,609,51409,CD4/CD8 Ratio,Other Body Fluid,Hematology,18266-7
+609,610,51410,CD41,Other Body Fluid,Hematology,51320-0
+610,611,51411,CD45,Other Body Fluid,Hematology,17823-6
+611,612,51412,CD5,Other Body Fluid,Hematology,57423-6
+612,613,51413,CD56,Other Body Fluid,Hematology,57424-4
+613,614,51414,CD57,Other Body Fluid,Hematology,
+614,615,51415,CD64,Other Body Fluid,Hematology,51366-3
+615,616,51416,CD7,Other Body Fluid,Hematology,57425-1
+616,617,51417,CD71,Other Body Fluid,Hematology,57426-9
+617,618,51418,CD8,Other Body Fluid,Hematology,17824-4
+618,619,51419,Eosinophils,Other Body Fluid,Hematology,26452-3
+619,620,51420,FMC-7,Other Body Fluid,Hematology,57428-5
+620,621,51421,Glyco A,Other Body Fluid,Hematology,57430-1
+621,622,51422,"Hematocrit, Other Fluid",Other Body Fluid,Hematology,11153-4
+622,623,51423,HLA-DR,Other Body Fluid,Hematology,51381-2
+623,624,51424,Immunophenotyping,Other Body Fluid,Hematology,
+624,625,51425,Kappa,Other Body Fluid,Hematology,
+625,626,51426,Lambda,Other Body Fluid,Hematology,
+626,627,51427,Lymphocytes,Other Body Fluid,Hematology,11031-2
+627,628,51428,Macrophage,Other Body Fluid,Hematology,12230-9
+628,629,51429,Mesothelial cells,Other Body Fluid,Hematology,28544-5
+629,630,51430,Metamyelocytes,Other Body Fluid,Hematology,17801-2
+630,631,51431,Monos,Other Body Fluid,Hematology,10330-9
+631,632,51432,Myelocytes,Other Body Fluid,Hematology,17800-4
+632,633,51433,NRBC,Other Body Fluid,Hematology,
+633,634,51434,Other Cell,Other Body Fluid,Hematology,
+634,635,51435,Plasma,Other Body Fluid,Hematology,17803-8
+635,636,51436,Polys,Other Body Fluid,Hematology,26518-1
+636,637,51437,Promyelocytes,Other Body Fluid,Hematology,17799-8
+637,638,51438,"RBC, Other Fluid",Other Body Fluid,Hematology,26455-6
+638,639,51439,"WBC, Other Fluid",Other Body Fluid,Hematology,26466-3
+639,640,51440,Atypical Lymphocytes,Pleural,Hematology,33370-8
+640,641,51441,Bands,Pleural,Hematology,
+641,642,51442,Basophils,Pleural,Hematology,35070-2
+642,643,51443,Blasts,Pleural,Hematology,
+643,644,51444,Eosinophils,Pleural,Hematology,30379-2
+644,645,51445,"Hematocrit, Pleural",Pleural,Hematology,
+645,646,51446,Lymphocytes,Pleural,Hematology,26481-2
+646,647,51447,Macrophages,Pleural,Hematology,40520-9
+647,648,51448,Mesothelial Cells,Pleural,Hematology,30431-1
+648,649,51449,Metamyelocytes,Pleural,Hematology,
+649,650,51450,Monos,Pleural,Hematology,33362-5
+650,651,51451,Myelocytes,Pleural,Hematology,
+651,652,51452,NRBC,Pleural,Hematology,
+652,653,51453,Other,Pleural,Hematology,
+653,654,51454,Plasma Cells,Pleural,Hematology,40522-5
+654,655,51455,Polys,Pleural,Hematology,26519-9
+655,656,51456,Promyelocytes,Pleural,Hematology,
+656,657,51457,"RBC, Pleural",Pleural,Hematology,26456-4
+657,658,51458,"WBC, Pleural",Pleural,Hematology,26467-1
+658,659,51459,Young Cells,Pleural,Hematology,
+659,660,51460,"Blood, Occult",Stool,Hematology,2335-8
+660,661,51461,Ammonium Biurate,Urine,Hematology,12454-5
+661,662,51462,Amorphous Crystals,Urine,Hematology,8246-1
+662,663,51463,Bacteria,Urine,Hematology,5769-5
+663,664,51464,Bilirubin,Urine,Hematology,5770-3
+664,665,51465,Bilirubin Crystals,Urine,Hematology,5771-1
+665,666,51466,Blood,Urine,Hematology,5794-3
+666,667,51467,Broad Casts,Urine,Hematology,18487-9
+667,668,51468,Calcium Carbonate Crystals,Urine,Hematology,5773-7
+668,669,51469,Calcium Oxalate Crystals,Urine,Hematology,5774-5
+669,670,51470,Calcium Phosphate Crystals,Urine,Hematology,5775-2
+670,671,51471,Cellular Cast,Urine,Hematology,
+671,672,51472,Cholesterol Crystals,Urine,Hematology,5777-8
+672,673,51473,Cysteine Crystals,Urine,Hematology,5782-8
+673,674,51474,Eosinophils,Urine,Hematology,25156-1
+674,675,51475,Epithelial Casts,Urine,Hematology,
+675,676,51476,Epithelial Cells,Urine,Hematology,5787-7
+676,677,51477,Free Fat,Urine,Hematology,53359-6
+677,678,51478,Glucose,Urine,Hematology,5792-7
+678,679,51479,Granular Casts,Urine,Hematology,5793-5
+679,680,51480,Hematocrit,Urine,Hematology,17809-5
+680,681,51481,Hemosiderin,Urine,Hematology,4644-1
+681,682,51482,Hyaline Casts,Urine,Hematology,5796-8
+682,683,51483,Hyphenated Yeast,Urine,Hematology,41865-7
+683,684,51484,Ketone,Urine,Hematology,5797-6
+684,685,51485,Leucine Crystals,Urine,Hematology,5798-4
+685,686,51486,Leukocytes,Urine,Hematology,5799-2
+686,687,51487,Nitrite,Urine,Hematology,5802-4
+687,688,51488,Non-squamous Epithelial Cells,Urine,Hematology,41284-1
+688,689,51489,NonSquamous Epithelial Cell,Urine,Hematology,41284-1
+689,690,51490,Oval Fat Body,Urine,Hematology,
+690,691,51491,pH,Urine,Hematology,5803-2
+691,692,51492,Protein,Urine,Hematology,5804-0
+692,693,51493,RBC,Urine,Hematology,5808-1
+693,694,51494,RBC Casts,Urine,Hematology,5807-3
+694,695,51495,RBC Clumps,Urine,Hematology,
+695,696,51496,"Reducing Substances, Urine",Urine,Hematology,
+696,697,51497,Renal Epithelial Cells,Urine,Hematology,26052-1
+697,698,51498,Specific Gravity,Urine,Hematology,5811-5
+698,699,51499,Sperm,Urine,Hematology,8248-7
+699,700,51500,Sulfonamides,Urine,Hematology,5812-3
+700,701,51501,Transitional Epithelial Cells,Urine,Hematology,30089-7
+701,702,51502,Trichomonas,Urine,Hematology,32724-7
+702,703,51503,Triple Phosphate Crystals,Urine,Hematology,5814-9
+703,704,51504,Tyrosine Crystals,Urine,Hematology,5815-6
+704,705,51505,Uric Acid Crystals,Urine,Hematology,5817-2
+705,706,51506,Urine Appearance,Urine,Hematology,5767-9
+706,707,51507,"Urine Casts, Other",Urine,Hematology,9842-6
+707,708,51508,Urine Color,Urine,Hematology,5778-6
+708,709,51509,Urine Comments,Urine,Hematology,
+709,710,51510,"Urine Crystals, Other",Urine,Hematology,5783-6
+710,711,51511,Urine Fat Bodies,Urine,Hematology,2272-3
+711,712,51512,Urine Mucous,Urine,Hematology,8247-9
+712,713,51513,Urine Specimen Type,Urine,Hematology,19159-3
+713,714,51514,Urobilinogen,Urine,Hematology,5818-0
+714,715,51515,Waxy Casts,Urine,Hematology,5819-8
+715,716,51516,WBC,Urine,Hematology,5821-4
+716,717,51517,WBC Casts,Urine,Hematology,5820-6
+717,718,51518,WBC Clumps,Urine,Hematology,
+718,719,51519,Yeast,Urine,Hematology,5822-2
+719,720,51520,ANTI-MC,BLOOD,CHEMISTRY,32042-4
+720,721,51521,"ACID PHOSPHATASE, PROSTATIC",BLOOD,CHEMISTRY,
+721,722,51522,PG,OTHER BODY FLUID,CHEMISTRY,48785-0
+722,723,51523,GR HOLD,URINE,CHEMISTRY,
+723,724,51524,FATTY,URINE,HEMATOLOGY,5789-3
+724,725,51525,Billed,BLOOD,CHEMISTRY,
+725,726,51526,FRUCAMN+,BLOOD,CHEMISTRY,
+726,727,51527,MS-DIA,BLOOD,CHEMISTRY,
+727,728,51528,STDY HOLD,BLOOD,CHEMISTRY,
+728,729,51529,Estimated Actual Glucose,BLOOD,CHEMISTRY,
+729,730,51530,AF-AFP,OTHER BODY FLUID,CHEMISTRY,
+730,731,51531,STDYURINE,URINE,CHEMISTRY,
+731,732,51532,PLASMGN,BLOOD,HEMATOLOGY,
+732,733,51533,WBCP,BLOOD,HEMATOLOGY,
+733,734,51534,MYELOS,JOINT FLUID,HEMATOLOGY,
+734,735,51535,CD55,OTHER BODY FLUID,HEMATOLOGY,
+735,736,51536,CD59,OTHER BODY FLUID,HEMATOLOGY,
+736,737,51537,TDT,OTHER BODY FLUID,HEMATOLOGY,
+737,738,51540,PROBLEM SPECIMEN,BLOOD,CHEMISTRY,
+738,739,51541,PROBLEM SPECIMEN,BLOOD,HEMATOLOGY,
+739,740,51542,PROBLEM SPECIMEN,URINE,HEMATOLOGY,
+740,741,51543,VOIDED SPECIMEN,BLOOD,CHEMISTRY,
+741,742,51544,VOIDED SPECIMEN,OTHER BODY FLUID,BLOOD GAS,
+742,743,51545,VOIDED SPECIMEN,BLOOD,BLOOD GAS,
+743,744,51546,VOIDED SPECIMEN,CSF,CHEMISTRY,
+744,745,51547,VOIDED SPECIMEN,OTHER BODY FLUID,CHEMISTRY,
+745,746,51548,VOIDED SPECIMEN,URINE,HEMATOLOGY,
+746,747,51549,VOIDED SPECIMEN,ASCITES,CHEMISTRY,
+747,748,51550,VOIDED SPECIMEN,BLOOD,HEMATOLOGY,
+748,749,51551,VOIDED SPECIMEN,OTHER BODY FLUID,HEMATOLOGY,
+749,750,51552,VOIDED SPECIMEN,STOOL,CHEMISTRY,
+750,751,51553,VOIDED SPECIMEN,URINE,CHEMISTRY,
+751,752,51554,VOIDED SPECIMEN,JOINT FLUID,HEMATOLOGY,
+752,753,51555,SURFACTANT ALBUMIN RATIO,OTHER BODY FLUID,CHEMISTRY,
