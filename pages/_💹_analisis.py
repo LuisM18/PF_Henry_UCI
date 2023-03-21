@@ -51,17 +51,34 @@ st.header('Análisis descriptivo')
 st.markdown("---")
 if tabla_seleccionada == 'patients':
    
-    adm_filter = st.selectbox("Selecciona el tipo de admisión", pd.unique(admissions["ADMISSION_TYPE"]),key="1")
-    insurance = st.selectbox("Selecciona el seguro del paciente", pd.unique(admissions['INSURANCE']),key="2")
-    # selecciona la etnia
-    etnia = st.multiselect(
-        'Selecciona la etnia del paciente', pd.unique(admissions["ETHNIVITY"]), default = 'WHITE')
+    admission_options = pd.read_sql("""SELECT DISTINCT ADMTYPE_NAME  FROM admissions_type""",mydb)
+    adm_filter = st.selectbox("Selecciona el tipo de admisión", admission_options,key="1")
+
+    insurance_options = pd.read_sql("""SELECT DISTINCT INSURANCE_NAME FROM insurance""",mydb)
+    insurance = st.selectbox("Selecciona el seguro del paciente", insurance_options,key="2")
+
+    etnia_options = pd.read_sql("""SELECT DISTINCT ETHNICITY FROM ethnicity""",mydb)
+    etnia = st.multiselect('Selecciona la etnia del paciente', etnia_options, default = ['WHITE','OTHER'])
 
     # creating a single-element container
     placeholder = st.empty()
 
     # dataframe filter
-    admissions = admissions[(admissions["ADMISSION_TYPE"] == adm_filter) & (admissions["INSURANCE"] == insurance) & (admissions["ethnicity"].isin(etnia))]
+    type_id = pd.read_sql("""SELECT ADMTYPE_ID 
+                            FROM admissions_type
+                            WHERE ADMTYPE_NAME = '%s'""" % adm_filter,mydb)
+    
+    insurance_id = pd.read_sql("""SELECT INSURANCE_ID 
+                            FROM insurance
+                            WHERE INSURANCE_NAME = '%s'""" % insurance,mydb) 
+    
+    etnia_id = pd.read_sql("""SELECT ETHNICITY_ID
+                            FROM ethnicity
+                            WHERE ETHNICITY IN {etnia}""".format(etnia=tuple(etnia)),mydb)
+
+    # dataframe filter
+
+    admissions = admissions[(admissions["ADMTYPE_ID"] == type_id) & (admissions["INSURANCE_ID"] == insurance_id) & (admissions["ETHNICITY_id"].isin(etnia_id))]
     fig3, fig4 = st.columns(2)
     fig5, fig6 = st.columns(2)
 
