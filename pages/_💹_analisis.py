@@ -82,18 +82,18 @@ if tabla_seleccionada == 'patients':
     fig3, fig4 = st.columns(2)
     fig5, fig6 = st.columns(2)
 
-    """
+    
     with fig3:
         st.markdown("### Pacientes por sexo")
         patient = patients.merge(admissions, left_on='SUBJECT_ID', right_on='SUBJECT_ID')
         x = patient['GENDER'].value_counts().keys()
         y = patient['GENDER'].value_counts().values
-        fig3 = px.bar(data_frame=patient, x=x, y = y )
-        st.plotly_chart(fig3,use_container_width=True)"""
+        fig3 = px.bar(patient['GENDER'].value_counts() )#data_frame=patient, x=x, y = y
+        st.plotly_chart(fig3,use_container_width=True)
 
     with fig4:
         st.markdown("### Pacientes por estado civil")
-        patient = patients.merge(admissions, left_on='SUBJECT_ID', right_on='SUBJECT_ID')
+        
         x = patient['MARITAL_STATUS'].value_counts().keys()
         y = patient['MARITAL_STATUS'].value_counts().values
         fig4 = px.bar(data_frame=patient, x=x, y =y )
@@ -101,7 +101,7 @@ if tabla_seleccionada == 'patients':
 
     with fig5:
         st.markdown("### Pacientes por edad")
-        patient = patients.merge(admissions, left_on='SUBJECT_ID', right_on='SUBJECT_ID')
+        
         yearnac = pd.to_datetime(patient['DOB'])
         yearmu = pd.to_datetime(patient['DOD'])
         patient['AGE'] = yearmu.dt.year - yearnac.dt.year
@@ -110,7 +110,7 @@ if tabla_seleccionada == 'patients':
 
     with fig6:
         st.markdown("### Pacientes por admission_location")
-        patient = patients.merge(admissions, left_on='SUBJECT_ID', right_on='SUBJECT_ID')
+        
         x = patient['admission_location'].value_counts().keys()
         y = patient['admission_location'].value_counts().values
         fig6 = px.bar(data_frame=patient, x=x, y =y)
