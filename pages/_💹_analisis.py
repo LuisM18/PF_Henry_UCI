@@ -171,7 +171,7 @@ if tabla_seleccionada == 'Estancia en UCI':
     with figb3:    
         st.metric('Permanencia misma sala UCI', f"{round(permaprops,2) } %", delta=None, delta_color="normal", help=None, label_visibility="visible")
     with figb4:  
-        icustays['los'].dropna(inplace=True)
+        icustays['LOS'].dropna(inplace=True)
         st.metric('Promedio estancia', f"{round(icustays['los'].mean(),2) } días" , delta=None, delta_color="normal", help=None, label_visibility="visible")
 
     st.markdown("### Fuente de los datos")
