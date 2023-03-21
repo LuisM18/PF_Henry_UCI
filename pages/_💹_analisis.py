@@ -21,7 +21,7 @@ icustays = pd.read_sql("""SELECT *
                             FROM icustay_hechos""",mydb)
 
 patients = pd.read_sql("""SELECT *
-                            FROM patient""",mydb)
+                            FROM patient_dim""",mydb)
 
 prescriptions = pd.read_sql("""SELECT *
                             FROM prescriptions""",mydb)
@@ -78,36 +78,40 @@ if tabla_seleccionada == 'Pacientes':
     with fig3:
         st.markdown("### Pacientes por sexo")
         genero = pd.read_sql("""SELECT DISTINCT GENDER, COUNT(GENDER)
-                                FROM patient
+                                FROM patient_dim
                                 GROUP BY GENDER""",mydb)
-        x = patients['GENDER'].value_counts().keys()
-        y = patients['GENDER'].value_counts().values
         fig3 = px.bar(genero,x='GENDER',y= 'COUNT(GENDER)')
         st.plotly_chart(fig3,use_container_width=True)
 
     with fig4:
         st.markdown("### Pacientes por estado civil")
-        
-        x = patient['MARITAL_STATUS'].value_counts().keys()
-        y = patient['MARITAL_STATUS'].value_counts().values
-        fig4 = px.bar(data_frame=patient, x=x, y =y )
+        estado_civil = pd.read_sql("""SELECT MARIT_STATUS_RESULT, COUNT(MARIT_STATUS_RESULT)
+                                        FROM admissions_hechos a 
+                                        RIGHT JOIN  marital_status m
+                                        ON a.MARIT_STATUS_ID = m.MARIT_STATUS_ID
+                                        GROUP BY MARIT_STATUS_RESULT;""",mydb)
+
+        fig4 = px.bar(estado_civil, x="MARIT_STATUS_RESULT", y ="COUNT(MARIT_STATUS_RESULT)" )
         st.plotly_chart(fig4,use_container_width=True)
 
     with fig5:
         st.markdown("### Pacientes por edad")
         
-        yearnac = pd.to_datetime(patient['DOB'])
-        yearmu = pd.to_datetime(patient['DOD'])
-        patient['AGE'] = yearmu.dt.year - yearnac.dt.year
-        fig5 = px.histogram(data_frame=patient, x="AGE")
+        yearnac = pd.to_datetime(patients['DOB'])
+        yearmu = pd.to_datetime(patients['DOD'])
+        patients['AGE'] = yearmu.dt.year - yearnac.dt.year
+        fig5 = px.histogram(data_frame=patients, x="AGE")
         st.plotly_chart(fig5,use_container_width=True)
 
     with fig6:
         st.markdown("### Pacientes por admission_location")
-        
-        x = patient['admission_location'].value_counts().keys()
-        y = patient['admission_location'].value_counts().values
-        fig6 = px.bar(data_frame=patient, x=x, y =y)
+        location = pd.read_sql("""SELECT ADMLOCATION_NAME, COUNT(ADMLOCATION_NAME)
+                                    FROM admissions_hechos a 
+                                    RIGHT JOIN  admissions_location al
+                                    ON a.ADMLOCATION_ID = al.ADMLOCATION_ID
+                                    GROUP BY ADMLOCATION_NAME;""",mydb)
+
+        fig6 = px.bar(location, x="ADMLOCATION_NAME", y ="COUNT(ADMLOCATION_NAME)")
         st.plotly_chart(fig6,use_container_width=True)
 
 if tabla_seleccionada == 'Prescripciones':
