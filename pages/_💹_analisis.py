@@ -45,11 +45,11 @@ d_items = pd.read_sql("""SELECT *
 
 st.sidebar.markdown("# Análisis descriptivo de las tablas")
 st.sidebar.markdown("# Seleccione las tablas")
-tables = ['patients','prescriptions','icustays','inputevents_mv','cptevents']
+tables = ['Pacientes','Prescripciones','Estancia en UCI','Ventilación Mecánica','cptevents']
 tabla_seleccionada = st.sidebar.selectbox('Seleccione las tablas',tables)
 st.header('Análisis descriptivo')
 st.markdown("---")
-if tabla_seleccionada == 'patients':
+if tabla_seleccionada == 'Pacientes':
    
     admission_options = pd.read_sql("""SELECT DISTINCT ADMTYPE_NAME  FROM admissions_type""",mydb)
     adm_filter = st.selectbox("Selecciona el tipo de admisión", admission_options,key="1")
@@ -86,9 +86,9 @@ if tabla_seleccionada == 'patients':
     with fig3:
         st.markdown("### Pacientes por sexo")
         patient = patients.merge(admissions, left_on='SUBJECT_ID', right_on='SUBJECT_ID')
-        x = patient['GENDER'].value_counts().keys()
-        y = patient['GENDER'].value_counts().values
-        fig3 = px.bar(pd.DataFrame(patient['GENDER'].value_counts()))#data_frame=patient, x=x, y = y
+        x = patients['GENDER'].value_counts().keys()
+        y = patients['GENDER'].value_counts().values
+        fig3 = px.bar(x=x, y = y)#data_frame=patient, x=x, y = y
         st.plotly_chart(fig3,use_container_width=True)
 
     with fig4:
@@ -116,7 +116,7 @@ if tabla_seleccionada == 'patients':
         fig6 = px.bar(data_frame=patient, x=x, y =y)
         st.plotly_chart(fig6,use_container_width=True)
 
-if tabla_seleccionada == 'prescriptions':
+if tabla_seleccionada == 'Prescripciones':
     fig3, fig4 = st.columns(2)
     fig5, fig6 = st.columns(2)
     with fig3:
@@ -151,7 +151,7 @@ if tabla_seleccionada == 'prescriptions':
     fig7 = px.line( x=x, y= y)
     st.plotly_chart(fig7,use_container_width=True)
 
-if tabla_seleccionada == 'icustays':
+if tabla_seleccionada == 'Estancia en UCI':
     figb1, figb2 = st.columns(2)
     figb3, figb4 = st.columns(2)
     with figb1:
@@ -182,7 +182,7 @@ if tabla_seleccionada == 'icustays':
     fig4 = px.bar(data_frame=icustays, x=x, y = y )
     st.plotly_chart(fig4,use_container_width=True)
 
-if tabla_seleccionada == 'inputevents_mv':
+if tabla_seleccionada == 'Ventilación Mecánica':
     
     st.markdown("### Categorías de medicamentos utilizadas")
     inpute = inputevents_mv.merge(d_items, left_on='itemid', right_on='itemid')
