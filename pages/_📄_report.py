@@ -102,17 +102,17 @@ for i in cptevents['CPT_CD'].unique():
   d_cpt2= pd.concat([d_cpt2,cpt])
 
 value = pd.read_sql("""SELECT valuenum
-                              FROM labevents2
+                              FROM labevents
                               WHERE subject_id = {paciente} AND hadm_id = {hadmid}""".format(paciente=paciente,hadmid=hadm_id),mydb)
 
 valueuom = pd.read_sql("""SELECT valueuom
-                              FROM labevents2
+                              FROM labevents
                               WHERE subject_id = {paciente} AND hadm_id = {hadmid}""".format(paciente=paciente,hadmid=hadm_id),mydb)
 
 
-itemidlabs = pd.read_sql("""SELECT labevents2.itemid, D_LABITEMS.label
-                              FROM labevents2
-                              INNER JOIN D_LABITEMS ON D_LABITEMS.itemid=labevents2.itemid
+itemidlabs = pd.read_sql("""SELECT labevents.itemid, D_LABITEMS.label
+                              FROM labevents
+                              INNER JOIN D_LABITEMS ON D_LABITEMS.itemid=labevents.itemid
                               WHERE subject_id = {paciente} AND hadm_id = {hadmid}
                               """.format(paciente=paciente,hadmid=hadm_id),mydb)
 
