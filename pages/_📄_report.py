@@ -12,14 +12,14 @@ st.set_page_config(
 
 ############## Cargar Data ###################################
 mydb = mysql.connector.connect(
-  host="proyectdb.mysql.database.azure.com",
-  user="administrador123",
-  password="pasword123.",
+  host= st.secrets["DB_HOST"],
+  user=st.secrets["DB_USER"],
+  password=st.secrets["DB_PASSWORD"],
   database="proyectdb"
 )
 
 admissions = pd.read_sql("""SELECT subject_id
-                            FROM admissions""",mydb)
+                            FROM admissions_hechos""",mydb)
 
 ###################################################################################
 
@@ -43,7 +43,7 @@ st.markdown("---")
 #Traemos de la base de datos
 
 admitted = pd.read_sql("""SELECT admittime 
-                              FROM admissions
+                              FROM admissions_hechos
                               WHERE subject_id = {paciente} AND hadm_id = {hadmid}
                               ORDER BY admittime DESC""".format(paciente=paciente,hadmid =hadm_id),mydb)
 admitted = pd.DataFrame(admitted)
@@ -72,12 +72,6 @@ diagnoses_long = pd.read_sql("""SELECT dd.long_title
 patient = pd.read_sql("""SELECT * 
                               FROM patient
                               WHERE subject_id = {paciente} """.format(paciente=paciente),mydb)
-
-subject = pd.read_sql("""SELECT SUBJECT_ID 
-                              FROM patient
-                              WHERE subject_id = {paciente} """.format(paciente=paciente),mydb)
-subject = pd.DataFrame(subject)
-subject = subject['SUBJECT_ID'].values[0]  
 
 admission= pd.read_sql("""SELECT *
                               FROM admissions
@@ -147,7 +141,7 @@ col2, col3, col4 = st.columns([3,1,1])
 with col2:
   st.markdown('ADMITIDO: {admitted}'. format(admitted = admitted))
 with col3:
-  st.markdown('CÓDIGO: {subject}'. format(subject = subject))
+  st.markdown('CÓDIGO: {subject}'. format(subject = paciente))
 
 col5, col6, col7 = st.columns([3,2,2])
 

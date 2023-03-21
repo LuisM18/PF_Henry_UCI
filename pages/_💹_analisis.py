@@ -3,19 +3,44 @@ import numpy as np  #
 import pandas as pd  # 
 import plotly.express as px  # 
 import streamlit as st  # 🎈
+import mysql.connector
 from datetime import datetime
 
-labevents = pd.read_csv("./EDA_UCI/dataset/LABEVENTS.csv")
-labitems = pd.read_csv("./EDA_UCI/dataset/D_LABITEMS.csv")
-admissions = pd.read_csv('./EDA_UCI/dataset/ADMISSIONS.csv')
-icustays = pd.read_csv('./EDA_UCI/dataset/ICUSTAYS.csv')
-ditems = pd.read_csv('./EDA_UCI/dataset/D_ITEMS.csv')
-dlabitems = pd.read_csv('./EDA_UCI/dataset/D_LABITEMS.csv')
-patients = pd.read_csv('./EDA_UCI/dataset/PATIENTS.csv')
-prescriptions = pd.read_csv('./EDA_UCI/dataset/PRESCRIPTIONS.csv')
-inputevents_mv = pd.read_csv('./EDA_UCI/dataset/INPUTEVENTS_MV.csv')
-d_items = pd.read_csv('./EDA_UCI/dataset/D_ITEMS.csv')
+mydb = mysql.connector.connect(
+  host= st.secrets["DB_HOST"],
+  user=st.secrets["DB_USER"],
+  password=st.secrets["DB_PASSWORD"],
+  database="proyectdb"
+)
 
+################## Cargar Data ##########################
+admissions = pd.read_sql("""SELECT *
+                            FROM admissions_hechos""",mydb,parse_dates=['INTIME','OUTTIME'])
+
+icustays = pd.read_sql("""SELECT *
+                            FROM icustays""",mydb)
+
+patients = pd.read_sql("""SELECT *
+                            FROM patient""",mydb)
+
+prescriptions = pd.read_sql("""SELECT *
+                            FROM prescriptions""",mydb)
+
+inputevents_cv = pd.read_sql("""SELECT *
+                            FROM inputevents_cv""",mydb)
+
+inputevents_mv = pd.read_sql("""SELECT *
+                            FROM inputevents_mv""",mydb)
+
+outputevents = pd.read_sql("""SELECT *
+                            FROM outputevents""",mydb)
+
+proceduresevents_mv = pd.read_sql("""SELECT *
+                            FROM procedureevents_mv""",mydb)
+
+
+###################################################################################
+d_items = pd.read_csv('./EDA_UCI/dataset/D_ITEMS.csv')
 st.sidebar.markdown("# Análisis descriptivo de las tablas")
 st.sidebar.markdown("# Seleccione las tablas")
 tables = ['patients','prescriptions','icustays','inputevents_mv','cptevents']
@@ -24,17 +49,17 @@ st.header('Análisis descriptivo')
 st.markdown("---")
 if tabla_seleccionada == 'patients':
    
-    adm_filter = st.selectbox("Selecciona el tipo de admisión", pd.unique(admissions["admission_type"]),key="1")
-    insurance = st.selectbox("Selecciona el seguro del paciente", pd.unique(admissions['insurance']),key="2")
+    adm_filter = st.selectbox("Selecciona el tipo de admisión", pd.unique(admissions["ADMISSION_TYPE"]),key="1")
+    insurance = st.selectbox("Selecciona el seguro del paciente", pd.unique(admissions['INSURANCE']),key="2")
     # selecciona la etnia
     etnia = st.multiselect(
-        'Selecciona la etnia del paciente', pd.unique(admissions["ethnicity"]), default = 'WHITE')
+        'Selecciona la etnia del paciente', pd.unique(admissions["ETHNIVITY"]), default = 'WHITE')
 
     # creating a single-element container
     placeholder = st.empty()
 
     # dataframe filter
-    admissions = admissions[(admissions["admission_type"] == adm_filter) & (admissions["insurance"] == insurance) & (admissions["ethnicity"].isin(etnia))]
+    admissions = admissions[(admissions["ADMISSION_TYPE"] == adm_filter) & (admissions["INSURANCE"] == insurance) & (admissions["ethnicity"].isin(etnia))]
     fig3, fig4 = st.columns(2)
     fig5, fig6 = st.columns(2)
 
@@ -77,28 +102,28 @@ if tabla_seleccionada == 'prescriptions':
     fig5, fig6 = st.columns(2)
     with fig3:
         st.markdown("### Medicamentos más utilizados")
-        x = prescriptions['drug'].value_counts().keys()
-        y = prescriptions['drug'].value_counts().values
+        x = prescriptions['DRUG'].value_counts().keys()
+        y = prescriptions['DRUG'].value_counts().values
         fig3 = px.bar(data_frame=prescriptions, x=x, y = y )
         st.plotly_chart(fig3,use_container_width=True)
 
     with fig4:
         st.markdown("### Ruta de la medicación")
-        x = prescriptions['route'].value_counts().keys()
-        y = prescriptions['route'].value_counts().values
+        x = prescriptions['ROUTE'].value_counts().keys()
+        y = prescriptions['ROUTE'].value_counts().values
         fig4 = px.bar(data_frame=prescriptions, x=x, y =y )
         st.plotly_chart(fig4,use_container_width=True)
 
 
     st.markdown("### Medicamentos dados en el tiempo")
-    prescriptions['startdate'] = prescriptions.startdate.apply(pd.to_datetime)
-    prescriptions['month'] = prescriptions['startdate'].dt.to_period('M')
-    max_value = prescriptions['startdate'].max()
-    min_value = prescriptions['startdate'].min()
+    prescriptions['STARTDATE'] = prescriptions['STARTDATE'].apply(pd.to_datetime)
+    prescriptions['month'] = prescriptions['STARTDATE'].dt.to_period('M')
+    max_value = prescriptions['STARTDATE'].max()
+    min_value = prescriptions['STARTDATE'].min()
     mind, maxd  = st.date_input('Seleccione el rango de fecha', [min_value, max_value])
     maxd = datetime.strptime(str(maxd), '%Y-%m-%d')
     mind = datetime.strptime(str(mind), '%Y-%m-%d')
-    filtered_prescriptions = prescriptions[(prescriptions['startdate'] > mind) & (prescriptions['startdate'] < maxd)]
+    filtered_prescriptions = prescriptions[(prescriptions['STARTDATE'] > mind) & (prescriptions['STARTDATE'] < maxd)]
     #filtered_prescriptions = prescriptions[prescriptions['startdate'] > mind]
     y = filtered_prescriptions.groupby(['month'])['drug'].count().values
     x = filtered_prescriptions.groupby(['month'])['drug'].count().index
