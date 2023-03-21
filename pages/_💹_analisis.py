@@ -18,7 +18,7 @@ admissions = pd.read_sql("""SELECT *
                             FROM admissions_hechos""",mydb,parse_dates=['INTIME','OUTTIME'])
 
 icustays = pd.read_sql("""SELECT *
-                            FROM icustays_hechos""",mydb)
+                            FROM icustay_hechos""",mydb)
 
 patients = pd.read_sql("""SELECT *
                             FROM patient""",mydb)
