@@ -38,9 +38,11 @@ outputevents = pd.read_sql("""SELECT *
 proceduresevents_mv = pd.read_sql("""SELECT *
                             FROM procedureevents_mv""",mydb)
 
+d_items = pd.read_sql("""SELECT *
+                            FROM d_items""",mydb)
 
 ###################################################################################
-d_items = pd.read_csv('./EDA_UCI/dataset/D_ITEMS.csv')
+
 st.sidebar.markdown("# Análisis descriptivo de las tablas")
 st.sidebar.markdown("# Seleccione las tablas")
 tables = ['patients','prescriptions','icustays','inputevents_mv','cptevents']
