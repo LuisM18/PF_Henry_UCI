@@ -74,7 +74,7 @@ if tabla_seleccionada == 'patients':
     
     etnia_id = pd.read_sql("""SELECT ETHNICITY_ID
                             FROM ethnicity
-                            WHERE ETHNICITY IN '%s'""" % tuple(etnia),mydb)
+                            WHERE ETHNICITY IN {etnia}'""".format(etnia=tuple(etnia)),mydb)
 
     # dataframe filter
 
