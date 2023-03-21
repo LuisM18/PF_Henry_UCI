@@ -51,11 +51,14 @@ st.header('Análisis descriptivo')
 st.markdown("---")
 if tabla_seleccionada == 'patients':
    
-    adm_filter = st.selectbox("Selecciona el tipo de admisión", pd.unique(admissions["ADMTYPE_ID"]),key="1")
-    insurance = st.selectbox("Selecciona el seguro del paciente", pd.unique(admissions['INSURANCE']),key="2")
-    # selecciona la etnia
-    etnia = st.multiselect(
-        'Selecciona la etnia del paciente', pd.unique(admissions["ETHNIVITY"]), default = 'WHITE')
+    admission_options = pd.read_sql("""SELECT DISTINCT ADMTYPE_NAME  FROM admissions_type""")
+    adm_filter = st.selectbox("Selecciona el tipo de admisión", admission_options,key="1")
+
+    insurance_options = pd.read_sql("""SELECT DISTINCT INSURANCE_NAME FROM insurance""")
+    insurance = st.selectbox("Selecciona el seguro del paciente", insurance_options,key="2")
+
+    etnia_options = pd.read_sql("""SELECT DISTINCT ETHNICITY FROM ethnicity""")
+    etnia = st.multiselect('Selecciona la etnia del paciente', etnia_options, default = 'WHITE')
 
     # creating a single-element container
     placeholder = st.empty()
