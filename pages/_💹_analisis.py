@@ -15,7 +15,7 @@ mydb = mysql.connector.connect(
 
 ################## Cargar Data ##########################
 admissions = pd.read_sql("""SELECT *
-                            FROM admissions_hechos""",mydb,parse_dates=['INTIME','OUTTIME'])
+                            FROM admissions""",mydb,parse_dates=['INTIME','OUTTIME'])
 
 icustays = pd.read_sql("""SELECT *
                             FROM icustays""",mydb)
