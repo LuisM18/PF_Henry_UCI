@@ -4,3 +4,4 @@ mysql-connector-python
 datetime
 numpy
 pdfkit
+IPython
