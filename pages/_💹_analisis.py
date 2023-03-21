@@ -64,7 +64,21 @@ if tabla_seleccionada == 'patients':
     placeholder = st.empty()
 
     # dataframe filter
-    admissions = admissions[(admissions["ADMTYPE_ID"] == adm_filter) & (admissions["INSURANCE"] == insurance) & (admissions["ethnicity"].isin(etnia))]
+    type_id = pd.read_sql("""SELECT ADMTYPE_ID 
+                            FROM admissions_type
+                            WHERE ADMTYPE_NAME = '%s'""" % adm_filter,mydb)
+    
+    insurance_id = pd.read_sql("""SELECT INSURANCE_ID 
+                            FROM insurance
+                            WHERE INSURANCE_NAME IN '%s'""" % tuple(insurance),mydb) 
+    
+    etnia_id = pd.read_sql("""SELECT ETHNICITY_ID
+                            FROM ethnicity
+                            WHERE ETHNICITY = '%s'""" % adm_filter,mydb)
+
+    # dataframe filter
+
+    admissions = admissions[(admissions["ADMTYPE_ID"] == type_id) & (admissions["INSURANCE_ID"] == insurance_id) & (admissions["ETHNICITY_ID"].isin(etnia_id))]
     fig3, fig4 = st.columns(2)
     fig5, fig6 = st.columns(2)
 
