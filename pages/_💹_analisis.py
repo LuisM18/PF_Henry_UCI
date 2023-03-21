@@ -51,7 +51,7 @@ st.header('Análisis descriptivo')
 st.markdown("---")
 if tabla_seleccionada == 'patients':
    
-    adm_filter = st.selectbox("Selecciona el tipo de admisión", pd.unique(admissions["ADMISSION_TYPE"]),key="1")
+    adm_filter = st.selectbox("Selecciona el tipo de admisión", pd.unique(admissions["admission_type"]),key="1")
     insurance = st.selectbox("Selecciona el seguro del paciente", pd.unique(admissions['INSURANCE']),key="2")
     # selecciona la etnia
     etnia = st.multiselect(
@@ -61,7 +61,7 @@ if tabla_seleccionada == 'patients':
     placeholder = st.empty()
 
     # dataframe filter
-    admissions = admissions[(admissions["ADMISSION_TYPE"] == adm_filter) & (admissions["INSURANCE"] == insurance) & (admissions["ethnicity"].isin(etnia))]
+    admissions = admissions[(admissions["admission_type"] == adm_filter) & (admissions["INSURANCE"] == insurance) & (admissions["ethnicity"].isin(etnia))]
     fig3, fig4 = st.columns(2)
     fig5, fig6 = st.columns(2)
 
