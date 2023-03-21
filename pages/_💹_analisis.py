@@ -85,7 +85,7 @@ if tabla_seleccionada == 'patients':
 
     with fig3:
         st.markdown("### Pacientes por sexo")
-        patient = patients.merge(admissions, left_on='subject_id', right_on='subject_id')
+        patient = patients.merge(admissions, left_on='SUBJECT_ID', right_on='SUBJECT_ID')
         x = patient['gender'].value_counts().keys()
         y = patient['gender'].value_counts().values
         fig3 = px.bar(data_frame=patient, x=x, y = y )
@@ -93,7 +93,7 @@ if tabla_seleccionada == 'patients':
 
     with fig4:
         st.markdown("### Pacientes por estado civil")
-        patient = patients.merge(admissions, left_on='subject_id', right_on='subject_id')
+        patient = patients.merge(admissions, left_on='SUBJECT_ID', right_on='SUBJECT_ID')
         x = patient['marital_status'].value_counts().keys()
         y = patient['marital_status'].value_counts().values
         fig4 = px.bar(data_frame=patient, x=x, y =y )
@@ -101,7 +101,7 @@ if tabla_seleccionada == 'patients':
 
     with fig5:
         st.markdown("### Pacientes por edad")
-        patient = patients.merge(admissions, left_on='subject_id', right_on='subject_id')
+        patient = patients.merge(admissions, left_on='SUBJECT_ID', right_on='SUBJECT_ID')
         yearnac = pd.to_datetime(patient['dob'])
         yearmu = pd.to_datetime(patient['dod'])
         patient['age'] = yearmu.dt.year - yearnac.dt.year
@@ -110,7 +110,7 @@ if tabla_seleccionada == 'patients':
 
     with fig6:
         st.markdown("### Pacientes por admission_location")
-        patient = patients.merge(admissions, left_on='subject_id', right_on='subject_id')
+        patient = patients.merge(admissions, left_on='SUBJECT_ID', right_on='SUBJECT_ID')
         x = patient['admission_location'].value_counts().keys()
         y = patient['admission_location'].value_counts().values
         fig6 = px.bar(data_frame=patient, x=x, y =y)
