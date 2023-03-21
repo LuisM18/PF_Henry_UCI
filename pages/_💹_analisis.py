@@ -82,7 +82,7 @@ if tabla_seleccionada == 'Pacientes':
                                 GROUP BY GENDER""",mydb)
         x = patients['GENDER'].value_counts().keys()
         y = patients['GENDER'].value_counts().values
-        fig3 = px.bar(genero)
+        fig3 = px.bar(genero,x='GENDER',y= 'COUNT(GENDER)')
         st.plotly_chart(fig3,use_container_width=True)
 
     with fig4:
