@@ -58,7 +58,7 @@ if tabla_seleccionada == 'patients':
     insurance = st.selectbox("Selecciona el seguro del paciente", insurance_options,key="2")
 
     etnia_options = pd.read_sql("""SELECT DISTINCT ETHNICITY FROM ethnicity""",mydb)
-    etnia = st.multiselect('Selecciona la etnia del paciente', etnia_options, default = ['WHITE','OTHER'])
+    etnia = st.multiselect('Selecciona la etnia del paciente', etnia_options, default = 'WHITE')
 
     # creating a single-element container
     placeholder = st.empty()
@@ -78,7 +78,7 @@ if tabla_seleccionada == 'patients':
 
     # dataframe filter
 
-    admissions = admissions[(admissions["ADMTYPE_ID"] == type_id) & (admissions["INSURANCE_ID"] == insurance_id) & (admissions["ETHNICITY_ID"].isin(etnia_id))]
+    admissions = admissions[(admissions["ADMTYPE_ID"] == type_id) & (admissions["INSURANCE_ID"] == insurance_id) & (admissions["ETHNICITY_id"].isin(etnia_id))]
     fig3, fig4 = st.columns(2)
     fig5, fig6 = st.columns(2)
 
