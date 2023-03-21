@@ -70,11 +70,11 @@ if tabla_seleccionada == 'patients':
     
     insurance_id = pd.read_sql("""SELECT INSURANCE_ID 
                             FROM insurance
-                            WHERE INSURANCE_NAME IN '%s'""" % tuple(insurance),mydb) 
+                            WHERE INSURANCE_NAME = '%s'""" % insurance,mydb) 
     
     etnia_id = pd.read_sql("""SELECT ETHNICITY_ID
                             FROM ethnicity
-                            WHERE ETHNICITY = '%s'""" % adm_filter,mydb)
+                            WHERE ETHNICITY IN '%s'""" % tuple(etnia),mydb)
 
     # dataframe filter
 
