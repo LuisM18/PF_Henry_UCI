@@ -153,12 +153,12 @@ if tabla_seleccionada == 'Estancia en UCI':
     figb1, figb2 = st.columns(2)
     figb3, figb4 = st.columns(2)
     with figb1:
-        values = pd.unique(icustays['icustay_id'])
+        values = pd.unique(icustays['ICUSTAY_ID'])
         value = len(values)
         st.metric('Cantidad de registros', value, delta=None, delta_color="normal", help=None, label_visibility="visible")
     with figb2:    
-        icustays['careunit_change'] = np.where(icustays['last_careunit'] != icustays['first_careunit'], 1, 0)
-        icustays['ward_change'] = np.where(icustays['first_wardid'] != icustays['last_wardid'], 1, 0)
+        icustays['careunit_change'] = np.where(icustays['LAST_CAREUNIT'] != icustays['FIRST_CAREUNIT'], 1, 0)
+        icustays['ward_change'] = np.where(icustays['FIRST_WARDID'] != icustays['LAST_WARDID'], 1, 0)
         cambios = icustays['careunit_change'].value_counts()
         cambios_sala = icustays['ward_change'].value_counts()
         permanencias = cambios[cambios.index == 0]
@@ -175,8 +175,8 @@ if tabla_seleccionada == 'Estancia en UCI':
         st.metric('Promedio estancia', f"{round(icustays['los'].mean(),2) } días" , delta=None, delta_color="normal", help=None, label_visibility="visible")
 
     st.markdown("### Fuente de los datos")
-    x = icustays['dbsource'].value_counts().keys()
-    y = icustays['dbsource'].value_counts().values
+    x = icustays['DBSOURCE'].value_counts().keys()
+    y = icustays['DBSOURCE'].value_counts().values
     fig4 = px.bar(data_frame=icustays, x=x, y = y )
     st.plotly_chart(fig4,use_container_width=True)
 
