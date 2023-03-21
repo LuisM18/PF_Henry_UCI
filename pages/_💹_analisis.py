@@ -82,14 +82,14 @@ if tabla_seleccionada == 'patients':
     fig3, fig4 = st.columns(2)
     fig5, fig6 = st.columns(2)
 
-
+    """
     with fig3:
         st.markdown("### Pacientes por sexo")
         patient = patients.merge(admissions, left_on='SUBJECT_ID', right_on='SUBJECT_ID')
         x = patient['GENDER'].value_counts().keys()
         y = patient['GENDER'].value_counts().values
         fig3 = px.bar(data_frame=patient, x=x, y = y )
-        st.plotly_chart(fig3,use_container_width=True)
+        st.plotly_chart(fig3,use_container_width=True)"""
 
     with fig4:
         st.markdown("### Pacientes por estado civil")
