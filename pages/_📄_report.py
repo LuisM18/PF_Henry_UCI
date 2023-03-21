@@ -29,7 +29,7 @@ st.markdown("---")
 paciente = st.selectbox("Paciente",admissions['subject_id'].unique())
 
 icustays = pd.read_sql("""SELECT * 
-                              FROM icustays
+                              FROM icustay_hechos
                               WHERE subject_id = {paciente} 
                               ORDER BY intime DESC""".format(paciente=paciente),mydb)
 
