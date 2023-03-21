@@ -36,7 +36,7 @@ outputevents = pd.read_sql("""SELECT *
                             FROM outputevents""",mydb)
 
 proceduresevents_mv = pd.read_sql("""SELECT *
-                            FROM procedureevents_mv""",mydb)
+                            FROM procedureevents_mv2""",mydb)
 
 d_items = pd.read_sql("""SELECT *
                             FROM d_items""",mydb)
