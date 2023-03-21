@@ -3,4 +3,4 @@ plotly
 mysql-connector-python
 datetime
 numpy
-
+pdfkit

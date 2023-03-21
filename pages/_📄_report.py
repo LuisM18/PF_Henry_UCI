@@ -4,6 +4,11 @@ import streamlit as st
 import mysql.connector
 import datetime as dt
 
+import pdfkit
+from io import BytesIO
+from IPython.display import HTML
+import base64
+
 st.set_page_config(
     page_title="Pacientes",
     page_icon="🏥",
@@ -184,8 +189,23 @@ discharge = pd.DataFrame(discharge)
 st.markdown(discharge['DISCHARGE_LOCATION'].values[0])
 
 #Descargar reporte
-if st.button('Descargar'):#Centrar boton en el layout
-  st.write(dt.datetime.now())
+def create_download_link(pdf_data, title = "Download PDF"):
+    # Crea un objeto de enlace HTML para descargar el archivo PDF
+    b64 = base64.b64encode(pdf_data).decode()
+    href = f'<a href="data:application/octet-stream;base64,{b64}" download="{title}.pdf">{title}</a>'
+    return href
+    
+def convert_page_to_pdf():
+    # Convierte la página actual en un archivo PDF y devuelve los datos del PDF
+    url = "https://crowe-clinic.streamlit.app/report"
+    pdf_data = pdfkit.from_url(url, False)
+    return pdf_data
+
+
+
+if st.button('Download PDF'):
+    pdf_data = convert_page_to_pdf()
+    st.markdown(create_download_link(pdf_data), unsafe_allow_html=True)
 
 
 
