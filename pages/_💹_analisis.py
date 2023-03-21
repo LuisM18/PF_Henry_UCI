@@ -58,7 +58,7 @@ if tabla_seleccionada == 'patients':
     insurance = st.selectbox("Selecciona el seguro del paciente", insurance_options,key="2")
 
     etnia_options = pd.read_sql("""SELECT DISTINCT ETHNICITY FROM ethnicity""",mydb)
-    etnia = st.multiselect('Selecciona la etnia del paciente', etnia_options, default = 'WHITE')
+    etnia = st.multiselect('Selecciona la etnia del paciente', etnia_options, default = ['WHITE','OTHER'])
 
     # creating a single-element container
     placeholder = st.empty()
