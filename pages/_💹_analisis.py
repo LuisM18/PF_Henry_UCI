@@ -205,8 +205,8 @@ if tabla_seleccionada == 'Ventilación Mecánica':
     
     st.markdown("### Categorías de medicamentos utilizadas")
     inpute = inputevents_mv.merge(d_items, left_on='ITEMID', right_on='ITEMID')
-    x = inpute.category.value_counts(dropna=False).keys()
-    y = inpute.category.value_counts(dropna=False).values
+    x = inpute['CATEGORY'].value_counts(dropna=False).keys()
+    y = inpute['CATEGORY'].value_counts(dropna=False).values
     fig3 = px.bar(data_frame=inpute, x = x, y = y )
     st.plotly_chart(fig3,use_container_width=True)
 
