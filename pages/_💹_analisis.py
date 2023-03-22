@@ -33,13 +33,17 @@ inputevents_mv = pd.read_sql("""SELECT *
 d_items = pd.read_sql("""SELECT *
                             FROM d_items""",mydb)
 
+cptevents = pd.read_sql("""SELECT *
+                            FROM cptevents""",mydb)
+
 ###################################################################################
 
 st.sidebar.markdown("# Análisis descriptivo de las tablas")
 st.sidebar.markdown("# Seleccione las tablas")
-tables = ['Pacientes','Prescripciones','Estancia en UCI','Ventilación Mecánica','cptevents']
+tables = ['Pacientes','Prescripciones','Estancia en UCI','Ventilación Mecánica','Códigos de terminología procesal']
 tabla_seleccionada = st.sidebar.selectbox('Seleccione las tablas',tables)
-st.header('Análisis descriptivo')
+
+st.markdown("<h1 style='text-align: center; color: white;'>Análisis descriptivo</h1>", unsafe_allow_html=True)
 st.markdown("---")
 if tabla_seleccionada == 'Pacientes':
    
@@ -74,65 +78,73 @@ if tabla_seleccionada == 'Pacientes':
     fig3, fig4 = st.columns(2)
     fig5, fig6 = st.columns(2)
 
-    
-    with fig3:
-        st.markdown("### Pacientes por sexo")
-        genero = pd.read_sql("""SELECT DISTINCT GENDER, COUNT(GENDER)
-                                FROM patient_dim
-                                GROUP BY GENDER""",mydb)
-        fig3 = px.bar(genero,x='GENDER',y= 'COUNT(GENDER)')
-        st.plotly_chart(fig3,use_container_width=True)
+    st.markdown("<h3 style='text-align: center; color: white;'>Pacientes por sexo</h3>", unsafe_allow_html=True)
+    genero = pd.read_sql("""SELECT DISTINCT GENDER, COUNT(GENDER)
+                            FROM patient_dim
+                            GROUP BY GENDER""",mydb)
+    fig3 = px.bar(genero,x='GENDER',y= 'COUNT(GENDER)', labels = {
+                     'GENDER': "Sexo",
+                     'COUNT(GENDER)': "Cantidad de registros",
+                 })
+    st.plotly_chart(fig3,use_container_width=True)
 
-    with fig4:
-        st.markdown("### Pacientes por estado civil")
-        estado_civil = pd.read_sql("""SELECT MARIT_STATUS_RESULT, COUNT(MARIT_STATUS_RESULT)
-                                        FROM admissions_hechos a 
-                                        RIGHT JOIN  marital_status m
-                                        ON a.MARIT_STATUS_ID = m.MARIT_STATUS_ID
-                                        GROUP BY MARIT_STATUS_RESULT;""",mydb)
-
-        fig4 = px.bar(estado_civil, x="MARIT_STATUS_RESULT", y ="COUNT(MARIT_STATUS_RESULT)" )
-        st.plotly_chart(fig4,use_container_width=True)
-
-    with fig5:
-        st.markdown("### Pacientes por edad")
-        
-        yearnac = pd.to_datetime(patients['DOB'])
-        yearmu = pd.to_datetime(patients['DOD'])
-        patients['AGE'] = yearmu.dt.year - yearnac.dt.year
-        fig5 = px.histogram(data_frame=patients, x="AGE")
-        st.plotly_chart(fig5,use_container_width=True)
-
-    with fig6:
-        st.markdown("### Pacientes por admission_location")
-        location = pd.read_sql("""SELECT ADMLOCATION_NAME, COUNT(ADMLOCATION_NAME)
+    st.markdown("<h3 style='text-align: center; color: white;'>Pacientes por estado civil</h3>", unsafe_allow_html=True)
+    estado_civil = pd.read_sql("""SELECT MARIT_STATUS_RESULT, COUNT(MARIT_STATUS_RESULT)
                                     FROM admissions_hechos a 
-                                    RIGHT JOIN  admissions_location al
-                                    ON a.ADMLOCATION_ID = al.ADMLOCATION_ID
-                                    GROUP BY ADMLOCATION_NAME;""",mydb)
+                                    RIGHT JOIN  marital_status m
+                                    ON a.MARIT_STATUS_ID = m.MARIT_STATUS_ID
+                                    GROUP BY MARIT_STATUS_RESULT;""",mydb)
 
-        fig6 = px.bar(location, x="ADMLOCATION_NAME", y ="COUNT(ADMLOCATION_NAME)")
-        st.plotly_chart(fig6,use_container_width=True)
+    fig4 = px.bar(estado_civil, x="MARIT_STATUS_RESULT", y ="COUNT(MARIT_STATUS_RESULT)", labels = {
+                     'MARIT_STATUS_RESULT': "Estado civil",
+                     'COUNT(MARIT_STATUS_RESULT)': "Cantidad de registros",
+                 }) 
+    st.plotly_chart(fig4,use_container_width=True)
+
+    st.markdown("<h3 style='text-align: center; color: white;'>Pacientes por edad</h3>", unsafe_allow_html=True) 
+    yearnac = pd.to_datetime(patients['DOB'])
+    yearmu = pd.to_datetime(patients['DOD'])
+    patients['AGE'] = yearmu.dt.year - yearnac.dt.year
+    fig5 = px.histogram(data_frame=patients, x="AGE", labels = {
+                     'AGE': "Edad",
+                 })
+    st.plotly_chart(fig5,use_container_width=True)
+
+    st.markdown("<h3 style='text-align: center; color: white;'>Lugares donde los pacientes fueron admitidos</h3>", unsafe_allow_html=True)
+    location = pd.read_sql("""SELECT ADMLOCATION_NAME, COUNT(ADMLOCATION_NAME)
+                                FROM admissions_hechos a 
+                                RIGHT JOIN  admissions_location al
+                                ON a.ADMLOCATION_ID = al.ADMLOCATION_ID
+                                GROUP BY ADMLOCATION_NAME;""",mydb)
+
+    fig6 = px.bar(location, x="ADMLOCATION_NAME", y ="COUNT(ADMLOCATION_NAME)", labels = {
+                     'ADMLOCATION_NAME': "Lugares",
+                     'COUNT(ADMLOCATION_NAME)': 'Cantidad de registros'
+                 })
+    st.plotly_chart(fig6,use_container_width=True)
 
 if tabla_seleccionada == 'Prescripciones':
     fig3, fig4 = st.columns(2)
     fig5, fig6 = st.columns(2)
-    with fig3:
-        st.markdown("### Medicamentos más utilizados")
-        x = prescriptions['DRUG'].value_counts().keys()
-        y = prescriptions['DRUG'].value_counts().values
-        fig3 = px.bar(data_frame=prescriptions, x=x, y = y )
-        st.plotly_chart(fig3,use_container_width=True)
+    st.markdown("<h3 style='text-align: center; color: white;'>Top N Medicamentos más utilizados</h3>", unsafe_allow_html=True)
+    x = prescriptions['DRUG'].value_counts().keys()
+    y = prescriptions['DRUG'].value_counts().values
+    fig3 = px.bar(data_frame=prescriptions, x = x, y = y , labels = {
+                     'x': "Medicamento",
+                     'y': 'Cantidad de registros'
+                 })
+    st.plotly_chart(fig3,use_container_width=True)
 
-    with fig4:
-        st.markdown("### Ruta de la medicación")
-        x = prescriptions['ROUTE'].value_counts().keys()
-        y = prescriptions['ROUTE'].value_counts().values
-        fig4 = px.bar(data_frame=prescriptions, x=x, y =y )
-        st.plotly_chart(fig4,use_container_width=True)
+    st.markdown("<h3 style='text-align: center; color: white;'>Ruta de la medicación</h3>", unsafe_allow_html=True)
+    x = prescriptions['ROUTE'].value_counts().keys()
+    y = prescriptions['ROUTE'].value_counts().values
+    fig4 = px.bar(data_frame=prescriptions, x = x, y = y, labels = {
+                     'x': "Ruta",
+                     'y': 'Cantidad de registros'
+                 })
+    st.plotly_chart(fig4,use_container_width=True)
 
-
-    st.markdown("### Medicamentos dados en el tiempo")
+    st.markdown("<h3 style='text-align: center; color: white;'>Cantidad de medicamentos aplicados en el tiempo</h3>", unsafe_allow_html=True)
     prescriptions['STARTDATE'] = prescriptions['STARTDATE'].apply(pd.to_datetime)
     prescriptions['month'] = prescriptions['STARTDATE'].dt.to_period('M')
     max_value = prescriptions['STARTDATE'].max()
@@ -144,10 +156,16 @@ if tabla_seleccionada == 'Prescripciones':
     #filtered_prescriptions = prescriptions[prescriptions['startdate'] > mind]
     y = filtered_prescriptions.groupby(['month'])['DRUG'].count().values
     x = filtered_prescriptions.groupby(['month'])['DRUG'].count().index
-    x = x.astype(str)
-    #fig7 = px.line(data_frame=filtered_prescriptions, x=x, y = y)
-    fig7 = px.line( x=x, y= y)
-    st.plotly_chart(fig7,use_container_width=True)
+    if len(x) != 1:
+        x = x.astype(str)
+        #fig7 = px.line(data_frame=filtered_prescriptions, x=x, y = y)
+        fig7 = px.line( x = x, y = y, labels = {
+                     'x': "Cantidad de medicamentos",
+                     'y': 'Cantidad de registros'
+                 })
+        st.plotly_chart(fig7,use_container_width=True)
+    else:
+        st.write('No hay información para los filtros seleccionados.')
 
 if tabla_seleccionada == 'Estancia en UCI':
     figb1, figb2 = st.columns(2)
@@ -174,10 +192,13 @@ if tabla_seleccionada == 'Estancia en UCI':
         icustays['LOS'].dropna(inplace=True)
         st.metric('Promedio estancia', f"{round(icustays['LOS'].mean(),2) } días" , delta=None, delta_color="normal", help=None, label_visibility="visible")
 
-    st.markdown("### Fuente de los datos")
+    st.markdown("<h3 style='text-align: center; color: white;'>Fuente de los datos</h3>", unsafe_allow_html=True)
     x = icustays['DBSOURCE'].value_counts().keys()
     y = icustays['DBSOURCE'].value_counts().values
-    fig4 = px.bar(data_frame=icustays, x=x, y = y )
+    fig4 = px.bar(data_frame=icustays, x = x, y = y,labels = {
+                     'x': "Fuente",
+                     'y': 'Cantidad de registros'
+                 }) 
     st.plotly_chart(fig4,use_container_width=True)
 
 if tabla_seleccionada == 'Ventilación Mecánica':
@@ -244,8 +265,39 @@ if tabla_seleccionada == 'Ventilación Mecánica':
     else:
         st.dataframe(average_year2)
 
-   
+if tabla_seleccionada == 'Códigos de terminología procesal':
+    st.markdown("<h3 style='text-align: center; color: white;'>Top 5 subsecciones más repetidas</h3>", unsafe_allow_html=True)
+    #cptevents['SUBSECTIONHEADER'].dropna(inplace=True)
+    data_cptevents = cptevents['SUBSECTIONHEADER'].value_counts()
+    x = data_cptevents.keys()[0:5]
+    y = data_cptevents.values[0:5]
+    fig4 = px.bar(data_frame=data_cptevents, x = x, y = y, labels={
+                     'x': "Subsecciones",
+                     'y': "Cantidad de registros",
+                 }) 
+    st.plotly_chart(fig4,use_container_width=True)
 
+    st.markdown("<h3 style='text-align: center; color: white;'>Top 5 secciones más repetidas</h3>", unsafe_allow_html=True)
+    #cptevents['SECTIONHEADER'].dropna(inplace=True)
+    datas_cptevents = cptevents['SECTIONHEADER'].value_counts()
+    x = datas_cptevents.keys()[0:5]
+    y = datas_cptevents.values[0:5]
+    fig5 = px.bar(data_frame=datas_cptevents, x = x, y = y, labels={
+                     'x': "Secciones",
+                     'y': "Cantidad de registros",
+                 }) 
+    st.plotly_chart(fig5,use_container_width=True)
+
+    st.markdown("<h3 style='text-align: center; color: white;'>Centro de coste que facturó</h3>", unsafe_allow_html=True)
+    #cptevents['COSTCENTER'].dropna(inplace=True)
+    cost_cptevents = cptevents['COSTCENTER'].value_counts()
+    x = cost_cptevents.keys()[0:5]
+    y = cost_cptevents.values[0:5]
+    fig6 = px.bar(data_frame=cost_cptevents, x = x, y = y,labels={
+                     'x': "Centro de coste",
+                     'y': "Cantidad de registros",
+                 })
+    st.plotly_chart(fig6,use_container_width=True)
   
 
 

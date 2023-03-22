@@ -36,10 +36,9 @@ mydb = mysql.connector.connect(
   database="proyectdb"
 )
 
-# dashboard title
-st.title(" Análisis del área UCI de Crowe Clinic ")
-st.subheader(" Por DataSight Consulting")
-
+#Titulo
+st.markdown("<h1 style='text-align: center; color: white;'>Análisis del área UCI de Crowe Clinic</h1>", unsafe_allow_html=True)
+st.markdown("<h3 style='text-align: right; color: white;'>Por DataSight Consulting</h3>", unsafe_allow_html=True)
 
 with open('./images/a_photography_of_Crowe clinic_hospital3.png', "rb") as image_file:
     encoded_string = base64.b64encode(image_file.read())
@@ -58,7 +57,7 @@ st.markdown(
 
 
 ####################### Crear KPIs
-st.subheader('KPIs')
+st.markdown("<h3 style='text-align: center; color: white;'>Key Perfomance Indicators</h3>", unsafe_allow_html=True)
 placeholder = st.empty()
 
 ## Tasa Mortalidad
@@ -131,13 +130,13 @@ kpi3.metric(
             delta= f"{round((tiempo.iloc[-1,-1]-tiempo.iloc[-2,-1]/tiempo.iloc[-2,-1])*100,2)} % "
         )    
 
-st.markdown("### Top 5 de diagnósticos más frecuentes")
+st.markdown("<h3 style='text-align: center; color: white;'>Top 5 de diagnósticos más frecuentes</h3>", unsafe_allow_html=True)
 top5 = top5_diagnostico(admissions)
 fig = px.bar(top5,labels=dict(value='Casos',index='Diagnóstico'))
 fig.update_layout(showlegend=False)
 st.plotly_chart(fig,use_container_width=True)       
 
-st.markdown("### Tasa de mortalidad por mes y año")
+st.markdown("<h3 style='text-align: center; color: white;'>Tasa de mortalidad por mes y año</h3>", unsafe_allow_html=True)
 max_value = admissions['DISCHTIME'].max()
 min_value = admissions['DISCHTIME'].min()
 mind, maxd  = st.date_input('Seleccione el rango de fecha', [min_value, max_value])
@@ -155,7 +154,7 @@ fig3.update_xaxes(tickformat='%b\n%Y')
 fig3.update_xaxes(rangeslider_visible=True)
 st.plotly_chart(fig3,use_container_width=True)
 
-st.markdown("### Tiempo promedio de estancia en UCI por mes y año")
+st.markdown("<h3 style='text-align: center; color: white;'>Tiempo promedio de estancia en UCI por mes y año</h3>", unsafe_allow_html=True)
 max_value = icustays['OUTTIME'].max()
 min_value = icustays['OUTTIME'].min()
 
