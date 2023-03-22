@@ -5,7 +5,7 @@ import plotly.express as px  #
 import streamlit as st
 import mysql.connector
 from datetime import datetime
-
+from PIL import Image
 
 st.set_page_config(
     page_title="Análisis del área UCI- Crowe Clinic",
@@ -36,7 +36,15 @@ mydb = mysql.connector.connect(
   database="proyectdb"
 )
 
-#Titulo
+#Logo y titulo 
+col1, col2, col3= st.columns([1,5,1])
+with col1:
+    croweclinic = Image.open('./images/croweclinichdwithout.png')
+    st.image(croweclinic, width = 175)
+with col3:
+    datasight = Image.open('./images/datasighthdwithoutmine.png')
+    st.image(datasight, width = 175)
+
 st.markdown("<h1 style='text-align: center; color: white;'>Análisis del área UCI de Crowe Clinic</h1>", unsafe_allow_html=True)
 st.markdown("<h3 style='text-align: right; color: white;'>Por DataSight Consulting</h3>", unsafe_allow_html=True)
 
