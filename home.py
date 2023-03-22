@@ -129,19 +129,18 @@ kpi3.metric(
             value= f"{round(tiempo.iloc[-1,-1])} días ",
             delta= f"{round((tiempo.iloc[-1,-1]-tiempo.iloc[-2,-1]/tiempo.iloc[-2,-1])*100,2)} % "
         )    
-
+####################################################################Top 5################################
 st.markdown("<h3 style='text-align: center; color: white;'>Top 5 de diagnósticos más frecuentes</h3>", unsafe_allow_html=True)
 top5 = top5_diagnostico(admissions)
 fig = px.bar(top5,labels=dict(value='Casos',index='Diagnóstico'))
 fig.update_layout(showlegend=False)
 st.plotly_chart(fig,use_container_width=True)       
 
+########################################################################## Mortalidad #######################################
 st.markdown("<h3 style='text-align: center; color: white;'>Tasa de mortalidad por mes y año</h3>", unsafe_allow_html=True)
-max_value = admissions['DISCHTIME'].max()
-min_value = admissions['DISCHTIME'].min()
-mind, maxd  = st.date_input('Seleccione el rango de fecha', [min_value, max_value])
-maxd = datetime.strptime(str(maxd), '%Y-%m-%d')
-mind = datetime.strptime(str(mind), '%Y-%m-%d')
+max_value = admissions['DISCHTIME'].max().to_pydatetime()
+min_value = admissions['DISCHTIME'].min().to_pydatetime()
+mind, maxd = st.slider('Seleccione el rango de fecha',value=(min_value,max_value))
 admissions = admissions[(admissions['DISCHTIME'] > mind) & (admissions['DISCHTIME'] < maxd)]
 
 tasa = tasa_mortalidad(admissions)
@@ -151,22 +150,20 @@ yearmonth = tasa.index.to_series().apply(lambda x: '{0}-{1}'.format(*x))
 fig3 = px.line(x = yearmonth.values,y = y,labels=dict(y='Porcentaje de Mortalidad',x='Fecha'))
 fig3.update_yaxes(tickformat=".2%")
 fig3.update_xaxes(tickformat='%b\n%Y')
-fig3.update_xaxes(rangeslider_visible=True)
 st.plotly_chart(fig3,use_container_width=True)
 
+
+######################################################################33 Tiempo de Estancia ###############################
 st.markdown("<h3 style='text-align: center; color: white;'>Tiempo promedio de estancia en UCI por mes y año</h3>", unsafe_allow_html=True)
-max_value = icustays['OUTTIME'].max()
-min_value = icustays['OUTTIME'].min()
-
-mind, maxd  = st.date_input('Seleccione el rango de fecha', [min_value, max_value])
-maxd = datetime.strptime(str(maxd), '%Y-%m-%d')
-mind = datetime.strptime(str(mind), '%Y-%m-%d')
-
+max_value = icustays['OUTTIME'].max().to_pydatetime()
+min_value = icustays['OUTTIME'].min().to_pydatetime()
+mind, maxd = st.slider('Seleccione el rango de fecha',value=(min_value,max_value))
 icustays = icustays[(icustays['OUTTIME'] > mind) & (icustays['OUTTIME'] < maxd)]
+
 y = tiempo['tiempo_estancia_promedio']
 yearmonth = tiempo.index.to_series().apply(lambda x: '{0}-{1}'.format(*x))
+
 fig4 = px.line(x = yearmonth.values,y = y,labels=dict(x='Fecha',y='Tiempo promedio (dias)'))
 fig4.update_xaxes(tickformat='%b\n%Y')
-fig4.update_xaxes(rangeslider_visible=True)
 st.plotly_chart(fig4,use_container_width=True)
 
