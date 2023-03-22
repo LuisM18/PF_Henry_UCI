@@ -140,10 +140,10 @@ st.plotly_chart(fig,use_container_width=True)
 st.markdown("### Tasa de mortalidad por mes y año")
 max_value = admissions['DISCHTIME'].max()
 min_value = admissions['DISCHTIME'].min()
-mindd, maxdd  = st.slider('Seleccione el rango de fecha', value=(min_value, max_value))
-maxdd = datetime.strptime(str(maxdd), '%Y-%m-%d')
-mindd = datetime.strptime(str(mindd), '%Y-%m-%d')
-admissions = admissions[(admissions['DISCHTIME'] > mindd) & (admissions['DISCHTIME'] < maxdd)]
+mind, maxd  = st.date_input('Seleccione el rango de fecha', [min_value, max_value])
+maxd = datetime.strptime(str(maxd), '%Y-%m-%d')
+mind = datetime.strptime(str(mind), '%Y-%m-%d')
+admissions = admissions[(admissions['DISCHTIME'] > mind) & (admissions['DISCHTIME'] < maxd)]
 
 tasa = tasa_mortalidad(admissions)
 y = tasa['tasa_mortalidad']
@@ -159,7 +159,7 @@ st.markdown("### Tiempo promedio de estancia en UCI por mes y año")
 max_value = icustays['OUTTIME'].max()
 min_value = icustays['OUTTIME'].min()
 
-mind,maxd  = st.slider('Seleccione el rango de fecha',value=(min_value, max_value))
+mind, maxd  = st.date_input('Seleccione el rango de fecha', [min_value, max_value])
 maxd = datetime.strptime(str(maxd), '%Y-%m-%d')
 mind = datetime.strptime(str(mind), '%Y-%m-%d')
 
