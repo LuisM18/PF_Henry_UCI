@@ -35,9 +35,9 @@ icustays = pd.read_sql("""SELECT *
 
 estancia = st.selectbox("Estancia en UCI",icustays['ICUSTAY_ID'].unique())
 hadm_id = icustays[icustays['ICUSTAY_ID'] == estancia]['HADM_ID'].values[0]
-###################################################################################
 
-st.markdown('## Información de Admisión')
+###################################################################################
+st.markdown("<h1 style='text-align: center; color: white;'> Información de Admisión</h1>", unsafe_allow_html=True)
 st.markdown("---")
 
 patient = pd.read_sql("""SELECT * 
@@ -53,7 +53,7 @@ st.dataframe(admission)
 st.dataframe(icustays) #Esta informacion no se va mostrar
 
 ###################################################################################
-st.markdown('## Historial clinico en la UCI')
+st.markdown("<h1 style='text-align: center; color: white;'> Historial clinico en la UCI</h1>", unsafe_allow_html=True)
 st.markdown("---")
 
 
@@ -110,7 +110,7 @@ if datetimeevents.shape[0] > 0:
     st.dataframe(caregivers)
 
 ###################################################################################
-st.markdown('## Procedimientos')
+st.markdown("<h1 style='text-align: center; color: white;'> Procedimientos</h1>", unsafe_allow_html=True)
 st.markdown("---")
 
 services = pd.read_sql("""SELECT * 
@@ -155,7 +155,7 @@ if proceduresevents_mv.shape[0] > 0:
   st.dataframe(proceduresevents_mv) # Condicional 
 
 ###################################################################################
-st.markdown('## Medicamentos')
+st.markdown("<h1 style='text-align: center; color: white;'> Medicamentos</h1>", unsafe_allow_html=True)
 st.markdown("---")
 
 
@@ -186,11 +186,11 @@ if inputevents_mv.shape[0] > 0:
   st.dataframe(inputevents_mv) # Ventilacion Mecanica
 
 ###################################################################################
-st.markdown('## Pruebas de Laboratorio y microbiologicos')
+st.markdown("<h1 style='text-align: center; color: white;'> Pruebas de Laboratorio y Microbiologicos</h1>", unsafe_allow_html=True)
 st.markdown("---")
 
 labevents2 = pd.read_sql("""SELECT * 
-                              FROM labevents2
+                              FROM labevents
                               WHERE subject_id = {paciente} AND hadm_id = {hadmid}""".format(paciente=paciente,hadmid=hadm_id),mydb)
 
 microbiologyevents = pd.read_sql("""SELECT * 
