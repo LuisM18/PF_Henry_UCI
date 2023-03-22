@@ -48,7 +48,7 @@ with col3:
 st.markdown("<h1 style='text-align: center; color: white;'>Análisis del área UCI de Crowe Clinic</h1>", unsafe_allow_html=True)
 st.markdown("<h3 style='text-align: right; color: white;'>Por DataSight Consulting</h3>", unsafe_allow_html=True)
 
-with open('./images/a_photography_of_Crowe clinic_hospital3.png', "rb") as image_file:
+with open('./images/a_photography_of_Crowe clinic_hospital6.png', "rb") as image_file:
     encoded_string = base64.b64encode(image_file.read())
 st.markdown(
         f"""
