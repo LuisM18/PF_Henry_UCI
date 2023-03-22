@@ -157,11 +157,11 @@ procedures_icd.set_index('seq_num',inplace=True)
 cptevents = pd.read_sql("""SELECT * 
                               FROM cptevents 
                               WHERE subject_id = {paciente} AND hadm_id = {hadmid}""".format(paciente=paciente,hadmid=hadm_id),mydb)
-cptevents.drop(columns=['SUBJECT_ID','HADM_ID'],inplace=True)
-cptevents.set_index('ROW_ID', inplace=True)
+cptevents.drop(columns=['ROW_ID','SUBJECT_ID','HADM_ID','CPT_NUMBER','TICKET_ID_SEQ'],inplace=True)
+cptevents.set_index('CPT_CD', inplace=True)
 
 d_cpt = pd.DataFrame({})
-for i in cptevents['CPT_CD'].unique():
+for i in cptevents.index.unique():
   cpt = pd.read_sql("""SELECT * 
                               FROM d_cpt
                               WHERE mincodeinsubsection <= {cptcode} AND maxcodeinsubsection >= {cptcode} """.format(cptcode=i),mydb)
@@ -200,43 +200,68 @@ st.markdown("---")
 prescriptions = pd.read_sql("""SELECT * 
                               FROM prescriptions
                               WHERE subject_id = {paciente} AND hadm_id = {hadmid}""".format(paciente=paciente,hadmid=hadm_id),mydb)
+prescriptions.drop(columns=['SUBJECT_ID','HADM_ID','ICUSTAY_ID','DRUG_NAME_POE','DRUG_NAME_GENERIC'],inplace=True)
+prescriptions.set_index('ROW_ID',inplace=True)
 
-inputevents_cv = pd.read_sql("""SELECT * 
-                              FROM inputevents_cv
-                              WHERE subject_id = {paciente} AND icustay_id = {icustay}""".format(paciente=paciente,icustay=estancia),mydb)
+inputevents_cv = pd.read_sql("""SELECT d.LABEL ,d.CATEGORY, i.*  
+                              FROM inputevents_cv i
+                              RIGHT JOIN d_items d
+                              ON i.ITEMID = d.ITEMID
+                              WHERE i.subject_id = {paciente} AND i.icustay_id = {icustay}""".format(paciente=paciente,icustay=estancia),mydb)
+inputevents_cv.drop(columns=['ROW_ID','SUBJECT_ID','HADM_ID','ICUSTAY_ID','ITEMID','LINKORDERID'],inplace=True)
+inputevents_cv.set_index('ORDERID',inplace=True)
 
-inputevents_mv = pd.read_sql("""SELECT * 
-                              FROM inputevents_mv
-                              WHERE subject_id = {paciente} AND icustay_id = {icustay}""".format(paciente=paciente,icustay=estancia),mydb)
+inputevents_mv = pd.read_sql("""SELECT d.LABEL ,d.CATEGORY, i.*  
+                              FROM inputevents_mv i
+                              RIGHT JOIN d_items d
+                              ON i.ITEMID = d.ITEMID
+                              WHERE i.subject_id = {paciente} AND i.icustay_id = {icustay}""".format(paciente=paciente,icustay=estancia),mydb)
+inputevents_mv.drop(columns=['ROW_ID','SUBJECT_ID','HADM_ID','ICUSTAY_ID','ITEMID','LINKORDERID','CONTINUEINNEXTDEPT','CANCELREASON','COMMENTS_STATUS'],inplace=True)
+inputevents_mv.set_index('ORDERID',inplace=True)
+
 
 st.subheader('Fuera de la UCI')
-st.dataframe(prescriptions[prescriptions['ICUSTAY_ID'] == 0])
+if prescriptions.shape[0] > 0:
+  st.table(prescriptions[prescriptions['ICUSTAY_ID'] == 0])
+else: st.markdown('Ninguna')
 
 st.subheader('Suministrados en UCI')
-st.dataframe(prescriptions[prescriptions['ICUSTAY_ID'] != 0])
+if prescriptions.shape[0] > 0:
+  st.table(prescriptions[prescriptions['ICUSTAY_ID'] != 0])
+else: st.markdown('Ninguna')
+
 
 if inputevents_cv.shape[0] > 0:
   st.subheader('Via Intravenosa')
-  st.dataframe(inputevents_cv) #Intravenosos
+  st.table(inputevents_cv) #Intravenosos
 
 if inputevents_mv.shape[0] > 0:
   st.subheader('Via Ventilación Mecánica')
-  st.dataframe(inputevents_mv) # Ventilacion Mecanica
+  st.table(inputevents_mv) # Ventilacion Mecanica
 
 ###################################################################################
 st.markdown("<h1 style='text-align: center; color: white;'> Pruebas de Laboratorio y Microbiologicos</h1>", unsafe_allow_html=True)
 st.markdown("---")
 
-labevents2 = pd.read_sql("""SELECT * 
-                              FROM labevents
-                              WHERE subject_id = {paciente} AND hadm_id = {hadmid}""".format(paciente=paciente,hadmid=hadm_id),mydb)
+labevents2 = pd.read_sql("""SELECT d.LABEL ,d.CATEGORY, lb.* 
+                              FROM labevents lb
+                              RIGHT JOIN d_items d
+                              ON lb.ITEMID = d.ITEMID
+                              WHERE lb.subject_id = {paciente} AND lb.hadm_id = {hadmid}""".format(paciente=paciente,hadmid=hadm_id),mydb)
+labevents2.drop(columns=['SUBJECT_ID','HADM_ID','ITEMID'],inplace=True)
+labevents2.set_index('ROW_ID',inplace=True)
 
-microbiologyevents = pd.read_sql("""SELECT * 
-                              FROM microbiologyevents
-                              WHERE subject_id = {paciente} AND hadm_id = {hadmid}""".format(paciente=paciente,hadmid=hadm_id),mydb)
 
-st.dataframe(labevents2)
-st.dataframe(microbiologyevents)
+microbiologyevents = pd.read_sql("""SELECT d.LABEL ,d.CATEGORY, m.*  
+                              FROM microbiologyevents m
+                              RIGHT JOIN d_items d
+                              ON m.SPEC_ITEMID = d.ITEMID
+                              WHERE m.subject_id = {paciente} AND m.hadm_id = {hadmid}""".format(paciente=paciente,hadmid=hadm_id),mydb)
+microbiologyevents.drop(columns=['SUBJECT_ID','HADM_ID','SPEC_ITEMID'],inplace=True)
+microbiologyevents.set_index('ROW_ID',inplace=True)
+
+st.table(labevents2)
+st.table(microbiologyevents)
 
 if st.button('Descargar'):#Centrar boton en el layout
   st.write(dt.datetime.now())
