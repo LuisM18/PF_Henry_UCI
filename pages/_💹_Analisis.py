@@ -119,7 +119,7 @@ if tabla_seleccionada == 'General':
     ethnic_data.rename(columns = {'ETHNICITY_id':'Porcentaje','ETHNICITY':'Etnia'}, inplace = True)
     fig5 = px.pie(data_frame = ethnic_data, values = 'Porcentaje', names = 'Etnia')
     st.plotly_chart(fig5,use_container_width=True)
-    
+
 if tabla_seleccionada == 'Pacientes':
    
     admission_options = pd.read_sql("""SELECT DISTINCT ADMTYPE_NAME  FROM admissions_type""",mydb)
@@ -157,9 +157,13 @@ if tabla_seleccionada == 'Pacientes':
     genero = pd.read_sql("""SELECT DISTINCT GENDER, COUNT(GENDER)
                             FROM patient_dim
                             GROUP BY GENDER""",mydb)
-    fig3 = px.bar(genero,x='GENDER',y= 'COUNT(GENDER)', labels = {
+    
+    genero['porcentaje'] = genero['COUNT(GENDER)']/genero['COUNT(GENDER)'].sum()
+    genero['porcentaje'] = round(genero['porcentaje'] * 100 ,2)
+
+    fig3 = px.pie(genero,names='GENDER',values= 'porcentaje', labels = {
                      'GENDER': "Sexo",
-                     'COUNT(GENDER)': "Cantidad de registros",
+                     'porcentaje': "Porcentaje",
                  })
     st.plotly_chart(fig3,use_container_width=True)
 
@@ -169,14 +173,18 @@ if tabla_seleccionada == 'Pacientes':
                                     RIGHT JOIN  marital_status m
                                     ON a.MARIT_STATUS_ID = m.MARIT_STATUS_ID
                                     GROUP BY MARIT_STATUS_RESULT;""",mydb)
+    
+    estado_civil = estado_civil.sort_values('COUNT(MARIT_STATUS_RESULT)',ascending=False)
+    estado_civil['porcentaje'] = estado_civil['COUNT(MARIT_STATUS_RESULT)']/estado_civil['COUNT(MARIT_STATUS_RESULT)'].sum()
+    estado_civil ['porcentaje'] = round(estado_civil ['porcentaje'] * 100 ,2)
 
-    fig4 = px.bar(estado_civil, x="MARIT_STATUS_RESULT", y ="COUNT(MARIT_STATUS_RESULT)", labels = {
+    fig4 = px.bar(estado_civil, x="MARIT_STATUS_RESULT", y ="porcentaje", labels = {
                      'MARIT_STATUS_RESULT': "Estado civil",
-                     'COUNT(MARIT_STATUS_RESULT)': "Cantidad de registros",
+                     'porcentaje': "Porcentaje",
                  }) 
     st.plotly_chart(fig4,use_container_width=True)
 
-    st.markdown("<h3 style='text-align: center; color: white;'>Pacientes por edad</h3>", unsafe_allow_html=True) 
+    st.markdown("<h3 style='text-align: center; color: white;'>Histograma de las edades de los pacientes</h3>", unsafe_allow_html=True) 
     yearnac = pd.to_datetime(patients['DOB'])
     yearmu = pd.to_datetime(patients['DOD'])
     patients['AGE'] = yearmu.dt.year - yearnac.dt.year
@@ -191,10 +199,13 @@ if tabla_seleccionada == 'Pacientes':
                                 RIGHT JOIN  admissions_location al
                                 ON a.ADMLOCATION_ID = al.ADMLOCATION_ID
                                 GROUP BY ADMLOCATION_NAME;""",mydb)
+    location = location.sort_values('COUNT(ADMLOCATION_NAME)',ascending=False)
+    location['porcentaje'] = location['COUNT(ADMLOCATION_NAME)']/location['COUNT(ADMLOCATION_NAME)'].sum()
+    location['porcentaje'] = round(location['porcentaje'] * 100 ,2)
 
-    fig6 = px.bar(location, x="ADMLOCATION_NAME", y ="COUNT(ADMLOCATION_NAME)", labels = {
+    fig6 = px.bar(location, x="ADMLOCATION_NAME", y ="porcentaje", labels = {
                      'ADMLOCATION_NAME': "Lugares",
-                     'COUNT(ADMLOCATION_NAME)': 'Cantidad de registros'
+                     'porcentaje': 'Porcentaje'
                  })
     st.plotly_chart(fig6,use_container_width=True)
 
@@ -270,11 +281,14 @@ if tabla_seleccionada == 'Estancia en UCI':
         st.metric('Promedio estancia', f"{round(icustays['LOS'].mean(),2) } días" , delta=None, delta_color="normal", help=None, label_visibility="visible")
 
     st.markdown("<h3 style='text-align: center; color: white;'>Fuente de los datos</h3>", unsafe_allow_html=True)
+
     x = icustays['DBSOURCE'].value_counts().keys()
-    y = icustays['DBSOURCE'].value_counts().values
-    fig4 = px.bar(data_frame=icustays, x = x, y = y,labels = {
+    y = icustays['DBSOURCE'].value_counts().values / icustays['DBSOURCE'].value_counts().values.sum()
+    y = y * 100
+    y = y.round(2)
+    fig4 = px.pie(data_frame=icustays, names = x, values = y, labels = {
                      'x': "Fuente",
-                     'y': 'Cantidad de registros'
+                     'y': 'Porcentaje'
                  }) 
     st.plotly_chart(fig4,use_container_width=True)
 
