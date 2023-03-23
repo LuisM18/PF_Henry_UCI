@@ -104,6 +104,12 @@ def tiempo_estancia_promedio(icustay):
 def top5_diagnostico(admissions):
     return pd.DataFrame(admissions['DIAGNOSIS'].value_counts()).head(5)
 
+def delta(expresion):
+    if 'nan' in expresion :
+        return "0 %"
+    else: 
+        return expresion
+        
 
 with placeholder.container():
 
@@ -118,18 +124,19 @@ with placeholder.container():
     kpi1.metric(
         label="Tasa de mortalidad último mes",
         value= f"{round(mortalidad.iloc[-1,-1]*100,2)} % ",
-        delta= f"{round((mortalidad.iloc[-1,-1]-mortalidad.iloc[-2,-1]/mortalidad.iloc[-2,-1])*100,2)} % "
+        delta = delta(f"{round((mortalidad.iloc[-1,-1]-mortalidad.iloc[-2,-1]/mortalidad.iloc[-2,-1])*100,2)} % ") 
+
     )
 
     reingresos = reingresos(admissions)
     kpi2.metric(
         label="Cantidad de reingresos",
         value= f" {round(reingresos.iloc[-1,-1],2)} pacientes",
-        delta= f"{round((reingresos.iloc[-1,-1]-reingresos.iloc[-2,-1]/reingresos.iloc[-2,-1])*100,2)} % "
+        delta= delta(f"{round((reingresos.iloc[-1,-1]-reingresos.iloc[-2,-1]/reingresos.iloc[-2,-1])*100,2)} % ")
     )
 
 icustays = pd.read_sql("""SELECT *
-                            FROM icustays""",mydb,parse_dates=['INTIME','OUTTIME'])
+                            FROM icustay_hechos""",mydb,parse_dates=['INTIME','OUTTIME'])
 
 tiempo = tiempo_estancia_promedio(icustays)
 kpi3.metric(

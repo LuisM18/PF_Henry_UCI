@@ -119,7 +119,9 @@ transfers.drop(columns=['SUBJECT_ID','HADM_ID','ICUSTAY_ID'],inplace=True)
 transfers.set_index('ROW_ID', inplace=True)
 
 st.subheader('Antecedentes')
-st.table(diagnoses_icd)
+if diagnoses_icd.shape[0] > 0:
+  st.table(diagnoses_icd)
+else: st.text('No tiene antecedentes en el hospital')
 # Indicar tambien si el paciente fue readmitido
 
 if outputevents.shape[0] > 0:
@@ -143,7 +145,7 @@ if datetimeevents.shape[0] > 0:
     caregivers.set_index('CGID',inplace=True)                  
 
     st.table(caregivers)
-else: st.text('No asignado')
+else: st.text('Sin asignar')
 
 ###################################################################################
 st.markdown("<h1 style='text-align: center; color: white;'> Procedimientos</h1>", unsafe_allow_html=True)
