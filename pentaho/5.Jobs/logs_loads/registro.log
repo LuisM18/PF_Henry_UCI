@@ -1,0 +1,152 @@
+2023/03/21 10:40:23 - Kitchen - Logging is at level : Basic
+2023/03/21 10:40:23 - Kitchen - Start of run.
+2023/03/21 10:40:33 - Job-loadtopatients - Start of job execution
+2023/03/21 10:40:33 - Job-loadtopatients - Job-loadtopatients
+2023/03/21 10:41:44 - Job-loadtopatients - Starting entry [insertotempts-patients]
+2023/03/21 10:41:44 - insertotempts-patients - Using run configuration [Pentaho local]
+2023/03/21 10:41:44 - insertotempts-patients - Running transformation using the Kettle execution engine
+2023/03/21 10:41:44 - insertotempts-patients - Dispatching started for transformation [insertotempts-patients]
+2023/03/21 10:41:45 - Table output.0 - Connected to database [proyectdb] (commit=1000)
+2023/03/21 10:41:45 - LOADATA.0 - Opening file: file:///D:/LABS/PF_Henry_UCI/pentaho/Data_load/patient1.csv
+2023/03/21 10:41:45 - LOADATA.0 - ERROR (version 9.3.0.0-428, build 9.3.0.0-428 from 2022-04-12 04.56.25 by buildguy) : Unexpected error
+2023/03/21 10:41:45 - LOADATA.0 - ERROR (version 9.3.0.0-428, build 9.3.0.0-428 from 2022-04-12 04.56.25 by buildguy) : org.pentaho.di.core.exception.KettleException: 
+2023/03/21 10:41:45 - LOADATA.0 - Error converting line
+2023/03/21 10:41:45 - LOADATA.0 - 
+2023/03/21 10:41:45 - LOADATA.0 - Couldn't parse field [Date] with value [F], format [yyyy-MM-dd HH:mm:ss] on data row [1].
+2023/03/21 10:41:45 - LOADATA.0 - 
+2023/03/21 10:41:45 - LOADATA.0 - dob String : couldn't convert string [F] to a date using format [yyyy-MM-dd HH:mm:ss] on offset location 0
+2023/03/21 10:41:45 - LOADATA.0 - F
+2023/03/21 10:41:45 - LOADATA.0 - 
+2023/03/21 10:41:45 - LOADATA.0 - 
+2023/03/21 10:41:45 - LOADATA.0 - 
+2023/03/21 10:41:45 - LOADATA.0 - 	at org.pentaho.di.trans.steps.fileinput.text.TextFileInputUtils.convertLineToRow(TextFileInputUtils.java:651)
+2023/03/21 10:41:45 - LOADATA.0 - 	at org.pentaho.di.trans.steps.fileinput.text.TextFileInputUtils.convertLineToRow(TextFileInputUtils.java:445)
+2023/03/21 10:41:45 - LOADATA.0 - 	at org.pentaho.di.trans.steps.fileinput.text.TextFileInputReader.readRow(TextFileInputReader.java:304)
+2023/03/21 10:41:45 - LOADATA.0 - 	at org.pentaho.di.trans.steps.file.BaseFileInputStep.processRow(BaseFileInputStep.java:219)
+2023/03/21 10:41:45 - LOADATA.0 - 	at org.pentaho.di.trans.step.RunThread.run(RunThread.java:62)
+2023/03/21 10:41:45 - LOADATA.0 - 	at java.lang.Thread.run(Unknown Source)
+2023/03/21 10:41:45 - LOADATA.0 - Caused by: org.pentaho.di.core.exception.KettleException: 
+2023/03/21 10:41:45 - LOADATA.0 - Couldn't parse field [Date] with value [F], format [yyyy-MM-dd HH:mm:ss] on data row [1].
+2023/03/21 10:41:45 - LOADATA.0 - 
+2023/03/21 10:41:45 - LOADATA.0 - dob String : couldn't convert string [F] to a date using format [yyyy-MM-dd HH:mm:ss] on offset location 0
+2023/03/21 10:41:45 - LOADATA.0 - F
+2023/03/21 10:41:45 - LOADATA.0 - 
+2023/03/21 10:41:45 - LOADATA.0 - 
+2023/03/21 10:41:45 - LOADATA.0 - 	at org.pentaho.di.trans.steps.fileinput.text.TextFileInputUtils.convertLineToRow(TextFileInputUtils.java:555)
+2023/03/21 10:41:45 - LOADATA.0 - 	... 5 more
+2023/03/21 10:41:45 - LOADATA.0 - Caused by: org.pentaho.di.core.exception.KettleValueException: 
+2023/03/21 10:41:45 - LOADATA.0 - dob String : couldn't convert string [F] to a date using format [yyyy-MM-dd HH:mm:ss] on offset location 0
+2023/03/21 10:41:45 - LOADATA.0 - F
+2023/03/21 10:41:45 - LOADATA.0 - 
+2023/03/21 10:41:45 - LOADATA.0 - 	at org.pentaho.di.core.row.value.ValueMetaBase.convertStringToDate(ValueMetaBase.java:943)
+2023/03/21 10:41:45 - LOADATA.0 - 	at org.pentaho.di.core.row.value.ValueMetaBase.getDate(ValueMetaBase.java:2314)
+2023/03/21 10:41:45 - LOADATA.0 - 	at org.pentaho.di.core.row.value.ValueMetaBase.convertData(ValueMetaBase.java:3870)
+2023/03/21 10:41:45 - LOADATA.0 - 	at org.pentaho.di.core.row.value.ValueMetaBase.convertDataFromString(ValueMetaBase.java:4121)
+2023/03/21 10:41:45 - LOADATA.0 - 	at org.pentaho.di.trans.steps.fileinput.text.TextFileInputUtils.convertLineToRow(TextFileInputUtils.java:512)
+2023/03/21 10:41:45 - LOADATA.0 - 	... 5 more
+2023/03/21 10:41:45 - LOADATA.0 - Caused by: java.text.ParseException: F
+2023/03/21 10:41:45 - LOADATA.0 - 	at org.pentaho.di.core.row.value.ValueMetaBase.convertStringToDate(ValueMetaBase.java:934)
+2023/03/21 10:41:45 - LOADATA.0 - 	... 9 more
+2023/03/21 10:41:45 - LOADATA.0 - Finished processing (I=2, O=0, R=0, W=0, U=1, E=1)
+2023/03/21 10:41:45 - insertotempts-patients - Transformation detected one or more steps with errors.
+2023/03/21 10:41:45 - insertotempts-patients - Transformation is killing the other steps!
+2023/03/21 10:41:45 - insertotempts-patients - ERROR (version 9.3.0.0-428, build 9.3.0.0-428 from 2022-04-12 04.56.25 by buildguy) : Errors detected!
+2023/03/21 10:41:46 - Carte - Installing timer to purge stale objects after 1440 minutes.
+2023/03/21 10:41:46 - insertotempts-patients - ERROR (version 9.3.0.0-428, build 9.3.0.0-428 from 2022-04-12 04.56.25 by buildguy) : Errors detected!
+2023/03/21 10:41:46 - Job-loadtopatients - Finished job entry [insertotempts-patients] (result=[false])
+2023/03/21 10:41:46 - Job-loadtopatients - Job-loadtopatients
+2023/03/21 10:42:57 - Job-loadtopatients - Starting entry [insertotempts-patients]
+2023/03/21 10:42:57 - insertotempts-patients - Using run configuration [Pentaho local]
+2023/03/21 10:42:57 - insertotempts-patients - Running transformation using the Kettle execution engine
+2023/03/21 10:42:57 - insertotempts-patients - Dispatching started for transformation [insertotempts-patients]
+2023/03/21 10:42:58 - Table output.0 - Connected to database [proyectdb] (commit=1000)
+2023/03/21 10:42:58 - LOADATA.0 - Opening file: file:///D:/LABS/PF_Henry_UCI/pentaho/Data_load/patient1.csv
+2023/03/21 10:42:58 - LOADATA.0 - ERROR (version 9.3.0.0-428, build 9.3.0.0-428 from 2022-04-12 04.56.25 by buildguy) : Unexpected error
+2023/03/21 11:03:12 - Kitchen - Logging is at level : Basic
+2023/03/21 11:03:12 - Kitchen - Start of run.
+2023/03/21 11:03:18 - Job-loadtopatients - Start of job execution
+2023/03/21 11:03:18 - Job-loadtopatients - Job-loadtopatients
+2023/03/21 11:04:28 - Job-loadtopatients - Starting entry [insertotempts-patients]
+2023/03/21 11:04:28 - insertotempts-patients - Using run configuration [Pentaho local]
+2023/03/21 11:04:28 - insertotempts-patients - Running transformation using the Kettle execution engine
+2023/03/21 11:04:28 - insertotempts-patients - Dispatching started for transformation [insertotempts-patients]
+2023/03/21 11:04:30 - Table output.0 - Connected to database [proyectdb] (commit=1000)
+2023/03/21 11:04:30 - LOADATA.0 - Opening file: file:///D:/LABS/PF_Henry_UCI/pentaho/Data_load/patients1.csv
+2023/03/21 11:04:30 - LOADATA.0 - Finished processing (I=21, O=0, R=0, W=20, U=1, E=0)
+2023/03/21 11:04:30 - If field value is null.0 - Finished processing (I=0, O=0, R=20, W=20, U=0, E=0)
+2023/03/21 11:04:30 - Unique rows (HashSet).0 - Finished processing (I=0, O=0, R=20, W=20, U=0, E=0)
+2023/03/21 11:04:30 - Select values.0 - Finished processing (I=0, O=0, R=20, W=20, U=0, E=0)
+2023/03/21 11:04:32 - Table output.0 - Finished processing (I=0, O=20, R=20, W=20, U=0, E=0)
+2023/03/21 11:04:32 - Carte - Installing timer to purge stale objects after 1440 minutes.
+2023/03/21 11:04:32 - Job-loadtopatients - Starting entry [patient-update+insert]
+2023/03/21 11:04:33 - patient-update+insert - Using run configuration [Pentaho local]
+2023/03/21 11:04:33 - patient-update+insert - Running transformation using the Kettle execution engine
+2023/03/21 11:04:33 - patient-updateinsert - Dispatching started for transformation [patient-updateinsert]
+2023/03/21 11:04:34 - patient_temp-new.0 - Finished reading query, closing connection
+2023/03/21 11:04:34 - patient-dest.0 - Finished reading query, closing connection
+2023/03/21 11:04:34 - patient_temp-new.0 - Finished processing (I=20, O=0, R=0, W=20, U=0, E=0)
+2023/03/21 11:04:34 - patient-dest.0 - Finished processing (I=100, O=0, R=0, W=100, U=0, E=0)
+2023/03/21 11:04:34 - Merge rows (diff).0 - Finished processing (I=0, O=0, R=120, W=120, U=0, E=0)
+2023/03/21 11:04:34 - Filter rows.0 - Finished processing (I=0, O=0, R=120, W=120, U=0, E=0)
+2023/03/21 11:04:34 - Select values.0 - Finished processing (I=0, O=0, R=120, W=120, U=0, E=0)
+2023/03/21 11:04:56 - Insert / update (patient).0 - Finished processing (I=120, O=20, R=120, W=120, U=0, E=0)
+2023/03/21 11:04:56 - Job-loadtopatients - Starting entry [Success]
+2023/03/21 11:04:56 - Job-loadtopatients - Finished job entry [Success] (result=[true])
+2023/03/21 11:04:56 - Job-loadtopatients - Finished job entry [patient-update+insert] (result=[true])
+2023/03/21 11:04:56 - Job-loadtopatients - Finished job entry [insertotempts-patients] (result=[true])
+2023/03/21 11:04:56 - Job-loadtopatients - Job-loadtopatients
+2023/03/21 11:06:07 - Job-loadtopatients - Starting entry [insertotempts-patients]
+2023/03/21 11:06:07 - insertotempts-patients - Using run configuration [Pentaho local]
+2023/03/21 11:06:07 - insertotempts-patients - Running transformation using the Kettle execution engine
+2023/03/21 11:06:07 - insertotempts-patients - Dispatching started for transformation [insertotempts-patients]
+2023/03/21 11:06:07 - Table output.0 - Connected to database [proyectdb] (commit=1000)
+2023/03/21 11:06:08 - LOADATA.0 - Opening file: file:///D:/LABS/PF_Henry_UCI/pentaho/Data_load/patients1.csv
+2023/03/21 11:06:08 - LOADATA.0 - Finished processing (I=21, O=0, R=0, W=20, U=1, E=0)
+2023/03/21 11:06:08 - If field value is null.0 - Finished processing (I=0, O=0, R=20, W=20, U=0, E=0)
+2023/03/21 11:06:08 - Unique rows (HashSet).0 - Finished processing (I=0, O=0, R=20, W=20, U=0, E=0)
+2023/03/21 11:06:08 - Select values.0 - Finished processing (I=0, O=0, R=20, W=20, U=0, E=0)
+2023/03/21 11:06:10 - Table output.0 - Finished processing (I=0, O=20, R=20, W=20, U=0, E=0)
+2023/03/21 11:06:10 - Job-loadtopatients - Starting entry [patient-update+insert]
+2023/03/21 11:06:10 - patient-update+insert - Using run configuration [Pentaho local]
+2023/03/21 11:06:10 - patient-update+insert - Running transformation using the Kettle execution engine
+2023/03/21 11:06:10 - patient-updateinsert - Dispatching started for transformation [patient-updateinsert]
+2023/03/21 11:06:11 - patient_temp-new.0 - Finished reading query, closing connection
+2023/03/21 11:06:11 - patient-dest.0 - Finished reading query, closing connection
+2023/03/21 11:06:11 - patient_temp-new.0 - Finished processing (I=20, O=0, R=0, W=20, U=0, E=0)
+2023/03/21 11:06:11 - patient-dest.0 - Finished processing (I=120, O=0, R=0, W=120, U=0, E=0)
+2023/03/21 11:06:11 - Merge rows (diff).0 - Finished processing (I=0, O=0, R=140, W=140, U=0, E=0)
+2023/03/21 11:06:11 - Filter rows.0 - Finished processing (I=0, O=0, R=140, W=140, U=0, E=0)
+2023/03/21 11:06:11 - Select values.0 - Finished processing (I=0, O=0, R=140, W=140, U=0, E=0)
+2023/03/21 11:06:36 - Insert / update (patient).0 - Finished processing (I=140, O=0, R=140, W=140, U=0, E=0)
+2023/03/21 11:06:36 - Job-loadtopatients - Starting entry [Success]
+2023/03/21 11:06:36 - Job-loadtopatients - Finished job entry [Success] (result=[true])
+2023/03/21 11:06:36 - Job-loadtopatients - Finished job entry [patient-update+insert] (result=[true])
+2023/03/21 11:06:36 - Job-loadtopatients - Finished job entry [insertotempts-patients] (result=[true])
+2023/03/21 11:06:36 - Job-loadtopatients - Job-loadtopatients
+2023/03/21 11:07:46 - Job-loadtopatients - Starting entry [insertotempts-patients]
+2023/03/21 11:07:46 - insertotempts-patients - Using run configuration [Pentaho local]
+2023/03/21 11:07:46 - insertotempts-patients - Running transformation using the Kettle execution engine
+2023/03/21 11:07:46 - insertotempts-patients - Dispatching started for transformation [insertotempts-patients]
+2023/03/21 11:07:47 - Table output.0 - Connected to database [proyectdb] (commit=1000)
+2023/03/21 11:07:47 - LOADATA.0 - Opening file: file:///D:/LABS/PF_Henry_UCI/pentaho/Data_load/patients1.csv
+2023/03/21 11:07:47 - LOADATA.0 - Finished processing (I=21, O=0, R=0, W=20, U=1, E=0)
+2023/03/21 11:07:47 - If field value is null.0 - Finished processing (I=0, O=0, R=20, W=20, U=0, E=0)
+2023/03/21 11:07:47 - Unique rows (HashSet).0 - Finished processing (I=0, O=0, R=20, W=20, U=0, E=0)
+2023/03/21 11:07:47 - Select values.0 - Finished processing (I=0, O=0, R=20, W=20, U=0, E=0)
+2023/03/21 11:07:50 - Table output.0 - Finished processing (I=0, O=20, R=20, W=20, U=0, E=0)
+2023/03/21 11:07:50 - Job-loadtopatients - Starting entry [patient-update+insert]
+2023/03/21 11:07:50 - patient-update+insert - Using run configuration [Pentaho local]
+2023/03/21 11:07:50 - patient-update+insert - Running transformation using the Kettle execution engine
+2023/03/21 11:07:50 - patient-updateinsert - Dispatching started for transformation [patient-updateinsert]
+2023/03/21 11:07:51 - patient-dest.0 - Finished reading query, closing connection
+2023/03/21 11:07:51 - patient_temp-new.0 - Finished reading query, closing connection
+2023/03/21 11:07:51 - patient-dest.0 - Finished processing (I=120, O=0, R=0, W=120, U=0, E=0)
+2023/03/21 11:07:51 - patient_temp-new.0 - Finished processing (I=20, O=0, R=0, W=20, U=0, E=0)
+2023/03/21 11:07:51 - Merge rows (diff).0 - Finished processing (I=0, O=0, R=140, W=140, U=0, E=0)
+2023/03/21 11:07:51 - Filter rows.0 - Finished processing (I=0, O=0, R=140, W=140, U=0, E=0)
+2023/03/21 11:07:51 - Select values.0 - Finished processing (I=0, O=0, R=140, W=140, U=0, E=0)
+2023/03/21 11:08:15 - Insert / update (patient).0 - Finished processing (I=140, O=0, R=140, W=140, U=0, E=0)
+2023/03/21 11:08:15 - Job-loadtopatients - Starting entry [Success]
+2023/03/21 11:08:15 - Job-loadtopatients - Finished job entry [Success] (result=[true])
+2023/03/21 11:08:15 - Job-loadtopatients - Finished job entry [patient-update+insert] (result=[true])
+2023/03/21 11:08:15 - Job-loadtopatients - Finished job entry [insertotempts-patients] (result=[true])
