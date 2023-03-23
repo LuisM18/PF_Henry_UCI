@@ -3,6 +3,8 @@ import plotly.express as px  #
 import streamlit as st 
 import mysql.connector
 import datetime as dt
+import streamlit.components.v1 as components
+import requests
 
 st.set_page_config(
     page_title="Pacientes",
@@ -200,8 +202,14 @@ st.markdown("---")
 prescriptions = pd.read_sql("""SELECT * 
                               FROM prescriptions
                               WHERE subject_id = {paciente} AND hadm_id = {hadmid}""".format(paciente=paciente,hadmid=hadm_id),mydb)
-prescriptions.drop(columns=['SUBJECT_ID','HADM_ID','ICUSTAY_ID','DRUG_NAME_POE','DRUG_NAME_GENERIC'],inplace=True)
-prescriptions.set_index('ROW_ID',inplace=True)
+
+prescriptionsf = prescriptions[prescriptions['ICUSTAY_ID'] == 0]
+prescriptionsf.drop(columns=['SUBJECT_ID','HADM_ID','ICUSTAY_ID','DRUG_NAME_POE','DRUG_NAME_GENERIC'],inplace=True)
+prescriptionsf.set_index('ROW_ID',inplace=True)
+
+prescriptionsuci = prescriptions[prescriptions['ICUSTAY_ID'] == 0]
+prescriptionsuci.drop(columns=['SUBJECT_ID','HADM_ID','ICUSTAY_ID','DRUG_NAME_POE','DRUG_NAME_GENERIC'],inplace=True)
+prescriptionsuci.set_index('ROW_ID',inplace=True)
 
 inputevents_cv = pd.read_sql("""SELECT d.LABEL ,d.CATEGORY, i.*  
                               FROM inputevents_cv i
@@ -221,13 +229,13 @@ inputevents_mv.set_index('ORDERID',inplace=True)
 
 
 st.subheader('Fuera de la UCI')
-if prescriptions.shape[0] > 0:
-  st.table(prescriptions[prescriptions['ICUSTAY_ID'] == 0])
+if prescriptionsf.shape[0] > 0:
+  st.table(prescriptionsf)
 else: st.markdown('Ninguna')
 
 st.subheader('Suministrados en UCI')
-if prescriptions.shape[0] > 0:
-  st.table(prescriptions[prescriptions['ICUSTAY_ID'] != 0])
+if prescriptionsuci.shape[0] > 0:
+  st.table(prescriptionsuci)
 else: st.markdown('Ninguna')
 
 
@@ -260,8 +268,81 @@ microbiologyevents = pd.read_sql("""SELECT d.LABEL ,d.CATEGORY, m.*
 microbiologyevents.drop(columns=['SUBJECT_ID','HADM_ID','SPEC_ITEMID'],inplace=True)
 microbiologyevents.set_index('ROW_ID',inplace=True)
 
-st.table(labevents2)
-st.table(microbiologyevents)
+st.subheader('Laboratorios')
+if labevents2.shape[0] > 0:
+  st.table(labevents2)
+  
+st.subheader('Estudios microbiológicos')
+if microbiologyevents.shape[0] > 0:
+  st.table(microbiologyevents)
 
-if st.button('Descargar'):#Centrar boton en el layout
-  st.write(dt.datetime.now())
+
+########################################################
+
+
+@st.cache_data
+def load_unpkg(src: str) -> str:
+    return requests.get(src).text
+
+
+HTML_2_CANVAS = load_unpkg("https://unpkg.com/html2canvas@1.4.1/dist/html2canvas.js")
+JSPDF = load_unpkg("https://unpkg.com/jspdf@latest/dist/jspdf.umd.min.js")
+BUTTON_TEXT = "Descargar"
+
+if st.button(BUTTON_TEXT):
+  NOMBRE = "{id_paciente}_{fecha}".format(id_paciente=paciente,fecha=dt.datetime.now().strftime('%Y%m%d_%I:%M%p'))
+  components.html(
+            f"""
+<script>{HTML_2_CANVAS}</script>
+<script>{JSPDF}</script>
+<script>
+const html2canvas = window.html2canvas
+const {{ jsPDF }} = window.jspdf
+
+const streamlitDoc = window.parent.document;
+const stApp = streamlitDoc.querySelector('.main > .block-container');
+
+const buttons = Array.from(streamlitDoc.querySelectorAll('.stButton > button'));
+const pdfButton = buttons.find(el => el.innerText === '{BUTTON_TEXT}');
+const docHeight = stApp.scrollHeight ;
+const docWidth = stApp.scrollWidth ;
+
+let topLeftMargin = 1.5;
+let pdfWidth = docHeight + (topLeftMargin * 2);
+let pdfHeight = (pdfWidth * 1.5) + (topLeftMargin * 2);
+let canvasImageWidth = docWidth;
+let canvasImageHeight = docHeight;
+
+let totalPDFPages = Math.ceil(docHeight / pdfHeight)-1;
+
+pdfButton.innerText = '{NOMBRE}';
+
+html2canvas(stApp, {{ allowTaint: true }}).then(function (canvas) {{
+
+    canvas.getContext('2d');
+    let imgData = canvas.toDataURL("image/jpeg", 1.0);
+
+    let pdf = new jsPDF('p', 'px', [pdfWidth, pdfHeight]);
+    pdf.addImage(imgData, 'JPG', topLeftMargin, topLeftMargin, canvasImageWidth, canvasImageHeight);
+
+    for (var i = 1; i <= totalPDFPages; i++) {{
+        pdf.addPage();
+        pdf.addImage(imgData, 'JPG', topLeftMargin, -(pdfHeight * i) + (topLeftMargin*4), canvasImageWidth, canvasImageHeight);
+    }}
+
+    pdf.save('{NOMBRE}.pdf');
+    pdfButton.innerText = '{NOMBRE}';
+}})
+
+</script>
+""",
+            height=0,
+            width=0,
+        )
+
+
+
+
+
+
+
