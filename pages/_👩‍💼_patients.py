@@ -143,6 +143,7 @@ if datetimeevents.shape[0] > 0:
     caregivers.set_index('CGID',inplace=True)                  
 
     st.table(caregivers)
+else: st.text('No asignado')
 
 ###################################################################################
 st.markdown("<h1 style='text-align: center; color: white;'> Procedimientos</h1>", unsafe_allow_html=True)
@@ -181,7 +182,9 @@ proceduresevents_mv.set_index('ORDERID', inplace=True)
 
 
 st.subheader('Anteriores a la estancia en UCI')
-st.table(procedures_icd) # Referente a antecedentes
+if procedures_icd.shape[0] > 0:
+  st.table(procedures_icd) # Referente a antecedentes
+else: st.text('No tiene antecedentes en el hospital')
 
 st.subheader('Aplicados en UCI')
 if cptevents.shape[0] > 0:
@@ -271,10 +274,12 @@ microbiologyevents.set_index('ROW_ID',inplace=True)
 st.subheader('Laboratorios')
 if labevents2.shape[0] > 0:
   st.table(labevents2)
+else: st.text('Ninguno')
   
 st.subheader('Estudios microbiológicos')
 if microbiologyevents.shape[0] > 0:
   st.table(microbiologyevents)
+else: st.text('Ninguno')
 
 
 ########################################################
