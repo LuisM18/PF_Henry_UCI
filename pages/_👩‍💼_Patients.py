@@ -59,7 +59,7 @@ age = age['age'].values[0]
 col2, col3, col4 = st.columns(3)
 
 with col2:
-  st.markdown('ADMITIDO:  {admitted}'. format(admitted = admission['ADMITTIME'].values[0]))
+  st.markdown('ADMITIDO:  {admitted}'. format(admitted = admission['ADMITTIME'].dt.date.values[0]))
 with col3:
   st.markdown('CÓDIGO:  {subject}'. format(subject = paciente))
 with col4:
