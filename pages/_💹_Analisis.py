@@ -37,11 +37,17 @@ d_items = pd.read_sql("""SELECT *
 cptevents = pd.read_sql("""SELECT *
                             FROM cptevents""",mydb)
 
+insurance = pd.read_sql("""SELECT *
+                            FROM insurance""",mydb)
+
+ethnic = pd.read_sql("""SELECT *
+                            FROM ETHNICITY""",mydb)
+
 ###################################################################################
 
 st.sidebar.markdown("# Análisis descriptivo de las tablas")
 st.sidebar.markdown("# Seleccione la tabla a visualizar")
-tables = ['Pacientes','Prescripciones','Estancia en UCI','Ventilación Mecánica','Códigos de terminología procesal']
+tables = ['General','Pacientes','Prescripciones','Estancia en UCI','Ventilación Mecánica','Códigos de terminología procesal']
 tabla_seleccionada = st.sidebar.selectbox('Seleccione la tabla',tables)
 datasight = Image.open('./images/datasighthdwithoutmine.png')
 st.sidebar.write('')
@@ -64,6 +70,56 @@ with st.sidebar:
     st.image(datasight, width = 150)
 st.markdown("<h1 style='text-align: center; color: white;'>Análisis descriptivo</h1>", unsafe_allow_html=True)
 st.markdown("---")
+if tabla_seleccionada == 'General':
+    col1, col2, col3 = st.columns(3)
+    quantity = pd.unique(admissions['SUBJECT_ID'])
+    col2.metric(label = 'Pacientes admitidos en UCI', value = quantity.shape[0])
+    css='''
+[data-testid="metric-container"] {
+    width: fit-content;
+    margin: auto;
+}
+
+[data-testid="metric-container"] > div {
+    width: fit-content;
+    margin: auto;
+}
+
+[data-testid="metric-container"] label {
+    width: fit-content;
+    margin: auto;
+}
+'''
+    st.markdown(f'<style>{css}</style>',unsafe_allow_html=True)
+    st.markdown("<h3 style='text-align: center; color: white;'>Porcentaje de pacientes por seguro</h3>", unsafe_allow_html=True)
+    insurance_names = insurance['INSURANCE_NAME']
+    insurance_counts = admissions['INSURANCE_ID'].value_counts()
+    porcentaje_insurance = insurance_counts / insurance_counts.values.sum()
+    porcentaje_insurance  = round(porcentaje_insurance * 100,2)
+
+    porcentaje_insurance = pd.DataFrame(porcentaje_insurance)
+    insurance_data = porcentaje_insurance.merge(insurance, left_on= porcentaje_insurance.index , right_on='INSURANCE_ID')
+    insurance_data.rename(columns = {'INSURANCE_ID_x':'Porcentaje','INSURANCE_NAME':'Seguro'}, inplace = True)
+    fig3 = px.pie(data_frame = insurance_data, values = 'Porcentaje', names = 'Seguro')
+    st.plotly_chart(fig3,use_container_width=True)
+
+    st.markdown("<h3 style='text-align: center; color: white;'>Porcentaje de pacientes por sexo</h3>", unsafe_allow_html=True)
+    gender_counts = patients['GENDER'].value_counts()
+    porcentaje_gender = gender_counts / gender_counts.values.sum()
+    porcentaje_gender  = round(porcentaje_gender * 100,2)
+    fig4 = px.pie(data_frame = porcentaje_gender, values = porcentaje_gender, names = porcentaje_gender.index, labels = {'F': 'Femenino','M':'Masculino'})
+    st.plotly_chart(fig4,use_container_width=True)
+
+    st.markdown("<h3 style='text-align: center; color: white;'>Porcentaje de pacientes por etnia</h3>", unsafe_allow_html=True)
+    ethnic_counts = admissions['ETHNICITY_id'].value_counts()
+    porcentaje_ethnic = ethnic_counts / ethnic_counts.values.sum()
+    porcentaje_ethnic  = round(porcentaje_ethnic * 100,2)
+    porcentaje_ethnic = pd.DataFrame(porcentaje_ethnic)
+    ethnic_data = porcentaje_ethnic.merge(ethnic, left_on= porcentaje_ethnic.index , right_on='ETHNICITY_ID')
+    ethnic_data.rename(columns = {'ETHNICITY_id':'Porcentaje','ETHNICITY':'Etnia'}, inplace = True)
+    fig5 = px.pie(data_frame = ethnic_data, values = 'Porcentaje', names = 'Etnia')
+    st.plotly_chart(fig5,use_container_width=True)
+    
 if tabla_seleccionada == 'Pacientes':
    
     admission_options = pd.read_sql("""SELECT DISTINCT ADMTYPE_NAME  FROM admissions_type""",mydb)
