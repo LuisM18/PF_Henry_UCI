@@ -3,6 +3,7 @@ import plotly.express as px  #
 import streamlit as st 
 import mysql.connector
 import datetime as dt
+from PIL import Image
 
 import pdfkit
 from io import BytesIO
@@ -23,12 +24,32 @@ mydb = mysql.connector.connect(
   database="proyectdb"
 )
 
+datasight = Image.open('./images/datasighthdwithoutmine.png')
+st.sidebar.write('')
+st.sidebar.write('')
+st.markdown(
+    """
+    <style>
+        [data-testid=stSidebar] [data-testid=stImage]{
+            text-align: center;
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+            width: 100%;
+        }
+    </style>
+    """, unsafe_allow_html=True
+)
+
+with st.sidebar:
+    st.image(datasight, width = 150)
+
 admissions = pd.read_sql("""SELECT subject_id
                             FROM admissions_hechos""",mydb)
 
 ###################################################################################
 
-st.markdown("# **Reporte de Paciente**")
+st.markdown("<h1 style='text-align: center; color: white;'> Reporte de paciente</h1>", unsafe_allow_html=True)
 st.markdown("---")
 
 paciente = st.selectbox("Paciente",admissions['subject_id'].unique())
@@ -52,6 +73,7 @@ admitted = pd.read_sql("""SELECT admittime
                               WHERE subject_id = {paciente} AND hadm_id = {hadmid}
                               ORDER BY admittime DESC""".format(paciente=paciente,hadmid =hadm_id),mydb)
 admitted = pd.DataFrame(admitted)
+admitted['admittime'] = admitted['admittime'].dt.date
 admitted= admitted['admittime'].values[0] 
 
 age = pd.read_sql("""SELECT (YEAR(DOD_HOSP)- YEAR(DOB)) as age 

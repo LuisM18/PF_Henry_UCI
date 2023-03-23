@@ -5,6 +5,7 @@ import plotly.express as px  #
 import streamlit as st  # 🎈
 import mysql.connector
 from datetime import datetime
+from PIL import Image
 
 mydb = mysql.connector.connect(
   host= st.secrets["DB_HOST"],
@@ -39,10 +40,28 @@ cptevents = pd.read_sql("""SELECT *
 ###################################################################################
 
 st.sidebar.markdown("# Análisis descriptivo de las tablas")
-st.sidebar.markdown("# Seleccione las tablas")
+st.sidebar.markdown("# Seleccione la tabla a visualizar")
 tables = ['Pacientes','Prescripciones','Estancia en UCI','Ventilación Mecánica','Códigos de terminología procesal']
-tabla_seleccionada = st.sidebar.selectbox('Seleccione las tablas',tables)
+tabla_seleccionada = st.sidebar.selectbox('Seleccione la tabla',tables)
+datasight = Image.open('./images/datasighthdwithoutmine.png')
+st.sidebar.write('')
+st.sidebar.write('')
+st.markdown(
+    """
+    <style>
+        [data-testid=stSidebar] [data-testid=stImage]{
+            text-align: center;
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+            width: 100%;
+        }
+    </style>
+    """, unsafe_allow_html=True
+)
 
+with st.sidebar:
+    st.image(datasight, width = 150)
 st.markdown("<h1 style='text-align: center; color: white;'>Análisis descriptivo</h1>", unsafe_allow_html=True)
 st.markdown("---")
 if tabla_seleccionada == 'Pacientes':
@@ -127,8 +146,9 @@ if tabla_seleccionada == 'Prescripciones':
     fig3, fig4 = st.columns(2)
     fig5, fig6 = st.columns(2)
     st.markdown("<h3 style='text-align: center; color: white;'>Top N Medicamentos más utilizados</h3>", unsafe_allow_html=True)
-    x = prescriptions['DRUG'].value_counts().keys()
-    y = prescriptions['DRUG'].value_counts().values
+    number = st.select_slider('Selecciona n', options = range(5,31) ,value = 5, key = '1')
+    x = prescriptions['DRUG'].value_counts().keys()[0:number]
+    y = prescriptions['DRUG'].value_counts().values[0:number]
     fig3 = px.bar(data_frame=prescriptions, x = x, y = y , labels = {
                      'x': "Medicamento",
                      'y': 'Cantidad de registros'
@@ -136,8 +156,9 @@ if tabla_seleccionada == 'Prescripciones':
     st.plotly_chart(fig3,use_container_width=True)
 
     st.markdown("<h3 style='text-align: center; color: white;'>Ruta de la medicación</h3>", unsafe_allow_html=True)
-    x = prescriptions['ROUTE'].value_counts().keys()
-    y = prescriptions['ROUTE'].value_counts().values
+    number = st.select_slider('Selecciona n', options = range(5,31) ,value = 5, key = '2')
+    x = prescriptions['ROUTE'].value_counts().keys()[0:number] 
+    y = prescriptions['ROUTE'].value_counts().values[0:number] 
     fig4 = px.bar(data_frame=prescriptions, x = x, y = y, labels = {
                      'x': "Ruta",
                      'y': 'Cantidad de registros'
@@ -202,15 +223,14 @@ if tabla_seleccionada == 'Estancia en UCI':
     st.plotly_chart(fig4,use_container_width=True)
 
 if tabla_seleccionada == 'Ventilación Mecánica':
-    
-    st.markdown("### Categorías de medicamentos utilizadas")
+    st.markdown("<h3 style='text-align: center; color: white;'>Categorías de medicamentos utilizadas</h3>", unsafe_allow_html=True)
     inpute = inputevents_mv.merge(d_items, left_on='ITEMID', right_on='ITEMID')
     x = inpute['CATEGORY'].value_counts(dropna=False).keys()
     y = inpute['CATEGORY'].value_counts(dropna=False).values
-    fig3 = px.bar(data_frame=inpute, x = x, y = y )
+    fig3 = px.bar(data_frame=inpute, x = x, y = y, labels = 
+                  {'x' : 'Categoría', 'y': 'Cantidad de registros'} )
     st.plotly_chart(fig3,use_container_width=True)
-
-    st.markdown("### Cantidad histórica promedio de cada medicina")
+    st.markdown("<h3 style='text-align: center; color: white;'>Cantidad histórica promedio de cada medicina</h3>", unsafe_allow_html=True)
     #historical average AMOUNT of each med.
     inpute['AMOUNT'].dropna(inplace=True)
     inpute['AMOUNTUOM'].dropna(inplace=True)
@@ -221,8 +241,7 @@ if tabla_seleccionada == 'Ventilación Mecánica':
     st.dataframe(average)
 
     #Filtro por mes o año
-    st.markdown("## Filtrar por mes o año")
-
+    st.markdown("<h3 style='text-align: center; color: white;'>Filtrar por mes o año</h3>", unsafe_allow_html=True)
     inpute['STARTTIME'] = inpute['STARTTIME'].apply(pd.to_datetime)
     inpute['start_year'] = inpute['STARTTIME'].dt.year
     inpute['start_month'] = inpute['STARTTIME'].dt.month
@@ -250,7 +269,8 @@ if tabla_seleccionada == 'Ventilación Mecánica':
             st.markdown('No hay información para estos filtros')
         else:
             st.dataframe(average_year)
-
+    
+    st.markdown("<h3 style='text-align: center; color: white;'>Filtrar por rango de años</h3>", unsafe_allow_html=True)
     #Filtro por año rango
     rango_año = st.slider(
     "Selecciona el rango de años",
