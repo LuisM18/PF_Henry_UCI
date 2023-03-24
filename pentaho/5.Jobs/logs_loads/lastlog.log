@@ -1,0 +1,606 @@
+
+2023/03/22 19:51:41 - Kitchen - Logging is at level : Basic
+2023/03/22 19:51:41 - Kitchen - Start of run.
+2023/03/22 19:51:47 - Job-massiveupdate - Start of job execution
+2023/03/22 19:51:47 - Job-massiveupdate - Job-massiveupdate
+2023/03/22 19:52:57 - Job-massiveupdate - Starting entry [insertotemptsall]
+2023/03/22 19:52:57 - insertotemptsall - Using run configuration [Pentaho local]
+2023/03/22 19:52:57 - insertotemptsall - Running transformation using the Kettle execution engine
+2023/03/22 19:52:57 - insertotemptsall - Dispatching started for transformation [insertotemptsall]
+2023/03/22 19:52:59 - procedures_icd_temp.0 - Connected to database [proyectdb] (commit=1000)
+2023/03/22 19:52:59 - diagnoses_temp.0 - Connected to database [proyectdb] (commit=1000)
+2023/03/22 19:52:59 - icustays_temp.0 - Connected to database [proyectdb] (commit=1000)
+2023/03/22 19:52:59 - admissions_temp.0 - Connected to database [proyectdb] (commit=1000)
+2023/03/22 19:52:59 - cptevents_temp.0 - Connected to database [proyectdb] (commit=1000)
+2023/03/22 19:52:59 - d_items_temp.0 - Connected to database [proyectdb] (commit=1000)
+2023/03/22 19:52:59 - inputevents_mv_temp.0 - Connected to database [proyectdb] (commit=1000)
+2023/03/22 19:52:59 - d_icd_procedures_temp.0 - Connected to database [proyectdb] (commit=10000)
+2023/03/22 19:52:59 - prescriptions_temp.0 - Connected to database [proyectdb] (commit=1000)
+2023/03/22 19:52:59 - patient_temp.0 - Connected to database [proyectdb] (commit=1000)
+2023/03/22 19:52:59 - d_labitems_temp.0 - Connected to database [proyectdb] (commit=1000)
+2023/03/22 19:52:59 - inputevents_cv_temp.0 - Connected to database [proyectdb] (commit=1000)
+2023/03/22 19:53:00 - Carte - Installing timer to purge stale objects after 1440 minutes.
+2023/03/22 19:53:00 - Job-massiveupdate - Starting entry [update-insertall]
+2023/03/22 19:53:00 - update-insertall - Using run configuration [Pentaho local]
+2023/03/22 19:53:00 - update-insertall - Running transformation using the Kettle execution engine
+2023/03/22 19:53:00 - update-insertall - Dispatching started for transformation [update-insertall]
+2023/03/22 19:53:01 - admissions_temp-new.0 - Finished reading query, closing connection
+2023/03/22 19:53:01 - d_icd_procedures_temp-new.0 - Finished reading query, closing connection
+2023/03/22 19:53:01 - patient_temp-new.0 - Finished reading query, closing connection
+2023/03/22 19:53:01 - cptevents-new.0 - Finished reading query, closing connection
+2023/03/22 19:53:01 - d_items_temp-new.0 - Finished reading query, closing connection
+2023/03/22 19:53:01 - procedures_icd_temp-new.0 - Finished reading query, closing connection
+2023/03/22 19:53:01 - prescriptions_temp-new.0 - Finished reading query, closing connection
+2023/03/22 19:53:01 - icustays_temp-new.0 - Finished reading query, closing connection
+2023/03/22 19:53:01 - diagnoses_temp-new.0 - Finished reading query, closing connection
+2023/03/22 19:53:01 - inputevents_mv_temp-new.0 - Finished reading query, closing connection
+2023/03/22 19:53:01 - d_labitems_temp-new.0 - Finished reading query, closing connection
+2023/03/22 19:53:01 - inputevents_cv_temp-new.0 - Finished reading query, closing connection
+2023/03/22 19:53:01 - patient-dest.0 - Finished reading query, closing connection
+2023/03/22 19:53:01 - icustays-dest.0 - Finished reading query, closing connection
+2023/03/22 19:53:01 - procedures_icd-dest.0 - Finished reading query, closing connection
+2023/03/22 19:53:01 - admissions-dest.0 - Finished reading query, closing connection
+2023/03/22 19:53:01 - d_labitems-dest.0 - Finished reading query, closing connection
+2023/03/22 19:53:01 - icustays-dest.0 - Finished processing (I=136, O=0, R=0, W=136, U=0, E=0)
+2023/03/22 19:53:01 - patient-dest.0 - Finished processing (I=128, O=0, R=0, W=128, U=0, E=0)
+2023/03/22 19:53:01 - procedures_icd-dest.0 - Finished processing (I=405, O=0, R=0, W=405, U=0, E=0)
+2023/03/22 19:53:01 - diagnoses_icd-dest.0 - Finished reading query, closing connection
+2023/03/22 19:53:01 - admissions-dest.0 - Finished processing (I=129, O=0, R=0, W=129, U=0, E=0)
+2023/03/22 19:53:01 - d_labitems-dest.0 - Finished processing (I=753, O=0, R=0, W=753, U=0, E=0)
+2023/03/22 19:53:01 - diagnoses_icd-dest.0 - Finished processing (I=1409, O=0, R=0, W=1409, U=0, E=0)
+2023/03/22 19:53:01 - cptevents-dest.0 - Finished reading query, closing connection
+2023/03/22 19:53:01 - Merge rows (diff) 6.0 - Finished processing (I=0, O=0, R=136, W=136, U=0, E=0)
+2023/03/22 19:53:01 - Merge rows (diff) 11.0 - Finished processing (I=0, O=0, R=405, W=405, U=0, E=0)
+2023/03/22 19:53:01 - Merge rows (diff) 9.0 - Finished processing (I=0, O=0, R=128, W=128, U=0, E=0)
+2023/03/22 19:53:01 - Filter rows 11.0 - Finished processing (I=0, O=0, R=405, W=405, U=0, E=0)
+2023/03/22 19:53:01 - Filter rows 6.0 - Finished processing (I=0, O=0, R=136, W=136, U=0, E=0)
+2023/03/22 19:53:01 - Filter rows 9.0 - Finished processing (I=0, O=0, R=128, W=128, U=0, E=0)
+2023/03/22 19:53:01 - d_icd_prosedures-dest.0 - Finished reading query, closing connection
+2023/03/22 19:53:01 - Select values.0 - Finished processing (I=0, O=0, R=128, W=128, U=0, E=0)
+2023/03/22 19:53:01 - cptevents-dest.0 - Finished processing (I=1579, O=0, R=0, W=1579, U=0, E=0)
+2023/03/22 19:53:01 - Merge rows (diff).0 - Finished processing (I=0, O=0, R=129, W=129, U=0, E=0)
+2023/03/22 19:53:01 - Filter rows.0 - Finished processing (I=0, O=0, R=129, W=129, U=0, E=0)
+2023/03/22 19:53:01 - d_icd_prosedures-dest.0 - Finished processing (I=3106, O=0, R=0, W=3106, U=0, E=0)
+2023/03/22 19:53:01 - Merge rows (diff) 12.0 - Finished processing (I=0, O=0, R=1409, W=1409, U=0, E=0)
+2023/03/22 19:53:01 - Merge rows (diff) 5.0 - Finished processing (I=0, O=0, R=753, W=753, U=0, E=0)
+2023/03/22 19:53:01 - Merge rows (diff) 2.0 - Finished processing (I=0, O=0, R=1579, W=1579, U=0, E=0)
+2023/03/22 19:53:01 - Filter rows 5.0 - Finished processing (I=0, O=0, R=753, W=753, U=0, E=0)
+2023/03/22 19:53:01 - Filter rows 12.0 - Finished processing (I=0, O=0, R=1409, W=1409, U=0, E=0)
+2023/03/22 19:53:01 - Filter rows 2.0 - Finished processing (I=0, O=0, R=1579, W=1579, U=0, E=0)
+2023/03/22 19:53:01 - d_items-dest.0 - Finished reading query, closing connection
+2023/03/22 19:53:01 - Merge rows (diff) 3.0 - Finished processing (I=0, O=0, R=3106, W=3106, U=0, E=0)
+2023/03/22 19:53:01 - Filter rows 3.0 - Finished processing (I=0, O=0, R=3106, W=3106, U=0, E=0)
+2023/03/22 19:53:01 - d_items-dest.0 - Finished processing (I=9990, O=0, R=0, W=9990, U=0, E=0)
+2023/03/22 19:53:01 - prescriptions-dest.0 - Finished reading query, closing connection
+2023/03/22 19:53:01 - Merge rows (diff) 4.0 - Finished processing (I=0, O=0, R=9990, W=9990, U=0, E=0)
+2023/03/22 19:53:01 - Filter rows 4.0 - Finished processing (I=0, O=0, R=9990, W=9990, U=0, E=0)
+2023/03/22 19:53:01 - inputevents_mv-dest.0 - Finished reading query, closing connection
+2023/03/22 19:53:01 - prescriptions-dest.0 - Finished processing (I=8319, O=0, R=0, W=8319, U=0, E=0)
+2023/03/22 19:53:01 - Merge rows (diff) 10.0 - Finished processing (I=0, O=0, R=8319, W=8319, U=0, E=0)
+2023/03/22 19:53:02 - Filter rows 10.0 - Finished processing (I=0, O=0, R=8319, W=8319, U=0, E=0)
+2023/03/22 19:53:02 - inputevents_cv-dest.0 - Finished reading query, closing connection
+2023/03/22 19:53:02 - inputevents_mv-dest.0 - Finished processing (I=10580, O=0, R=0, W=10580, U=0, E=0)
+2023/03/22 19:53:02 - Merge rows (diff) 8.0 - Finished processing (I=0, O=0, R=10580, W=10580, U=0, E=0)
+2023/03/22 19:53:02 - inputevents_cv-dest.0 - Finished processing (I=27840, O=0, R=0, W=27840, U=0, E=0)
+2023/03/22 19:53:24 - admissions.0 - Finished processing (I=129, O=0, R=129, W=129, U=0, E=0)
+2023/03/22 19:53:24 - patient.0 - Finished processing (I=128, O=0, R=128, W=128, U=0, E=0)
+2023/03/22 19:53:26 - icustays.0 - Finished processing (I=136, O=0, R=136, W=136, U=14, E=0)
+2023/03/22 19:54:13 - procedures_icd.0 - Finished processing (I=405, O=0, R=405, W=405, U=0, E=0)
+2023/03/22 19:55:11 - Filter rows 8.0 - Finished processing (I=0, O=0, R=10580, W=10580, U=0, E=0)
+2023/03/22 19:55:15 - d_labitems.0 - Finished processing (I=753, O=0, R=753, W=753, U=0, E=0)
+2023/03/22 19:57:08 - diagnoses_icd.0 - Finished processing (I=1409, O=0, R=1409, W=1409, U=0, E=0)
+2023/03/22 19:57:41 - cptevents.0 - Finished processing (I=1579, O=0, R=1579, W=1579, U=0, E=0)
+2023/03/22 20:02:33 - d_icd_procedures.0 - Finished processing (I=3106, O=0, R=3106, W=3106, U=0, E=0)
+2023/03/22 20:21:18 - prescriptions.0 - Finished processing (I=8319, O=0, R=8319, W=8319, U=0, E=0)
+2023/03/22 20:22:59 - Merge rows (diff) 7.0 - Finished processing (I=0, O=0, R=27840, W=27840, U=0, E=0)
+2023/03/22 20:29:28 - d_items.0 - Finished processing (I=9990, O=0, R=9990, W=9990, U=0, E=0)
+2023/03/22 20:31:32 - inputevents_mv.0 - Finished processing (I=10580, O=0, R=10580, W=10580, U=0, E=0)
+2023/03/22 20:59:58 - Filter rows 7.0 - Finished processing (I=0, O=0, R=27840, W=27840, U=0, E=0)
+2023/03/22 21:36:40 - inputevents_cv.0 - Finished processing (I=27840, O=0, R=27840, W=27840, U=0, E=0)
+2023/03/22 21:36:40 - Job-massiveupdate - Starting entry [Dimensions_icustays]
+2023/03/22 21:36:40 - Dimensions_icustays - Using run configuration [Pentaho local]
+2023/03/22 21:36:40 - Dimensions_icustays - Running transformation using the Kettle execution engine
+2023/03/22 21:36:40 - Dimensions_icustays - Dispatching started for transformation [Dimensions_icustays]
+2023/03/22 21:36:41 - patient.0 - Finished reading query, closing connection
+2023/03/22 21:36:41 - icustays.0 - Finished reading query, closing connection
+2023/03/22 21:36:41 - Select values.0 - Finished processing (I=0, O=0, R=136, W=136, U=0, E=0)
+2023/03/22 21:36:41 - Select values 6.0 - Finished processing (I=0, O=0, R=128, W=128, U=0, E=0)
+2023/03/22 21:36:41 - admissions.0 - Finished reading query, closing connection
+2023/03/22 21:36:41 - icustays.0 - Finished processing (I=136, O=0, R=0, W=136, U=0, E=0)
+2023/03/22 21:36:41 - patient.0 - Finished processing (I=128, O=0, R=0, W=128, U=0, E=0)
+2023/03/22 21:36:41 - Select values 6 2.0 - Finished processing (I=0, O=0, R=129, W=129, U=0, E=0)
+2023/03/22 21:36:41 - admissions.0 - Finished processing (I=129, O=0, R=0, W=129, U=0, E=0)
+2023/03/22 21:37:06 - patient-dimload 2.0 - Finished processing (I=136, O=0, R=136, W=136, U=0, E=0)
+2023/03/22 21:37:06 - patient-dimload.0 - Finished processing (I=128, O=28, R=128, W=128, U=0, E=0)
+2023/03/22 21:37:10 - admissions-dimload.0 - Finished processing (I=129, O=0, R=129, W=129, U=51, E=0)
+2023/03/22 21:37:10 - Job-massiveupdate - Starting entry [Dimensions_Admision]
+2023/03/22 21:37:10 - Dimensions_Admision - Using run configuration [Pentaho local]
+2023/03/22 21:37:10 - Dimensions_Admision - Running transformation using the Kettle execution engine
+2023/03/22 21:37:10 - Dimension_Admision - Dispatching started for transformation [Dimension_Admision]
+2023/03/22 21:37:11 - patient.0 - Finished reading query, closing connection
+2023/03/22 21:37:11 - Select values 6.0 - Finished processing (I=0, O=0, R=128, W=128, U=0, E=0)
+2023/03/22 21:37:11 - patient.0 - Finished processing (I=128, O=0, R=0, W=128, U=0, E=0)
+2023/03/22 21:37:11 - admissions.0 - Finished reading query, closing connection
+2023/03/22 21:37:11 - Select values 3.0 - Finished processing (I=0, O=0, R=129, W=129, U=0, E=0)
+2023/03/22 21:37:11 - Select values 4.0 - Finished processing (I=0, O=0, R=129, W=129, U=0, E=0)
+2023/03/22 21:37:11 - Select values.0 - Finished processing (I=0, O=0, R=129, W=129, U=0, E=0)
+2023/03/22 21:37:11 - Select values 2.0 - Finished processing (I=0, O=0, R=129, W=129, U=0, E=0)
+2023/03/22 21:37:11 - Select values 5.0 - Finished processing (I=0, O=0, R=129, W=129, U=0, E=0)
+2023/03/22 21:37:11 - Select values 7.0 - Finished processing (I=0, O=0, R=129, W=129, U=0, E=0)
+2023/03/22 21:37:11 - Add sequence 2.0 - Finished processing (I=0, O=0, R=5, W=5, U=0, E=0)
+2023/03/22 21:37:11 - Unique rows (HashSet) 6.0 - Finished processing (I=0, O=0, R=129, W=9, U=0, E=120)
+2023/03/22 21:37:11 - If field value is null.0 - Finished processing (I=0, O=0, R=129, W=129, U=0, E=0)
+2023/03/22 21:37:11 - Unique rows (HashSet) 3.0 - Finished processing (I=0, O=0, R=129, W=10, U=0, E=119)
+2023/03/22 21:37:11 - Unique rows (HashSet) 2.0 - Finished processing (I=0, O=0, R=129, W=5, U=0, E=124)
+2023/03/22 21:37:11 - Unique rows (HashSet).0 - Finished processing (I=0, O=0, R=129, W=3, U=0, E=126)
+2023/03/22 21:37:11 - Unique rows (HashSet) 5.0 - Finished processing (I=0, O=0, R=129, W=7, U=0, E=122)
+2023/03/22 21:37:11 - Add sequence.0 - Finished processing (I=0, O=0, R=3, W=3, U=0, E=0)
+2023/03/22 21:37:11 - Unique rows (HashSet) 4.0 - Finished processing (I=0, O=0, R=129, W=4, U=0, E=125)
+2023/03/22 21:37:11 - Add sequence 4.0 - Finished processing (I=0, O=0, R=4, W=4, U=0, E=0)
+2023/03/22 21:37:11 - Add sequence 3.0 - Finished processing (I=0, O=0, R=10, W=10, U=0, E=0)
+2023/03/22 21:37:11 - Add sequence 6.0 - Finished processing (I=0, O=0, R=9, W=9, U=0, E=0)
+2023/03/22 21:37:11 - Add sequence 5.0 - Finished processing (I=0, O=0, R=7, W=7, U=0, E=0)
+2023/03/22 21:37:11 - admissions.0 - Finished processing (I=129, O=0, R=0, W=774, U=0, E=0)
+2023/03/22 21:37:11 - patien-dim.0 - ERROR (version 9.3.0.0-428, build 9.3.0.0-428 from 2022-04-12 04.56.25 by buildguy) : Error in step, asking everyone to stop because of:
+2023/03/22 21:37:11 - patien-dim.0 - ERROR (version 9.3.0.0-428, build 9.3.0.0-428 from 2022-04-12 04.56.25 by buildguy) : org.pentaho.di.core.exception.KettleDatabaseException: 
+2023/03/22 21:37:11 - patien-dim.0 - Error looking up row in database
+2023/03/22 21:37:11 - patien-dim.0 - Table 'proyectdb.patien-dim' doesn't exist
+2023/03/22 21:37:11 - patien-dim.0 - 
+2023/03/22 21:37:11 - patien-dim.0 - 	at org.pentaho.di.core.database.Database.getLookup(Database.java:3114)
+2023/03/22 21:37:11 - patien-dim.0 - 	at org.pentaho.di.core.database.Database.getLookup(Database.java:3093)
+2023/03/22 21:37:11 - patien-dim.0 - 	at org.pentaho.di.core.database.Database.getLookup(Database.java:3089)
+2023/03/22 21:37:11 - patien-dim.0 - 	at org.pentaho.di.trans.steps.insertupdate.InsertUpdate.lookupValues(InsertUpdate.java:89)
+2023/03/22 21:37:11 - patien-dim.0 - 	at org.pentaho.di.trans.steps.insertupdate.InsertUpdate.processRow(InsertUpdate.java:299)
+2023/03/22 21:37:11 - patien-dim.0 - 	at org.pentaho.di.trans.step.RunThread.run(RunThread.java:62)
+2023/03/22 21:37:11 - patien-dim.0 - 	at java.lang.Thread.run(Unknown Source)
+2023/03/22 21:37:11 - patien-dim.0 - Caused by: java.sql.SQLSyntaxErrorException: Table 'proyectdb.patien-dim' doesn't exist
+2023/03/22 21:37:11 - patien-dim.0 - 	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:120)
+2023/03/22 21:37:11 - patien-dim.0 - 	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:122)
+2023/03/22 21:37:11 - patien-dim.0 - 	at com.mysql.cj.jdbc.ClientPreparedStatement.executeInternal(ClientPreparedStatement.java:916)
+2023/03/22 21:37:11 - patien-dim.0 - 	at com.mysql.cj.jdbc.ClientPreparedStatement.executeQuery(ClientPreparedStatement.java:972)
+2023/03/22 21:37:11 - patien-dim.0 - 	at org.pentaho.di.core.database.Database.getLookup(Database.java:3099)
+2023/03/22 21:37:11 - patien-dim.0 - 	... 6 more
+2023/03/22 21:37:11 - Dimension_Admision - ERROR (version 9.3.0.0-428, build 9.3.0.0-428 from 2022-04-12 04.56.25 by buildguy) : Errors detected!
+2023/03/22 21:37:12 - patien-dim.0 - Finished processing (I=0, O=0, R=1, W=0, U=0, E=1)
+2023/03/22 21:37:12 - Dimension_Admision - Transformation detected one or more steps with errors.
+2023/03/22 21:37:12 - Dimension_Admision - Transformation is killing the other steps!
+2023/03/22 21:37:12 - MARITAL_STATUS.0 - Finished processing (I=1, O=0, R=1, W=0, U=0, E=0)
+2023/03/22 21:37:12 - ETHNICITY.0 - Finished processing (I=1, O=0, R=1, W=0, U=0, E=0)
+2023/03/22 21:37:12 - ALTALOCATION.0 - Finished processing (I=1, O=0, R=1, W=0, U=0, E=0)
+2023/03/22 21:37:12 - ADMISSIONS_TYPE.0 - Finished processing (I=1, O=0, R=1, W=0, U=0, E=0)
+2023/03/22 21:37:12 - INSURANCE.0 - Finished processing (I=1, O=0, R=1, W=0, U=0, E=0)
+2023/03/22 21:37:12 - ADMISSIONS_LOCATION.0 - Finished processing (I=1, O=0, R=1, W=0, U=0, E=0)
+2023/03/22 21:37:12 - Dimension_Admision - ERROR (version 9.3.0.0-428, build 9.3.0.0-428 from 2022-04-12 04.56.25 by buildguy) : Errors detected!
+2023/03/22 21:37:12 - Job-massiveupdate - Finished job entry [Dimensions_Admision] (result=[false])
+2023/03/22 21:37:12 - Job-massiveupdate - Finished job entry [Dimensions_icustays] (result=[false])
+2023/03/22 21:37:12 - Job-massiveupdate - Finished job entry [update-insertall] (result=[false])
+2023/03/22 21:37:12 - Job-massiveupdate - Finished job entry [insertotemptsall] (result=[false])
+2023/03/22 21:37:12 - Job-massiveupdate - Job-massiveupdate
+2023/03/22 21:38:22 - Job-massiveupdate - Starting entry [insertotemptsall]
+2023/03/22 21:38:22 - insertotemptsall - Using run configuration [Pentaho local]
+2023/03/22 21:38:22 - insertotemptsall - Running transformation using the Kettle execution engine
+2023/03/22 21:38:22 - insertotemptsall - Dispatching started for transformation [insertotemptsall]
+2023/03/22 21:38:23 - prescriptions_temp.0 - Connected to database [proyectdb] (commit=1000)
+2023/03/22 21:38:23 - cptevents_temp.0 - Connected to database [proyectdb] (commit=1000)
+2023/03/22 21:38:23 - icustays_temp.0 - Connected to database [proyectdb] (commit=1000)
+2023/03/22 21:38:23 - d_labitems_temp.0 - Connected to database [proyectdb] (commit=1000)
+2023/03/22 21:38:23 - admissions_temp.0 - Connected to database [proyectdb] (commit=1000)
+2023/03/22 21:38:23 - diagnoses_temp.0 - Connected to database [proyectdb] (commit=1000)
+2023/03/22 21:38:23 - patient_temp.0 - Connected to database [proyectdb] (commit=1000)
+2023/03/22 21:38:23 - d_items_temp.0 - Connected to database [proyectdb] (commit=1000)
+2023/03/22 21:38:23 - d_icd_procedures_temp.0 - Connected to database [proyectdb] (commit=10000)
+2023/03/22 21:38:23 - inputevents_mv_temp.0 - Connected to database [proyectdb] (commit=1000)
+2023/03/22 21:38:23 - procedures_icd_temp.0 - Connected to database [proyectdb] (commit=1000)
+2023/03/22 21:38:23 - inputevents_cv_temp.0 - Connected to database [proyectdb] (commit=1000)
+2023/03/22 21:38:24 - Job-massiveupdate - Starting entry [update-insertall]
+2023/03/22 21:38:24 - update-insertall - Using run configuration [Pentaho local]
+2023/03/22 21:38:24 - update-insertall - Running transformation using the Kettle execution engine
+2023/03/22 21:38:24 - update-insertall - Dispatching started for transformation [update-insertall]
+2023/03/22 21:38:25 - admissions_temp-new.0 - Finished reading query, closing connection
+2023/03/22 21:38:25 - d_icd_procedures_temp-new.0 - Finished reading query, closing connection
+2023/03/22 21:38:25 - cptevents-new.0 - Finished reading query, closing connection
+2023/03/22 21:38:25 - d_labitems_temp-new.0 - Finished reading query, closing connection
+2023/03/22 21:38:25 - d_items_temp-new.0 - Finished reading query, closing connection
+2023/03/22 21:38:25 - inputevents_cv_temp-new.0 - Finished reading query, closing connection
+2023/03/22 21:38:25 - icustays_temp-new.0 - Finished reading query, closing connection
+2023/03/22 21:38:25 - icustays-dest.0 - Finished reading query, closing connection
+2023/03/22 21:38:25 - inputevents_mv_temp-new.0 - Finished reading query, closing connection
+2023/03/22 21:38:25 - patient_temp-new.0 - Finished reading query, closing connection
+2023/03/22 21:38:25 - diagnoses_temp-new.0 - Finished reading query, closing connection
+2023/03/22 21:38:25 - procedures_icd-dest.0 - Finished reading query, closing connection
+2023/03/22 21:38:25 - patient-dest.0 - Finished reading query, closing connection
+2023/03/22 21:38:25 - prescriptions_temp-new.0 - Finished reading query, closing connection
+2023/03/22 21:38:25 - procedures_icd_temp-new.0 - Finished reading query, closing connection
+2023/03/22 21:38:25 - d_labitems-dest.0 - Finished reading query, closing connection
+2023/03/22 21:38:25 - admissions-dest.0 - Finished reading query, closing connection
+2023/03/22 21:38:25 - icustays-dest.0 - Finished processing (I=136, O=0, R=0, W=136, U=0, E=0)
+2023/03/22 21:38:25 - procedures_icd-dest.0 - Finished processing (I=405, O=0, R=0, W=405, U=0, E=0)
+2023/03/22 21:38:25 - patient-dest.0 - Finished processing (I=128, O=0, R=0, W=128, U=0, E=0)
+2023/03/22 21:38:25 - d_labitems-dest.0 - Finished processing (I=753, O=0, R=0, W=753, U=0, E=0)
+2023/03/22 21:38:25 - admissions-dest.0 - Finished processing (I=129, O=0, R=0, W=129, U=0, E=0)
+2023/03/22 21:38:25 - diagnoses_icd-dest.0 - Finished reading query, closing connection
+2023/03/22 21:38:25 - diagnoses_icd-dest.0 - Finished processing (I=1409, O=0, R=0, W=1409, U=0, E=0)
+2023/03/22 21:38:25 - cptevents-dest.0 - Finished reading query, closing connection
+2023/03/22 21:38:25 - Merge rows (diff) 6.0 - Finished processing (I=0, O=0, R=136, W=136, U=0, E=0)
+2023/03/22 21:38:25 - Filter rows 6.0 - Finished processing (I=0, O=0, R=136, W=136, U=0, E=0)
+2023/03/22 21:38:25 - Merge rows (diff) 11.0 - Finished processing (I=0, O=0, R=405, W=405, U=0, E=0)
+2023/03/22 21:38:25 - Merge rows (diff) 9.0 - Finished processing (I=0, O=0, R=128, W=128, U=0, E=0)
+2023/03/22 21:38:25 - Filter rows 9.0 - Finished processing (I=0, O=0, R=128, W=128, U=0, E=0)
+2023/03/22 21:38:25 - Filter rows 11.0 - Finished processing (I=0, O=0, R=405, W=405, U=0, E=0)
+2023/03/22 21:38:25 - Select values.0 - Finished processing (I=0, O=0, R=128, W=128, U=0, E=0)
+2023/03/22 21:38:25 - d_icd_prosedures-dest.0 - Finished reading query, closing connection
+2023/03/22 21:38:25 - cptevents-dest.0 - Finished processing (I=1579, O=0, R=0, W=1579, U=0, E=0)
+2023/03/22 21:38:25 - Merge rows (diff) 5.0 - Finished processing (I=0, O=0, R=753, W=753, U=0, E=0)
+2023/03/22 21:38:25 - Merge rows (diff).0 - Finished processing (I=0, O=0, R=129, W=129, U=0, E=0)
+2023/03/22 21:38:25 - Filter rows 5.0 - Finished processing (I=0, O=0, R=753, W=753, U=0, E=0)
+2023/03/22 21:38:25 - Filter rows.0 - Finished processing (I=0, O=0, R=129, W=129, U=0, E=0)
+2023/03/22 21:38:25 - Merge rows (diff) 12.0 - Finished processing (I=0, O=0, R=1409, W=1409, U=0, E=0)
+2023/03/22 21:38:25 - Filter rows 12.0 - Finished processing (I=0, O=0, R=1409, W=1409, U=0, E=0)
+2023/03/22 21:38:25 - Merge rows (diff) 2.0 - Finished processing (I=0, O=0, R=1579, W=1579, U=0, E=0)
+2023/03/22 21:38:25 - d_icd_prosedures-dest.0 - Finished processing (I=3106, O=0, R=0, W=3106, U=0, E=0)
+2023/03/22 21:38:25 - Filter rows 2.0 - Finished processing (I=0, O=0, R=1579, W=1579, U=0, E=0)
+2023/03/22 21:38:25 - d_items-dest.0 - Finished reading query, closing connection
+2023/03/22 21:38:25 - Merge rows (diff) 3.0 - Finished processing (I=0, O=0, R=3106, W=3106, U=0, E=0)
+2023/03/22 21:38:25 - Filter rows 3.0 - Finished processing (I=0, O=0, R=3106, W=3106, U=0, E=0)
+2023/03/22 21:38:25 - d_items-dest.0 - Finished processing (I=9990, O=0, R=0, W=9990, U=0, E=0)
+2023/03/22 21:38:26 - prescriptions-dest.0 - Finished reading query, closing connection
+2023/03/22 21:38:26 - Merge rows (diff) 4.0 - Finished processing (I=0, O=0, R=9990, W=9990, U=0, E=0)
+2023/03/22 21:38:26 - Filter rows 4.0 - Finished processing (I=0, O=0, R=9990, W=9990, U=0, E=0)
+2023/03/22 21:38:26 - prescriptions-dest.0 - Finished processing (I=8319, O=0, R=0, W=8319, U=0, E=0)
+2023/03/22 21:38:26 - inputevents_mv-dest.0 - Finished reading query, closing connection
+2023/03/22 21:38:26 - Merge rows (diff) 10.0 - Finished processing (I=0, O=0, R=8319, W=8319, U=0, E=0)
+2023/03/22 21:38:26 - Filter rows 10.0 - Finished processing (I=0, O=0, R=8319, W=8319, U=0, E=0)
+2023/03/22 21:38:26 - inputevents_cv-dest.0 - Finished reading query, closing connection
+2023/03/22 21:38:26 - inputevents_mv-dest.0 - Finished processing (I=10580, O=0, R=0, W=10580, U=0, E=0)
+2023/03/22 21:38:26 - Merge rows (diff) 8.0 - Finished processing (I=0, O=0, R=10580, W=10580, U=0, E=0)
+2023/03/22 21:38:26 - inputevents_cv-dest.0 - Finished processing (I=27840, O=0, R=0, W=27840, U=0, E=0)
+2023/03/22 21:38:48 - patient.0 - Finished processing (I=128, O=0, R=128, W=128, U=0, E=0)
+2023/03/22 22:59:15 - Kitchen - Logging is at level : Basic
+2023/03/22 22:59:15 - Kitchen - Start of run.
+2023/03/22 22:59:22 - Job-massiveupdate - Start of job execution
+2023/03/22 22:59:22 - Job-massiveupdate - Job-massiveupdate
+2023/03/22 23:00:32 - Job-massiveupdate - Starting entry [insertotemptsall]
+2023/03/22 23:00:32 - insertotemptsall - Using run configuration [Pentaho local]
+2023/03/22 23:00:32 - insertotemptsall - Running transformation using the Kettle execution engine
+2023/03/22 23:00:32 - insertotemptsall - Dispatching started for transformation [insertotemptsall]
+2023/03/22 23:00:33 - cptevents_temp.0 - Connected to database [proyectdb] (commit=1000)
+2023/03/22 23:00:33 - admissions_temp.0 - Connected to database [proyectdb] (commit=1000)
+2023/03/22 23:00:33 - d_icd_procedures_temp.0 - Connected to database [proyectdb] (commit=10000)
+2023/03/22 23:00:33 - d_items_temp.0 - Connected to database [proyectdb] (commit=1000)
+2023/03/22 23:00:33 - inputevents_cv_temp.0 - Connected to database [proyectdb] (commit=1000)
+2023/03/22 23:00:33 - inputevents_mv_temp.0 - Connected to database [proyectdb] (commit=1000)
+2023/03/22 23:00:33 - prescriptions_temp.0 - Connected to database [proyectdb] (commit=1000)
+2023/03/22 23:00:33 - icustays_temp.0 - Connected to database [proyectdb] (commit=1000)
+2023/03/22 23:00:33 - patient_temp.0 - Connected to database [proyectdb] (commit=1000)
+2023/03/22 23:00:33 - procedures_icd_temp.0 - Connected to database [proyectdb] (commit=1000)
+2023/03/22 23:00:33 - d_labitems_temp.0 - Connected to database [proyectdb] (commit=1000)
+2023/03/22 23:00:33 - diagnoses_temp.0 - Connected to database [proyectdb] (commit=1000)
+2023/03/22 23:00:34 - Carte - Installing timer to purge stale objects after 1440 minutes.
+2023/03/22 23:00:34 - Job-massiveupdate - Starting entry [update-insertall]
+2023/03/22 23:00:34 - update-insertall - Using run configuration [Pentaho local]
+2023/03/22 23:00:34 - update-insertall - Running transformation using the Kettle execution engine
+2023/03/22 23:00:34 - update-insertall - Dispatching started for transformation [update-insertall]
+2023/03/22 23:00:35 - prescriptions_temp-new.0 - Finished reading query, closing connection
+2023/03/22 23:00:35 - diagnoses_temp-new.0 - Finished reading query, closing connection
+2023/03/22 23:00:35 - procedures_icd_temp-new.0 - Finished reading query, closing connection
+2023/03/22 23:00:35 - icustays_temp-new.0 - Finished reading query, closing connection
+2023/03/22 23:00:35 - patient_temp-new.0 - Finished reading query, closing connection
+2023/03/22 23:00:35 - d_labitems_temp-new.0 - Finished reading query, closing connection
+2023/03/22 23:00:35 - d_items_temp-new.0 - Finished reading query, closing connection
+2023/03/22 23:00:35 - admissions_temp-new.0 - Finished reading query, closing connection
+2023/03/22 23:00:35 - cptevents-new.0 - Finished reading query, closing connection
+2023/03/22 23:00:35 - d_icd_procedures_temp-new.0 - Finished reading query, closing connection
+2023/03/22 23:00:35 - inputevents_mv_temp-new.0 - Finished reading query, closing connection
+2023/03/22 23:00:35 - inputevents_cv_temp-new.0 - Finished reading query, closing connection
+2023/03/22 23:00:35 - patient-dest.0 - Finished reading query, closing connection
+2023/03/22 23:00:35 - icustays-dest.0 - Finished reading query, closing connection
+2023/03/22 23:00:35 - procedures_icd-dest.0 - Finished reading query, closing connection
+2023/03/22 23:00:36 - procedures_icd-dest.0 - Finished processing (I=405, O=0, R=0, W=405, U=0, E=0)
+2023/03/22 23:00:36 - patient-dest.0 - Finished processing (I=128, O=0, R=0, W=128, U=0, E=0)
+2023/03/22 23:00:36 - admissions-dest.0 - Finished reading query, closing connection
+2023/03/22 23:00:36 - icustays-dest.0 - Finished processing (I=136, O=0, R=0, W=136, U=0, E=0)
+2023/03/22 23:00:36 - d_labitems-dest.0 - Finished reading query, closing connection
+2023/03/22 23:00:36 - diagnoses_icd-dest.0 - Finished reading query, closing connection
+2023/03/22 23:00:36 - admissions-dest.0 - Finished processing (I=129, O=0, R=0, W=129, U=0, E=0)
+2023/03/22 23:00:36 - d_labitems-dest.0 - Finished processing (I=753, O=0, R=0, W=753, U=0, E=0)
+2023/03/22 23:00:36 - cptevents-dest.0 - Finished reading query, closing connection
+2023/03/22 23:00:36 - diagnoses_icd-dest.0 - Finished processing (I=1409, O=0, R=0, W=1409, U=0, E=0)
+2023/03/22 23:00:36 - Merge rows (diff) 9.0 - Finished processing (I=0, O=0, R=128, W=128, U=0, E=0)
+2023/03/22 23:00:36 - Filter rows 9.0 - Finished processing (I=0, O=0, R=128, W=128, U=0, E=0)
+2023/03/22 23:00:36 - Merge rows (diff) 6.0 - Finished processing (I=0, O=0, R=136, W=136, U=0, E=0)
+2023/03/22 23:00:36 - Merge rows (diff) 11.0 - Finished processing (I=0, O=0, R=405, W=405, U=0, E=0)
+2023/03/22 23:00:36 - Filter rows 11.0 - Finished processing (I=0, O=0, R=405, W=405, U=0, E=0)
+2023/03/22 23:00:36 - d_icd_prosedures-dest.0 - Finished reading query, closing connection
+2023/03/22 23:00:36 - cptevents-dest.0 - Finished processing (I=1579, O=0, R=0, W=1579, U=0, E=0)
+2023/03/22 23:00:36 - Select values.0 - Finished processing (I=0, O=0, R=128, W=128, U=0, E=0)
+2023/03/22 23:00:36 - Filter rows 6.0 - Finished processing (I=0, O=0, R=136, W=136, U=0, E=0)
+2023/03/22 23:00:36 - Merge rows (diff).0 - Finished processing (I=0, O=0, R=129, W=129, U=0, E=0)
+2023/03/22 23:00:36 - Filter rows.0 - Finished processing (I=0, O=0, R=129, W=129, U=0, E=0)
+2023/03/22 23:00:36 - d_items-dest.0 - Finished reading query, closing connection
+2023/03/22 23:00:36 - Merge rows (diff) 12.0 - Finished processing (I=0, O=0, R=1409, W=1409, U=0, E=0)
+2023/03/22 23:00:36 - Merge rows (diff) 5.0 - Finished processing (I=0, O=0, R=753, W=753, U=0, E=0)
+2023/03/22 23:00:36 - Merge rows (diff) 2.0 - Finished processing (I=0, O=0, R=1579, W=1579, U=0, E=0)
+2023/03/22 23:00:36 - Filter rows 12.0 - Finished processing (I=0, O=0, R=1409, W=1409, U=0, E=0)
+2023/03/22 23:00:36 - Filter rows 2.0 - Finished processing (I=0, O=0, R=1579, W=1579, U=0, E=0)
+2023/03/22 23:00:36 - Filter rows 5.0 - Finished processing (I=0, O=0, R=753, W=753, U=0, E=0)
+2023/03/22 23:00:36 - d_icd_prosedures-dest.0 - Finished processing (I=3106, O=0, R=0, W=3106, U=0, E=0)
+2023/03/22 23:00:36 - d_items-dest.0 - Finished processing (I=9990, O=0, R=0, W=9990, U=0, E=0)
+2023/03/22 23:00:36 - Merge rows (diff) 3.0 - Finished processing (I=0, O=0, R=3106, W=3106, U=0, E=0)
+2023/03/22 23:00:36 - prescriptions-dest.0 - Finished reading query, closing connection
+2023/03/22 23:00:36 - Filter rows 3.0 - Finished processing (I=0, O=0, R=3106, W=3106, U=0, E=0)
+2023/03/22 23:00:36 - Merge rows (diff) 4.0 - Finished processing (I=0, O=0, R=9990, W=9990, U=0, E=0)
+2023/03/22 23:00:36 - Filter rows 4.0 - Finished processing (I=0, O=0, R=9990, W=9990, U=0, E=0)
+2023/03/22 23:00:36 - prescriptions-dest.0 - Finished processing (I=8319, O=0, R=0, W=8319, U=0, E=0)
+2023/03/22 23:00:36 - inputevents_mv-dest.0 - Finished reading query, closing connection
+2023/03/22 23:00:36 - Merge rows (diff) 10.0 - Finished processing (I=0, O=0, R=8319, W=8319, U=0, E=0)
+2023/03/22 23:00:36 - Filter rows 10.0 - Finished processing (I=0, O=0, R=8319, W=8319, U=0, E=0)
+2023/03/22 23:00:36 - inputevents_mv-dest.0 - Finished processing (I=10580, O=0, R=0, W=10580, U=0, E=0)
+2023/03/22 23:00:36 - Merge rows (diff) 8.0 - Finished processing (I=0, O=0, R=10580, W=10580, U=0, E=0)
+2023/03/22 23:00:36 - inputevents_cv-dest.0 - Finished reading query, closing connection
+2023/03/22 23:00:36 - inputevents_cv-dest.0 - Finished processing (I=27840, O=0, R=0, W=27840, U=0, E=0)
+2023/03/22 23:00:58 - patient.0 - Finished processing (I=128, O=0, R=128, W=128, U=0, E=0)
+2023/03/22 23:00:58 - admissions.0 - Finished processing (I=129, O=0, R=129, W=129, U=0, E=0)
+2023/03/22 23:01:02 - icustays.0 - Finished processing (I=136, O=0, R=136, W=136, U=14, E=0)
+2023/03/22 23:01:48 - procedures_icd.0 - Finished processing (I=405, O=0, R=405, W=405, U=0, E=0)
+2023/03/22 23:02:43 - Filter rows 8.0 - Finished processing (I=0, O=0, R=10580, W=10580, U=0, E=0)
+2023/03/22 23:28:03 - Kitchen - Logging is at level : Basic
+2023/03/22 23:28:03 - Kitchen - Start of run.
+2023/03/22 23:28:09 - Job-massiveupdate - Start of job execution
+2023/03/22 23:28:09 - Job-massiveupdate - Job-massiveupdate
+2023/03/22 23:29:19 - Job-massiveupdate - Starting entry [insertotemptsall]
+2023/03/22 23:29:19 - insertotemptsall - Using run configuration [Pentaho local]
+2023/03/22 23:29:19 - insertotemptsall - Running transformation using the Kettle execution engine
+2023/03/22 23:29:19 - insertotemptsall - Dispatching started for transformation [insertotemptsall]
+2023/03/22 23:29:21 - diagnoses_temp.0 - Connected to database [proyectdb] (commit=1000)
+2023/03/22 23:29:21 - admissions_temp.0 - Connected to database [proyectdb] (commit=1000)
+2023/03/22 23:29:21 - inputevents_mv_temp.0 - Connected to database [proyectdb] (commit=1000)
+2023/03/22 23:29:21 - procedures_icd_temp.0 - Connected to database [proyectdb] (commit=1000)
+2023/03/22 23:29:21 - icustays_temp.0 - Connected to database [proyectdb] (commit=1000)
+2023/03/22 23:29:21 - d_items_temp.0 - Connected to database [proyectdb] (commit=1000)
+2023/03/22 23:29:21 - d_icd_procedures_temp.0 - Connected to database [proyectdb] (commit=10000)
+2023/03/22 23:29:21 - d_labitems_temp.0 - Connected to database [proyectdb] (commit=1000)
+2023/03/22 23:29:21 - prescriptions_temp.0 - Connected to database [proyectdb] (commit=1000)
+2023/03/22 23:29:21 - cptevents_temp.0 - Connected to database [proyectdb] (commit=1000)
+2023/03/22 23:29:21 - inputevents_cv_temp.0 - Connected to database [proyectdb] (commit=1000)
+2023/03/22 23:29:21 - patient_temp.0 - Connected to database [proyectdb] (commit=1000)
+2023/03/22 23:29:21 - Carte - Installing timer to purge stale objects after 1440 minutes.
+2023/03/22 23:29:21 - Job-massiveupdate - Starting entry [update-insertall]
+2023/03/22 23:29:22 - update-insertall - Using run configuration [Pentaho local]
+2023/03/22 23:29:22 - update-insertall - Running transformation using the Kettle execution engine
+2023/03/22 23:29:22 - update-insertall - Dispatching started for transformation [update-insertall]
+2023/03/22 23:29:23 - diagnoses_temp-new.0 - Finished reading query, closing connection
+2023/03/22 23:29:23 - inputevents_cv_temp-new.0 - Finished reading query, closing connection
+2023/03/22 23:29:23 - admissions_temp-new.0 - Finished reading query, closing connection
+2023/03/22 23:29:23 - icustays_temp-new.0 - Finished reading query, closing connection
+2023/03/22 23:29:23 - d_items_temp-new.0 - Finished reading query, closing connection
+2023/03/22 23:29:23 - cptevents-new.0 - Finished reading query, closing connection
+2023/03/22 23:29:23 - d_icd_procedures_temp-new.0 - Finished reading query, closing connection
+2023/03/22 23:29:23 - patient_temp-new.0 - Finished reading query, closing connection
+2023/03/22 23:29:23 - procedures_icd_temp-new.0 - Finished reading query, closing connection
+2023/03/22 23:29:23 - d_labitems_temp-new.0 - Finished reading query, closing connection
+2023/03/22 23:29:23 - prescriptions_temp-new.0 - Finished reading query, closing connection
+2023/03/22 23:29:23 - inputevents_mv_temp-new.0 - Finished reading query, closing connection
+2023/03/22 23:29:23 - procedures_icd-dest.0 - Finished reading query, closing connection
+2023/03/22 23:29:23 - icustays-dest.0 - Finished reading query, closing connection
+2023/03/22 23:29:23 - patient-dest.0 - Finished reading query, closing connection
+2023/03/22 23:29:23 - admissions-dest.0 - Finished reading query, closing connection
+2023/03/22 23:29:23 - procedures_icd-dest.0 - Finished processing (I=405, O=0, R=0, W=405, U=0, E=0)
+2023/03/22 23:29:23 - icustays-dest.0 - Finished processing (I=136, O=0, R=0, W=136, U=0, E=0)
+2023/03/22 23:29:23 - d_labitems-dest.0 - Finished reading query, closing connection
+2023/03/22 23:29:23 - patient-dest.0 - Finished processing (I=128, O=0, R=0, W=128, U=0, E=0)
+2023/03/22 23:29:23 - diagnoses_icd-dest.0 - Finished reading query, closing connection
+2023/03/22 23:29:23 - admissions-dest.0 - Finished processing (I=129, O=0, R=0, W=129, U=0, E=0)
+2023/03/22 23:29:23 - d_labitems-dest.0 - Finished processing (I=753, O=0, R=0, W=753, U=0, E=0)
+2023/03/22 23:29:23 - cptevents-dest.0 - Finished reading query, closing connection
+2023/03/22 23:29:23 - diagnoses_icd-dest.0 - Finished processing (I=1409, O=0, R=0, W=1409, U=0, E=0)
+2023/03/22 23:29:23 - Merge rows (diff) 9.0 - Finished processing (I=0, O=0, R=128, W=128, U=0, E=0)
+2023/03/22 23:29:23 - Filter rows 9.0 - Finished processing (I=0, O=0, R=128, W=128, U=0, E=0)
+2023/03/22 23:29:23 - Merge rows (diff) 11.0 - Finished processing (I=0, O=0, R=405, W=405, U=0, E=0)
+2023/03/22 23:29:23 - Merge rows (diff) 6.0 - Finished processing (I=0, O=0, R=136, W=136, U=0, E=0)
+2023/03/22 23:29:23 - Select values.0 - Finished processing (I=0, O=0, R=128, W=128, U=0, E=0)
+2023/03/22 23:29:23 - cptevents-dest.0 - Finished processing (I=1579, O=0, R=0, W=1579, U=0, E=0)
+2023/03/22 23:29:23 - Filter rows 6.0 - Finished processing (I=0, O=0, R=136, W=136, U=0, E=0)
+2023/03/22 23:29:23 - Filter rows 11.0 - Finished processing (I=0, O=0, R=405, W=405, U=0, E=0)
+2023/03/22 23:29:23 - d_icd_prosedures-dest.0 - Finished reading query, closing connection
+2023/03/22 23:29:23 - Merge rows (diff).0 - Finished processing (I=0, O=0, R=129, W=129, U=0, E=0)
+2023/03/22 23:29:23 - Filter rows.0 - Finished processing (I=0, O=0, R=129, W=129, U=0, E=0)
+2023/03/22 23:29:23 - Merge rows (diff) 5.0 - Finished processing (I=0, O=0, R=753, W=753, U=0, E=0)
+2023/03/22 23:29:23 - Merge rows (diff) 2.0 - Finished processing (I=0, O=0, R=1579, W=1579, U=0, E=0)
+2023/03/22 23:29:23 - Filter rows 5.0 - Finished processing (I=0, O=0, R=753, W=753, U=0, E=0)
+2023/03/22 23:29:23 - Filter rows 2.0 - Finished processing (I=0, O=0, R=1579, W=1579, U=0, E=0)
+2023/03/22 23:29:23 - Merge rows (diff) 12.0 - Finished processing (I=0, O=0, R=1409, W=1409, U=0, E=0)
+2023/03/22 23:29:23 - Filter rows 12.0 - Finished processing (I=0, O=0, R=1409, W=1409, U=0, E=0)
+2023/03/22 23:29:23 - d_icd_prosedures-dest.0 - Finished processing (I=3106, O=0, R=0, W=3106, U=0, E=0)
+2023/03/22 23:29:23 - d_items-dest.0 - Finished reading query, closing connection
+2023/03/22 23:29:23 - Merge rows (diff) 3.0 - Finished processing (I=0, O=0, R=3106, W=3106, U=0, E=0)
+2023/03/22 23:29:23 - Filter rows 3.0 - Finished processing (I=0, O=0, R=3106, W=3106, U=0, E=0)
+2023/03/22 23:29:23 - d_items-dest.0 - Finished processing (I=9990, O=0, R=0, W=9990, U=0, E=0)
+2023/03/22 23:29:23 - prescriptions-dest.0 - Finished reading query, closing connection
+2023/03/22 23:29:23 - Merge rows (diff) 4.0 - Finished processing (I=0, O=0, R=9990, W=9990, U=0, E=0)
+2023/03/22 23:29:23 - Filter rows 4.0 - Finished processing (I=0, O=0, R=9990, W=9990, U=0, E=0)
+2023/03/22 23:29:23 - prescriptions-dest.0 - Finished processing (I=8319, O=0, R=0, W=8319, U=0, E=0)
+2023/03/22 23:29:23 - Merge rows (diff) 10.0 - Finished processing (I=0, O=0, R=8319, W=8319, U=0, E=0)
+2023/03/22 23:29:23 - Filter rows 10.0 - Finished processing (I=0, O=0, R=8319, W=8319, U=0, E=0)
+2023/03/22 23:29:23 - inputevents_mv-dest.0 - Finished reading query, closing connection
+2023/03/22 23:29:23 - inputevents_cv-dest.0 - Finished reading query, closing connection
+2023/03/22 23:29:23 - inputevents_mv-dest.0 - Finished processing (I=10580, O=0, R=0, W=10580, U=0, E=0)
+2023/03/22 23:29:24 - Merge rows (diff) 8.0 - Finished processing (I=0, O=0, R=10580, W=10580, U=0, E=0)
+2023/03/22 23:29:24 - inputevents_cv-dest.0 - Finished processing (I=27840, O=0, R=0, W=27840, U=0, E=0)
+2023/03/22 23:29:46 - patient.0 - Finished processing (I=128, O=0, R=128, W=128, U=0, E=0)
+2023/03/22 23:29:47 - admissions.0 - Finished processing (I=129, O=0, R=129, W=129, U=0, E=0)
+2023/03/22 23:29:49 - icustays.0 - Finished processing (I=136, O=0, R=136, W=136, U=14, E=0)
+2023/03/22 23:30:37 - procedures_icd.0 - Finished processing (I=405, O=0, R=405, W=405, U=0, E=0)
+2023/03/22 23:31:33 - Filter rows 8.0 - Finished processing (I=0, O=0, R=10580, W=10580, U=0, E=0)
+2023/03/22 23:31:37 - d_labitems.0 - Finished processing (I=753, O=0, R=753, W=753, U=0, E=0)
+2023/03/22 23:33:39 - diagnoses_icd.0 - Finished processing (I=1409, O=0, R=1409, W=1409, U=0, E=0)
+2023/03/22 23:34:09 - cptevents.0 - Finished processing (I=1579, O=0, R=1579, W=1579, U=0, E=0)
+2023/03/22 23:38:59 - d_icd_procedures.0 - Finished processing (I=3106, O=0, R=3106, W=3106, U=0, E=0)
+2023/03/22 23:57:10 - prescriptions.0 - Finished processing (I=8319, O=0, R=8319, W=8319, U=0, E=0)
+2023/03/22 23:59:06 - Merge rows (diff) 7.0 - Finished processing (I=0, O=0, R=27840, W=27840, U=0, E=0)
+2023/03/23 00:06:02 - d_items.0 - Finished processing (I=9990, O=0, R=9990, W=9990, U=0, E=0)
+2023/03/23 00:07:57 - inputevents_mv.0 - Finished processing (I=10580, O=0, R=10580, W=10580, U=0, E=0)
+2023/03/23 00:35:08 - Filter rows 7.0 - Finished processing (I=0, O=0, R=27840, W=27840, U=0, E=0)
+2023/03/23 01:10:50 - inputevents_cv.0 - Finished processing (I=27840, O=0, R=27840, W=27840, U=0, E=0)
+2023/03/23 01:10:50 - Job-massiveupdate - Starting entry [Dimensions_icustays]
+2023/03/23 01:10:50 - Dimensions_icustays - Using run configuration [Pentaho local]
+2023/03/23 01:10:50 - Dimensions_icustays - Running transformation using the Kettle execution engine
+2023/03/23 01:10:50 - Dimensions_icustays - Dispatching started for transformation [Dimensions_icustays]
+2023/03/23 01:10:51 - icustays.0 - Finished reading query, closing connection
+2023/03/23 01:10:51 - patient.0 - Finished reading query, closing connection
+2023/03/23 01:10:51 - Select values.0 - Finished processing (I=0, O=0, R=136, W=136, U=0, E=0)
+2023/03/23 01:10:51 - Select values 6.0 - Finished processing (I=0, O=0, R=128, W=128, U=0, E=0)
+2023/03/23 01:10:51 - admissions.0 - Finished reading query, closing connection
+2023/03/23 01:10:51 - Select values 6 2.0 - Finished processing (I=0, O=0, R=129, W=129, U=0, E=0)
+2023/03/23 01:10:51 - icustays.0 - Finished processing (I=136, O=0, R=0, W=136, U=0, E=0)
+2023/03/23 01:10:51 - patient.0 - Finished processing (I=128, O=0, R=0, W=128, U=0, E=0)
+2023/03/23 01:10:51 - admissions.0 - Finished processing (I=129, O=0, R=0, W=129, U=0, E=0)
+2023/03/23 01:11:14 - patient-dimload.0 - Finished processing (I=128, O=0, R=128, W=128, U=0, E=0)
+2023/03/23 01:11:15 - admissions-dimload.0 - Finished processing (I=129, O=0, R=129, W=129, U=0, E=0)
+2023/03/23 01:11:15 - patient-dimload 2.0 - Finished processing (I=136, O=0, R=136, W=136, U=0, E=0)
+2023/03/23 01:11:15 - Job-massiveupdate - Starting entry [Dimensions_Admision]
+2023/03/23 01:11:15 - Dimensions_Admision - Using run configuration [Pentaho local]
+2023/03/23 01:11:15 - Dimensions_Admision - Running transformation using the Kettle execution engine
+2023/03/23 01:11:15 - Dimension_Admision - Dispatching started for transformation [Dimension_Admision]
+2023/03/23 01:11:16 - patient.0 - Finished reading query, closing connection
+2023/03/23 01:11:16 - Select values 6.0 - Finished processing (I=0, O=0, R=128, W=128, U=0, E=0)
+2023/03/23 01:11:16 - admissions.0 - Finished reading query, closing connection
+2023/03/23 01:11:16 - Select values 3.0 - Finished processing (I=0, O=0, R=129, W=129, U=0, E=0)
+2023/03/23 01:11:16 - Select values 7.0 - Finished processing (I=0, O=0, R=129, W=129, U=0, E=0)
+2023/03/23 01:11:16 - Select values 4.0 - Finished processing (I=0, O=0, R=129, W=129, U=0, E=0)
+2023/03/23 01:11:16 - Select values 2.0 - Finished processing (I=0, O=0, R=129, W=129, U=0, E=0)
+2023/03/23 01:11:16 - Add sequence 6.0 - Finished processing (I=0, O=0, R=9, W=9, U=0, E=0)
+2023/03/23 01:11:16 - Add sequence 4.0 - Finished processing (I=0, O=0, R=4, W=4, U=0, E=0)
+2023/03/23 01:11:16 - Unique rows (HashSet).0 - Finished processing (I=0, O=0, R=129, W=3, U=0, E=126)
+2023/03/23 01:11:16 - If field value is null.0 - Finished processing (I=0, O=0, R=129, W=129, U=0, E=0)
+2023/03/23 01:11:16 - Unique rows (HashSet) 4.0 - Finished processing (I=0, O=0, R=129, W=4, U=0, E=125)
+2023/03/23 01:11:16 - Unique rows (HashSet) 2.0 - Finished processing (I=0, O=0, R=129, W=5, U=0, E=124)
+2023/03/23 01:11:16 - Unique rows (HashSet) 3.0 - Finished processing (I=0, O=0, R=129, W=10, U=0, E=119)
+2023/03/23 01:11:16 - Unique rows (HashSet) 6.0 - Finished processing (I=0, O=0, R=129, W=9, U=0, E=120)
+2023/03/23 01:11:16 - patient.0 - Finished processing (I=128, O=0, R=0, W=128, U=0, E=0)
+2023/03/23 01:11:16 - Select values.0 - Finished processing (I=0, O=0, R=129, W=129, U=0, E=0)
+2023/03/23 01:11:16 - Select values 5.0 - Finished processing (I=0, O=0, R=129, W=129, U=0, E=0)
+2023/03/23 01:11:16 - Add sequence 5.0 - Finished processing (I=0, O=0, R=7, W=7, U=0, E=0)
+2023/03/23 01:11:16 - Unique rows (HashSet) 5.0 - Finished processing (I=0, O=0, R=129, W=7, U=0, E=122)
+2023/03/23 01:11:16 - Add sequence.0 - Finished processing (I=0, O=0, R=3, W=3, U=0, E=0)
+2023/03/23 01:11:16 - Add sequence 3.0 - Finished processing (I=0, O=0, R=10, W=10, U=0, E=0)
+2023/03/23 01:11:16 - Add sequence 2.0 - Finished processing (I=0, O=0, R=5, W=5, U=0, E=0)
+2023/03/23 01:11:16 - admissions.0 - Finished processing (I=129, O=0, R=0, W=774, U=0, E=0)
+2023/03/23 01:11:17 - ADMISSIONS_TYPE.0 - Finished processing (I=3, O=0, R=3, W=3, U=0, E=0)
+2023/03/23 01:11:17 - INSURANCE.0 - Finished processing (I=4, O=0, R=4, W=4, U=0, E=0)
+2023/03/23 01:11:17 - ADMISSIONS_LOCATION.0 - Finished processing (I=5, O=0, R=5, W=5, U=0, E=0)
+2023/03/23 01:11:18 - MARITAL_STATUS.0 - Finished processing (I=7, O=0, R=7, W=7, U=0, E=0)
+2023/03/23 01:11:18 - ETHNICITY.0 - Finished processing (I=9, O=0, R=9, W=9, U=0, E=0)
+2023/03/23 01:11:18 - ALTALOCATION.0 - Finished processing (I=10, O=0, R=10, W=10, U=0, E=0)
+2023/03/23 01:11:38 - patien-dim.0 - Finished processing (I=128, O=0, R=128, W=128, U=0, E=0)
+2023/03/23 01:11:38 - Job-massiveupdate - Starting entry [admissions-hechos]
+2023/03/23 01:11:39 - admissions-hechos - Using run configuration [Pentaho local]
+2023/03/23 01:11:39 - admissions-hechos - Running transformation using the Kettle execution engine
+2023/03/23 01:11:39 - admissions-hechos - Dispatching started for transformation [admissions-hechos]
+2023/03/23 01:11:40 - marital_status.0 - Finished reading query, closing connection
+2023/03/23 01:11:40 - admissions_location.0 - Finished reading query, closing connection
+2023/03/23 01:11:40 - altalocation.0 - Finished reading query, closing connection
+2023/03/23 01:11:40 - insurance.0 - Finished reading query, closing connection
+2023/03/23 01:11:40 - ethnicity.0 - Finished reading query, closing connection
+2023/03/23 01:11:40 - admissions_type.0 - Finished reading query, closing connection
+2023/03/23 01:11:40 - marital_status.0 - Finished processing (I=7, O=0, R=0, W=7, U=0, E=0)
+2023/03/23 01:11:40 - admissions_location.0 - Finished processing (I=5, O=0, R=0, W=5, U=0, E=0)
+2023/03/23 01:11:40 - altalocation.0 - Finished processing (I=10, O=0, R=0, W=10, U=0, E=0)
+2023/03/23 01:11:40 - admissions-crud.0 - Finished reading query, closing connection
+2023/03/23 01:11:40 - insurance.0 - Finished processing (I=4, O=0, R=0, W=4, U=0, E=0)
+2023/03/23 01:11:40 - admissions_type.0 - Finished processing (I=3, O=0, R=0, W=3, U=0, E=0)
+2023/03/23 01:11:40 - admissions_hechos.0 - Finished reading query, closing connection
+2023/03/23 01:11:40 - ethnicity.0 - Finished processing (I=9, O=0, R=0, W=9, U=0, E=0)
+2023/03/23 01:11:40 - Select values 7.0 - Finished processing (I=0, O=0, R=129, W=129, U=0, E=0)
+2023/03/23 01:11:40 - Stream lookup.0 - Finished processing (I=0, O=0, R=134, W=129, U=0, E=0)
+2023/03/23 01:11:40 - Stream lookup 2.0 - Finished processing (I=0, O=0, R=132, W=129, U=0, E=0)
+2023/03/23 01:11:40 - Stream lookup 3.0 - Finished processing (I=0, O=0, R=139, W=129, U=0, E=0)
+2023/03/23 01:11:40 - Stream lookup 4.0 - Finished processing (I=0, O=0, R=136, W=129, U=0, E=0)
+2023/03/23 01:11:40 - Stream lookup 5.0 - Finished processing (I=0, O=0, R=133, W=129, U=0, E=0)
+2023/03/23 01:11:40 - admissions-crud.0 - Finished processing (I=129, O=0, R=0, W=129, U=0, E=0)
+2023/03/23 01:11:40 - admissions_hechos.0 - Finished processing (I=129, O=0, R=0, W=129, U=0, E=0)
+2023/03/23 01:11:40 - Stream lookup 6.0 - Finished processing (I=0, O=0, R=138, W=129, U=0, E=0)
+2023/03/23 01:11:40 - Si fuera nulo.0 - Finished processing (I=0, O=0, R=129, W=129, U=0, E=0)
+2023/03/23 01:11:40 - Comparacion con datos previos.0 - Finished processing (I=0, O=0, R=258, W=129, U=0, E=0)
+2023/03/23 01:11:40 - Filter rows.0 - Finished processing (I=0, O=0, R=129, W=0, U=0, E=0)
+2023/03/23 01:11:40 - Job-massiveupdate - Starting entry [Success 2]
+2023/03/23 01:11:40 - Job-massiveupdate - Finished job entry [Success 2] (result=[true])
+2023/03/23 01:11:40 - Job-massiveupdate - Finished job entry [admissions-hechos] (result=[true])
+2023/03/23 01:11:40 - Job-massiveupdate - Finished job entry [Dimensions_Admision] (result=[true])
+2023/03/23 01:11:40 - Job-massiveupdate - Finished job entry [Dimensions_icustays] (result=[true])
+2023/03/23 01:11:40 - Job-massiveupdate - Finished job entry [update-insertall] (result=[true])
+2023/03/23 01:11:40 - Job-massiveupdate - Finished job entry [insertotemptsall] (result=[true])
+2023/03/23 01:11:40 - Job-massiveupdate - Job-massiveupdate
+2023/03/23 01:12:50 - Job-massiveupdate - Starting entry [insertotemptsall]
+2023/03/23 01:12:50 - insertotemptsall - Using run configuration [Pentaho local]
+2023/03/23 01:12:50 - insertotemptsall - Running transformation using the Kettle execution engine
+2023/03/23 01:12:50 - insertotemptsall - Dispatching started for transformation [insertotemptsall]
+2023/03/23 01:12:51 - patient_temp.0 - Connected to database [proyectdb] (commit=1000)
+2023/03/23 01:12:51 - procedures_icd_temp.0 - Connected to database [proyectdb] (commit=1000)
+2023/03/23 01:12:51 - d_labitems_temp.0 - Connected to database [proyectdb] (commit=1000)
+2023/03/23 01:12:51 - diagnoses_temp.0 - Connected to database [proyectdb] (commit=1000)
+2023/03/23 01:12:51 - d_items_temp.0 - Connected to database [proyectdb] (commit=1000)
+2023/03/23 01:12:51 - prescriptions_temp.0 - Connected to database [proyectdb] (commit=1000)
+2023/03/23 01:12:51 - admissions_temp.0 - Connected to database [proyectdb] (commit=1000)
+2023/03/23 01:12:51 - d_icd_procedures_temp.0 - Connected to database [proyectdb] (commit=10000)
+2023/03/23 01:12:51 - inputevents_mv_temp.0 - Connected to database [proyectdb] (commit=1000)
+2023/03/23 01:12:51 - cptevents_temp.0 - Connected to database [proyectdb] (commit=1000)
+2023/03/23 01:12:51 - inputevents_cv_temp.0 - Connected to database [proyectdb] (commit=1000)
+2023/03/23 01:12:51 - icustays_temp.0 - Connected to database [proyectdb] (commit=1000)
+2023/03/23 01:12:52 - Job-massiveupdate - Starting entry [update-insertall]
+2023/03/23 01:12:52 - update-insertall - Using run configuration [Pentaho local]
+2023/03/23 01:12:52 - update-insertall - Running transformation using the Kettle execution engine
+2023/03/23 01:12:52 - update-insertall - Dispatching started for transformation [update-insertall]
+2023/03/23 01:12:53 - admissions_temp-new.0 - Finished reading query, closing connection
+2023/03/23 01:12:53 - cptevents-new.0 - Finished reading query, closing connection
+2023/03/23 01:12:53 - inputevents_cv_temp-new.0 - Finished reading query, closing connection
+2023/03/23 01:12:53 - d_labitems_temp-new.0 - Finished reading query, closing connection
+2023/03/23 01:12:53 - d_items_temp-new.0 - Finished reading query, closing connection
+2023/03/23 01:12:53 - icustays_temp-new.0 - Finished reading query, closing connection
+2023/03/23 01:12:53 - d_icd_procedures_temp-new.0 - Finished reading query, closing connection
+2023/03/23 01:12:53 - icustays-dest.0 - Finished reading query, closing connection
+2023/03/23 01:12:53 - patient-dest.0 - Finished reading query, closing connection
+2023/03/23 01:12:53 - prescriptions_temp-new.0 - Finished reading query, closing connection
+2023/03/23 01:12:53 - patient_temp-new.0 - Finished reading query, closing connection
+2023/03/23 01:12:53 - diagnoses_temp-new.0 - Finished reading query, closing connection
+2023/03/23 01:12:53 - inputevents_mv_temp-new.0 - Finished reading query, closing connection
+2023/03/23 01:12:53 - procedures_icd_temp-new.0 - Finished reading query, closing connection
+2023/03/23 01:12:53 - procedures_icd-dest.0 - Finished reading query, closing connection
+2023/03/23 01:12:53 - admissions-dest.0 - Finished reading query, closing connection
+2023/03/23 01:12:53 - icustays-dest.0 - Finished processing (I=136, O=0, R=0, W=136, U=0, E=0)
+2023/03/23 01:12:53 - d_labitems-dest.0 - Finished reading query, closing connection
+2023/03/23 01:12:53 - patient-dest.0 - Finished processing (I=128, O=0, R=0, W=128, U=0, E=0)
+2023/03/23 01:12:53 - procedures_icd-dest.0 - Finished processing (I=405, O=0, R=0, W=405, U=0, E=0)
+2023/03/23 01:12:53 - admissions-dest.0 - Finished processing (I=129, O=0, R=0, W=129, U=0, E=0)
+2023/03/23 01:12:53 - d_labitems-dest.0 - Finished processing (I=753, O=0, R=0, W=753, U=0, E=0)
+2023/03/23 01:12:53 - diagnoses_icd-dest.0 - Finished reading query, closing connection
+2023/03/23 01:12:53 - cptevents-dest.0 - Finished reading query, closing connection
+2023/03/23 01:12:53 - diagnoses_icd-dest.0 - Finished processing (I=1409, O=0, R=0, W=1409, U=0, E=0)
+2023/03/23 01:12:53 - Merge rows (diff) 6.0 - Finished processing (I=0, O=0, R=136, W=136, U=0, E=0)
+2023/03/23 01:12:53 - Filter rows 6.0 - Finished processing (I=0, O=0, R=136, W=136, U=0, E=0)
+2023/03/23 01:12:53 - Merge rows (diff) 9.0 - Finished processing (I=0, O=0, R=128, W=128, U=0, E=0)
+2023/03/23 01:12:53 - Filter rows 9.0 - Finished processing (I=0, O=0, R=128, W=128, U=0, E=0)
+2023/03/23 01:12:53 - Select values.0 - Finished processing (I=0, O=0, R=128, W=128, U=0, E=0)
+2023/03/23 01:12:53 - Merge rows (diff) 11.0 - Finished processing (I=0, O=0, R=405, W=405, U=0, E=0)
+2023/03/23 01:12:53 - Filter rows 11.0 - Finished processing (I=0, O=0, R=405, W=405, U=0, E=0)
+2023/03/23 01:12:53 - d_icd_prosedures-dest.0 - Finished reading query, closing connection
+2023/03/23 01:12:53 - cptevents-dest.0 - Finished processing (I=1579, O=0, R=0, W=1579, U=0, E=0)
+2023/03/23 01:12:53 - Merge rows (diff).0 - Finished processing (I=0, O=0, R=129, W=129, U=0, E=0)
+2023/03/23 01:12:53 - Filter rows.0 - Finished processing (I=0, O=0, R=129, W=129, U=0, E=0)
+2023/03/23 01:12:53 - Merge rows (diff) 5.0 - Finished processing (I=0, O=0, R=753, W=753, U=0, E=0)
+2023/03/23 01:12:53 - Filter rows 5.0 - Finished processing (I=0, O=0, R=753, W=753, U=0, E=0)
+2023/03/23 01:12:53 - Merge rows (diff) 2.0 - Finished processing (I=0, O=0, R=1579, W=1579, U=0, E=0)
+2023/03/23 01:12:54 - Merge rows (diff) 12.0 - Finished processing (I=0, O=0, R=1409, W=1409, U=0, E=0)
+2023/03/23 01:12:54 - Filter rows 2.0 - Finished processing (I=0, O=0, R=1579, W=1579, U=0, E=0)
+2023/03/23 01:12:54 - Filter rows 12.0 - Finished processing (I=0, O=0, R=1409, W=1409, U=0, E=0)
+2023/03/23 01:12:54 - d_icd_prosedures-dest.0 - Finished processing (I=3106, O=0, R=0, W=3106, U=0, E=0)
+2023/03/23 01:12:54 - d_items-dest.0 - Finished reading query, closing connection
+2023/03/23 01:12:54 - Merge rows (diff) 3.0 - Finished processing (I=0, O=0, R=3106, W=3106, U=0, E=0)
+2023/03/23 01:12:54 - Filter rows 3.0 - Finished processing (I=0, O=0, R=3106, W=3106, U=0, E=0)
+2023/03/23 01:12:54 - d_items-dest.0 - Finished processing (I=9990, O=0, R=0, W=9990, U=0, E=0)
+2023/03/23 01:12:54 - prescriptions-dest.0 - Finished reading query, closing connection
+2023/03/23 01:12:54 - Merge rows (diff) 4.0 - Finished processing (I=0, O=0, R=9990, W=9990, U=0, E=0)
+2023/03/23 01:12:54 - Filter rows 4.0 - Finished processing (I=0, O=0, R=9990, W=9990, U=0, E=0)
+2023/03/23 01:12:54 - prescriptions-dest.0 - Finished processing (I=8319, O=0, R=0, W=8319, U=0, E=0)
+2023/03/23 01:12:54 - inputevents_mv-dest.0 - Finished reading query, closing connection
+2023/03/23 01:12:54 - inputevents_cv-dest.0 - Finished reading query, closing connection
+2023/03/23 01:12:54 - Merge rows (diff) 10.0 - Finished processing (I=0, O=0, R=8319, W=8319, U=0, E=0)

@@ -1,0 +1,1 @@
+D:\LABS\PF_Henry_UCI\pentaho\5.Jobs\Kitchen.bat /file:D:\LABS\PF_Henry_UCI\pentaho\5.Jobs\Job-massiveupdate.kjb /log:D:\LABS\PF_Henry_UCI\pentaho\5.Jobs\logs_loads\lastlog.log /level:Basic

@@ -1,0 +1,1 @@
+D:\LABS\pdi-ce-9.3.0.0-428\data-integration\Kitchen.bat /file:D:\LABS\PF_Henry_UCI\pentaho\5.Jobs\Job-massiveupdate.kjb /log:D:\LABS\PF_Henry_UCI\pentaho\5.Jobs\logs_loads\lastlog.log /level:Basic
