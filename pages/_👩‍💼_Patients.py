@@ -7,7 +7,7 @@ import streamlit.components.v1 as components
 import requests
 
 st.set_page_config(
-    page_title="Pacientes",
+    page_title="Patients",
     page_icon="🏥",
     layout="wide",
 )
@@ -24,22 +24,21 @@ admissions = pd.read_sql("""SELECT subject_id
                             FROM admissions""",mydb)
 
 ###################################################################################
-
-st.markdown("# **Reporte de Paciente**")
+st.markdown("<h1 style='text-align: center; color: white;'>Patient Report</h1>", unsafe_allow_html=True)
 st.markdown("---")
 
-paciente = st.selectbox("Paciente",admissions['subject_id'].unique())
+paciente = st.selectbox("Patient ID",admissions['subject_id'].unique())
 
 icustays = pd.read_sql("""SELECT * 
                               FROM icustays
                               WHERE subject_id = {paciente} 
                               ORDER BY intime DESC""".format(paciente=paciente),mydb)
 
-estancia = st.selectbox("Estancia en UCI",icustays['ICUSTAY_ID'].unique())
+estancia = st.selectbox("UCI Stay ID",icustays['ICUSTAY_ID'].unique())
 hadm_id = icustays[icustays['ICUSTAY_ID'] == estancia]['HADM_ID'].values[0]
 
 ###################################################################################
-st.markdown("<h1 style='text-align: center; color: white;'> Información de Admisión</h1>", unsafe_allow_html=True)
+st.markdown("<h1 style='text-align: center; color: white;'> Admission Information</h1>", unsafe_allow_html=True)
 st.markdown("---")
 
 patient = pd.read_sql("""SELECT * 
@@ -59,32 +58,32 @@ age = age['age'].values[0]
 col2, col3, col4 = st.columns(3)
 
 with col2:
-  st.markdown('ADMITIDO:  {admitted}'. format(admitted = admission['ADMITTIME'].dt.date.values[0]))
+  st.markdown('ADMITTED:  {admitted}'. format(admitted = admission['ADMITTIME'].dt.date.values[0]))
 with col3:
-  st.markdown('CÓDIGO:  {subject}'. format(subject = paciente))
+  st.markdown('CODE:  {subject}'. format(subject = paciente))
 with col4:
-  st.markdown('TIEMPO EN UCI: {los} horas'.format(los= round(icustays['LOS'].values[0]*24)))
+  st.markdown('TIME IN ICU: {los} hours'.format(los= round(icustays['LOS'].values[0]*24)))
 
 col5, col6, col7 = st.columns(3)
 
 with col5:
-  st.markdown('NOMBRE COMPLETO: XXXXXX XXXXXX') 
+  st.markdown('FULL NAME: XXXXXX XXXXXX') 
 with col6:
-  st.markdown('EDAD:  {age} años'.format(age = age)) 
+  st.markdown('AGE:  {age} years'.format(age = age)) 
 with col7:
-  st.markdown('SEXO:  {gender}'.format(gender= patient['GENDER'].values[0]))
+  st.markdown('SEX:  {gender}'.format(gender= patient['GENDER'].values[0]))
 
 if admission['DEATHTIME'].values[0] != None:
-  st.markdown('FECHA DE MUERTE: {death}'.format(death= admission['DEATHTIME'].values[0]))
+  st.markdown('DEATH TIME: {death}'.format(death= admission['DEATHTIME'].values[0]))
 
 
 
 ###################################################################################
-st.markdown("<h1 style='text-align: center; color: white;'> Historial clinico en la UCI</h1>", unsafe_allow_html=True)
+st.markdown("<h1 style='text-align: center; color: white;'> Clinical history in the ICU</h1>", unsafe_allow_html=True)
 st.markdown("---")
 
 
-diagnoses_icd = pd.read_sql("""SELECT d.seq_num AS '#' ,dd.long_title AS DIAGNOSTICO 
+diagnoses_icd = pd.read_sql("""SELECT d.seq_num AS '#' ,dd.long_title AS DIAGNOSIS
                               FROM diagnoses_icd d
                               JOIN d_icd_diagnoses dd
                               ON (d.icd9_code = dd.icd9_code) 
@@ -118,26 +117,26 @@ transfers = pd.read_sql("""SELECT *
 transfers.drop(columns=['SUBJECT_ID','HADM_ID','ICUSTAY_ID'],inplace=True)
 transfers.set_index('ROW_ID', inplace=True)
 
-st.subheader('Antecedentes')
+st.subheader('Medical history')
 if diagnoses_icd.shape[0] > 0:
   st.table(diagnoses_icd)
-else: st.text('No tiene antecedentes en el hospital')
+else: st.text('Patient has no history in the hospital')
 # Indicar tambien si el paciente fue readmitido
 
 if outputevents.shape[0] > 0:
-  st.subheader('Producción de liquidos')
+  st.subheader('Liquid Production')
   st.table(outputevents) 
 
 if callout.shape[0] > 0:
-  st.subheader('Salida de alta')
+  st.subheader('Medical discharge exit')
   st.table(callout) 
 
 if transfers.shape[0] > 0:
-  st.subheader('Transferencias')
+  st.subheader('Transfers')
   st.table(transfers)  
 
 
-st.subheader("Cuidadores a cargo del paciente")
+st.subheader("Caregivers in charge of the patient")
 if datetimeevents.shape[0] > 0:
     caregivers = pd.read_sql("""SELECT CGID,LABEL, DESCRIPTION 
                               FROM caregivers
@@ -145,10 +144,10 @@ if datetimeevents.shape[0] > 0:
     caregivers.set_index('CGID',inplace=True)                  
 
     st.table(caregivers)
-else: st.text('Sin asignar')
+else: st.text('Not assigned')
 
 ###################################################################################
-st.markdown("<h1 style='text-align: center; color: white;'> Procedimientos</h1>", unsafe_allow_html=True)
+st.markdown("<h1 style='text-align: center; color: white;'> Procedures</h1>", unsafe_allow_html=True)
 st.markdown("---")
 
 procedures_icd = pd.read_sql("""SELECT pro.seq_num ,dpro.short_title AS PROCEDIMIENTO
@@ -183,12 +182,12 @@ proceduresevents_mv.set_index('ORDERID', inplace=True)
 
 
 
-st.subheader('Anteriores a la estancia en UCI')
+st.subheader('Prior to stay in ICU')
 if procedures_icd.shape[0] > 0:
   st.table(procedures_icd) # Referente a antecedentes
-else: st.text('No tiene antecedentes en el hospital')
+else: st.text('Patient has no history in the hospital')
 
-st.subheader('Aplicados en UCI')
+st.subheader('Applied in ICU')
 if cptevents.shape[0] > 0:
   st.table(cptevents) 
 
@@ -196,11 +195,11 @@ if d_cpt.shape[0] > 0:
   st.table(d_cpt)
 
 if proceduresevents_mv.shape[0] > 0:
-  st.subheader('Ventilación Mecánica')
+  st.subheader('Mechanic ventilation')
   st.table(proceduresevents_mv) # Condicional 
 
 ###################################################################################
-st.markdown("<h1 style='text-align: center; color: white;'> Medicamentos</h1>", unsafe_allow_html=True)
+st.markdown("<h1 style='text-align: center; color: white;'>Medicines</h1>", unsafe_allow_html=True)
 st.markdown("---")
 
 
@@ -233,27 +232,27 @@ inputevents_mv.drop(columns=['ROW_ID','SUBJECT_ID','HADM_ID','ICUSTAY_ID','ITEMI
 inputevents_mv.set_index('ORDERID',inplace=True)
 
 
-st.subheader('Fuera de la UCI')
+st.subheader('Outside the ICU')
 if prescriptionsf.shape[0] > 0:
   st.table(prescriptionsf)
-else: st.markdown('Ninguna')
+else: st.markdown('None')
 
-st.subheader('Suministrados en UCI')
+st.subheader('Supplied in ICU')
 if prescriptionsuci.shape[0] > 0:
   st.table(prescriptionsuci)
-else: st.markdown('Ninguna')
+else: st.markdown('None')
 
 
 if inputevents_cv.shape[0] > 0:
-  st.subheader('Via Intravenosa')
+  st.subheader('Intravenously')
   st.table(inputevents_cv) #Intravenosos
 
 if inputevents_mv.shape[0] > 0:
-  st.subheader('Via Ventilación Mecánica')
+  st.subheader('Via Mechanical Ventilation')
   st.table(inputevents_mv) # Ventilacion Mecanica
 
 ###################################################################################
-st.markdown("<h1 style='text-align: center; color: white;'> Pruebas de Laboratorio y Microbiologicos</h1>", unsafe_allow_html=True)
+st.markdown("<h1 style='text-align: center; color: white;'>Laboratory and Microbiological Tests</h1>", unsafe_allow_html=True)
 st.markdown("---")
 
 labevents2 = pd.read_sql("""SELECT d.LABEL ,d.CATEGORY, lb.* 
@@ -273,15 +272,15 @@ microbiologyevents = pd.read_sql("""SELECT d.LABEL ,d.CATEGORY, m.*
 microbiologyevents.drop(columns=['SUBJECT_ID','HADM_ID','SPEC_ITEMID'],inplace=True)
 microbiologyevents.set_index('ROW_ID',inplace=True)
 
-st.subheader('Laboratorios')
+st.subheader('Laboratory')
 if labevents2.shape[0] > 0:
   st.table(labevents2)
-else: st.text('Ninguno')
+else: st.text('None')
   
-st.subheader('Estudios microbiológicos')
+st.subheader('Microbiological Studies')
 if microbiologyevents.shape[0] > 0:
   st.table(microbiologyevents)
-else: st.text('Ninguno')
+else: st.text('None')
 
 
 ########################################################
@@ -294,7 +293,7 @@ def load_unpkg(src: str) -> str:
 
 HTML_2_CANVAS = load_unpkg("https://unpkg.com/html2canvas@1.4.1/dist/html2canvas.js")
 JSPDF = load_unpkg("https://unpkg.com/jspdf@latest/dist/jspdf.umd.min.js")
-BUTTON_TEXT = "Descargar"
+BUTTON_TEXT = "Download"
 
 if st.button(BUTTON_TEXT):
   NOMBRE = "{id_paciente}_{fecha}".format(id_paciente=paciente,fecha=dt.datetime.now().strftime('%Y%m%d_%I:%M%p'))
