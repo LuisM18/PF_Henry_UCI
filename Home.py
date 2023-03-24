@@ -175,6 +175,7 @@ min_value = icustays['OUTTIME'].min().to_pydatetime()
 mindd, maxdd = st.slider('Seleccione el rango de fecha',value=(min_value,max_value))
 icustays = icustays[(icustays['OUTTIME'] > mindd) & (icustays['OUTTIME'] < maxdd)]
 
+tiempo = tiempo_estancia_promedio(icustays)
 y = tiempo['tiempo_estancia_promedio']
 yearmonth = tiempo.index.to_series().apply(lambda x: '{0}-{1}'.format(*x))
 
