@@ -122,17 +122,18 @@ with placeholder.container():
 
     mortalidad = tasa_mortalidad(admissions)
     kpi1.metric(
-        label="Tasa de mortalidad último mes",
-        value= f"{round(mortalidad.iloc[-1,-1]*100,2)} % ",
-        delta = delta(f"{round((mortalidad.iloc[-1,-1]-mortalidad.iloc[-2,-1]/mortalidad.iloc[-2,-1])*100,2)} % ") 
-
+        label = "Tasa de mortalidad último mes",
+        value = f"{round(mortalidad.iloc[-1,-1]*100,2)} % ",
+        delta = delta(f"{round((mortalidad.iloc[-1,-1]-mortalidad.iloc[-2,-1]/mortalidad.iloc[-2,-1])*100,2)} % "),
+        help = 'El objetivo es reducir o mantener la tasa de mortalidad hasta un 20%'
     )
 
     reingresos = reingresos(admissions)
     kpi2.metric(
-        label="Cantidad de reingresos",
-        value= f" {round(reingresos.iloc[-1,-1],2)} pacientes",
-        delta= delta(f"{round((reingresos.iloc[-1,-1]-reingresos.iloc[-2,-1]/reingresos.iloc[-2,-1])*100,2)} % ")
+        label = "Cantidad de reingresos",
+        value = f" {round(reingresos.iloc[-1,-1],2)} pacientes",
+        delta = delta(f"{round((reingresos.iloc[-1,-1]-reingresos.iloc[-2,-1]/reingresos.iloc[-2,-1])*100,2)} % "),
+        help = 'El objetivo es reducir los reingresos lo máximo posible'
     )
 
 icustays = pd.read_sql("""SELECT *
@@ -142,7 +143,8 @@ tiempo = tiempo_estancia_promedio(icustays)
 kpi3.metric(
             label="Tiempo de estancia promedio en la UCI último mes",
             value= f"{round(tiempo.iloc[-1,-1])} días ",
-            delta= f"{round((tiempo.iloc[-1,-1]-tiempo.iloc[-2,-1]/tiempo.iloc[-2,-1])*100,2)} % "
+            delta= f"{round((tiempo.iloc[-1,-1]-tiempo.iloc[-2,-1]/tiempo.iloc[-2,-1])*100,2)} % ",
+            help = 'El objetivo es reducir y/o mantener el tiempo de estancia de 5 días'
         )    
 ####################################################################Top 5################################
 st.markdown("<h3 style='text-align: center; color: white;'>Top 5 de diagnósticos más frecuentes</h3>", unsafe_allow_html=True)
