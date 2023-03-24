@@ -319,8 +319,8 @@ if tabla_seleccionada == 'Ventilación Mecánica':
     mes_año = st.radio('Selecciona filtro por mes y año', ('Mes','Año'))
     if mes_año == 'Mes':
         month = st.selectbox('Selecciona el mes', sorted(pd.unique(inpute['start_month'])))
-        inpute = inpute[inpute['start_month'] == int(month)]
-        average_month = inpute.groupby(['LABEL','AMOUNTUOM'])['AMOUNT'].mean()
+        inpute3 = inpute[inpute['start_month'] == int(month)]
+        average_month = inpute3.groupby(['LABEL','AMOUNTUOM'])['AMOUNT'].mean()
         average_month = average_month.reset_index()
         average_month.rename(columns={"AMOUNT": "average_AMOUNT","LABEL": "item","AMOUNTUOM": "unit"}, inplace = True)
         if average_month.empty:
@@ -331,8 +331,8 @@ if tabla_seleccionada == 'Ventilación Mecánica':
     #filtrar medicina por año
     if mes_año == 'Año':
         year= st.selectbox('Selecciona el año', sorted(pd.unique(inpute['start_year'])))
-        inpute = inpute[inpute['start_year'] == int(year)]
-        average_year = inpute.groupby(['LABEL','AMOUNTUOM'])['AMOUNT'].mean()
+        inpute4 = inpute[inpute['start_year'] == int(year)]
+        average_year = inpute4.groupby(['LABEL','AMOUNTUOM'])['AMOUNT'].mean()
         average_year = average_year.reset_index()
         average_year.rename(columns={"AMOUNT": "average_AMOUNT","LABEL": "item","AMOUNTUOM": "unit"}, inplace = True)
         if average_year.empty:
@@ -345,7 +345,7 @@ if tabla_seleccionada == 'Ventilación Mecánica':
     rango_año = st.slider(
     "Selecciona el rango de años",
     value=(int(inpute['start_year'].max())-10,int(inpute['start_year'].max())), min_value= int(inpute['start_year'].min()), max_value=int(inpute['start_year'].max()))
-
+    st.write(rango_año)
     inpute2 = inpute[(inpute['start_year'] > int(rango_año[0])) & (inpute['start_year'] < int(rango_año[1]))]
     average_year2 = inpute2.groupby(['LABEL','AMOUNTUOM'])['AMOUNT'].mean()
     average_year2 = average_year2.reset_index()
@@ -359,8 +359,9 @@ if tabla_seleccionada == 'Códigos de terminología procesal':
     st.markdown("<h3 style='text-align: center; color: white;'>Top 5 subsecciones más repetidas</h3>", unsafe_allow_html=True)
     #cptevents['SUBSECTIONHEADER'].dropna(inplace=True)
     data_cptevents = cptevents['SUBSECTIONHEADER'].value_counts()
-    x = data_cptevents.keys()[0:5]
-    y = data_cptevents.values[0:5]
+    number = st.select_slider('Selecciona n', options = range(1,10) ,value = 5, key = '3')
+    x = data_cptevents.keys()[0:number]
+    y = data_cptevents.values[0:number]
     fig4 = px.bar(data_frame=data_cptevents, x = x, y = y, labels={
                      'x': "Subsecciones",
                      'y': "Cantidad de registros",
@@ -370,8 +371,9 @@ if tabla_seleccionada == 'Códigos de terminología procesal':
     st.markdown("<h3 style='text-align: center; color: white;'>Top 5 secciones más repetidas</h3>", unsafe_allow_html=True)
     #cptevents['SECTIONHEADER'].dropna(inplace=True)
     datas_cptevents = cptevents['SECTIONHEADER'].value_counts()
-    x = datas_cptevents.keys()[0:5]
-    y = datas_cptevents.values[0:5]
+    number = st.select_slider('Selecciona n', options = range(1,5) ,value = 3, key = '4')
+    x = datas_cptevents.keys()[0:number]
+    y = datas_cptevents.values[0:number]
     fig5 = px.bar(data_frame=datas_cptevents, x = x, y = y, labels={
                      'x': "Secciones",
                      'y': "Cantidad de registros",
@@ -381,9 +383,9 @@ if tabla_seleccionada == 'Códigos de terminología procesal':
     st.markdown("<h3 style='text-align: center; color: white;'>Centro de coste que facturó</h3>", unsafe_allow_html=True)
     #cptevents['COSTCENTER'].dropna(inplace=True)
     cost_cptevents = cptevents['COSTCENTER'].value_counts()
-    x = cost_cptevents.keys()[0:5]
-    y = cost_cptevents.values[0:5]
-    fig6 = px.bar(data_frame=cost_cptevents, x = x, y = y,labels={
+    x = cost_cptevents.keys()
+    y = cost_cptevents.values
+    fig6 = px.pie(data_frame=cost_cptevents, names = x, values = y,labels={
                      'x': "Centro de coste",
                      'y': "Cantidad de registros",
                  })
