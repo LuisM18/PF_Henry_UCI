@@ -188,6 +188,7 @@ if tabla_seleccionada == 'Pacientes':
     yearnac = pd.to_datetime(patients['DOB'])
     yearmu = pd.to_datetime(patients['DOD'])
     patients['AGE'] = yearmu.dt.year - yearnac.dt.year
+    patients = patients[patients['AGE'] < 150]
     fig5 = px.histogram(data_frame=patients, x="AGE", labels = {
                      'AGE': "Edad",
                  })
@@ -355,7 +356,7 @@ if tabla_seleccionada == 'Ventilación Mecánica':
         st.dataframe(average_year2)
 
 if tabla_seleccionada == 'Códigos de terminología procesal':
-    st.markdown("<h3 style='text-align: center; color: white;'>Top 5 subsecciones más repetidas</h3>", unsafe_allow_html=True)
+    st.markdown("<h3 style='text-align: center; color: white;'>Top N subsecciones más repetidas</h3>", unsafe_allow_html=True)
     #cptevents['SUBSECTIONHEADER'].dropna(inplace=True)
     data_cptevents = cptevents['SUBSECTIONHEADER'].value_counts()
     number = st.select_slider('Selecciona n', options = range(1,10) ,value = 5, key = '3')
@@ -367,7 +368,7 @@ if tabla_seleccionada == 'Códigos de terminología procesal':
                  }) 
     st.plotly_chart(fig4,use_container_width=True)
 
-    st.markdown("<h3 style='text-align: center; color: white;'>Top 5 secciones más repetidas</h3>", unsafe_allow_html=True)
+    st.markdown("<h3 style='text-align: center; color: white;'>Top N secciones más repetidas</h3>", unsafe_allow_html=True)
     #cptevents['SECTIONHEADER'].dropna(inplace=True)
     datas_cptevents = cptevents['SECTIONHEADER'].value_counts()
     number = st.select_slider('Selecciona n', options = range(1,5) ,value = 3, key = '4')
