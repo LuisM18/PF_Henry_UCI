@@ -174,8 +174,8 @@ st.plotly_chart(fig3,use_container_width=True)
 st.markdown("<h3 style='text-align: center; color: white;'>Tiempo promedio de estancia en UCI por mes y año</h3>", unsafe_allow_html=True)
 max_value = icustays['OUTTIME'].max().to_pydatetime()
 min_value = icustays['OUTTIME'].min().to_pydatetime()
-mind, maxd = st.slider('Seleccione el rango de fecha',value=(min_value,max_value))
-icustays = icustays[(icustays['OUTTIME'] > mind) & (icustays['OUTTIME'] < maxd)]
+mindd, maxdd = st.slider('Seleccione el rango de fecha',value=(min_value,max_value))
+icustays = icustays[(icustays['OUTTIME'] > mindd) & (icustays['OUTTIME'] < maxdd)]
 
 y = tiempo['tiempo_estancia_promedio']
 yearmonth = tiempo.index.to_series().apply(lambda x: '{0}-{1}'.format(*x))
