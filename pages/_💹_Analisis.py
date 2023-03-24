@@ -232,12 +232,12 @@ if tabla_seleccionada == 'Prescripciones':
                  })
     st.plotly_chart(fig4,use_container_width=True)
 
-    st.markdown("<h3 style='text-align: center; color: white;'>Cantidad de medicamentos aplicados en el tiempo</h3>", unsafe_allow_html=True)
+    st.markdown("<h3 style='text-align: center; color: white;'>Cantidad de medicamentos suministrados en el tiempo</h3>", unsafe_allow_html=True)
     prescriptions['STARTDATE'] = prescriptions['STARTDATE'].apply(pd.to_datetime)
     prescriptions['month'] = prescriptions['STARTDATE'].dt.to_period('M')
-    max_value = prescriptions['STARTDATE'].max()
-    min_value = prescriptions['STARTDATE'].min()
-    mind, maxd  = st.date_input('Seleccione el rango de fecha', [min_value, max_value])
+    max_value = prescriptions['STARTDATE'].max().to_pydatetime()
+    min_value = prescriptions['STARTDATE'].min().to_pydatetime()
+    mind, maxd  = st.slider('Seleccione el rango de fecha',value= (min_value, max_value))
     maxd = datetime.strptime(str(maxd), '%Y-%m-%d')
     mind = datetime.strptime(str(mind), '%Y-%m-%d')
     filtered_prescriptions = prescriptions[(prescriptions['STARTDATE'] > mind) & (prescriptions['STARTDATE'] < maxd)]
