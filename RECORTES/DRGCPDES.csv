@@ -1,0 +1,60 @@
+row_id,subject_id,hadm_id,drg_type,drg_code,description,drg_severity,drg_mortality
+77379,40124,146893,"APR ",1394,Other Pneumonia,4.0,4.0
+77380,40124,146893,MS,208,RESPIRATORY SYSTEM DIAGNOSIS W VENTILATOR SUPPORT <96 HOURS,,
+77589,41795,118192,"APR ",1333,Pulmonary Edema & Respiratory Failure,3.0,2.0
+77590,41795,118192,"APR ",1333,Pulmonary Edema & Respiratory Failure,3.0,2.0
+77591,41795,118192,MS,189,PULMONARY EDEMA & RESPIRATORY FAILURE,,
+77902,43827,149950,"APR ",1743,Percutaneous Cardiovascular Procedures w/ AMI,3.0,2.0
+77903,43827,149950,"APR ",1743,Percutaneous Cardiovascular Procedures w/ AMI,3.0,2.0
+77904,43827,149950,MS,249,PERC CARDIOVASC PROC W NON-DRUG-ELUTING STENT W/O MCC,,
+78113,42135,102203,"APR ",2794,Hepatic Coma & Other Major Acute Liver Disorders,4.0,4.0
+78114,42135,102203,"APR ",2794,Hepatic Coma & Other Major Acute Liver Disorders,4.0,4.0
+78115,42135,102203,MS,441,"DISORDERS OF LIVER EXCEPT MALIG,CIRR,ALC HEPA W MCC",,
+78199,42066,171628,"APR ",1304,Respiratory System Diagnosis w/ Ventilator Support 96+ Hours,4.0,3.0
+78200,42066,171628,"APR ",1303,Respiratory System Diagnosis w/ Ventilator Support 96+ Hours,3.0,2.0
+78201,42066,171628,MS,207,RESPIRATORY SYSTEM DIAGNOSIS W VENTILATOR SUPPORT 96+ HOURS,,
+78754,40310,157609,"APR ",6914,Lymphoma & Non-acute Leukemia,4.0,4.0
+78755,40310,157609,"APR ",6914,Lymphoma & Non-acute Leukemia,4.0,4.0
+78756,40310,157609,MS,840,LYMPHOMA & NON-ACUTE LEUKEMIA W MCC,,
+79414,42430,100969,"APR ",454,CVA & Precerebral Occulusion w/ Infarct,4.0,4.0
+79415,42430,100969,"APR ",454,CVA & Precerebral Occulusion w/ Infarct,4.0,4.0
+79416,42430,100969,MS,64,INTRACRANIAL HEMORRHAGE OR CEREBRAL INFARCTION W MCC,,
+81288,40612,104697,"APR ",2843,Disorders of the Gallbladder & Biliary Tract,3.0,3.0
+81289,40612,104697,"APR ",2843,Disorders of the Gallbladder & Biliary Tract,3.0,3.0
+81290,40612,104697,MS,444,DISORDERS OF THE BILIARY TRACT W MCC,,
+83543,41976,172082,MS,4,"TRACH W MV 96+ HRS OR PDX EXC FACE, MOUTH & NECK W/O MAJ O.R.",,
+83544,41976,172082,"APR ",54,Tracheostomy W Long Term Mechanical Ventilation W/O Extensive Procedure,4.0,3.0
+83545,41976,172082,"APR ",54,Tracheostomy W Long Term Mechanical Ventilation W/O Extensive Procedure,4.0,3.0
+87023,41976,152032,"APR ",1394,Other Pneumonia,4.0,3.0
+87024,41976,152032,"APR ",1394,Other Pneumonia,4.0,3.0
+87025,41976,152032,MS,193,SIMPLE PNEUMONIA & PLEURISY W MCC,,
+96394,41976,130681,"APR ",7204,Septicemia & Disseminated Infections,4.0,4.0
+96395,41976,130681,"APR ",7204,Septicemia & Disseminated Infections,4.0,4.0
+96396,41976,130681,MS,871,SEPTICEMIA OR SEVERE SEPSIS W/O MV 96+ HOURS W MCC,,
+104800,41976,180546,"APR ",7104,Infectious & Parasitic Diseases Including HIV W O.R. Procedure,4.0,3.0
+104801,41976,180546,"APR ",7104,Infectious & Parasitic Diseases Including HIV W O.R. Procedure,4.0,3.0
+104802,41976,180546,MS,853,INFECTIOUS & PARASITIC DISEASES W O.R. PROCEDURE W MCC,,
+107869,41976,174863,"APR ",4664,"Malfunction, Reaction & Complic of Genitourinary Device Or Proc",4.0,4.0
+107870,41976,174863,"APR ",4664,"Malfunction, Reaction & Complic of Genitourinary Device Or Proc",4.0,4.0
+107871,41976,174863,MS,698,OTHER KIDNEY & URINARY TRACT DIAGNOSES W MCC,,
+111307,41976,155297,"APR ",7204,Septicemia & Disseminated Infections,4.0,4.0
+111308,41976,155297,"APR ",7204,Septicemia & Disseminated Infections,4.0,4.0
+111309,41976,155297,MS,871,SEPTICEMIA OR SEVERE SEPSIS W/O MV 96+ HOURS W MCC,,
+112602,41976,125013,"APR ",7204,Septicemia & Disseminated Infections,4.0,4.0
+112603,41976,125013,"APR ",7204,Septicemia & Disseminated Infections,4.0,4.0
+112604,41976,125013,MS,871,SEPTICEMIA OR SEVERE SEPSIS W/O MV 96+ HOURS W MCC,,
+114724,41976,151798,"APR ",7204,Septicemia & Disseminated Infections,4.0,4.0
+114725,41976,151798,"APR ",7204,Septicemia & Disseminated Infections,4.0,4.0
+114726,41976,151798,MS,871,SEPTICEMIA OR SEVERE SEPSIS W/O MV 96+ HOURS W MCC,,
+117246,41976,179418,"APR ",7204,Septicemia & Disseminated Infections,4.0,4.0
+117247,41976,179418,"APR ",7204,Septicemia & Disseminated Infections,4.0,4.0
+117248,41976,179418,MS,871,SEPTICEMIA OR SEVERE SEPSIS W/O MV 96+ HOURS W MCC,,
+120200,41976,145024,"APR ",2522,"Malfunction, Reaction & Complication Of G.I. Device Or Procedure",2.0,2.0
+120276,41976,145024,"APR ",2522,"Malfunction, Reaction & Complication Of G.I. Device Or Procedure",2.0,2.0
+120277,41976,145024,MS,394,OTHER DIGESTIVE SYSTEM DIAGNOSES W CC,,
+125346,41976,149469,MS,871,SEPTICEMIA OR SEVERE SEPSIS W/O MV 96+ HOURS W MCC,,
+125347,41976,149469,"APR ",7204,Septicemia & Disseminated Infections,4.0,4.0
+125348,41976,149469,"APR ",7204,Septicemia & Disseminated Infections,4.0,4.0
+125442,41976,153826,"APR ",7204,Septicemia & Disseminated Infections,4.0,4.0
+125443,41976,153826,"APR ",7204,Septicemia & Disseminated Infections,4.0,4.0
+125444,41976,153826,MS,871,SEPTICEMIA OR SEVERE SEPSIS W/O MV 96+ HOURS W MCC,,
