@@ -238,8 +238,7 @@ if tabla_seleccionada == 'Prescripciones':
     max_value = prescriptions['STARTDATE'].max().to_pydatetime()
     min_value = prescriptions['STARTDATE'].min().to_pydatetime()
     mind, maxd  = st.slider('Seleccione el rango de fecha',value= (min_value, max_value))
-    maxd = datetime.strptime(str(maxd), '%Y-%m-%d')
-    mind = datetime.strptime(str(mind), '%Y-%m-%d')
+
     filtered_prescriptions = prescriptions[(prescriptions['STARTDATE'] > mind) & (prescriptions['STARTDATE'] < maxd)]
     #filtered_prescriptions = prescriptions[prescriptions['startdate'] > mind]
     y = filtered_prescriptions.groupby(['month'])['DRUG'].count().values
