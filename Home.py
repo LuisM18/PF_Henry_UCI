@@ -8,12 +8,12 @@ from datetime import datetime
 from PIL import Image
 
 st.set_page_config(
-    page_title="Análisis del área UCI- Crowe Clinic",
+    page_title="Analysis of the ICU area- Crowe Clinic",
     page_icon="🏥",
     layout="wide",
 )
 
-st.sidebar.markdown('### Links relacionados a la base de datos')
+st.sidebar.markdown('###Links related to the database')
 
 url = 'https://github.com/LuisM18/PF_Henry_UCI'
 url2 = 'https://drive.google.com/drive/folders/19I8VMpCp3ylpVTRGGG0W4aGKt-4f664X'
@@ -24,7 +24,7 @@ st.sidebar.markdown(f'''
 unsafe_allow_html=True)
 
 st.sidebar.markdown(f'''
-<a href={url2}><button>Base de Datos</button></a>
+<a href={url2}><button>Database</button></a>
 ''',
 unsafe_allow_html=True)
 
@@ -45,8 +45,8 @@ with col3:
     datasight = Image.open('./images/datasighthdwithoutmine.png')
     st.image(datasight, width = 175)
 
-st.markdown("<h1 style='text-align: center; color: white;'>Análisis del área UCI de Crowe Clinic</h1>", unsafe_allow_html=True)
-st.markdown("<h3 style='text-align: right; color: white;'>Por DataSight Consulting</h3>", unsafe_allow_html=True)
+st.markdown("<h1 style='text-align: center; color: white;'>Analysis of the Crowe Clinic ICU area</h1>", unsafe_allow_html=True)
+st.markdown("<h3 style='text-align: right; color: white;'>By DataSight Consulting</h3>", unsafe_allow_html=True)
 
 with open('./images/a_photography_of_Crowe clinic_hospital6.png', "rb") as image_file:
     encoded_string = base64.b64encode(image_file.read())
@@ -122,18 +122,18 @@ with placeholder.container():
 
     mortalidad = tasa_mortalidad(admissions)
     kpi1.metric(
-        label = "Tasa de mortalidad último mes",
+        label = "Mortality rate last month",
         value = f"{round(mortalidad.iloc[-1,-1]*100,2)} % ",
         delta = delta(f"{round((mortalidad.iloc[-1,-1]-mortalidad.iloc[-2,-1]/mortalidad.iloc[-2,-1])*100,2)} % "),
-        help = 'El objetivo es reducir o mantener la tasa de mortalidad hasta un 20%'
+        help = 'The goal is to reduce or maintain the mortality rate by up to 20%'
     )
 
     reingresos = reingresos(admissions)
     kpi2.metric(
-        label = "Cantidad de reingresos",
-        value = f" {round(reingresos.iloc[-1,-1],2)} pacientes",
+        label = "Number of readmissions",
+        value = f" {round(reingresos.iloc[-1,-1],2)} patients",
         delta = delta(f"{round((reingresos.iloc[-1,-1]-reingresos.iloc[-2,-1]/reingresos.iloc[-2,-1])*100,2)} % "),
-        help = 'El objetivo es reducir los reingresos lo máximo posible'
+        help = 'The goal is to reduce readmissions as much as possible.'
     )
 
 icustays = pd.read_sql("""SELECT *
@@ -141,47 +141,47 @@ icustays = pd.read_sql("""SELECT *
 
 tiempo = tiempo_estancia_promedio(icustays)
 kpi3.metric(
-            label="Tiempo de estancia promedio en la UCI último mes",
-            value= f"{round(tiempo.iloc[-1,-1])} días ",
+            label="Average length of stay in the ICU last month",
+            value= f"{round(tiempo.iloc[-1,-1])} days",
             delta= f"{round((tiempo.iloc[-1,-1]-tiempo.iloc[-2,-1]/tiempo.iloc[-2,-1])*100,2)} % ",
-            help = 'El objetivo es reducir y/o mantener el tiempo de estancia de 5 días'
+            help = 'The objective is to reduce and/or maintain the stay time of 5 days'
         )    
 ####################################################################Top 5################################
-st.markdown("<h3 style='text-align: center; color: white;'>Top 5 de diagnósticos más frecuentes</h3>", unsafe_allow_html=True)
+st.markdown("<h3 style='text-align: center; color: white;'>Top 5 most frequent diagnoses</h3>", unsafe_allow_html=True)
 top5 = top5_diagnostico(admissions)
-fig = px.bar(top5,labels=dict(value='Casos',index='Diagnóstico'))
+fig = px.bar(top5,labels=dict(value='Cases',index='Diagnose'))
 fig.update_layout(showlegend=False)
 st.plotly_chart(fig,use_container_width=True)       
 
 ########################################################################## Mortalidad #######################################
-st.markdown("<h3 style='text-align: center; color: white;'>Tasa de mortalidad por mes y año</h3>", unsafe_allow_html=True)
+st.markdown("<h3 style='text-align: center; color: white;'>Mortality rate by month and year</h3>", unsafe_allow_html=True)
 max_value = admissions['DISCHTIME'].max().to_pydatetime()
 min_value = admissions['DISCHTIME'].min().to_pydatetime()
-mind, maxd = st.slider('Seleccione el rango de fecha',value=(min_value,max_value))
+mind, maxd = st.slider('Select date range',value=(min_value,max_value))
 admissions = admissions[(admissions['DISCHTIME'] > mind) & (admissions['DISCHTIME'] < maxd)]
 
 tasa = tasa_mortalidad(admissions)
 y = tasa['tasa_mortalidad']
 yearmonth = tasa.index.to_series().apply(lambda x: '{0}-{1}'.format(*x))
 
-fig3 = px.line(x = yearmonth.values,y = y,labels=dict(y='Porcentaje de Mortalidad',x='Fecha'))
+fig3 = px.line(x = yearmonth.values,y = y,labels=dict(y='Mortality rate',x='Date'))
 fig3.update_yaxes(tickformat=".2%")
 fig3.update_xaxes(tickformat='%b\n%Y')
 st.plotly_chart(fig3,use_container_width=True)
 
 
 ######################################################################33 Tiempo de Estancia ###############################
-st.markdown("<h3 style='text-align: center; color: white;'>Tiempo promedio de estancia en UCI por mes y año</h3>", unsafe_allow_html=True)
+st.markdown("<h3 style='text-align: center; color: white;'>Average length of stay in ICU by month and year</h3>", unsafe_allow_html=True)
 max_value = icustays['OUTTIME'].max().to_pydatetime()
 min_value = icustays['OUTTIME'].min().to_pydatetime()
-mindd, maxdd = st.slider('Seleccione el rango de fecha',value=(min_value,max_value))
+mindd, maxdd = st.slider('Select date range',value=(min_value,max_value))
 icustays = icustays[(icustays['OUTTIME'] > mindd) & (icustays['OUTTIME'] < maxdd)]
 
 tiempo = tiempo_estancia_promedio(icustays)
 y = tiempo['tiempo_estancia_promedio']
 yearmonth = tiempo.index.to_series().apply(lambda x: '{0}-{1}'.format(*x))
 
-fig4 = px.line(x = yearmonth.values,y = y,labels=dict(x='Fecha',y='Tiempo promedio (dias)'))
+fig4 = px.line(x = yearmonth.values,y = y,labels=dict(x='Date',y='Average time(days)'))
 fig4.update_xaxes(tickformat='%b\n%Y')
 st.plotly_chart(fig4,use_container_width=True)
 
