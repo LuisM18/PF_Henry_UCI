@@ -760,7 +760,7 @@
     <valuetypes>
       <valuetype>
         <name>String</name>
-        <value>SD</value>
+        <value>WD</value>
         <mask/>
         <set_type_empty_string>N</set_type_empty_string>
       </valuetype>
@@ -854,7 +854,7 @@
     <valuetypes>
       <valuetype>
         <name>String</name>
-        <value>SD</value>
+        <value>WD</value>
         <mask/>
         <set_type_empty_string>N</set_type_empty_string>
       </valuetype>
@@ -948,7 +948,7 @@
     <valuetypes>
       <valuetype>
         <name>String</name>
-        <value>SD</value>
+        <value>WD</value>
         <mask/>
         <set_type_empty_string>N</set_type_empty_string>
       </valuetype>
@@ -1042,7 +1042,7 @@
     <valuetypes>
       <valuetype>
         <name>String</name>
-        <value>SD</value>
+        <value>WD</value>
         <mask/>
         <set_type_empty_string>N</set_type_empty_string>
       </valuetype>
@@ -1136,7 +1136,7 @@
     <valuetypes>
       <valuetype>
         <name>String</name>
-        <value>SD</value>
+        <value>WD</value>
         <mask/>
         <set_type_empty_string>N</set_type_empty_string>
       </valuetype>
@@ -1230,7 +1230,7 @@
     <valuetypes>
       <valuetype>
         <name>String</name>
-        <value>SD</value>
+        <value>WD</value>
         <mask/>
         <set_type_empty_string>N</set_type_empty_string>
       </valuetype>
@@ -1324,7 +1324,7 @@
     <valuetypes>
       <valuetype>
         <name>String</name>
-        <value>SD</value>
+        <value>WD</value>
         <mask/>
         <set_type_empty_string>N</set_type_empty_string>
       </valuetype>
@@ -1418,7 +1418,7 @@
     <valuetypes>
       <valuetype>
         <name>String</name>
-        <value>SD</value>
+        <value>WD</value>
         <mask/>
         <set_type_empty_string>N</set_type_empty_string>
       </valuetype>
@@ -1512,7 +1512,7 @@
     <valuetypes>
       <valuetype>
         <name>String</name>
-        <value>SD</value>
+        <value>WD</value>
         <mask/>
         <set_type_empty_string>N</set_type_empty_string>
       </valuetype>
@@ -1606,7 +1606,7 @@
     <valuetypes>
       <valuetype>
         <name>String</name>
-        <value>SD</value>
+        <value>WD</value>
         <mask/>
         <set_type_empty_string>N</set_type_empty_string>
       </valuetype>
@@ -1700,7 +1700,7 @@
     <valuetypes>
       <valuetype>
         <name>String</name>
-        <value>SD</value>
+        <value>WD</value>
         <mask/>
         <set_type_empty_string>N</set_type_empty_string>
       </valuetype>
@@ -1794,7 +1794,7 @@
     <valuetypes>
       <valuetype>
         <name>String</name>
-        <value>SD</value>
+        <value>WD</value>
         <mask/>
         <set_type_empty_string>N</set_type_empty_string>
       </valuetype>
