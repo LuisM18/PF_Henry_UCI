@@ -1,777 +1,777 @@
-,row_id,icd9_code,short_title,long_title
-3106,3107,7942,Cls red-radius/ul epiphy,"Closed reduction of separated epiphysis, radius and ulna"
-3107,3108,7945,Close reduc-femur epiphy,"Closed reduction of separated epiphysis, femur"
-3108,3109,7946,Cls red-tibia/fib epiphy,"Closed reduction of separated epiphysis, tibia and fibula"
-3109,3110,7949,Cls reduc-sep epiphy NEC,"Closed reduction of separated epiphysis, other specified bone"
-3110,3111,7950,Open red-sep epiphy NOS,"Open reduction of separated epiphysis, unspecified site"
-3111,3112,7951,Opn red-sep epiphy-humer,"Open reduction of separated epiphysis, humerus"
-3112,3113,7952,Op red-radius/uln epiphy,"Open reduction of separated epiphysis, radius and ulna"
-3113,3114,7955,Opn red-sep epiphy-femur,"Open reduction of separated epiphysis, femur"
-3114,3115,8135,Refus drs/drslmb pst/pst,"Refusion of dorsal and dorsolumbar spine, posterior column, posterior technique"
-3115,3116,8136,Refus lmb/lmbsac ant/ant,"Refusion of lumbar and lumbosacral spine, anterior column, anterior technique"
-3116,3117,8137,Refus lmb/lmbsac pst/pst,"Refusion of lumbar and lumbosacral spine, posterior column, posterior technique"
-3117,3118,8138,Refus lmb/lmbsc ant/post,"Refusion of lumbar and lumbosacral spine, anterior column, posterior technique"
-3118,3119,8139,Refusion of spine NEC,"Refusion of spine, not elsewhere classified"
-3119,3120,8140,"Repair of hip, NEC","Repair of hip, not elsewhere classified"
-3120,3121,8142,Five-in-one knee repair,Five-in-one repair of knee
-3121,3122,8143,Triad knee repair,Triad knee repair
-3122,3123,8144,Patellar stabilization,Patellar stabilization
-3123,3124,8145,Cruciate lig repair NEC,Other repair of the cruciate ligaments
-3124,3125,8146,Collaterl lig repair NEC,Other repair of the collateral ligaments
-3125,3126,8147,Other repair of knee,Other repair of knee
-3126,3127,8149,Other repair of ankle,Other repair of ankle
-3127,3128,8151,Total hip replacement,Total hip replacement
-3128,3129,8152,Partial hip replacement,Partial hip replacement
-3129,3130,8153,Revise hip replacemt NOS,"Revision of hip replacement, not otherwise specified"
-3130,3131,8154,Total knee replacement,Total knee replacement
-3131,3132,8155,Revise knee replace NOS,"Revision of knee replacement, not otherwise specified"
-3132,3133,8156,Total ankle replacement,Total ankle replacement
-3133,3134,8157,"Repl joint of foot, toe",Replacement of joint of foot and toe
-3134,3135,8159,Rev jt repl low ext NEC,"Revision of joint replacement of lower extremity, not elsewhere classified"
-3135,3136,6759,Oth rep int cervical os,Other repair of internal cervical os
-3136,3137,6761,Suture cervical lacerat,Suture of laceration of cervix
-3137,3138,6762,Cervical fistula repair,Repair of fistula of cervix
-3138,3139,7399,Ops assisting deliv NEC,Other operations assisting delivery
-3139,3140,740,Classical c-section,Classical cesarean section
-3140,3141,741,Low cervical c-section,Low cervical cesarean section
-3141,3142,742,Extraperitoneal c-sect,Extraperitoneal cesarean section
-3142,3143,743,Rem extratub ectop preg,Removal of extratubal ectopic pregnancy
-3143,3144,744,Cesarean section NEC,Cesarean section of other specified type
-3144,3145,8773,Intravenous pyelogram,Intravenous pyelogram
-3145,3146,8774,Retrograde pyelogram,Retrograde pyelogram
-3146,3147,8775,Percutaneous pyelogram,Percutaneous pyelogram
-3147,3148,8776,Retrogr cystourethrogram,Retrograde cystourethrogram
-3148,3149,8777,Cystogram NEC,Other cystogram
-3149,3150,8778,Ileal conduitogram,Ileal conduitogram
-3150,3151,8779,Urinary system x-ray NEC,Other x-ray of the urinary system
-3151,3152,8781,X-ray of gravid uterus,X-ray of gravid uterus
-3152,3153,8782,Gas hysterosalpingogram,Gas contrast hysterosalpingogram
-3153,3154,8783,Dye hysterosalpingogram,Opaque dye contrast hysterosalpingogram
-3154,3155,8784,Percutaneous hysterogram,Percutaneous hysterogram
-3155,3156,8785,Tube & uterus x-ray NEC,Other x-ray of fallopian tubes and uterus
-3156,3157,8789,Female genital x-ray NEC,Other x-ray of female genital organs
-3157,3158,8791,Contr semin vesiculogram,Contrast seminal vesiculogram
-3158,3159,8792,Prostat/sem ves xray NEC,Other x-ray of prostate and seminal vesicles
-3159,3160,8793,Contrast epididymogram,Contrast epididymogram
-3160,3161,8794,Contrast vasogram,Contrast vasogram
-3161,3162,8795,Epididymis/vas x-ray NEC,Other x-ray of epididymis and vas deferens
-3162,3163,8799,Male genital x-ray NEC,Other x-ray of male genital organs
-3163,3164,8801,C.A.T. scan of abdomen,Computerized axial tomography of abdomen
-3164,3165,8802,Abdominal tomography NEC,Other abdomen tomography
-3165,3166,8803,Abdominal wall sinogram,Sinogram of abdominal wall
-3166,3167,8804,Abdominal lymphangiogram,Abdominal lymphangiogram
-3167,3168,8809,Abdominal wall x-ray NEC,Other soft tissue x-ray of abdominal wall
-3168,3169,8811,Pelvic dye contrast xray,Pelvic opaque dye contrast radiography
-3169,3170,8812,Pelvic gas contrast xray,Pelvic gas contrast radiography
-3170,3171,8813,Periton pneumogram NEC,Other peritoneal pneumogram
-3171,3172,8814,Retroperiton fistulogram,Retroperitoneal fistulogram
-3172,3173,8815,Retroperiton pneumogram,Retroperitoneal pneumogram
-3173,3174,8816,Retroperitoneal xray NEC,Other retroperitoneal x-ray
-3174,3175,8819,Abdominal x-ray NEC,Other x-ray of abdomen
-3175,3176,8821,Skl xray-shoulder/up arm,Skeletal x-ray of shoulder and upper arm
-3176,3177,8822,Skel xray-elbow/forearm,Skeletal x-ray of elbow and forearm
-3177,3178,9461,Alcohol rehabilitation,Alcohol rehabilitation
-3178,3179,9462,Alcohol detoxification,Alcohol detoxification
-3179,3180,9463,Alcohol rehab/detox,Alcohol rehabilitation and detoxification
-3180,3181,9464,Drug rehabilitation,Drug rehabilitation
-3181,3182,9465,Drug detoxification,Drug detoxification
-3182,3183,9466,Drug rehab/detox,Drug rehabilitation and detoxification
-3183,3184,9467,Comb alcohol/drug rehab,Combined alcohol and drug rehabilitation
-3184,3185,9468,Comb alcohol/drug detox,Combined alcohol and drug detoxification
-3185,3186,9469,Comb alco/drug reha/deto,Combined alcohol and drug rehabilitation and detoxification
-3186,3187,8823,Skel xray-wrist & hand,Skeletal x-ray of wrist and hand
-3187,3188,8824,Skel xray-upper limb NOS,"Skeletal x-ray of upper limb, not otherwise specified"
-3188,3189,8825,Pelvimetry,Pelvimetry
-3189,3190,8826,Skel xray-pelvis/hip NEC,Other skeletal x-ray of pelvis and hip
-3190,3191,8827,Skel xray-thigh/knee/leg,"Skeletal x-ray of thigh, knee, and lower leg"
-3191,3192,8828,Skel xray-ankle & foot,Skeletal x-ray of ankle and foot
-3192,3193,8829,Skel xray-lower limb NOS,"Skeletal x-ray of lower limb, not otherwise specified"
-3193,3194,8831,Skeletal series x-ray,Skeletal series
-3194,3195,8832,Contrast arthrogram,Contrast arthrogram
-3195,3196,8833,Other skeletal x-ray,Other skeletal x-ray
-3196,3197,8834,Upper limb lymphangiogrm,Lymphangiogram of upper limb
-3197,3198,8835,Up limb sft tis xray NEC,Other soft tissue x-ray of upper limb
-3198,3199,8836,Lower limb lymphangiogrm,Lymphangiogram of lower limb
-3199,3200,8837,Lo limb sft tis xray NEC,Other soft tissue x-ray of lower limb
-3200,3201,8838,Other C.A.T. scan,Other computerized axial tomography
-3201,3202,8839,X-ray NEC and NOS,"X-ray, other and unspecified"
-3202,3203,8840,Contrast arteriogram NOS,"Arteriography using contrast material, unspecified site"
-3203,3204,8841,Contr cerebr arteriogram,Arteriography of cerebral arteries
-3204,3205,8842,Contrast aortogram,Aortography
-3205,3206,8843,Contr pulmon arteriogram,Arteriography of pulmonary arteries
-3206,3207,8844,Contr thor arteriogr NEC,Arteriography of other intrathoracic vessels
-3207,3208,8845,Contrast renal arteriogr,Arteriography of renal arteries
-3208,3209,8846,Contrast placentogram,Arteriography of placenta
-3209,3210,8847,Contr abd arteriogrm NEC,Arteriography of other intra-abdominal arteries
-3210,3211,8848,Contrast arteriogram-leg,Arteriography of femoral and other lower extremity arteries
-3211,3212,8849,Contrast arteriogram NEC,Arteriography of other specified sites
-3212,3213,8850,Angiocardiography NOS,"Angiocardiography, not otherwise specified"
-3213,3214,8851,Vena cav angiocardiogram,Angiocardiography of venae cavae
-3214,3215,8852,Rt heart angiocardiogram,Angiocardiography of right heart structures
-3215,3216,8853,Lt heart angiocardiogram,Angiocardiography of left heart structures
-3216,3217,8854,Rt & lt heart angiocard,Combined right and left heart angiocardiography
-3217,3218,8855,Coronar arteriogr-1 cath,Coronary arteriography using a single catheter
-3218,3219,8856,Coronar arteriogr-2 cath,Coronary arteriography using two catheters
-3219,3220,8857,Coronary arteriogram NEC,Other and unspecified coronary arteriography
-3220,3221,8858,Negatve-contr cardiogram,Negative-contrast cardiac roentgenography
-3221,3222,8859,Intraop cor flr vas angi,Intra-operative coronary fluorescence vascular angiography
-3222,3223,8860,Contrast phlebogram NOS,"Phlebography using contrast material, unspecified site"
-3223,3224,8861,Contr phlebogram-hd/neck,Phlebography of veins of head and neck using contrast material
-3224,3225,8862,Contr phlebogram-pulmon,Phlebography of pulmonary veins using contrast material
-3225,3226,8863,Thorac contr phlebog NEC,Phlebography of other intrathoracic veins using contrast material
-3226,3227,8864,Portal contr phlebogram,Phlebography of the portal venous system using contrast material
-3227,3228,8865,Abd contr phlebogram NEC,Phlebography of other Intra-Abdominal veins using contrast material
-3228,3229,8866,Contrast phlebogram-leg,Phlebography of femoral and other lower extremity veins using contrast material
-3229,3230,8867,Contrast phlebogram NEC,Phlebography of other specified sites using contrast material
-3230,3231,8868,Impedance phlebogram,Impedance phlebography
-3231,3232,8871,Dx ultrasound-head/neck,Diagnostic ultrasound of head and neck
-3232,3233,8872,Dx ultrasound-heart,Diagnostic ultrasound of heart
-3233,3234,8873,Dx ultrasound-thorax NEC,Diagnostic ultrasound of other sites of thorax
-3234,3235,8874,Dx ultrasound-digestive,Diagnostic ultrasound of digestive system
-3235,3236,8875,Dx ultrasound-urinary,Diagnostic ultrasound of urinary system
-3236,3237,8876,Dx ultrasound-abdomen,Diagnostic ultrasound of abdomen and retroperitoneum
-3237,3238,8877,Dx ultrasound-vascular,Diagnostic ultrasound of peripheral vascular system
-3238,3239,8878,Dx ultrasound-grav uter,Diagnostic ultrasound of gravid uterus
-3239,3240,8879,Dx ultrasound NEC,Other diagnostic ultrasound
-3240,3241,8881,Cerebral thermography,Cerebral thermography
-3241,3242,8882,Ocular thermography,Ocular thermography
-3242,3243,8883,Bone thermography,Bone thermography
-3243,3244,9501,Limited eye examination,Limited eye examination
-3244,3245,9502,Comprehensive eye exam,Comprehensive eye examination
-3245,3246,9503,Extended ophthal work-up,Extended ophthalmologic work-up
-3246,3247,9504,Anesthetized eye exam,Eye examination under anesthesia
-3247,3248,9505,Visual field study,Visual field study
-3248,3249,9506,Color vision study,Color vision study
-3249,3250,9507,Dark adaptation study,Dark adaptation study
-3250,3251,9509,Eye examination NOS,"Eye examination, not otherwise specified"
-3251,3252,9511,Fundus photography,Fundus photography
-3252,3253,9512,Eye fluorescein angiogra,Fluorescein angiography or angioscopy of eye
-3253,3254,9513,Ultrasound study of eye,Ultrasound study of eye
-3254,3255,9514,X-ray study of eye,X-ray study of eye
-3255,3256,9515,Ocular motility study,Ocular motility study
-3256,3257,9516,P32 & eye tracer NEC,P32 and other tracer studies of eye
-3257,3258,9521,Electroretinogram,Electroretinogram [ERG]
-3258,3259,9522,Electro-oculogram,Electro-oculogram [EOG]
-3259,3260,8884,Muscle thermography,Muscle thermography
-3260,3261,8885,Breast thermography,Breast thermography
-3261,3262,8886,Blood vessel thermograph,Blood vessel thermography
-3262,3263,8889,Thermography NEC,Thermography of other sites
-3263,3264,8890,Diagnostic imaging NOS,"Diagnostic imaging, not elsewhere classified"
-3264,3265,8891,Mri of brain & brainstem,Magnetic resonance imaging of brain and brain stem
-3265,3266,8892,Mri chest & heart,Magnetic resonance imaging of chest and myocardium
-3266,3267,8893,Mri spinal canal,Magnetic resonance imaging of spinal canal
-3267,3268,8894,Mri musculoskeletal,Magnetic resonance imaging of musculoskeletal
-3268,3269,8895,"Mri pelvis,prostate,blad","Magnetic resonance imaging of pelvis, prostate, and bladder"
-3269,3270,9191,Bact smear NOS,"Microscopic examination of specimen from unspecified site, bacterial smear"
-3270,3271,9192,Culture NOS,"Microscopic examination of specimen from unspecified site, culture"
-3271,3272,9193,C & s NOS,"Microscopic examination of specimen from unspecified site, culture and sensitivity"
-3272,3273,9194,Parasitology NOS,"Microscopic examination of specimen from unspecified site, parasitology"
-3273,3274,9195,Toxicology NOS,"Microscopic examination of specimen from unspecified site, toxicology"
-3274,3275,9196,Cell blk/pap NOS,"Microscopic examination of specimen from unspecified site, cell block and Papanicolaou smear"
-3275,3276,9919,Inject anticoagulant,Injection of anticoagulant
-3276,3277,9920,Inj/inf platelet inhibit,Injection or infusion of platelet inhibitor
-3277,3278,9921,Inject antibiotic,Injection of antibiotic
-3278,3279,9922,Inject anti-infect NEC,Injection of other anti-infective
-3279,3280,9923,Inject steroid,Injection of steroid
-3280,3281,9924,Inject hormone NEC,Injection of other hormone
-3281,3282,9925,Inject ca chemother NEC,Injection or infusion of cancer chemotherapeutic substance
-3282,3283,9926,Inject tranquilizer,Injection of tranquilizer
-3283,3284,9927,Iontophoresis,Iontophoresis
-3284,3285,9928,Immunotherapy as antineo,Injection or infusion of biological response modifier [BRM] as an antineoplastic agent
-3285,3286,9929,Inject/infuse NEC,Injection or infusion of other therapeutic or prophylactic substance
-3286,3287,9931,Cholera vaccination,Vaccination against cholera
-3287,3288,9932,Typhoid/paratyphoid vacc,Vaccination against typhoid and paratyphoid fever
-3288,3289,9933,Tuberculosis vaccination,Vaccination against tuberculosis
-3289,3290,9934,Plague vaccination,Vaccination against plague
-3290,3291,9935,Tularemia vaccination,Vaccination against tularemia
-3291,3292,9936,Diphtheria toxoid admin,Administration of diphtheria toxoid
-3292,3293,9937,Pertussis vaccination,Vaccination against pertussis
-3293,3294,9938,Tetanus toxoid administ,Administration of tetanus toxoid
-3294,3295,9939,Dpt administration,"Administration of diphtheria-tetanus-pertussis, combined"
-3295,3296,9941,Polio vaccine administra,Administration of poliomyelitis vaccine
-3296,3297,9942,Smallpox vaccination,Vaccination against smallpox
-3297,3298,9943,Yellow fever vaccination,Vaccination against yellow fever
-3298,3299,9944,Rabies vaccination,Vaccination against rabies
-3299,3300,9945,Measles vaccination,Vaccination against measles
-3300,3301,9946,Mumps vaccination,Vaccination against mumps
-3301,3302,9947,Rubella vaccination,Vaccination against rubella
-3302,3303,9948,Mmr administration,Administration of measles-mumps-rubella vaccine
-3303,3304,9951,Common cold vaccination,Prophylactic vaccination against the common cold
-3304,3305,9952,Influenza vaccination,Prophylactic vaccination against influenza
-3305,3306,9953,Arbovirus enceph vaccin,Prophylactic vaccination against arthropod-borne viral encephalitis
-3306,3307,9954,Arbovirus vaccinat NEC,Prophylactic vaccination against other arthropod-borne viral diseases
-3307,3308,9955,Vaccination NEC,Prophylactic administration of vaccine against other diseases
-3308,3309,9956,Tetanus antitoxin admini,Administration of tetanus antitoxin
-3309,3310,9199,Micro exam NOS,"Microscopic examination of specimen from unspecified site, other microscopic examination"
-3310,3311,9201,Thyroid scan/isotop func,Thyroid scan and radioisotope function studies
-3311,3312,9202,Liver scan/isotope funct,Liver scan and radioisotope function study
-3312,3313,9203,Renal scan/isotope funct,Renal scan and radioisotope function study
-3313,3314,9204,GI scan & isotope funct,Gastrointestinal scan and radioisotope function study
-3314,3315,9205,C-vasc scan/isotop funct,Cardiovascular and hematopoietic scan and radioisotope function study
-3315,3316,9209,Other isotope function,Other radioisotope function studies
-3316,3317,9211,Cerebral scan,Cerebral scan
-3317,3318,9212,Head scan NEC,Scan of other sites of head
-3318,3319,9213,Parathyroid scan,Parathyroid scan
-3319,3320,9214,Bone scan,Bone scan
-3320,3321,9215,Pulmonary scan,Pulmonary scan
-3321,3322,9216,Lymphatic system scan,Scan of lymphatic system
-3322,3323,9217,Placental scan,Placental scan
-3323,3324,9218,Total body scan,Total body scan
-3324,3325,9219,Scan of other sites,Scan of other sites
-3325,3326,9220,Inf liquid brachy isotop,Infusion of liquid brachytherapy radioisotope
-3326,3327,9221,Superficial radiation,Superficial radiation
-3327,3328,9222,Orthovoltage radiation,Orthovoltage radiation
-3328,3329,9223,Radioisot teleradiother,Radioisotopic teleradiotherapy
-3329,3330,9224,Teleradio using photons,Teleradiotherapy using photons
-3330,3331,9225,Electron teleradiotherap,Teleradiotherapy using electrons
-3331,3332,9226,Particul teleradioth NEC,Teleradiotherapy of other particulate radiation
-3332,3333,9227,Radioactive elem implant,Implantation or insertion of radioactive elements
-3333,3334,9228,Isotope inject/instill,Injection or instillation of radioisotopes
-3334,3335,9229,Radiotherapeut proc NEC,Other radiotherapeutic procedure
-3335,3336,9230,Stereo radiosurgery NOS,"Stereotactic radiosurgery, not otherwise specified"
-3336,3337,9231,Sing source radiosurgery,Single source photon radiosurgery
-3337,3338,9232,Multisource radiosurgery,Multi-source photon radiosurgery
-3338,3339,9233,Particulate radiosurgery,Particulate radiosurgery
-3339,3340,9239,Stereo radiosurgery NEC,"Stereotactic radiosurgery, not elsewhere classified"
-3340,3341,9241,Intra-op electron rad rx,Intra-operative electron radiation therapy
-3341,3342,9957,Botulism antitoxin admin,Administration of botulism antitoxin
-3342,3343,9958,Antitoxin administra NEC,Administration of other antitoxins
-3343,3344,9959,Vaccination/innocula NEC,Other vaccination and inoculation
-3344,3345,9960,Cardiopulm resuscita NOS,"Cardiopulmonary resuscitation, not otherwise specified"
-3345,3346,9961,Atrial cardioversion,Atrial cardioversion
-3346,3347,9962,Heart countershock NEC,Other electric countershock of heart
-3347,3348,9963,Closed chest card massag,Closed chest cardiac massage
-3348,3349,9964,Carotid sinus stiumlat,Carotid sinus stimulation
-3349,3350,9301,Functional pt evaluation,Functional evaluation
-3350,3351,9302,Orthotic evaluation,Orthotic evaluation
-3351,3352,9303,Prosthetic evaluation,Prosthetic evaluation
-3352,3353,9304,Manual muscle funct test,Manual testing of muscle function
-3353,3354,9305,Range of motion testing,Range of motion testing
-3354,3355,9306,Limb length measurement,Measurement of limb length
-3355,3356,9307,Body measurement,Body measurement
-3356,3357,9308,Electromyography,Electromyography
-3357,3358,9309,Other dx pt procedure,Other diagnostic physical therapy procedure
-3358,3359,9311,Assisting exercise,Assisting exercise
-3359,3360,9312,Activ musculosk exer NEC,Other active musculoskeletal exercise
-3360,3361,9313,Resistive exercise,Resistive exercise
-3361,3362,9314,Joint movement training,Training in joint movements
-3362,3363,9315,Mobilization of spine,Mobilization of spine
-3363,3364,9316,Other joint mobilization,Mobilization of other joints
-3364,3365,9317,Pass musculosk exer NEC,Other passive musculoskeletal exercise
-3365,3366,9318,Pt breathing exercise,Breathing exercise
-3366,3367,9319,Pt exercise NEC,"Exercise, not elsewhere classified"
-3367,3368,9321,Manual & mechan traction,Manual and mechanical traction
-3368,3369,9322,Ambulat & gait training,Ambulation and gait training
-3369,3370,9323,Orthotic device fitting,Fitting of orthotic device
-3370,3371,9324,Prosthet/orthot training,Training in use of prosthetic or orthotic device
-3371,3372,9325,Forced limb extension,Forced extension of limb
-3372,3373,9326,Manual rupt joint adhes,Manual rupture of joint adhesions
-3373,3374,9327,Musc or tend stretching,Stretching of muscle or tendon
-3374,3375,9328,Stretching of fascia,Stretching of fascia
-3375,3376,9329,Forcib correct defor NEC,Other forcible correction of musculoskeletal deformity
-3376,3377,9331,Assisted pool exercise,Assisted exercise in pool
-3377,3378,9332,Whirlpool treatment,Whirlpool treatment
-3378,3379,9333,Other hydrotherapy,Other hydrotherapy
-3379,3380,9334,Diathermy,Diathermy
-3380,3381,9335,Other heat therapy,Other heat therapy
-3381,3382,9336,Cardiac retraining,Cardiac retraining
-3382,3383,9337,Prenatal training,Prenatal training
-3383,3384,9338,Combined pt NOS,Combined physical therapy without mention of the components
-3384,3385,9339,Physical therapy NEC,Other physical therapy
-3385,3386,9341,Spine tract w skull dev,Spinal traction using skull device
-3386,3387,9342,Other spinal traction,Other spinal traction
-3387,3388,9343,Intermitt skel traction,Intermittent skeletal traction
-3388,3389,9344,Other skeletal traction,Other skeletal traction
-3389,3390,9345,Thomas' splint traction,Thomas' splint traction
-3390,3391,9346,Limb skin traction NEC,Other skin traction of limbs
-3391,3392,9351,Plaster jacket applicat,Application of plaster jacket
-3392,3393,9352,Neck support application,Application of neck support
-3393,3394,9353,Other cast application,Application of other cast
-3394,3395,9354,Application of splint,Application of splint
-3395,3396,9355,Dental wiring,Dental wiring
-3396,3397,9356,Pressure dressing applic,Application of pressure dressing
-3397,3398,9357,Dressing of wound NEC,Application of other wound dressing
-3398,3399,9358,Pressure trouser applica,Application of pressure trousers
-3399,3400,9359,Immobiliz/wound attn NEC,"Other immobilization, pressure, and attention to wound"
-3400,3401,9361,Omt for gen'l mobilizat,Osteopathic manipulative treatment for general mobilization
-3401,3402,9362,"Omt with hi-vel,lo-ampli","Osteopathic manipulative treatment using high-velocity, low-amplitude forces"
-3402,3403,9363,"Omt with lo-vel,hi-ampli","Osteopathic manipulative treatment using low- velocity, high-amplitude forces"
-3403,3404,9364,"Omt with isoton,isometri","Osteopathic manipulative treatment using isotonic, isometric forces"
-3404,3405,9365,Omt with indirect forces,Osteopathic manipulative treatment using indirect forces
-3405,3406,9366,Omt to move tissue fluid,Osteopathic manipulative treatment to move tissue fluids
-3406,3407,9367,Osteopath manipulat NEC,Other specified osteopathic manipulative treatment
-3407,3408,9371,Dyslexia training,Dyslexia training
-3408,3409,9372,Dysphasia training,Dysphasia training
-3409,3410,9373,Esophag speech training,Esophageal speech training
-3410,3411,9374,Speech defect training,Speech defect training
-3411,3412,9375,Other speech therapy,Other speech training and therapy
-3412,3413,9376,Training in lead dog use,Training in use of lead dog for the blind
-3413,3414,9377,Braille or moon training,Training in braille or moon
-3414,3415,9969,Cardiac rhythm conv NEC,Other conversion of cardiac rhythm
-3415,3416,9971,Therapeu plasmapheresis,Therapeutic plasmapheresis
-3416,3417,9972,Therapeutc leukopheresis,Therapeutic leukopheresis
-3417,3418,9973,Therapeu erythropheresis,Therapeutic erythrocytapheresis
-3418,3419,9974,Therapeu plateltpheresis,Therapeutic plateletpheresis
-3419,3420,9975,Adm neuroprotective agnt,Administration of neuroprotective agent
-3420,3421,9976,Extracorp immunoabsorpt,Extracorporeal immunoadsorption
-3421,3422,9977,App adhesion barrier sub,Application or administration of an adhesion barrier substance
-3422,3423,9978,Aquapheresis,Aquapheresis
-3423,3424,9979,Other therapeu apheresis,Other therapeutic apheresis
-3424,3425,9981,Hypothermia,Hypothermia (central) (local)
-3425,3426,9982,Ultraviolet light therap,Ultraviolet light therapy
-3426,3427,9983,Other phototherapy,Other phototherapy
-3427,3428,9984,Isolation,Isolation
-3428,3429,9985,Hyperthermia ca therapy,Hyperthermia for treatment of cancer
-3429,3430,9986,Non-invasive bone stimul,Non-invasive placement of bone growth stimulator
-3430,3431,9988,Therapeutc photopheresis,Therapeutic photopheresis
-3431,3432,9991,Anesthesia acupuncture,Acupuncture for anesthesia
-3432,3433,6651,Remove both fallop tubes,Removal of both fallopian tubes at same operative episode
-3433,3434,6652,Remove solitary fal tube,Removal of remaining fallopian tube
-3434,3435,6661,Destroy fallop tube les,Excision or destruction of lesion of fallopian tube
-3435,3436,6662,Remov tube & ectop preg,Salpingectomy with removal of tubal pregnancy
-3436,3437,6663,Bilat part salpingec NOS,"Bilateral partial salpingectomy, not otherwise specified"
-3437,3438,6669,Partial salpingectom NEC,Other partial salpingectomy
-3438,3439,9378,Rehab for the blind NEC,Other rehabilitation for the blind
-3439,3440,9381,Recreational therapy,Recreation therapy
-3440,3441,9382,Educational therapy,Educational therapy
-3441,3442,9383,Occupational therapy,Occupational therapy
-3442,3443,9384,Music therapy,Music therapy
-3443,3444,9385,Vocational rehabilitat,Vocational rehabilitation
-3444,3445,9389,Rehabilitation NEC,"Rehabilitation, not elsewhere classified"
-3445,3446,9390,Non-invasive mech vent,Non-invasive mechanical ventilation
-3446,3447,9391,Ippb,Intermittent positive pressure breathing [IPPB]
-3447,3448,9393,Nonmechan resuscitation,Nonmechanical methods of resuscitation
-3448,3449,9394,Nebulizer therapy,Respiratory medication administered by nebulizer
-3449,3450,9395,Hyperbaric oxygenation,Hyperbaric oxygenation
-3450,3451,9396,Oxygen enrichment NEC,Other oxygen enrichment
-3451,3452,9397,Decompression chamber,Decompression chamber
-3452,3453,9398,Atmos press/compos contr,Other control of atmospheric pressure and composition
-3453,3454,9399,Other resp procedures,Other respiratory procedures
-3454,3455,9401,Intelligence test admin,Administration of intelligence test
-3455,3456,9402,Psychologic test adminis,Administration of psychologic test
-3456,3457,9403,Character analysis,Character analysis
-3457,3458,9408,Psychol eval & test NEC,Other psychologic evaluation and testing
-3458,3459,9409,Psychol mental stat NOS,"Psychologic mental status determination, not otherwise specified"
-3459,3460,9411,Psychiat mental determin,Psychiatric mental status determination
-3460,3461,9412,Routine psychiat visit,"Routine psychiatric visit, not otherwise specified"
-3461,3462,9413,Psychia commitment eval,Psychiatric commitment evaluation
-3462,3463,9992,Other acupuncture,Other acupuncture
-3463,3464,9993,Rectal massage,Rectal massage (for levator spasm)
-3464,3465,9994,Prostatic massage,Prostatic massage
-3465,3466,9995,Stretching of foreskin,Stretching of foreskin
-3466,3467,9996,Sperm collection,Collection of sperm for artificial insemination
-3467,3468,9997,Denture fitting,Fitting of denture
-3468,3469,9998,Milk extraction,Extraction of milk from lactating breast
-3469,3470,9999,Miscellaneous proc NEC,Other miscellaneous procedures
-3470,3471,8621,Excision of pilonid cyst,Excision of pilonidal cyst or sinus
-3471,3472,8622,Exc wound debridement,"Excisional debridement of wound, infection, or burn"
-3472,3473,8623,Nail removal,"Removal of nail, nail bed, or nail fold"
-3473,3474,8624,Skin chemosurgery,Chemosurgery of skin
-3474,3475,8625,Dermabrasion,Dermabrasion
-3475,3476,8626,Ligation dermal appendag,Ligation of dermal appendage
-3476,3477,8627,Debridement of nail,"Debridement of nail, nail bed, or nail fold"
-3477,3478,8628,Nonexcis debridement wnd,"Nonexcisional debridement of wound, infection or burn"
-3478,3479,863,Other local destruc skin,Other local excision or destruction of lesion or tissue of skin and subcutaneous tissue
-3479,3480,864,Radical excis skin les,Radical excision of skin lesion
-3480,3481,9419,Psychia interv/eval NEC,Other psychiatric interview and evaluation
-3481,3482,9421,Narcoanalysis,Narcoanalysis
-3482,3483,9422,Lithium therapy,Lithium therapy
-3483,3484,9423,Neuroleptic therapy,Neuroleptic therapy
-3484,3485,9424,Chemical shock therapy,Chemical shock therapy
-3485,3486,8651,Replantation of scalp,Replantation of scalp
-3486,3487,8659,Skin closure NEC,Closure of skin and subcutaneous tissue of other sites
-3487,3488,8660,Free skin graft NOS,"Free skin graft, not otherwise specified"
-3488,3489,8661,Full-thick hand skin grf,Full-thickness skin graft to hand
-3489,3490,8662,Hand skin graft NEC,Other skin graft to hand
-3490,3491,8663,Full-thick skin grft NEC,Full-thickness skin graft to other sites
-3491,3492,8664,Hair transplant,Hair transplant
-3492,3493,8665,Heterograft to skin,Heterograft to skin
-3493,3494,8666,Homograft to skin,Homograft to skin
-3494,3495,8667,Dermal regener graft,Dermal regenerative graft
-3495,3496,8669,Free skin graft NEC,Other skin graft to other sites
-3496,3497,8670,Pedicle graft/flap NOS,"Pedicle or flap graft, not otherwise specified"
-3497,3498,8671,Cut & prep pedicle graft,Cutting and preparation of pedicle grafts or flaps
-3498,3499,8672,Pedicle graft advancemen,Advancement of pedicle graft
-3499,3500,8673,Attach pedicle to hand,Attachment of pedicle or flap graft to hand
-3500,3501,8674,Attach pedicle graft NEC,Attachment of pedicle or flap graft to other sites
-3501,3502,8675,Revision of pedicle grft,Revision of pedicle or flap graft
-3502,3503,8681,Repair facial weakness,Repair for facial weakness
-3503,3504,9425,Psychiat drug therap NEC,Other psychiatric drug therapy
-3504,3505,9426,Subconvulsive est,Subconvulsive electroshock therapy
-3505,3506,9427,Electroshock therapy NEC,Other electroshock therapy
-3506,3507,9429,Psychiatr somatother NEC,Other psychiatric somatotherapy
-3507,3508,9431,Psychoanalysis,Psychoanalysis
-3508,3509,9432,Hypnotherapy,Hypnotherapy
-3509,3510,9433,Behavior therapy,Behavior therapy
-3510,3511,9434,Ind therap psychsex dysf,Individual therapy for psychosexual dysfunction
-3511,3512,9435,Crisis intervention,Crisis intervention
-3512,3513,8682,Facial rhytidectomy,Facial rhytidectomy
-3513,3514,8683,Size reduct plastic op,Size reduction plastic operation
-3514,3515,8684,Relaxation of scar,Relaxation of scar or web contracture of skin
-3515,3516,8685,Syndactyly correction,Correction of syndactyly
-3516,3517,8686,Onychoplasty,Onychoplasty
-3517,3518,8687,Fat grft skin/subq tiss,Fat graft of skin and subcutaneous tissue
-3518,3519,8689,Skin repair & plasty NEC,Other repair and reconstruction of skin and subcutaneous tissue
-3519,3520,8690,Ext fat for grft/banking,Extraction of fat for graft or banking
-3520,3521,8691,Skin excision for graft,Excision of skin for graft
-3521,3522,8692,Epilation of skin,Electrolysis and other epilation of skin
-3522,3523,8693,Insert tissue expander,Insertion of tissue expander
-3523,3524,8694,Ins/repl single pul gen,"Insertion or replacement of single array neurostimulator pulse generator, not specified as rechargeable"
-3524,3525,8695,Ins/re pls gn no rechrg,"Insertion or replacement of multiple array neurostimulator pulse generator, not specified as rechargeable"
-3525,3526,8696,Insert/repl oth neurost,Insertion or replacement of other neurostimulator pulse generator
-3526,3527,8697,"Ins/rep 1 pul gen,rechrg",Insertion or replacement of single array rechargeable neurostimulator pulse generator
-3527,3528,8698,"Ins/rep mul pul gn,rechg",Insertion or replacement of multiple array (two or more) rechargeable neurostimulator pulse generator
-3528,3529,8699,Skin & subq op NEC,Other operations on skin and subcutaneous tissue
-3529,3530,8701,Pneumoencephalogram,Pneumoencephalogram
-3530,3531,8702,Brain/skull contrst xray,Other contrast radiogram of brain and skull
-3531,3532,8703,C.A.T. scan of head,Computerized axial tomography of head
-3532,3533,8704,Head tomography NEC,Other tomography of head
-3533,3534,8705,Contrast dacryocystogram,Contrast dacryocystogram
-3534,3535,8706,Nasophary contrast x-ray,Contrast radiogram of nasopharynx
-3535,3536,8707,Contrast laryngogram,Contrast laryngogram
-3536,3537,8708,Cervical lymphangiogram,Cervical lymphangiogram
-3537,3538,8709,Head soft tiss x-ray NEC,"Other soft tissue x-ray of face, head, and neck"
-3538,3539,8711,Full-mouth x-ray,Full-mouth x-ray of teeth
-3539,3540,8712,Dental x-ray NEC,Other dental x-ray
-3540,3541,8713,Tm contrast arthrogram,Temporomandibular contrast arthrogram
-3541,3542,8714,Contrast x-ray of orbit,Contrast radiogram of orbit
-3542,3543,8715,Contrast x-ray of sinus,Contrast radiogram of sinus
-3543,3544,8716,Facial bone x-ray NEC,Other x-ray of facial bones
-3544,3545,8717,Skull x-ray NEC,Other x-ray of skull
-3545,3546,8721,Contrast myelogram,Contrast myelogram
-3546,3547,8722,Cervical spine x-ray NEC,Other x-ray of cervical spine
-3547,3548,8723,Thoracic spine x-ray NEC,Other x-ray of thoracic spine
-3548,3549,8724,Lumbosac spine x-ray NEC,Other x-ray of lumbosacral spine
-3549,3550,8729,Spinal x-ray NEC,Other x-ray of spine
-3550,3551,8731,Endotracheal bronchogram,Endotracheal bronchogram
-3551,3552,8732,Contrast bronchogram NEC,Other contrast bronchogram
-3552,3553,9436,Play psychotherapy,Play psychotherapy
-3553,3554,9437,Explor verbal psychother,Exploratory verbal psychotherapy
-3554,3555,9438,Suppor verbal psychother,Supportive verbal psychotherapy
-3555,3556,9439,Individ psychotherap NEC,Other individual psychotherapy
-3556,3557,9441,Grp therap psychsex dysf,Group therapy for psychosexual dysfunction
-3557,3558,9442,Family therapy,Family therapy
-3558,3559,9443,Psychodrama,Psychodrama
-3559,3560,9444,Other group therapy,Other group therapy
-3560,3561,9445,Drug addict counselling,Drug addiction counseling
-3561,3562,8733,Mediastinal pneumogram,Mediastinal pneumogram
-3562,3563,8734,Intrathor lymphangiogram,Intrathoracic lymphangiogram
-3563,3564,8735,Contr mammary ductogram,Contrast radiogram of mammary ducts
-3564,3565,8736,Breast xerography,Xerography of breast
-3565,3566,8737,Mammography NEC,Other mammography
-3566,3567,8738,Chest wall sinogram,Sinogram of chest wall
-3567,3568,8739,Thorax sft tiss xray NEC,Other soft tissue x-ray of chest wall
-3568,3569,8741,C.A.T. scan of thorax,Computerized axial tomography of thorax
-3569,3570,8742,Thoracic tomography NEC,Other tomography of thorax
-3570,3571,8743,Rib/sternum/clavic x-ray,"X-ray of ribs, sternum, and clavicle"
-3571,3572,8744,Routine chest x-ray,"Routine chest x-ray, so described"
-3572,3573,8749,Chest x-ray NEC,Other chest x-ray
-3573,3574,8751,Perc hepat Cholangiogram,Percutaneous hepatic cholangiogram
-3574,3575,8752,Intraven cholangiogram,Intravenous cholangiogram
-3575,3576,8753,Intraoper cholangiogram,Intraoperative cholangiogram
-3576,3577,8754,Cholangiogram NEC,Other cholangiogram
-3577,3578,8759,Biliary tract x-ray NEC,Other biliary tract x-ray
-3578,3579,8761,Barium swallow,Barium swallow
-3579,3580,8762,Upper GI series,Upper GI series
-3580,3581,8763,Small bowel series,Small bowel series
-3581,3582,8764,Lower GI series,Lower GI series
-3582,3583,8765,Intestinal x-ray NEC,Other x-ray of intestine
-3583,3584,8766,Contrast pancreatogram,Contrast pancreatogram
-3584,3585,8769,Digestive tract xray NEC,Other digestive tract x-ray
-3585,3586,8771,C.A.T. scan of kidney,Computerized axial tomography of kidney
-3586,3587,8772,Nephrotomogram NEC,Other nephrotomogram
-3587,3588,9446,Alcoholism counselling,Alcoholism counseling
-3588,3589,9449,Other counselling,Other counseling
-3589,3590,9451,Referral for psychother,Referral for psychotherapy
-3590,3591,9452,Referral psych aftercare,Referral for psychiatric aftercare
-3591,3592,9453,Referral alcohol rehab,Referral for alcoholism rehabilitation
-3592,3593,9454,Referral for drug rehab,Referral for drug addiction rehabilitation
-3593,3594,9455,Referral vocation rehab,Referral for vocational rehabilitation
-3594,3595,9459,Referral psych rehab NEC,Referral for other psychologic rehabilitation
-3595,3596,9012,Culture-endocrine,"Microscopic examination of specimen from endocrine gland, not elsewhere classified, culture"
-3596,3597,9013,C & s-endocrine,"Microscopic examination of specimen from endocrine gland, not elsewhere classified, culture and sensitivity"
-3597,3598,9014,Parasitology-endocrine,"Microscopic examination of specimen from endocrine gland, not elsewhere classified, parasitology"
-3598,3599,9015,Toxicology-endocrine,"Microscopic examination of specimen from endocrine gland, not elsewhere classified, toxicology"
-3599,3600,9016,Cell block/pap-endocrine,"Microscopic examination of specimen from endocrine gland, not elsewhere classified, cell block and Papanicolaou smear"
-3600,3601,9019,Micro exam-endocrine NEC,"Microscopic examination of specimen from endocrine gland, not elsewhere classified, other microscopic examination"
-3601,3602,9021,Bact smear-eye,"Microscopic examination of specimen from eye, bacterial smear"
-3602,3603,9022,Culture-eye,"Microscopic examination of specimen from eye, culture"
-3603,3604,9601,Insert nasopharyn airway,Insertion of nasopharyngeal airway
-3604,3605,9602,Insert oropharyn airway,Insertion of oropharyngeal airway
-3605,3606,9603,Insert esoph obtu airway,Insertion of esophageal obturator airway
-3606,3607,9604,Insert endotracheal tube,Insertion of endotracheal tube
-3607,3608,9605,Resp tract intubat NEC,Other intubation of respiratory tract
-3608,3609,9606,Insert sengstaken tube,Insertion of Sengstaken tube
-3609,3610,9607,Insert gastric tube NEC,Insertion of other (naso-)gastric tube
-3610,3611,9608,Insert intestinal tube,Insertion of (naso-)intestinal tube
-3611,3612,9609,Insert rectal tube,Insertion of rectal tube
-3612,3613,9611,Pack ext auditory canal,Packing of external auditory canal
-3613,3614,9614,Vaginal packing,Vaginal packing
-3614,3615,9615,Vaginal mold insertion,Insertion of vaginal mold
-3615,3616,9616,Other vaginal dilation,Other vaginal dilation
-3616,3617,9617,Vag diaphragm insertion,Insertion of vaginal diaphragm
-3617,3618,9618,Oth vagin pessary insert,Insertion of other vaginal pessary
-3618,3619,9619,Rectal packing,Rectal packing
-3619,3620,9621,Dilat frontonasal duct,Dilation of frontonasal duct
-3620,3621,9622,Dilation of rectum,Dilation of rectum
-3621,3622,9623,Dilation anal sphincter,Dilation of anal sphincter
-3622,3623,9624,Dilat enterostomy stoma,Dilation and manipulation of enterostomy stoma
-3623,3624,9625,Therapeut distent bladd,Therapeutic distention of bladder
-3624,3625,9626,Manual reduc rect prolap,Manual reduction of rectal prolapse
-3625,3626,9627,Manual reduction hernia,Manual reduction of hernia
-3626,3627,9628,Manl reduct stoma prolap,Manual reduction of enterostomy prolapse
-3627,3628,9629,Reduct intuss ali tract,Reduction of intussusception of alimentary tract
-3628,3629,9631,Gastric cooling,Gastric cooling
-3629,3630,9632,Gastric freezing,Gastric freezing
-3630,3631,9633,Gastric lavage,Gastric lavage
-3631,3632,9634,Gastric tube irrigat NEC,Other irrigation of (naso-)gastric tube
-3632,3633,9635,Gastric gavage,Gastric gavage
-3633,3634,9636,GI ostomy irrigation,Irrigation of gastrostomy or enterostomy
-3634,3635,9637,Proctoclysis,Proctoclysis
-3635,3636,9638,Impacted feces removal,Removal of impacted feces
-3636,3637,9639,Other transanal enema,Other transanal enema
-3637,3638,9641,Biliary tube irrigation,Irrigation of cholecystostomy and other biliary tube
-3638,3639,9642,Pancreatic tube irrigat,Irrigation of pancreatic tube
-3639,3640,9643,GI tract instillat NEC,"Digestive tract instillation, except gastric gavage"
-3640,3641,9644,Vaginal douche,Vaginal douche
-3641,3642,9645,Nephrost/pyelost irrigat,Irrigation of nephrostomy and pyelostomy
-3642,3643,9646,Urterost/urete cth irrig,Irrigation of ureterostomy and ureteral catheter
-3643,3644,9647,Cystostomy irrigation,Irrigation of cystostomy
-3644,3645,9648,Indwell cath irrig NEC,Irrigation of other indwelling urinary catheter
-3645,3646,9023,C & s-eye,"Microscopic examination of specimen from eye, culture and sensitivity"
-3646,3647,9024,Parasitology-eye,"Microscopic examination of specimen from eye, parasitology"
-3647,3648,9025,Toxicology-eye,"Microscopic examination of specimen from eye, toxicology"
-3648,3649,9026,Cell block/pap-eye,"Microscopic examination of specimen from eye, cell block and Papanicolaou smear"
-3649,3650,9029,Micro exam-eye NEC,"Microscopic examination of specimen from eye, other microscopic examination"
-3650,3651,9031,Bact smear-ent/larynx,"Microscopic examination of specimen from ear, nose, throat, and larynx, bacterial smear"
-3651,3652,9032,Culture-ent/larynx,"Microscopic examination of specimen from ear, nose, throat, and larynx, culture"
-3652,3653,9033,C & s-ent/larynx,"Microscopic examination of specimen from ear, nose, throat, and larynx, culture and sensitivity"
-3653,3654,9034,Parasitology-ent/larynx,"Microscopic examination of specimen from ear, nose, throat, and larynx, parasitology"
-3654,3655,9035,Toxicology-ent/larynx,"Microscopic examination of specimen from ear, nose, throat, and larynx, toxicology"
-3655,3656,9036,Cell block/pap-ent/laryn,"Microscopic examination of specimen from ear, nose, throat, and larynx, cell block and Papanicolaou smear"
-3656,3657,9039,Micro exam-ent/laryn NEC,"Microscopic examination of specimen from ear, nose, throat, and larynx, other microscopic examination"
-3657,3658,9041,Bact smear-lower resp,"Microscopic examination of specimen from trachea, bronchus, pleura, lung, and other thoracic specimen, and of sputum, bacterial smear"
-3658,3659,9042,Culture-lower resp,"Microscopic examination of specimen from trachea, bronchus, pleura, lung, and other thoracic specimen, and of sputum, culture"
-3659,3660,9043,C & s-lower resp,"Microscopic examination of specimen from trachea, bronchus, pleura, lung, and other thoracic specimen, and of sputum, culture and sensitivity"
-3660,3661,9044,Parasitology-lower resp,"Microscopic examination of specimen from trachea, bronchus, pleura, lung, and other thoracic specimen, and of sputum, parasitology"
-3661,3662,9045,Toxicology-lower resp,"Microscopic examination of specimen from trachea, bronchus, pleura, lung, and other thoracic specimen, and of sputum, toxicology"
-3662,3663,9046,Cell block/pap-lowr resp,"Microscopic examination of specimen from trachea, bronchus, pleura, lung, and other thoracic specimen, and of sputum, cell block and Papanicolaou smear"
-3663,3664,9049,Micro exam-lowr resp NEC,"Microscopic examination of specimen from trachea, bronchus, pleura, lung, and other thoracic specimen, and of sputum, other microscopic examination"
-3664,3665,9051,Bact smear-blood,"Microscopic examination of blood, bacterial smear"
-3665,3666,9649,Other gu instillation,Other genitourinary instillation
-3666,3667,9651,Irrigation of eye,Irrigation of eye
-3667,3668,9652,Irrigation of ear,Irrigation of ear
-3668,3669,9653,Irrigation of nasal pass,Irrigation of nasal passages
-3669,3670,9654,Dental scaling & debride,"Dental scaling, polishing, and debridement"
-3670,3671,9655,Tracheostomy toilette,Tracheostomy toilette
-3671,3672,9656,Bronch/trach lavage NEC,Other lavage of bronchus and trachea
-3672,3673,9657,Vascular cath irrigation,Irrigation of vascular catheter
-3673,3674,9658,Wound catheter irrigat,Irrigation of wound catheter
-3674,3675,9659,Wound irrigation NEC,Other irrigation of wound
-3675,3676,966,Entral infus nutrit sub,Enteral infusion of concentrated nutritional substances
-3676,3677,9670,Con inv mec ven-unsp dur,Continuous invasive mechanical ventilation of unspecified duration
-3677,3678,9671,Cont inv mec ven <96 hrs,Continuous invasive mechanical ventilation for less than 96 consecutive hours
-3678,3679,9672,Cont inv mec ven 96+ hrs,Continuous invasive mechanical ventilation for 96 consecutive hours or more
-3679,3680,9701,Replace gast/esoph tube,Replacement of (naso-)gastric or esophagostomy tube
-3680,3681,9702,Replace gastrostomy tube,Replacement of gastrostomy tube
-3681,3682,9703,Replace small bowel tube,Replacement of tube or enterostomy device of small intestine
-3682,3683,9704,Replace large bowel tube,Replacement of tube or enterostomy device of large intestine
-3683,3684,9705,Repl stent in bile duct,Replacement of stent (tube) in biliary or pancreatic duct
-3684,3685,9711,Replace upper limb cast,Replacement of cast on upper limb
-3685,3686,9052,Culture-blood,"Microscopic examination of blood, culture"
-3686,3687,9053,C & s-blood,"Microscopic examination of blood, culture and sensitivity"
-3687,3688,9054,Parasitology-blood,"Microscopic examination of blood, parasitology"
-3688,3689,9055,Toxicology-blood,"Microscopic examination of blood, toxicology"
-3689,3690,9056,Cell block/pap-blood,"Microscopic examination of blood, cell block and Papanicolaou smear"
-3690,3691,9059,Micro exam-blood NEC,"Microscopic examination of blood, other microscopic examination"
-3691,3692,9061,Bact smear-spleen/marrow,"Microscopic examination of specimen from spleen and of bone marrow, bacterial smear"
-3692,3693,9062,Culture-spleen/marrow,"Microscopic examination of specimen from spleen and of bone marrow, culture"
-3693,3694,9063,C & s-spleen/marrow,"Microscopic examination of specimen from spleen and of bone marrow, culture and sensitivity"
-3694,3695,9064,Parasitol-spleen/marrow,"Microscopic examination of specimen from spleen and of bone marrow, parasitology"
-3695,3696,9065,Toxicology-spleen/marrow,"Microscopic examination of specimen from spleen and of bone marrow, toxicology"
-3696,3697,9066,Cell blk/pap-spleen/marr,"Microscopic examination of specimen from spleen and of bone marrow, cell block and Papanicolaou smear"
-3697,3698,9069,Micro exam-spln/marr NEC,"Microscopic examination of specimen from spleen and of bone marrow, other microscopic examination"
-3698,3699,9071,Bact smear-lymph system,"Microscopic examination of specimen from lymph node and of lymph, bacterial smear"
-3699,3700,9072,Culture-lymph system,"Microscopic examination of specimen from lymph node and of lymph, culture"
-3700,3701,9073,C & s-lymph system,"Microscopic examination of specimen from lymph node and of lymph, culture and sensitivity"
-3701,3702,9074,Parasitology-lymph sys,"Microscopic examination of specimen from lymph node and of lymph, parasitology"
-3702,3703,9075,Toxicology-lymph system,"Microscopic examination of specimen from lymph node and of lymph, toxicology"
-3703,3704,9076,Cell blk/pap-lymph sys,"Microscopic examination of specimen from lymph node and of lymph, cell block and Papanicolaou smear"
-3704,3705,9079,Micro exam-lymph sys NEC,"Microscopic examination of specimen from lymph node and of lymph, other microscopic examination"
-3705,3706,9081,Bact smear-upper GI,"Microscopic examination of specimen from upper gastrointestinal tract and of vomitus, bacterial smear"
-3706,3707,9082,Culture-upper GI,"Microscopic examination of specimen from upper gastrointestinal tract and of vomitus, culture"
-3707,3708,9083,C & s-upper GI,"Microscopic examination of specimen from upper gastrointestinal tract and of vomitus, culture and sensitivity"
-3708,3709,9084,Parasitology-upper GI,"Microscopic examination of specimen from upper gastrointestinal tract and of vomitus, parasitology"
-3709,3710,9085,Toxicology-upper GI,"Microscopic examination of specimen from upper gastrointestinal tract and of vomitus, toxicology"
-3710,3711,9086,Cell blk/pap-upper GI,"Microscopic examination of specimen from upper gastrointestinal tract and of vomitus, cell block and Papanicolaou smear"
-3711,3712,9089,Micro exam-upper GI NEC,"Microscopic examination of specimen from upper gastrointestinal tract and of vomitus, other microscopic examination"
-3712,3713,9091,Bact smear-lower GI,"Microscopic examination of specimen from lower gastrointestinal tract and of stool, bacterial smear"
-3713,3714,9092,Culture-lower GI,"Microscopic examination of specimen from lower gastrointestinal tract and of stool, culture"
-3714,3715,9712,Replace lower limb cast,Replacement of cast on lower limb
-3715,3716,9713,Replace cast NEC,Replacement of other cast
-3716,3717,9714,Replac m/s immob dev NEC,Replacement of other device for musculoskeletal immobilization
-3717,3718,9715,Replace wound catheter,Replacement of wound catheter
-3718,3719,9716,Replace wound pack/drain,Replacement of wound packing or drain
-3719,3720,9721,Replace nasal packing,Replacement of nasal packing
-3720,3721,9722,Replace dental packing,Replacement of dental packing
-3721,3722,9723,Replace trach tube,Replacement of tracheostomy tube
-3722,3723,9724,Replace vag diaphragm,Replacement and refitting of vaginal diaphragm
-3723,3724,9725,Replace vaginal pessary,Replacement of other vaginal pessary
-3724,3725,9726,Replace vag/vulv packing,Replacement of vaginal or vulvar packing or drain
-3725,3726,9729,Non-op replacement NEC,Other nonoperative replacements
-3726,3727,9731,Remove eye prosthesis,Removal of eye prosthesis
-3727,3728,9732,Remove nasal packing,Removal of nasal packing
-3728,3729,9733,Remove dental wiring,Removal of dental wiring
-3729,3730,9734,Remove dental packing,Removal of dental packing
-3730,3731,9735,Remove dental prosthesis,Removal of dental prosthesis
-3731,3732,9736,Remove ext mand fix dev,Removal of other external mandibular fixation device
-3732,3733,9737,Remove tracheostomy tube,Removal of tracheostomy tube
-3733,3734,9738,Remove head/neck sutures,Removal of sutures from head and neck
-3734,3735,9739,Remove head/neck dev NEC,Removal of other therapeutic device from head and neck
-3735,3736,9741,Remov thoracotomy tube,Removal of thoracotomy tube or pleural cavity drain
-3736,3737,9742,Remov mediastinal drain,Removal of mediastinal drain
-3737,3738,9743,Remov thorax sutures,Removal of sutures from thorax
-3738,3739,9744,Nonop remov hrt asst sys,Nonoperative removal of heart assist system
-3739,3740,9749,Remov thor ther dev NEC,Removal of other device from thorax
-3740,3741,9751,Remov gastrostomy tube,Removal of gastrostomy tube
-3741,3742,9752,Remov small bowel tube,Removal of tube from small intestine
-3742,3743,9753,Remov large bowel tube,Removal of tube from large intestine or appendix
-3743,3744,9754,Remov cholecystost tube,Removal of cholecystostomy tube
-3744,3745,9755,Remov biliary/liver tube,"Removal of T-tube, other bile duct tube, or liver tube"
-3745,3746,9756,Remov pancreatic tube,Removal of pancreatic tube or drain
-3746,3747,9759,Remov other GI device,Removal of other device from digestive system
-3747,3748,9761,Remov pyelos/nephros tub,Removal of pyelostomy and nephrostomy tube
-3748,3749,9762,Remov ureteral drain,Removal of ureterostomy tube and ureteral catheter
-3749,3750,9763,Remov cystostomy tube,Removal of cystostomy tube
-3750,3751,9764,Remov urin drainage NEC,Removal of other urinary drainage device
-3751,3752,9093,C & s-lower GI,"Microscopic examination of specimen from lower gastrointestinal tract and of stool, culture and sensitivity"
-3752,3753,9094,Parasitology-lower GI,"Microscopic examination of specimen from lower gastrointestinal tract and of stool, parasitology"
-3753,3754,9095,Toxicology-lower GI,"Microscopic examination of specimen from lower gastrointestinal tract and of stool, toxicology"
-3754,3755,9096,Cell blk/pap-lower GI,"Microscopic examination of specimen from lower gastrointestinal tract and of stool, cell block and Papanicolaou smear"
-3755,3756,9099,Micro exam-lower GI NEC,"Microscopic examination of specimen from lower gastrointestinal tract and of stool, other microscopic examination"
-3756,3757,9101,Bact smear-bili/pancreas,"Microscopic examination of specimen from liver, biliary tract, and pancreas, bacterial smear"
-3757,3758,9102,Culture-bili/pancreas,"Microscopic examination of specimen from liver, biliary tract, and pancreas, culture"
-3758,3759,9103,C & s-bili/pancreas,"Microscopic examination of specimen from liver, biliary tract, and pancreas, culture and sensitivity"
-3759,3760,9104,Parasitology-bili/pancr,"Microscopic examination of specimen from liver, biliary tract, and pancreas, parasitology"
-3760,3761,9105,Toxicology-bili/pancreas,"Microscopic examination of specimen from liver, biliary tract, and pancreas, toxicology"
-3761,3762,9106,Cell blk/pap-bili/pancre,"Microscopic examination of specimen from liver, biliary tract, and pancreas, cell block and Papanicolaou smear"
-3762,3763,9109,Micro exam-bili/panc NEC,"Microscopic examination of specimen from liver, biliary tract, and pancreas, other microscopic examination"
-3763,3764,9111,Bact smear-peritoneum,"Microscopic examination of peritoneal and retroperitoneal specimen, bacterial smear"
-3764,3765,9112,Culture-peritoneum,"Microscopic examination of peritoneal and retroperitoneal specimen, culture"
-3765,3766,9113,C & s-peritoneum,"Microscopic examination of peritoneal and retroperitoneal specimen, culture and sensitivity"
-3766,3767,9114,Parasitology-peritoneum,"Microscopic examination of peritoneal and retroperitoneal specimen, parasitology"
-3767,3768,9115,Toxicology-peritoneum,"Microscopic examination of peritoneal and retroperitoneal specimen, toxicology"
-3768,3769,9116,Cell blk/pap-peritoneum,"Microscopic examination of peritoneal and retroperitoneal specimen, cell block and Papanicolaou smear"
-3769,3770,9119,Micro exam-periton NEC,"Microscopic examination of peritoneal and retroperitoneal specimen, other microscopic examination"
-3770,3771,9121,Bact smear-upper urinary,"Microscopic examination of specimen from kidney, ureter, perirenal and periureteral tissue, bacterial smear"
-3771,3772,9122,Culture-upper urinary,"Microscopic examination of specimen from kidney, ureter, perirenal and periureteral tissue, culture"
-3772,3773,9123,C & s-upper urinary,"Microscopic examination of specimen from kidney, ureter, perirenal and periureteral tissue, culture and sensitivity"
-3773,3774,9124,Parasitology-upper urin,"Microscopic examination of specimen from kidney, ureter, perirenal and periureteral tissue, parasitology"
-3774,3775,9125,Toxicology-upper urinary,"Microscopic examination of specimen from kidney, ureter, perirenal and periureteral tissue, toxicology"
-3775,3776,9126,Cell blk/pap-upper urin,"Microscopic examination of specimen from kidney, ureter, perirenal and periureteral tissue, cell block and Papanicolaou smear"
-3776,3777,9765,Remov urethral stent,Removal of urethral stent
-3777,3778,9769,Remov other urin device,Removal of other device from urinary system
-3778,3779,9771,Removal iud,Removal of intrauterine contraceptive device
-3779,3780,9772,Remov intrauterine pack,Removal of intrauterine pack
-3780,3781,9773,Remov vaginal diaphragm,Removal of vaginal diaphragm
-3781,3782,9774,Removal oth vag pessary,Removal of other vaginal pessary
-3782,3783,9775,Remov vag/vulv packing,Removal of vaginal or vulvar packing
-3783,3784,9779,Remov other genit device,Removal of other device from genital tract
-3784,3785,9781,Remov retroperiton drain,Removal of retroperitoneal drainage device
-3785,3786,9782,Remov peritoneal drain,Removal of peritoneal drainage device
-3786,3787,9783,Remov abdom wall suture,Removal of abdominal wall sutures
-3787,3788,9784,Remov trunk suture NEC,"Removal of sutures from trunk, not elsewhere classified"
-3788,3789,9785,Remov trunk packing NEC,"Removal of packing from trunk, not elsewhere classified"
-3789,3790,9786,Remov abdomen device NEC,Removal of other device from abdomen
-3790,3791,9787,Remov trunk device NEC,Removal of other device from trunk
-3791,3792,9788,Remov ext immobilization,Removal of external immobilization device
-3792,3793,9789,Remov therapeut dev NEC,Removal of other therapeutic device
-3793,3794,9801,Remov intralum mouth FB,Removal of intraluminal foreign body from mouth without incision
-3794,3795,9802,Remov intralum esoph FB,Removal of intraluminal foreign body from esophagus without incision
-3795,3796,9803,Remov intralum gastr FB,Removal of intraluminal foreign body from stomach and small intestine without incision
-3796,3797,9804,Remov intralum colon FB,Removal of intraluminal foreign body from large intestine without incision
-3797,3798,9805,Remov intralum rect FB,Removal of intraluminal foreign body from rectum and anus without incision
-3798,3799,9811,Remov intralum ear FB,Removal of intraluminal foreign body from ear without incision
-3799,3800,9812,Remov intralum nose FB,Removal of intraluminal foreign body from nose without incision
-3800,3801,9813,Remov intralum pharyn FB,Removal of intraluminal foreign body from pharynx without incision
-3801,3802,9814,Remov intralum laryn FB,Removal of intraluminal foreign body from larynx without incision
-3802,3803,9815,Remov intralum trach FB,Removal of intraluminal foreign body from trachea and bronchus without incision
-3803,3804,9816,Remov intralum uter FB,Removal of intraluminal foreign body from uterus without incision
-3804,3805,9817,Remov intralum vag FB,Removal of intraluminal foreign body from vagina without incision
-3805,3806,9818,Remov intralum stoma FB,Removal of intraluminal foreign body from artificial stoma without incision
-3806,3807,9819,Remove intralum ureth FB,Removal of intraluminal foreign body from urethra without incision
-3807,3808,9820,Removal of FB NOS,"Removal of foreign body, not otherwise specified"
-3808,3809,9821,Removal superfic FB eye,Removal of superficial foreign body from eye without incision
-3809,3810,9822,Removal head/neck FB,Removal of other foreign body without incision from head and neck
-3810,3811,9823,Removal vulvar FB,Removal of foreign body from vulva without incision
-3811,3812,9129,Micro exam-uppr urin NEC,"Microscopic examination of specimen from kidney, ureter, perirenal and periureteral tissue, other microscopic examination"
-3812,3813,9131,Bact smear-lower urinary,"Microscopic examination of specimen from bladder, urethra, prostate, seminal vesicle, perivesical tissue, and of urine and semen, bacterial smear"
-3813,3814,9132,Culture-lower urinary,"Microscopic examination of specimen from bladder, urethra, prostate, seminal vesicle, perivesical tissue, and of urine and semen, culture"
-3814,3815,9133,C & s-lower urinary,"Microscopic examination of specimen from bladder, urethra, prostate, seminal vesicle, perivesical tissue, and of urine and semen, culture and sensitivity"
-3815,3816,9134,Parasitlolgy-lower urin,"Microscopic examination of specimen from bladder, urethra, prostate, seminal vesicle, perivesical tissue, and of urine and semen, parasitology"
-3816,3817,9135,Toxicology-lower urinary,"Microscopic examination of specimen from bladder, urethra, prostate, seminal vesicle, perivesical tissue, and of urine and semen, toxicology"
-3817,3818,9136,Cell blk/pap-lower urin,"Microscopic examination of specimen from bladder, urethra, prostate, seminal vesicle, perivesical tissue, and of urine and semen, cell block and Papanicolaou smear"
-3818,3819,9139,Micro exam-low urin NEC,"Microscopic examination of specimen from bladder, urethra, prostate, seminal vesicle, perivesical tissue, and of urine and semen, other microscopic examination"
-3819,3820,9141,Bact smear-female genit,"Microscopic examination of specimen from female genital tract, bacterial smear"
-3820,3821,9142,Culture-female genital,"Microscopic examination of specimen from female genital tract, culture"
-3821,3822,9143,C & s-female genital,"Microscopic examination of specimen from female genital tract, culture and sensitivity"
-3822,3823,9144,Parasitology-female gen,"Microscopic examination of specimen from female genital tract, parasitology"
-3823,3824,9145,Toxicology-female genit,"Microscopic examination of specimen from female genital tract, toxicology"
-3824,3825,9146,Cell blk/pap-female gen,"Microscopic examination of specimen from female genital tract, cell block and Papanicolaou smear"
-3825,3826,9149,Micro exam-femal gen NEC,"Microscopic examination of specimen from female genital tract, other microscopic examination"
-3826,3827,9151,Bact smear-musculoskel,"Microscopic examination of specimen from musculoskeletal system and of joint fluid, bacterial smear"
-3827,3828,9152,Culture-musculoskeletal,"Microscopic examination of specimen from musculoskeletal system and of joint fluid, culture"
-3828,3829,9153,C & s-musculoskeletal,"Microscopic examination of specimen from musculoskeletal system and of joint fluid, culture and sensitivity"
-3829,3830,9154,Parasitology-musculoskel,"Microscopic examination of specimen from musculoskeletal system and of joint fluid, parasitology"
-3830,3831,9155,Toxicology-musculoskel,"Microscopic examination of specimen from musculoskeletal system and of joint fluid, toxicology"
-3831,3832,9156,Cell blk/pap-musculoskel,"Microscopic examination of specimen from musculoskeletal system and of joint fluid, cell block and Papanicolaou smear"
-3832,3833,9824,Removal scrotal/penis FB,Removal of foreign body from scrotum or penis without incision
-3833,3834,9825,Removal trunk FB NEC,"Removal of other foreign body without incision from trunk except scrotum, penis, or vulva"
-3834,3835,9826,Removal FB from hand,Removal of foreign body from hand without incision
-3835,3836,9827,Removal FB from arm,"Removal of foreign body without incision from upper limb, except hand"
-3836,3837,9828,Removal FB from foot,Removal of foreign body from foot without incision
-3837,3838,9829,Removal FB from leg,"Removal of foreign body without incision from lower limb, except foot"
-3838,3839,9851,Eswl kid/ureter/bladder,"Extracorporeal shockwave lithotripsy [ESWL] of the kidney, ureter and/or bladder"
-3839,3840,9852,Eswl gb/bile duct,Extracorporeal shockwave lithotripsy [ESWL] of the gallbladder and/or bile duct
-3840,3841,9859,Eswl other sites,Extracorporeal shockwave lithotripsy of other sites
-3841,3842,9900,Periop aut trans hol bld,Perioperative autologous transfusion of whole blood or blood components
-3842,3843,9901,Exchange transfusion,Exchange transfusion
-3843,3844,9902,Transfus prev auto blood,Transfusion of previously collected autologous blood
-3844,3845,9903,Whole blood transfus NEC,Other transfusion of whole blood
-3845,3846,9904,Packed cell transfusion,Transfusion of packed cells
-3846,3847,9905,Platelet transfusion,Transfusion of platelets
-3847,3848,9906,Coag factor transfusion,Transfusion of coagulation factors
-3848,3849,9907,Serum transfusion NEC,Transfusion of other serum
-3849,3850,9908,Blood expander transfus,Transfusion of blood expander
-3850,3851,9909,Transfusion NEC,Transfusion of other substance
-3851,3852,9910,Inject/inf thrombo agent,Injection or infusion of thrombolytic agent
-3852,3853,9911,Inject rh immune globul,Injection of Rh immune globulin
-3853,3854,9912,Allergy immunization,Immunization for allergy
-3854,3855,9913,Autoimmune dis immunizat,Immunization for autoimmune disease
-3855,3856,9914,Injct/inf immunoglobulin,Injection or infusion of immunoglobulin
-3856,3857,9915,Parent infus nutrit sub,Parenteral infusion of concentrated nutritional substances
-3857,3858,9916,Inject antidote,Injection of antidote
-3858,3859,9917,Inject insulin,Injection of insulin
-3859,3860,9918,Inject/infuse electrolyt,Injection or infusion of electrolytes
-3860,3861,9159,Micro exam-musculosk NEC,"Microscopic examination of specimen from musculoskeletal system and of joint fluid, other microscopic examination"
-3861,3862,9161,Bact smear-integument,"Microscopic examination of specimen from skin and other integument, bacterial smear"
-3862,3863,9162,Culture-integument,"Microscopic examination of specimen from skin and other integument, culture"
-3863,3864,9163,C & s-integument,"Microscopic examination of specimen from skin and other integument, culture and sensitivity"
-3864,3865,9164,Parasitology-integument,"Microscopic examination of specimen from skin and other integument, parasitology"
-3865,3866,9165,Toxicology-integument,"Microscopic examination of specimen from skin and other integument, toxicology"
-3866,3867,9166,Cell blk/pap-integument,"Microscopic examination of specimen from skin and other integument, cell block and Papanicolaou smear"
-3867,3868,9169,Micro exam-integumen NEC,"Microscopic examination of specimen from skin and other integument, other microscopic examination"
-3868,3869,9171,Bact smear-op wound,"Microscopic examination of specimen from operative wound, bacterial smear"
-3869,3870,9172,Culture-op wound,"Microscopic examination of specimen from operative wound, culture"
-3870,3871,9173,C & s-op wound,"Microscopic examination of specimen from operative wound, culture and sensitivity"
-3871,3872,9174,Parasitology-op wound,"Microscopic examination of specimen from operative wound, parasitology"
-3872,3873,9175,Toxicology-op wound,"Microscopic examination of specimen from operative wound, toxicology"
-3873,3874,9176,Cell blk/pap-op wound,"Microscopic examination of specimen from operative wound, cell block and Papanicolaou smear"
-3874,3875,9179,Micro exam-op wound NEC,"Microscopic examination of specimen from operative wound, other microscopic examination"
-3875,3876,9181,Bact smear NEC,"Microscopic examination of specimen from other site, bacterial smear"
-3876,3877,9182,Culture NEC,"Microscopic examination of specimen from other site, culture"
-3877,3878,9183,C & s NEC,"Microscopic examination of specimen from other site, culture and sensitivity"
-3878,3879,9184,Parasitology NEC,"Microscopic examination of specimen from other site, parasitology"
-3879,3880,9185,Toxicology NEC,"Microscopic examination of specimen from other site, toxicology"
-3880,3881,9186,Cell blk/pap NEC,"Microscopic examination of specimen from other site, cell block and Papanicolaou smear"
-3881,3882,9189,Micro exam NEC,"Microscopic examination of specimen from other site, other microscopic examination"
+row_id,icd9_code,short_title,long_title
+3107,7942,Cls red-radius/ul epiphy,"Closed reduction of separated epiphysis, radius and ulna"
+3108,7945,Close reduc-femur epiphy,"Closed reduction of separated epiphysis, femur"
+3109,7946,Cls red-tibia/fib epiphy,"Closed reduction of separated epiphysis, tibia and fibula"
+3110,7949,Cls reduc-sep epiphy NEC,"Closed reduction of separated epiphysis, other specified bone"
+3111,7950,Open red-sep epiphy NOS,"Open reduction of separated epiphysis, unspecified site"
+3112,7951,Opn red-sep epiphy-humer,"Open reduction of separated epiphysis, humerus"
+3113,7952,Op red-radius/uln epiphy,"Open reduction of separated epiphysis, radius and ulna"
+3114,7955,Opn red-sep epiphy-femur,"Open reduction of separated epiphysis, femur"
+3115,8135,Refus drs/drslmb pst/pst,"Refusion of dorsal and dorsolumbar spine, posterior column, posterior technique"
+3116,8136,Refus lmb/lmbsac ant/ant,"Refusion of lumbar and lumbosacral spine, anterior column, anterior technique"
+3117,8137,Refus lmb/lmbsac pst/pst,"Refusion of lumbar and lumbosacral spine, posterior column, posterior technique"
+3118,8138,Refus lmb/lmbsc ant/post,"Refusion of lumbar and lumbosacral spine, anterior column, posterior technique"
+3119,8139,Refusion of spine NEC,"Refusion of spine, not elsewhere classified"
+3120,8140,"Repair of hip, NEC","Repair of hip, not elsewhere classified"
+3121,8142,Five-in-one knee repair,Five-in-one repair of knee
+3122,8143,Triad knee repair,Triad knee repair
+3123,8144,Patellar stabilization,Patellar stabilization
+3124,8145,Cruciate lig repair NEC,Other repair of the cruciate ligaments
+3125,8146,Collaterl lig repair NEC,Other repair of the collateral ligaments
+3126,8147,Other repair of knee,Other repair of knee
+3127,8149,Other repair of ankle,Other repair of ankle
+3128,8151,Total hip replacement,Total hip replacement
+3129,8152,Partial hip replacement,Partial hip replacement
+3130,8153,Revise hip replacemt NOS,"Revision of hip replacement, not otherwise specified"
+3131,8154,Total knee replacement,Total knee replacement
+3132,8155,Revise knee replace NOS,"Revision of knee replacement, not otherwise specified"
+3133,8156,Total ankle replacement,Total ankle replacement
+3134,8157,"Repl joint of foot, toe",Replacement of joint of foot and toe
+3135,8159,Rev jt repl low ext NEC,"Revision of joint replacement of lower extremity, not elsewhere classified"
+3136,6759,Oth rep int cervical os,Other repair of internal cervical os
+3137,6761,Suture cervical lacerat,Suture of laceration of cervix
+3138,6762,Cervical fistula repair,Repair of fistula of cervix
+3139,7399,Ops assisting deliv NEC,Other operations assisting delivery
+3140,740,Classical c-section,Classical cesarean section
+3141,741,Low cervical c-section,Low cervical cesarean section
+3142,742,Extraperitoneal c-sect,Extraperitoneal cesarean section
+3143,743,Rem extratub ectop preg,Removal of extratubal ectopic pregnancy
+3144,744,Cesarean section NEC,Cesarean section of other specified type
+3145,8773,Intravenous pyelogram,Intravenous pyelogram
+3146,8774,Retrograde pyelogram,Retrograde pyelogram
+3147,8775,Percutaneous pyelogram,Percutaneous pyelogram
+3148,8776,Retrogr cystourethrogram,Retrograde cystourethrogram
+3149,8777,Cystogram NEC,Other cystogram
+3150,8778,Ileal conduitogram,Ileal conduitogram
+3151,8779,Urinary system x-ray NEC,Other x-ray of the urinary system
+3152,8781,X-ray of gravid uterus,X-ray of gravid uterus
+3153,8782,Gas hysterosalpingogram,Gas contrast hysterosalpingogram
+3154,8783,Dye hysterosalpingogram,Opaque dye contrast hysterosalpingogram
+3155,8784,Percutaneous hysterogram,Percutaneous hysterogram
+3156,8785,Tube & uterus x-ray NEC,Other x-ray of fallopian tubes and uterus
+3157,8789,Female genital x-ray NEC,Other x-ray of female genital organs
+3158,8791,Contr semin vesiculogram,Contrast seminal vesiculogram
+3159,8792,Prostat/sem ves xray NEC,Other x-ray of prostate and seminal vesicles
+3160,8793,Contrast epididymogram,Contrast epididymogram
+3161,8794,Contrast vasogram,Contrast vasogram
+3162,8795,Epididymis/vas x-ray NEC,Other x-ray of epididymis and vas deferens
+3163,8799,Male genital x-ray NEC,Other x-ray of male genital organs
+3164,8801,C.A.T. scan of abdomen,Computerized axial tomography of abdomen
+3165,8802,Abdominal tomography NEC,Other abdomen tomography
+3166,8803,Abdominal wall sinogram,Sinogram of abdominal wall
+3167,8804,Abdominal lymphangiogram,Abdominal lymphangiogram
+3168,8809,Abdominal wall x-ray NEC,Other soft tissue x-ray of abdominal wall
+3169,8811,Pelvic dye contrast xray,Pelvic opaque dye contrast radiography
+3170,8812,Pelvic gas contrast xray,Pelvic gas contrast radiography
+3171,8813,Periton pneumogram NEC,Other peritoneal pneumogram
+3172,8814,Retroperiton fistulogram,Retroperitoneal fistulogram
+3173,8815,Retroperiton pneumogram,Retroperitoneal pneumogram
+3174,8816,Retroperitoneal xray NEC,Other retroperitoneal x-ray
+3175,8819,Abdominal x-ray NEC,Other x-ray of abdomen
+3176,8821,Skl xray-shoulder/up arm,Skeletal x-ray of shoulder and upper arm
+3177,8822,Skel xray-elbow/forearm,Skeletal x-ray of elbow and forearm
+3178,9461,Alcohol rehabilitation,Alcohol rehabilitation
+3179,9462,Alcohol detoxification,Alcohol detoxification
+3180,9463,Alcohol rehab/detox,Alcohol rehabilitation and detoxification
+3181,9464,Drug rehabilitation,Drug rehabilitation
+3182,9465,Drug detoxification,Drug detoxification
+3183,9466,Drug rehab/detox,Drug rehabilitation and detoxification
+3184,9467,Comb alcohol/drug rehab,Combined alcohol and drug rehabilitation
+3185,9468,Comb alcohol/drug detox,Combined alcohol and drug detoxification
+3186,9469,Comb alco/drug reha/deto,Combined alcohol and drug rehabilitation and detoxification
+3187,8823,Skel xray-wrist & hand,Skeletal x-ray of wrist and hand
+3188,8824,Skel xray-upper limb NOS,"Skeletal x-ray of upper limb, not otherwise specified"
+3189,8825,Pelvimetry,Pelvimetry
+3190,8826,Skel xray-pelvis/hip NEC,Other skeletal x-ray of pelvis and hip
+3191,8827,Skel xray-thigh/knee/leg,"Skeletal x-ray of thigh, knee, and lower leg"
+3192,8828,Skel xray-ankle & foot,Skeletal x-ray of ankle and foot
+3193,8829,Skel xray-lower limb NOS,"Skeletal x-ray of lower limb, not otherwise specified"
+3194,8831,Skeletal series x-ray,Skeletal series
+3195,8832,Contrast arthrogram,Contrast arthrogram
+3196,8833,Other skeletal x-ray,Other skeletal x-ray
+3197,8834,Upper limb lymphangiogrm,Lymphangiogram of upper limb
+3198,8835,Up limb sft tis xray NEC,Other soft tissue x-ray of upper limb
+3199,8836,Lower limb lymphangiogrm,Lymphangiogram of lower limb
+3200,8837,Lo limb sft tis xray NEC,Other soft tissue x-ray of lower limb
+3201,8838,Other C.A.T. scan,Other computerized axial tomography
+3202,8839,X-ray NEC and NOS,"X-ray, other and unspecified"
+3203,8840,Contrast arteriogram NOS,"Arteriography using contrast material, unspecified site"
+3204,8841,Contr cerebr arteriogram,Arteriography of cerebral arteries
+3205,8842,Contrast aortogram,Aortography
+3206,8843,Contr pulmon arteriogram,Arteriography of pulmonary arteries
+3207,8844,Contr thor arteriogr NEC,Arteriography of other intrathoracic vessels
+3208,8845,Contrast renal arteriogr,Arteriography of renal arteries
+3209,8846,Contrast placentogram,Arteriography of placenta
+3210,8847,Contr abd arteriogrm NEC,Arteriography of other intra-abdominal arteries
+3211,8848,Contrast arteriogram-leg,Arteriography of femoral and other lower extremity arteries
+3212,8849,Contrast arteriogram NEC,Arteriography of other specified sites
+3213,8850,Angiocardiography NOS,"Angiocardiography, not otherwise specified"
+3214,8851,Vena cav angiocardiogram,Angiocardiography of venae cavae
+3215,8852,Rt heart angiocardiogram,Angiocardiography of right heart structures
+3216,8853,Lt heart angiocardiogram,Angiocardiography of left heart structures
+3217,8854,Rt & lt heart angiocard,Combined right and left heart angiocardiography
+3218,8855,Coronar arteriogr-1 cath,Coronary arteriography using a single catheter
+3219,8856,Coronar arteriogr-2 cath,Coronary arteriography using two catheters
+3220,8857,Coronary arteriogram NEC,Other and unspecified coronary arteriography
+3221,8858,Negatve-contr cardiogram,Negative-contrast cardiac roentgenography
+3222,8859,Intraop cor flr vas angi,Intra-operative coronary fluorescence vascular angiography
+3223,8860,Contrast phlebogram NOS,"Phlebography using contrast material, unspecified site"
+3224,8861,Contr phlebogram-hd/neck,Phlebography of veins of head and neck using contrast material
+3225,8862,Contr phlebogram-pulmon,Phlebography of pulmonary veins using contrast material
+3226,8863,Thorac contr phlebog NEC,Phlebography of other intrathoracic veins using contrast material
+3227,8864,Portal contr phlebogram,Phlebography of the portal venous system using contrast material
+3228,8865,Abd contr phlebogram NEC,Phlebography of other Intra-Abdominal veins using contrast material
+3229,8866,Contrast phlebogram-leg,Phlebography of femoral and other lower extremity veins using contrast material
+3230,8867,Contrast phlebogram NEC,Phlebography of other specified sites using contrast material
+3231,8868,Impedance phlebogram,Impedance phlebography
+3232,8871,Dx ultrasound-head/neck,Diagnostic ultrasound of head and neck
+3233,8872,Dx ultrasound-heart,Diagnostic ultrasound of heart
+3234,8873,Dx ultrasound-thorax NEC,Diagnostic ultrasound of other sites of thorax
+3235,8874,Dx ultrasound-digestive,Diagnostic ultrasound of digestive system
+3236,8875,Dx ultrasound-urinary,Diagnostic ultrasound of urinary system
+3237,8876,Dx ultrasound-abdomen,Diagnostic ultrasound of abdomen and retroperitoneum
+3238,8877,Dx ultrasound-vascular,Diagnostic ultrasound of peripheral vascular system
+3239,8878,Dx ultrasound-grav uter,Diagnostic ultrasound of gravid uterus
+3240,8879,Dx ultrasound NEC,Other diagnostic ultrasound
+3241,8881,Cerebral thermography,Cerebral thermography
+3242,8882,Ocular thermography,Ocular thermography
+3243,8883,Bone thermography,Bone thermography
+3244,9501,Limited eye examination,Limited eye examination
+3245,9502,Comprehensive eye exam,Comprehensive eye examination
+3246,9503,Extended ophthal work-up,Extended ophthalmologic work-up
+3247,9504,Anesthetized eye exam,Eye examination under anesthesia
+3248,9505,Visual field study,Visual field study
+3249,9506,Color vision study,Color vision study
+3250,9507,Dark adaptation study,Dark adaptation study
+3251,9509,Eye examination NOS,"Eye examination, not otherwise specified"
+3252,9511,Fundus photography,Fundus photography
+3253,9512,Eye fluorescein angiogra,Fluorescein angiography or angioscopy of eye
+3254,9513,Ultrasound study of eye,Ultrasound study of eye
+3255,9514,X-ray study of eye,X-ray study of eye
+3256,9515,Ocular motility study,Ocular motility study
+3257,9516,P32 & eye tracer NEC,P32 and other tracer studies of eye
+3258,9521,Electroretinogram,Electroretinogram [ERG]
+3259,9522,Electro-oculogram,Electro-oculogram [EOG]
+3260,8884,Muscle thermography,Muscle thermography
+3261,8885,Breast thermography,Breast thermography
+3262,8886,Blood vessel thermograph,Blood vessel thermography
+3263,8889,Thermography NEC,Thermography of other sites
+3264,8890,Diagnostic imaging NOS,"Diagnostic imaging, not elsewhere classified"
+3265,8891,Mri of brain & brainstem,Magnetic resonance imaging of brain and brain stem
+3266,8892,Mri chest & heart,Magnetic resonance imaging of chest and myocardium
+3267,8893,Mri spinal canal,Magnetic resonance imaging of spinal canal
+3268,8894,Mri musculoskeletal,Magnetic resonance imaging of musculoskeletal
+3269,8895,"Mri pelvis,prostate,blad","Magnetic resonance imaging of pelvis, prostate, and bladder"
+3270,9191,Bact smear NOS,"Microscopic examination of specimen from unspecified site, bacterial smear"
+3271,9192,Culture NOS,"Microscopic examination of specimen from unspecified site, culture"
+3272,9193,C & s NOS,"Microscopic examination of specimen from unspecified site, culture and sensitivity"
+3273,9194,Parasitology NOS,"Microscopic examination of specimen from unspecified site, parasitology"
+3274,9195,Toxicology NOS,"Microscopic examination of specimen from unspecified site, toxicology"
+3275,9196,Cell blk/pap NOS,"Microscopic examination of specimen from unspecified site, cell block and Papanicolaou smear"
+3276,9919,Inject anticoagulant,Injection of anticoagulant
+3277,9920,Inj/inf platelet inhibit,Injection or infusion of platelet inhibitor
+3278,9921,Inject antibiotic,Injection of antibiotic
+3279,9922,Inject anti-infect NEC,Injection of other anti-infective
+3280,9923,Inject steroid,Injection of steroid
+3281,9924,Inject hormone NEC,Injection of other hormone
+3282,9925,Inject ca chemother NEC,Injection or infusion of cancer chemotherapeutic substance
+3283,9926,Inject tranquilizer,Injection of tranquilizer
+3284,9927,Iontophoresis,Iontophoresis
+3285,9928,Immunotherapy as antineo,Injection or infusion of biological response modifier [BRM] as an antineoplastic agent
+3286,9929,Inject/infuse NEC,Injection or infusion of other therapeutic or prophylactic substance
+3287,9931,Cholera vaccination,Vaccination against cholera
+3288,9932,Typhoid/paratyphoid vacc,Vaccination against typhoid and paratyphoid fever
+3289,9933,Tuberculosis vaccination,Vaccination against tuberculosis
+3290,9934,Plague vaccination,Vaccination against plague
+3291,9935,Tularemia vaccination,Vaccination against tularemia
+3292,9936,Diphtheria toxoid admin,Administration of diphtheria toxoid
+3293,9937,Pertussis vaccination,Vaccination against pertussis
+3294,9938,Tetanus toxoid administ,Administration of tetanus toxoid
+3295,9939,Dpt administration,"Administration of diphtheria-tetanus-pertussis, combined"
+3296,9941,Polio vaccine administra,Administration of poliomyelitis vaccine
+3297,9942,Smallpox vaccination,Vaccination against smallpox
+3298,9943,Yellow fever vaccination,Vaccination against yellow fever
+3299,9944,Rabies vaccination,Vaccination against rabies
+3300,9945,Measles vaccination,Vaccination against measles
+3301,9946,Mumps vaccination,Vaccination against mumps
+3302,9947,Rubella vaccination,Vaccination against rubella
+3303,9948,Mmr administration,Administration of measles-mumps-rubella vaccine
+3304,9951,Common cold vaccination,Prophylactic vaccination against the common cold
+3305,9952,Influenza vaccination,Prophylactic vaccination against influenza
+3306,9953,Arbovirus enceph vaccin,Prophylactic vaccination against arthropod-borne viral encephalitis
+3307,9954,Arbovirus vaccinat NEC,Prophylactic vaccination against other arthropod-borne viral diseases
+3308,9955,Vaccination NEC,Prophylactic administration of vaccine against other diseases
+3309,9956,Tetanus antitoxin admini,Administration of tetanus antitoxin
+3310,9199,Micro exam NOS,"Microscopic examination of specimen from unspecified site, other microscopic examination"
+3311,9201,Thyroid scan/isotop func,Thyroid scan and radioisotope function studies
+3312,9202,Liver scan/isotope funct,Liver scan and radioisotope function study
+3313,9203,Renal scan/isotope funct,Renal scan and radioisotope function study
+3314,9204,GI scan & isotope funct,Gastrointestinal scan and radioisotope function study
+3315,9205,C-vasc scan/isotop funct,Cardiovascular and hematopoietic scan and radioisotope function study
+3316,9209,Other isotope function,Other radioisotope function studies
+3317,9211,Cerebral scan,Cerebral scan
+3318,9212,Head scan NEC,Scan of other sites of head
+3319,9213,Parathyroid scan,Parathyroid scan
+3320,9214,Bone scan,Bone scan
+3321,9215,Pulmonary scan,Pulmonary scan
+3322,9216,Lymphatic system scan,Scan of lymphatic system
+3323,9217,Placental scan,Placental scan
+3324,9218,Total body scan,Total body scan
+3325,9219,Scan of other sites,Scan of other sites
+3326,9220,Inf liquid brachy isotop,Infusion of liquid brachytherapy radioisotope
+3327,9221,Superficial radiation,Superficial radiation
+3328,9222,Orthovoltage radiation,Orthovoltage radiation
+3329,9223,Radioisot teleradiother,Radioisotopic teleradiotherapy
+3330,9224,Teleradio using photons,Teleradiotherapy using photons
+3331,9225,Electron teleradiotherap,Teleradiotherapy using electrons
+3332,9226,Particul teleradioth NEC,Teleradiotherapy of other particulate radiation
+3333,9227,Radioactive elem implant,Implantation or insertion of radioactive elements
+3334,9228,Isotope inject/instill,Injection or instillation of radioisotopes
+3335,9229,Radiotherapeut proc NEC,Other radiotherapeutic procedure
+3336,9230,Stereo radiosurgery NOS,"Stereotactic radiosurgery, not otherwise specified"
+3337,9231,Sing source radiosurgery,Single source photon radiosurgery
+3338,9232,Multisource radiosurgery,Multi-source photon radiosurgery
+3339,9233,Particulate radiosurgery,Particulate radiosurgery
+3340,9239,Stereo radiosurgery NEC,"Stereotactic radiosurgery, not elsewhere classified"
+3341,9241,Intra-op electron rad rx,Intra-operative electron radiation therapy
+3342,9957,Botulism antitoxin admin,Administration of botulism antitoxin
+3343,9958,Antitoxin administra NEC,Administration of other antitoxins
+3344,9959,Vaccination/innocula NEC,Other vaccination and inoculation
+3345,9960,Cardiopulm resuscita NOS,"Cardiopulmonary resuscitation, not otherwise specified"
+3346,9961,Atrial cardioversion,Atrial cardioversion
+3347,9962,Heart countershock NEC,Other electric countershock of heart
+3348,9963,Closed chest card massag,Closed chest cardiac massage
+3349,9964,Carotid sinus stiumlat,Carotid sinus stimulation
+3350,9301,Functional pt evaluation,Functional evaluation
+3351,9302,Orthotic evaluation,Orthotic evaluation
+3352,9303,Prosthetic evaluation,Prosthetic evaluation
+3353,9304,Manual muscle funct test,Manual testing of muscle function
+3354,9305,Range of motion testing,Range of motion testing
+3355,9306,Limb length measurement,Measurement of limb length
+3356,9307,Body measurement,Body measurement
+3357,9308,Electromyography,Electromyography
+3358,9309,Other dx pt procedure,Other diagnostic physical therapy procedure
+3359,9311,Assisting exercise,Assisting exercise
+3360,9312,Activ musculosk exer NEC,Other active musculoskeletal exercise
+3361,9313,Resistive exercise,Resistive exercise
+3362,9314,Joint movement training,Training in joint movements
+3363,9315,Mobilization of spine,Mobilization of spine
+3364,9316,Other joint mobilization,Mobilization of other joints
+3365,9317,Pass musculosk exer NEC,Other passive musculoskeletal exercise
+3366,9318,Pt breathing exercise,Breathing exercise
+3367,9319,Pt exercise NEC,"Exercise, not elsewhere classified"
+3368,9321,Manual & mechan traction,Manual and mechanical traction
+3369,9322,Ambulat & gait training,Ambulation and gait training
+3370,9323,Orthotic device fitting,Fitting of orthotic device
+3371,9324,Prosthet/orthot training,Training in use of prosthetic or orthotic device
+3372,9325,Forced limb extension,Forced extension of limb
+3373,9326,Manual rupt joint adhes,Manual rupture of joint adhesions
+3374,9327,Musc or tend stretching,Stretching of muscle or tendon
+3375,9328,Stretching of fascia,Stretching of fascia
+3376,9329,Forcib correct defor NEC,Other forcible correction of musculoskeletal deformity
+3377,9331,Assisted pool exercise,Assisted exercise in pool
+3378,9332,Whirlpool treatment,Whirlpool treatment
+3379,9333,Other hydrotherapy,Other hydrotherapy
+3380,9334,Diathermy,Diathermy
+3381,9335,Other heat therapy,Other heat therapy
+3382,9336,Cardiac retraining,Cardiac retraining
+3383,9337,Prenatal training,Prenatal training
+3384,9338,Combined pt NOS,Combined physical therapy without mention of the components
+3385,9339,Physical therapy NEC,Other physical therapy
+3386,9341,Spine tract w skull dev,Spinal traction using skull device
+3387,9342,Other spinal traction,Other spinal traction
+3388,9343,Intermitt skel traction,Intermittent skeletal traction
+3389,9344,Other skeletal traction,Other skeletal traction
+3390,9345,Thomas' splint traction,Thomas' splint traction
+3391,9346,Limb skin traction NEC,Other skin traction of limbs
+3392,9351,Plaster jacket applicat,Application of plaster jacket
+3393,9352,Neck support application,Application of neck support
+3394,9353,Other cast application,Application of other cast
+3395,9354,Application of splint,Application of splint
+3396,9355,Dental wiring,Dental wiring
+3397,9356,Pressure dressing applic,Application of pressure dressing
+3398,9357,Dressing of wound NEC,Application of other wound dressing
+3399,9358,Pressure trouser applica,Application of pressure trousers
+3400,9359,Immobiliz/wound attn NEC,"Other immobilization, pressure, and attention to wound"
+3401,9361,Omt for gen'l mobilizat,Osteopathic manipulative treatment for general mobilization
+3402,9362,"Omt with hi-vel,lo-ampli","Osteopathic manipulative treatment using high-velocity, low-amplitude forces"
+3403,9363,"Omt with lo-vel,hi-ampli","Osteopathic manipulative treatment using low- velocity, high-amplitude forces"
+3404,9364,"Omt with isoton,isometri","Osteopathic manipulative treatment using isotonic, isometric forces"
+3405,9365,Omt with indirect forces,Osteopathic manipulative treatment using indirect forces
+3406,9366,Omt to move tissue fluid,Osteopathic manipulative treatment to move tissue fluids
+3407,9367,Osteopath manipulat NEC,Other specified osteopathic manipulative treatment
+3408,9371,Dyslexia training,Dyslexia training
+3409,9372,Dysphasia training,Dysphasia training
+3410,9373,Esophag speech training,Esophageal speech training
+3411,9374,Speech defect training,Speech defect training
+3412,9375,Other speech therapy,Other speech training and therapy
+3413,9376,Training in lead dog use,Training in use of lead dog for the blind
+3414,9377,Braille or moon training,Training in braille or moon
+3415,9969,Cardiac rhythm conv NEC,Other conversion of cardiac rhythm
+3416,9971,Therapeu plasmapheresis,Therapeutic plasmapheresis
+3417,9972,Therapeutc leukopheresis,Therapeutic leukopheresis
+3418,9973,Therapeu erythropheresis,Therapeutic erythrocytapheresis
+3419,9974,Therapeu plateltpheresis,Therapeutic plateletpheresis
+3420,9975,Adm neuroprotective agnt,Administration of neuroprotective agent
+3421,9976,Extracorp immunoabsorpt,Extracorporeal immunoadsorption
+3422,9977,App adhesion barrier sub,Application or administration of an adhesion barrier substance
+3423,9978,Aquapheresis,Aquapheresis
+3424,9979,Other therapeu apheresis,Other therapeutic apheresis
+3425,9981,Hypothermia,Hypothermia (central) (local)
+3426,9982,Ultraviolet light therap,Ultraviolet light therapy
+3427,9983,Other phototherapy,Other phototherapy
+3428,9984,Isolation,Isolation
+3429,9985,Hyperthermia ca therapy,Hyperthermia for treatment of cancer
+3430,9986,Non-invasive bone stimul,Non-invasive placement of bone growth stimulator
+3431,9988,Therapeutc photopheresis,Therapeutic photopheresis
+3432,9991,Anesthesia acupuncture,Acupuncture for anesthesia
+3433,6651,Remove both fallop tubes,Removal of both fallopian tubes at same operative episode
+3434,6652,Remove solitary fal tube,Removal of remaining fallopian tube
+3435,6661,Destroy fallop tube les,Excision or destruction of lesion of fallopian tube
+3436,6662,Remov tube & ectop preg,Salpingectomy with removal of tubal pregnancy
+3437,6663,Bilat part salpingec NOS,"Bilateral partial salpingectomy, not otherwise specified"
+3438,6669,Partial salpingectom NEC,Other partial salpingectomy
+3439,9378,Rehab for the blind NEC,Other rehabilitation for the blind
+3440,9381,Recreational therapy,Recreation therapy
+3441,9382,Educational therapy,Educational therapy
+3442,9383,Occupational therapy,Occupational therapy
+3443,9384,Music therapy,Music therapy
+3444,9385,Vocational rehabilitat,Vocational rehabilitation
+3445,9389,Rehabilitation NEC,"Rehabilitation, not elsewhere classified"
+3446,9390,Non-invasive mech vent,Non-invasive mechanical ventilation
+3447,9391,Ippb,Intermittent positive pressure breathing [IPPB]
+3448,9393,Nonmechan resuscitation,Nonmechanical methods of resuscitation
+3449,9394,Nebulizer therapy,Respiratory medication administered by nebulizer
+3450,9395,Hyperbaric oxygenation,Hyperbaric oxygenation
+3451,9396,Oxygen enrichment NEC,Other oxygen enrichment
+3452,9397,Decompression chamber,Decompression chamber
+3453,9398,Atmos press/compos contr,Other control of atmospheric pressure and composition
+3454,9399,Other resp procedures,Other respiratory procedures
+3455,9401,Intelligence test admin,Administration of intelligence test
+3456,9402,Psychologic test adminis,Administration of psychologic test
+3457,9403,Character analysis,Character analysis
+3458,9408,Psychol eval & test NEC,Other psychologic evaluation and testing
+3459,9409,Psychol mental stat NOS,"Psychologic mental status determination, not otherwise specified"
+3460,9411,Psychiat mental determin,Psychiatric mental status determination
+3461,9412,Routine psychiat visit,"Routine psychiatric visit, not otherwise specified"
+3462,9413,Psychia commitment eval,Psychiatric commitment evaluation
+3463,9992,Other acupuncture,Other acupuncture
+3464,9993,Rectal massage,Rectal massage (for levator spasm)
+3465,9994,Prostatic massage,Prostatic massage
+3466,9995,Stretching of foreskin,Stretching of foreskin
+3467,9996,Sperm collection,Collection of sperm for artificial insemination
+3468,9997,Denture fitting,Fitting of denture
+3469,9998,Milk extraction,Extraction of milk from lactating breast
+3470,9999,Miscellaneous proc NEC,Other miscellaneous procedures
+3471,8621,Excision of pilonid cyst,Excision of pilonidal cyst or sinus
+3472,8622,Exc wound debridement,"Excisional debridement of wound, infection, or burn"
+3473,8623,Nail removal,"Removal of nail, nail bed, or nail fold"
+3474,8624,Skin chemosurgery,Chemosurgery of skin
+3475,8625,Dermabrasion,Dermabrasion
+3476,8626,Ligation dermal appendag,Ligation of dermal appendage
+3477,8627,Debridement of nail,"Debridement of nail, nail bed, or nail fold"
+3478,8628,Nonexcis debridement wnd,"Nonexcisional debridement of wound, infection or burn"
+3479,863,Other local destruc skin,Other local excision or destruction of lesion or tissue of skin and subcutaneous tissue
+3480,864,Radical excis skin les,Radical excision of skin lesion
+3481,9419,Psychia interv/eval NEC,Other psychiatric interview and evaluation
+3482,9421,Narcoanalysis,Narcoanalysis
+3483,9422,Lithium therapy,Lithium therapy
+3484,9423,Neuroleptic therapy,Neuroleptic therapy
+3485,9424,Chemical shock therapy,Chemical shock therapy
+3486,8651,Replantation of scalp,Replantation of scalp
+3487,8659,Skin closure NEC,Closure of skin and subcutaneous tissue of other sites
+3488,8660,Free skin graft NOS,"Free skin graft, not otherwise specified"
+3489,8661,Full-thick hand skin grf,Full-thickness skin graft to hand
+3490,8662,Hand skin graft NEC,Other skin graft to hand
+3491,8663,Full-thick skin grft NEC,Full-thickness skin graft to other sites
+3492,8664,Hair transplant,Hair transplant
+3493,8665,Heterograft to skin,Heterograft to skin
+3494,8666,Homograft to skin,Homograft to skin
+3495,8667,Dermal regener graft,Dermal regenerative graft
+3496,8669,Free skin graft NEC,Other skin graft to other sites
+3497,8670,Pedicle graft/flap NOS,"Pedicle or flap graft, not otherwise specified"
+3498,8671,Cut & prep pedicle graft,Cutting and preparation of pedicle grafts or flaps
+3499,8672,Pedicle graft advancemen,Advancement of pedicle graft
+3500,8673,Attach pedicle to hand,Attachment of pedicle or flap graft to hand
+3501,8674,Attach pedicle graft NEC,Attachment of pedicle or flap graft to other sites
+3502,8675,Revision of pedicle grft,Revision of pedicle or flap graft
+3503,8681,Repair facial weakness,Repair for facial weakness
+3504,9425,Psychiat drug therap NEC,Other psychiatric drug therapy
+3505,9426,Subconvulsive est,Subconvulsive electroshock therapy
+3506,9427,Electroshock therapy NEC,Other electroshock therapy
+3507,9429,Psychiatr somatother NEC,Other psychiatric somatotherapy
+3508,9431,Psychoanalysis,Psychoanalysis
+3509,9432,Hypnotherapy,Hypnotherapy
+3510,9433,Behavior therapy,Behavior therapy
+3511,9434,Ind therap psychsex dysf,Individual therapy for psychosexual dysfunction
+3512,9435,Crisis intervention,Crisis intervention
+3513,8682,Facial rhytidectomy,Facial rhytidectomy
+3514,8683,Size reduct plastic op,Size reduction plastic operation
+3515,8684,Relaxation of scar,Relaxation of scar or web contracture of skin
+3516,8685,Syndactyly correction,Correction of syndactyly
+3517,8686,Onychoplasty,Onychoplasty
+3518,8687,Fat grft skin/subq tiss,Fat graft of skin and subcutaneous tissue
+3519,8689,Skin repair & plasty NEC,Other repair and reconstruction of skin and subcutaneous tissue
+3520,8690,Ext fat for grft/banking,Extraction of fat for graft or banking
+3521,8691,Skin excision for graft,Excision of skin for graft
+3522,8692,Epilation of skin,Electrolysis and other epilation of skin
+3523,8693,Insert tissue expander,Insertion of tissue expander
+3524,8694,Ins/repl single pul gen,"Insertion or replacement of single array neurostimulator pulse generator, not specified as rechargeable"
+3525,8695,Ins/re pls gn no rechrg,"Insertion or replacement of multiple array neurostimulator pulse generator, not specified as rechargeable"
+3526,8696,Insert/repl oth neurost,Insertion or replacement of other neurostimulator pulse generator
+3527,8697,"Ins/rep 1 pul gen,rechrg",Insertion or replacement of single array rechargeable neurostimulator pulse generator
+3528,8698,"Ins/rep mul pul gn,rechg",Insertion or replacement of multiple array (two or more) rechargeable neurostimulator pulse generator
+3529,8699,Skin & subq op NEC,Other operations on skin and subcutaneous tissue
+3530,8701,Pneumoencephalogram,Pneumoencephalogram
+3531,8702,Brain/skull contrst xray,Other contrast radiogram of brain and skull
+3532,8703,C.A.T. scan of head,Computerized axial tomography of head
+3533,8704,Head tomography NEC,Other tomography of head
+3534,8705,Contrast dacryocystogram,Contrast dacryocystogram
+3535,8706,Nasophary contrast x-ray,Contrast radiogram of nasopharynx
+3536,8707,Contrast laryngogram,Contrast laryngogram
+3537,8708,Cervical lymphangiogram,Cervical lymphangiogram
+3538,8709,Head soft tiss x-ray NEC,"Other soft tissue x-ray of face, head, and neck"
+3539,8711,Full-mouth x-ray,Full-mouth x-ray of teeth
+3540,8712,Dental x-ray NEC,Other dental x-ray
+3541,8713,Tm contrast arthrogram,Temporomandibular contrast arthrogram
+3542,8714,Contrast x-ray of orbit,Contrast radiogram of orbit
+3543,8715,Contrast x-ray of sinus,Contrast radiogram of sinus
+3544,8716,Facial bone x-ray NEC,Other x-ray of facial bones
+3545,8717,Skull x-ray NEC,Other x-ray of skull
+3546,8721,Contrast myelogram,Contrast myelogram
+3547,8722,Cervical spine x-ray NEC,Other x-ray of cervical spine
+3548,8723,Thoracic spine x-ray NEC,Other x-ray of thoracic spine
+3549,8724,Lumbosac spine x-ray NEC,Other x-ray of lumbosacral spine
+3550,8729,Spinal x-ray NEC,Other x-ray of spine
+3551,8731,Endotracheal bronchogram,Endotracheal bronchogram
+3552,8732,Contrast bronchogram NEC,Other contrast bronchogram
+3553,9436,Play psychotherapy,Play psychotherapy
+3554,9437,Explor verbal psychother,Exploratory verbal psychotherapy
+3555,9438,Suppor verbal psychother,Supportive verbal psychotherapy
+3556,9439,Individ psychotherap NEC,Other individual psychotherapy
+3557,9441,Grp therap psychsex dysf,Group therapy for psychosexual dysfunction
+3558,9442,Family therapy,Family therapy
+3559,9443,Psychodrama,Psychodrama
+3560,9444,Other group therapy,Other group therapy
+3561,9445,Drug addict counselling,Drug addiction counseling
+3562,8733,Mediastinal pneumogram,Mediastinal pneumogram
+3563,8734,Intrathor lymphangiogram,Intrathoracic lymphangiogram
+3564,8735,Contr mammary ductogram,Contrast radiogram of mammary ducts
+3565,8736,Breast xerography,Xerography of breast
+3566,8737,Mammography NEC,Other mammography
+3567,8738,Chest wall sinogram,Sinogram of chest wall
+3568,8739,Thorax sft tiss xray NEC,Other soft tissue x-ray of chest wall
+3569,8741,C.A.T. scan of thorax,Computerized axial tomography of thorax
+3570,8742,Thoracic tomography NEC,Other tomography of thorax
+3571,8743,Rib/sternum/clavic x-ray,"X-ray of ribs, sternum, and clavicle"
+3572,8744,Routine chest x-ray,"Routine chest x-ray, so described"
+3573,8749,Chest x-ray NEC,Other chest x-ray
+3574,8751,Perc hepat Cholangiogram,Percutaneous hepatic cholangiogram
+3575,8752,Intraven cholangiogram,Intravenous cholangiogram
+3576,8753,Intraoper cholangiogram,Intraoperative cholangiogram
+3577,8754,Cholangiogram NEC,Other cholangiogram
+3578,8759,Biliary tract x-ray NEC,Other biliary tract x-ray
+3579,8761,Barium swallow,Barium swallow
+3580,8762,Upper GI series,Upper GI series
+3581,8763,Small bowel series,Small bowel series
+3582,8764,Lower GI series,Lower GI series
+3583,8765,Intestinal x-ray NEC,Other x-ray of intestine
+3584,8766,Contrast pancreatogram,Contrast pancreatogram
+3585,8769,Digestive tract xray NEC,Other digestive tract x-ray
+3586,8771,C.A.T. scan of kidney,Computerized axial tomography of kidney
+3587,8772,Nephrotomogram NEC,Other nephrotomogram
+3588,9446,Alcoholism counselling,Alcoholism counseling
+3589,9449,Other counselling,Other counseling
+3590,9451,Referral for psychother,Referral for psychotherapy
+3591,9452,Referral psych aftercare,Referral for psychiatric aftercare
+3592,9453,Referral alcohol rehab,Referral for alcoholism rehabilitation
+3593,9454,Referral for drug rehab,Referral for drug addiction rehabilitation
+3594,9455,Referral vocation rehab,Referral for vocational rehabilitation
+3595,9459,Referral psych rehab NEC,Referral for other psychologic rehabilitation
+3596,9012,Culture-endocrine,"Microscopic examination of specimen from endocrine gland, not elsewhere classified, culture"
+3597,9013,C & s-endocrine,"Microscopic examination of specimen from endocrine gland, not elsewhere classified, culture and sensitivity"
+3598,9014,Parasitology-endocrine,"Microscopic examination of specimen from endocrine gland, not elsewhere classified, parasitology"
+3599,9015,Toxicology-endocrine,"Microscopic examination of specimen from endocrine gland, not elsewhere classified, toxicology"
+3600,9016,Cell block/pap-endocrine,"Microscopic examination of specimen from endocrine gland, not elsewhere classified, cell block and Papanicolaou smear"
+3601,9019,Micro exam-endocrine NEC,"Microscopic examination of specimen from endocrine gland, not elsewhere classified, other microscopic examination"
+3602,9021,Bact smear-eye,"Microscopic examination of specimen from eye, bacterial smear"
+3603,9022,Culture-eye,"Microscopic examination of specimen from eye, culture"
+3604,9601,Insert nasopharyn airway,Insertion of nasopharyngeal airway
+3605,9602,Insert oropharyn airway,Insertion of oropharyngeal airway
+3606,9603,Insert esoph obtu airway,Insertion of esophageal obturator airway
+3607,9604,Insert endotracheal tube,Insertion of endotracheal tube
+3608,9605,Resp tract intubat NEC,Other intubation of respiratory tract
+3609,9606,Insert sengstaken tube,Insertion of Sengstaken tube
+3610,9607,Insert gastric tube NEC,Insertion of other (naso-)gastric tube
+3611,9608,Insert intestinal tube,Insertion of (naso-)intestinal tube
+3612,9609,Insert rectal tube,Insertion of rectal tube
+3613,9611,Pack ext auditory canal,Packing of external auditory canal
+3614,9614,Vaginal packing,Vaginal packing
+3615,9615,Vaginal mold insertion,Insertion of vaginal mold
+3616,9616,Other vaginal dilation,Other vaginal dilation
+3617,9617,Vag diaphragm insertion,Insertion of vaginal diaphragm
+3618,9618,Oth vagin pessary insert,Insertion of other vaginal pessary
+3619,9619,Rectal packing,Rectal packing
+3620,9621,Dilat frontonasal duct,Dilation of frontonasal duct
+3621,9622,Dilation of rectum,Dilation of rectum
+3622,9623,Dilation anal sphincter,Dilation of anal sphincter
+3623,9624,Dilat enterostomy stoma,Dilation and manipulation of enterostomy stoma
+3624,9625,Therapeut distent bladd,Therapeutic distention of bladder
+3625,9626,Manual reduc rect prolap,Manual reduction of rectal prolapse
+3626,9627,Manual reduction hernia,Manual reduction of hernia
+3627,9628,Manl reduct stoma prolap,Manual reduction of enterostomy prolapse
+3628,9629,Reduct intuss ali tract,Reduction of intussusception of alimentary tract
+3629,9631,Gastric cooling,Gastric cooling
+3630,9632,Gastric freezing,Gastric freezing
+3631,9633,Gastric lavage,Gastric lavage
+3632,9634,Gastric tube irrigat NEC,Other irrigation of (naso-)gastric tube
+3633,9635,Gastric gavage,Gastric gavage
+3634,9636,GI ostomy irrigation,Irrigation of gastrostomy or enterostomy
+3635,9637,Proctoclysis,Proctoclysis
+3636,9638,Impacted feces removal,Removal of impacted feces
+3637,9639,Other transanal enema,Other transanal enema
+3638,9641,Biliary tube irrigation,Irrigation of cholecystostomy and other biliary tube
+3639,9642,Pancreatic tube irrigat,Irrigation of pancreatic tube
+3640,9643,GI tract instillat NEC,"Digestive tract instillation, except gastric gavage"
+3641,9644,Vaginal douche,Vaginal douche
+3642,9645,Nephrost/pyelost irrigat,Irrigation of nephrostomy and pyelostomy
+3643,9646,Urterost/urete cth irrig,Irrigation of ureterostomy and ureteral catheter
+3644,9647,Cystostomy irrigation,Irrigation of cystostomy
+3645,9648,Indwell cath irrig NEC,Irrigation of other indwelling urinary catheter
+3646,9023,C & s-eye,"Microscopic examination of specimen from eye, culture and sensitivity"
+3647,9024,Parasitology-eye,"Microscopic examination of specimen from eye, parasitology"
+3648,9025,Toxicology-eye,"Microscopic examination of specimen from eye, toxicology"
+3649,9026,Cell block/pap-eye,"Microscopic examination of specimen from eye, cell block and Papanicolaou smear"
+3650,9029,Micro exam-eye NEC,"Microscopic examination of specimen from eye, other microscopic examination"
+3651,9031,Bact smear-ent/larynx,"Microscopic examination of specimen from ear, nose, throat, and larynx, bacterial smear"
+3652,9032,Culture-ent/larynx,"Microscopic examination of specimen from ear, nose, throat, and larynx, culture"
+3653,9033,C & s-ent/larynx,"Microscopic examination of specimen from ear, nose, throat, and larynx, culture and sensitivity"
+3654,9034,Parasitology-ent/larynx,"Microscopic examination of specimen from ear, nose, throat, and larynx, parasitology"
+3655,9035,Toxicology-ent/larynx,"Microscopic examination of specimen from ear, nose, throat, and larynx, toxicology"
+3656,9036,Cell block/pap-ent/laryn,"Microscopic examination of specimen from ear, nose, throat, and larynx, cell block and Papanicolaou smear"
+3657,9039,Micro exam-ent/laryn NEC,"Microscopic examination of specimen from ear, nose, throat, and larynx, other microscopic examination"
+3658,9041,Bact smear-lower resp,"Microscopic examination of specimen from trachea, bronchus, pleura, lung, and other thoracic specimen, and of sputum, bacterial smear"
+3659,9042,Culture-lower resp,"Microscopic examination of specimen from trachea, bronchus, pleura, lung, and other thoracic specimen, and of sputum, culture"
+3660,9043,C & s-lower resp,"Microscopic examination of specimen from trachea, bronchus, pleura, lung, and other thoracic specimen, and of sputum, culture and sensitivity"
+3661,9044,Parasitology-lower resp,"Microscopic examination of specimen from trachea, bronchus, pleura, lung, and other thoracic specimen, and of sputum, parasitology"
+3662,9045,Toxicology-lower resp,"Microscopic examination of specimen from trachea, bronchus, pleura, lung, and other thoracic specimen, and of sputum, toxicology"
+3663,9046,Cell block/pap-lowr resp,"Microscopic examination of specimen from trachea, bronchus, pleura, lung, and other thoracic specimen, and of sputum, cell block and Papanicolaou smear"
+3664,9049,Micro exam-lowr resp NEC,"Microscopic examination of specimen from trachea, bronchus, pleura, lung, and other thoracic specimen, and of sputum, other microscopic examination"
+3665,9051,Bact smear-blood,"Microscopic examination of blood, bacterial smear"
+3666,9649,Other gu instillation,Other genitourinary instillation
+3667,9651,Irrigation of eye,Irrigation of eye
+3668,9652,Irrigation of ear,Irrigation of ear
+3669,9653,Irrigation of nasal pass,Irrigation of nasal passages
+3670,9654,Dental scaling & debride,"Dental scaling, polishing, and debridement"
+3671,9655,Tracheostomy toilette,Tracheostomy toilette
+3672,9656,Bronch/trach lavage NEC,Other lavage of bronchus and trachea
+3673,9657,Vascular cath irrigation,Irrigation of vascular catheter
+3674,9658,Wound catheter irrigat,Irrigation of wound catheter
+3675,9659,Wound irrigation NEC,Other irrigation of wound
+3676,966,Entral infus nutrit sub,Enteral infusion of concentrated nutritional substances
+3677,9670,Con inv mec ven-unsp dur,Continuous invasive mechanical ventilation of unspecified duration
+3678,9671,Cont inv mec ven <96 hrs,Continuous invasive mechanical ventilation for less than 96 consecutive hours
+3679,9672,Cont inv mec ven 96+ hrs,Continuous invasive mechanical ventilation for 96 consecutive hours or more
+3680,9701,Replace gast/esoph tube,Replacement of (naso-)gastric or esophagostomy tube
+3681,9702,Replace gastrostomy tube,Replacement of gastrostomy tube
+3682,9703,Replace small bowel tube,Replacement of tube or enterostomy device of small intestine
+3683,9704,Replace large bowel tube,Replacement of tube or enterostomy device of large intestine
+3684,9705,Repl stent in bile duct,Replacement of stent (tube) in biliary or pancreatic duct
+3685,9711,Replace upper limb cast,Replacement of cast on upper limb
+3686,9052,Culture-blood,"Microscopic examination of blood, culture"
+3687,9053,C & s-blood,"Microscopic examination of blood, culture and sensitivity"
+3688,9054,Parasitology-blood,"Microscopic examination of blood, parasitology"
+3689,9055,Toxicology-blood,"Microscopic examination of blood, toxicology"
+3690,9056,Cell block/pap-blood,"Microscopic examination of blood, cell block and Papanicolaou smear"
+3691,9059,Micro exam-blood NEC,"Microscopic examination of blood, other microscopic examination"
+3692,9061,Bact smear-spleen/marrow,"Microscopic examination of specimen from spleen and of bone marrow, bacterial smear"
+3693,9062,Culture-spleen/marrow,"Microscopic examination of specimen from spleen and of bone marrow, culture"
+3694,9063,C & s-spleen/marrow,"Microscopic examination of specimen from spleen and of bone marrow, culture and sensitivity"
+3695,9064,Parasitol-spleen/marrow,"Microscopic examination of specimen from spleen and of bone marrow, parasitology"
+3696,9065,Toxicology-spleen/marrow,"Microscopic examination of specimen from spleen and of bone marrow, toxicology"
+3697,9066,Cell blk/pap-spleen/marr,"Microscopic examination of specimen from spleen and of bone marrow, cell block and Papanicolaou smear"
+3698,9069,Micro exam-spln/marr NEC,"Microscopic examination of specimen from spleen and of bone marrow, other microscopic examination"
+3699,9071,Bact smear-lymph system,"Microscopic examination of specimen from lymph node and of lymph, bacterial smear"
+3700,9072,Culture-lymph system,"Microscopic examination of specimen from lymph node and of lymph, culture"
+3701,9073,C & s-lymph system,"Microscopic examination of specimen from lymph node and of lymph, culture and sensitivity"
+3702,9074,Parasitology-lymph sys,"Microscopic examination of specimen from lymph node and of lymph, parasitology"
+3703,9075,Toxicology-lymph system,"Microscopic examination of specimen from lymph node and of lymph, toxicology"
+3704,9076,Cell blk/pap-lymph sys,"Microscopic examination of specimen from lymph node and of lymph, cell block and Papanicolaou smear"
+3705,9079,Micro exam-lymph sys NEC,"Microscopic examination of specimen from lymph node and of lymph, other microscopic examination"
+3706,9081,Bact smear-upper GI,"Microscopic examination of specimen from upper gastrointestinal tract and of vomitus, bacterial smear"
+3707,9082,Culture-upper GI,"Microscopic examination of specimen from upper gastrointestinal tract and of vomitus, culture"
+3708,9083,C & s-upper GI,"Microscopic examination of specimen from upper gastrointestinal tract and of vomitus, culture and sensitivity"
+3709,9084,Parasitology-upper GI,"Microscopic examination of specimen from upper gastrointestinal tract and of vomitus, parasitology"
+3710,9085,Toxicology-upper GI,"Microscopic examination of specimen from upper gastrointestinal tract and of vomitus, toxicology"
+3711,9086,Cell blk/pap-upper GI,"Microscopic examination of specimen from upper gastrointestinal tract and of vomitus, cell block and Papanicolaou smear"
+3712,9089,Micro exam-upper GI NEC,"Microscopic examination of specimen from upper gastrointestinal tract and of vomitus, other microscopic examination"
+3713,9091,Bact smear-lower GI,"Microscopic examination of specimen from lower gastrointestinal tract and of stool, bacterial smear"
+3714,9092,Culture-lower GI,"Microscopic examination of specimen from lower gastrointestinal tract and of stool, culture"
+3715,9712,Replace lower limb cast,Replacement of cast on lower limb
+3716,9713,Replace cast NEC,Replacement of other cast
+3717,9714,Replac m/s immob dev NEC,Replacement of other device for musculoskeletal immobilization
+3718,9715,Replace wound catheter,Replacement of wound catheter
+3719,9716,Replace wound pack/drain,Replacement of wound packing or drain
+3720,9721,Replace nasal packing,Replacement of nasal packing
+3721,9722,Replace dental packing,Replacement of dental packing
+3722,9723,Replace trach tube,Replacement of tracheostomy tube
+3723,9724,Replace vag diaphragm,Replacement and refitting of vaginal diaphragm
+3724,9725,Replace vaginal pessary,Replacement of other vaginal pessary
+3725,9726,Replace vag/vulv packing,Replacement of vaginal or vulvar packing or drain
+3726,9729,Non-op replacement NEC,Other nonoperative replacements
+3727,9731,Remove eye prosthesis,Removal of eye prosthesis
+3728,9732,Remove nasal packing,Removal of nasal packing
+3729,9733,Remove dental wiring,Removal of dental wiring
+3730,9734,Remove dental packing,Removal of dental packing
+3731,9735,Remove dental prosthesis,Removal of dental prosthesis
+3732,9736,Remove ext mand fix dev,Removal of other external mandibular fixation device
+3733,9737,Remove tracheostomy tube,Removal of tracheostomy tube
+3734,9738,Remove head/neck sutures,Removal of sutures from head and neck
+3735,9739,Remove head/neck dev NEC,Removal of other therapeutic device from head and neck
+3736,9741,Remov thoracotomy tube,Removal of thoracotomy tube or pleural cavity drain
+3737,9742,Remov mediastinal drain,Removal of mediastinal drain
+3738,9743,Remov thorax sutures,Removal of sutures from thorax
+3739,9744,Nonop remov hrt asst sys,Nonoperative removal of heart assist system
+3740,9749,Remov thor ther dev NEC,Removal of other device from thorax
+3741,9751,Remov gastrostomy tube,Removal of gastrostomy tube
+3742,9752,Remov small bowel tube,Removal of tube from small intestine
+3743,9753,Remov large bowel tube,Removal of tube from large intestine or appendix
+3744,9754,Remov cholecystost tube,Removal of cholecystostomy tube
+3745,9755,Remov biliary/liver tube,"Removal of T-tube, other bile duct tube, or liver tube"
+3746,9756,Remov pancreatic tube,Removal of pancreatic tube or drain
+3747,9759,Remov other GI device,Removal of other device from digestive system
+3748,9761,Remov pyelos/nephros tub,Removal of pyelostomy and nephrostomy tube
+3749,9762,Remov ureteral drain,Removal of ureterostomy tube and ureteral catheter
+3750,9763,Remov cystostomy tube,Removal of cystostomy tube
+3751,9764,Remov urin drainage NEC,Removal of other urinary drainage device
+3752,9093,C & s-lower GI,"Microscopic examination of specimen from lower gastrointestinal tract and of stool, culture and sensitivity"
+3753,9094,Parasitology-lower GI,"Microscopic examination of specimen from lower gastrointestinal tract and of stool, parasitology"
+3754,9095,Toxicology-lower GI,"Microscopic examination of specimen from lower gastrointestinal tract and of stool, toxicology"
+3755,9096,Cell blk/pap-lower GI,"Microscopic examination of specimen from lower gastrointestinal tract and of stool, cell block and Papanicolaou smear"
+3756,9099,Micro exam-lower GI NEC,"Microscopic examination of specimen from lower gastrointestinal tract and of stool, other microscopic examination"
+3757,9101,Bact smear-bili/pancreas,"Microscopic examination of specimen from liver, biliary tract, and pancreas, bacterial smear"
+3758,9102,Culture-bili/pancreas,"Microscopic examination of specimen from liver, biliary tract, and pancreas, culture"
+3759,9103,C & s-bili/pancreas,"Microscopic examination of specimen from liver, biliary tract, and pancreas, culture and sensitivity"
+3760,9104,Parasitology-bili/pancr,"Microscopic examination of specimen from liver, biliary tract, and pancreas, parasitology"
+3761,9105,Toxicology-bili/pancreas,"Microscopic examination of specimen from liver, biliary tract, and pancreas, toxicology"
+3762,9106,Cell blk/pap-bili/pancre,"Microscopic examination of specimen from liver, biliary tract, and pancreas, cell block and Papanicolaou smear"
+3763,9109,Micro exam-bili/panc NEC,"Microscopic examination of specimen from liver, biliary tract, and pancreas, other microscopic examination"
+3764,9111,Bact smear-peritoneum,"Microscopic examination of peritoneal and retroperitoneal specimen, bacterial smear"
+3765,9112,Culture-peritoneum,"Microscopic examination of peritoneal and retroperitoneal specimen, culture"
+3766,9113,C & s-peritoneum,"Microscopic examination of peritoneal and retroperitoneal specimen, culture and sensitivity"
+3767,9114,Parasitology-peritoneum,"Microscopic examination of peritoneal and retroperitoneal specimen, parasitology"
+3768,9115,Toxicology-peritoneum,"Microscopic examination of peritoneal and retroperitoneal specimen, toxicology"
+3769,9116,Cell blk/pap-peritoneum,"Microscopic examination of peritoneal and retroperitoneal specimen, cell block and Papanicolaou smear"
+3770,9119,Micro exam-periton NEC,"Microscopic examination of peritoneal and retroperitoneal specimen, other microscopic examination"
+3771,9121,Bact smear-upper urinary,"Microscopic examination of specimen from kidney, ureter, perirenal and periureteral tissue, bacterial smear"
+3772,9122,Culture-upper urinary,"Microscopic examination of specimen from kidney, ureter, perirenal and periureteral tissue, culture"
+3773,9123,C & s-upper urinary,"Microscopic examination of specimen from kidney, ureter, perirenal and periureteral tissue, culture and sensitivity"
+3774,9124,Parasitology-upper urin,"Microscopic examination of specimen from kidney, ureter, perirenal and periureteral tissue, parasitology"
+3775,9125,Toxicology-upper urinary,"Microscopic examination of specimen from kidney, ureter, perirenal and periureteral tissue, toxicology"
+3776,9126,Cell blk/pap-upper urin,"Microscopic examination of specimen from kidney, ureter, perirenal and periureteral tissue, cell block and Papanicolaou smear"
+3777,9765,Remov urethral stent,Removal of urethral stent
+3778,9769,Remov other urin device,Removal of other device from urinary system
+3779,9771,Removal iud,Removal of intrauterine contraceptive device
+3780,9772,Remov intrauterine pack,Removal of intrauterine pack
+3781,9773,Remov vaginal diaphragm,Removal of vaginal diaphragm
+3782,9774,Removal oth vag pessary,Removal of other vaginal pessary
+3783,9775,Remov vag/vulv packing,Removal of vaginal or vulvar packing
+3784,9779,Remov other genit device,Removal of other device from genital tract
+3785,9781,Remov retroperiton drain,Removal of retroperitoneal drainage device
+3786,9782,Remov peritoneal drain,Removal of peritoneal drainage device
+3787,9783,Remov abdom wall suture,Removal of abdominal wall sutures
+3788,9784,Remov trunk suture NEC,"Removal of sutures from trunk, not elsewhere classified"
+3789,9785,Remov trunk packing NEC,"Removal of packing from trunk, not elsewhere classified"
+3790,9786,Remov abdomen device NEC,Removal of other device from abdomen
+3791,9787,Remov trunk device NEC,Removal of other device from trunk
+3792,9788,Remov ext immobilization,Removal of external immobilization device
+3793,9789,Remov therapeut dev NEC,Removal of other therapeutic device
+3794,9801,Remov intralum mouth FB,Removal of intraluminal foreign body from mouth without incision
+3795,9802,Remov intralum esoph FB,Removal of intraluminal foreign body from esophagus without incision
+3796,9803,Remov intralum gastr FB,Removal of intraluminal foreign body from stomach and small intestine without incision
+3797,9804,Remov intralum colon FB,Removal of intraluminal foreign body from large intestine without incision
+3798,9805,Remov intralum rect FB,Removal of intraluminal foreign body from rectum and anus without incision
+3799,9811,Remov intralum ear FB,Removal of intraluminal foreign body from ear without incision
+3800,9812,Remov intralum nose FB,Removal of intraluminal foreign body from nose without incision
+3801,9813,Remov intralum pharyn FB,Removal of intraluminal foreign body from pharynx without incision
+3802,9814,Remov intralum laryn FB,Removal of intraluminal foreign body from larynx without incision
+3803,9815,Remov intralum trach FB,Removal of intraluminal foreign body from trachea and bronchus without incision
+3804,9816,Remov intralum uter FB,Removal of intraluminal foreign body from uterus without incision
+3805,9817,Remov intralum vag FB,Removal of intraluminal foreign body from vagina without incision
+3806,9818,Remov intralum stoma FB,Removal of intraluminal foreign body from artificial stoma without incision
+3807,9819,Remove intralum ureth FB,Removal of intraluminal foreign body from urethra without incision
+3808,9820,Removal of FB NOS,"Removal of foreign body, not otherwise specified"
+3809,9821,Removal superfic FB eye,Removal of superficial foreign body from eye without incision
+3810,9822,Removal head/neck FB,Removal of other foreign body without incision from head and neck
+3811,9823,Removal vulvar FB,Removal of foreign body from vulva without incision
+3812,9129,Micro exam-uppr urin NEC,"Microscopic examination of specimen from kidney, ureter, perirenal and periureteral tissue, other microscopic examination"
+3813,9131,Bact smear-lower urinary,"Microscopic examination of specimen from bladder, urethra, prostate, seminal vesicle, perivesical tissue, and of urine and semen, bacterial smear"
+3814,9132,Culture-lower urinary,"Microscopic examination of specimen from bladder, urethra, prostate, seminal vesicle, perivesical tissue, and of urine and semen, culture"
+3815,9133,C & s-lower urinary,"Microscopic examination of specimen from bladder, urethra, prostate, seminal vesicle, perivesical tissue, and of urine and semen, culture and sensitivity"
+3816,9134,Parasitlolgy-lower urin,"Microscopic examination of specimen from bladder, urethra, prostate, seminal vesicle, perivesical tissue, and of urine and semen, parasitology"
+3817,9135,Toxicology-lower urinary,"Microscopic examination of specimen from bladder, urethra, prostate, seminal vesicle, perivesical tissue, and of urine and semen, toxicology"
+3818,9136,Cell blk/pap-lower urin,"Microscopic examination of specimen from bladder, urethra, prostate, seminal vesicle, perivesical tissue, and of urine and semen, cell block and Papanicolaou smear"
+3819,9139,Micro exam-low urin NEC,"Microscopic examination of specimen from bladder, urethra, prostate, seminal vesicle, perivesical tissue, and of urine and semen, other microscopic examination"
+3820,9141,Bact smear-female genit,"Microscopic examination of specimen from female genital tract, bacterial smear"
+3821,9142,Culture-female genital,"Microscopic examination of specimen from female genital tract, culture"
+3822,9143,C & s-female genital,"Microscopic examination of specimen from female genital tract, culture and sensitivity"
+3823,9144,Parasitology-female gen,"Microscopic examination of specimen from female genital tract, parasitology"
+3824,9145,Toxicology-female genit,"Microscopic examination of specimen from female genital tract, toxicology"
+3825,9146,Cell blk/pap-female gen,"Microscopic examination of specimen from female genital tract, cell block and Papanicolaou smear"
+3826,9149,Micro exam-femal gen NEC,"Microscopic examination of specimen from female genital tract, other microscopic examination"
+3827,9151,Bact smear-musculoskel,"Microscopic examination of specimen from musculoskeletal system and of joint fluid, bacterial smear"
+3828,9152,Culture-musculoskeletal,"Microscopic examination of specimen from musculoskeletal system and of joint fluid, culture"
+3829,9153,C & s-musculoskeletal,"Microscopic examination of specimen from musculoskeletal system and of joint fluid, culture and sensitivity"
+3830,9154,Parasitology-musculoskel,"Microscopic examination of specimen from musculoskeletal system and of joint fluid, parasitology"
+3831,9155,Toxicology-musculoskel,"Microscopic examination of specimen from musculoskeletal system and of joint fluid, toxicology"
+3832,9156,Cell blk/pap-musculoskel,"Microscopic examination of specimen from musculoskeletal system and of joint fluid, cell block and Papanicolaou smear"
+3833,9824,Removal scrotal/penis FB,Removal of foreign body from scrotum or penis without incision
+3834,9825,Removal trunk FB NEC,"Removal of other foreign body without incision from trunk except scrotum, penis, or vulva"
+3835,9826,Removal FB from hand,Removal of foreign body from hand without incision
+3836,9827,Removal FB from arm,"Removal of foreign body without incision from upper limb, except hand"
+3837,9828,Removal FB from foot,Removal of foreign body from foot without incision
+3838,9829,Removal FB from leg,"Removal of foreign body without incision from lower limb, except foot"
+3839,9851,Eswl kid/ureter/bladder,"Extracorporeal shockwave lithotripsy [ESWL] of the kidney, ureter and/or bladder"
+3840,9852,Eswl gb/bile duct,Extracorporeal shockwave lithotripsy [ESWL] of the gallbladder and/or bile duct
+3841,9859,Eswl other sites,Extracorporeal shockwave lithotripsy of other sites
+3842,9900,Periop aut trans hol bld,Perioperative autologous transfusion of whole blood or blood components
+3843,9901,Exchange transfusion,Exchange transfusion
+3844,9902,Transfus prev auto blood,Transfusion of previously collected autologous blood
+3845,9903,Whole blood transfus NEC,Other transfusion of whole blood
+3846,9904,Packed cell transfusion,Transfusion of packed cells
+3847,9905,Platelet transfusion,Transfusion of platelets
+3848,9906,Coag factor transfusion,Transfusion of coagulation factors
+3849,9907,Serum transfusion NEC,Transfusion of other serum
+3850,9908,Blood expander transfus,Transfusion of blood expander
+3851,9909,Transfusion NEC,Transfusion of other substance
+3852,9910,Inject/inf thrombo agent,Injection or infusion of thrombolytic agent
+3853,9911,Inject rh immune globul,Injection of Rh immune globulin
+3854,9912,Allergy immunization,Immunization for allergy
+3855,9913,Autoimmune dis immunizat,Immunization for autoimmune disease
+3856,9914,Injct/inf immunoglobulin,Injection or infusion of immunoglobulin
+3857,9915,Parent infus nutrit sub,Parenteral infusion of concentrated nutritional substances
+3858,9916,Inject antidote,Injection of antidote
+3859,9917,Inject insulin,Injection of insulin
+3860,9918,Inject/infuse electrolyt,Injection or infusion of electrolytes
+3861,9159,Micro exam-musculosk NEC,"Microscopic examination of specimen from musculoskeletal system and of joint fluid, other microscopic examination"
+3862,9161,Bact smear-integument,"Microscopic examination of specimen from skin and other integument, bacterial smear"
+3863,9162,Culture-integument,"Microscopic examination of specimen from skin and other integument, culture"
+3864,9163,C & s-integument,"Microscopic examination of specimen from skin and other integument, culture and sensitivity"
+3865,9164,Parasitology-integument,"Microscopic examination of specimen from skin and other integument, parasitology"
+3866,9165,Toxicology-integument,"Microscopic examination of specimen from skin and other integument, toxicology"
+3867,9166,Cell blk/pap-integument,"Microscopic examination of specimen from skin and other integument, cell block and Papanicolaou smear"
+3868,9169,Micro exam-integumen NEC,"Microscopic examination of specimen from skin and other integument, other microscopic examination"
+3869,9171,Bact smear-op wound,"Microscopic examination of specimen from operative wound, bacterial smear"
+3870,9172,Culture-op wound,"Microscopic examination of specimen from operative wound, culture"
+3871,9173,C & s-op wound,"Microscopic examination of specimen from operative wound, culture and sensitivity"
+3872,9174,Parasitology-op wound,"Microscopic examination of specimen from operative wound, parasitology"
+3873,9175,Toxicology-op wound,"Microscopic examination of specimen from operative wound, toxicology"
+3874,9176,Cell blk/pap-op wound,"Microscopic examination of specimen from operative wound, cell block and Papanicolaou smear"
+3875,9179,Micro exam-op wound NEC,"Microscopic examination of specimen from operative wound, other microscopic examination"
+3876,9181,Bact smear NEC,"Microscopic examination of specimen from other site, bacterial smear"
+3877,9182,Culture NEC,"Microscopic examination of specimen from other site, culture"
+3878,9183,C & s NEC,"Microscopic examination of specimen from other site, culture and sensitivity"
+3879,9184,Parasitology NEC,"Microscopic examination of specimen from other site, parasitology"
+3880,9185,Toxicology NEC,"Microscopic examination of specimen from other site, toxicology"
+3881,9186,Cell blk/pap NEC,"Microscopic examination of specimen from other site, cell block and Papanicolaou smear"
+3882,9189,Micro exam NEC,"Microscopic examination of specimen from other site, other microscopic examination"

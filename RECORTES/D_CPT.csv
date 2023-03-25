@@ -1,27 +1,27 @@
-,row_id,category,sectionrange,sectionheader,subsectionrange,subsectionheader,codesuffix,mincodeinsubsection,maxcodeinsubsection
-108,109,1,90281-99099; 99151-99199; 99500-99607,Medicine,96150-96155,Health and behavior assessment/intervention,,96150,96155
-109,110,1,90281-99099; 99151-99199; 99500-99607,Medicine,96360-96549,"Hydration, therapeutic, prophylactic, diagnostic injections and infusions, and chemotherapy and other highly complex drug or highly complex biologic agent administration",,96360,96549
-110,111,1,90281-99099; 99151-99199; 99500-99607,Medicine,96567-96571,Photodynamic therapy,,96567,96571
-111,112,1,90281-99099; 99151-99199; 99500-99607,Medicine,96900-96999,Special dermatological procedures,,96900,96999
-112,113,1,90281-99099; 99151-99199; 99500-99607,Medicine,97001-97799,Physical medicine and rehabilitation,,97001,97799
-113,114,1,90281-99099; 99151-99199; 99500-99607,Medicine,97802-97804,Medical nutrition therapy,,97802,97804
-114,115,1,90281-99099; 99151-99199; 99500-99607,Medicine,97810-97814,Acupuncture,,97810,97814
-115,116,1,90281-99099; 99151-99199; 99500-99607,Medicine,98925-98929,Osteopathic manipulative treatment,,98925,98929
-116,117,1,90281-99099; 99151-99199; 99500-99607,Medicine,98940-98943,Chiropractic manipulative treatment,,98940,98943
-117,118,1,90281-99099; 99151-99199; 99500-99607,Medicine,98960-98962,Education and training for patient self-management,,98960,98962
-118,119,1,90281-99099; 99151-99199; 99500-99607,Medicine,98966-98969,Non-face-to-face nonphysician services,,98966,98969
-119,120,1,90281-99099; 99151-99199; 99500-99607,Medicine,99000-99091,"Special services, procedures and reports",,99000,99091
-120,121,1,90281-99099; 99151-99199; 99500-99607,Medicine,99170-99199,Other services and procedures,,99170,99199
-121,122,1,90281-99099; 99151-99199; 99500-99607,Medicine,99500-99602,Home health procedures/services,,99500,99602
-122,123,1,90281-99099; 99151-99199; 99500-99607,Medicine,99605-99607,Medication therapy management services,,99605,99607
-123,124,2,0001F-7025F,Performance measurement,0001F-0015F,Composite measures,F,1,15
-124,125,2,0001F-7025F,Performance measurement,0500F-0575F,Patient management,F,500,575
-125,126,2,0001F-7025F,Performance measurement,1000F-1220F,Patient history,F,1000,1220
-126,127,2,0001F-7025F,Performance measurement,2000F-2050F,Physical examination,F,2000,2050
-127,128,2,0001F-7025F,Performance measurement,3006F-3573F,Diagnostic/screening processes or results,F,3006,3573
-128,129,2,0001F-7025F,Performance measurement,4000F-4306F,"Therapeutic, preventive or other interventions",F,4000,4306
-129,130,2,0001F-7025F,Performance measurement,5005F-5100F,Follow-up or other outcomes,F,5005,5100
-130,131,2,0001F-7025F,Performance measurement,6005F-6045F,Patient safety,F,6005,6045
-131,132,2,0001F-7025F,Performance measurement,7010F-7025F,Structural Measures,F,7010,7025
-132,133,3,0016T-0207T,Emerging technology,0016T-0207T,Temporary codes,T,16,207
-133,134,3,0256T-0259T,Emerging technology,0256T-0259T,Temporary codes,T,256,259
+row_id,category,sectionrange,sectionheader,subsectionrange,subsectionheader,codesuffix,mincodeinsubsection,maxcodeinsubsection
+109,1,90281-99099; 99151-99199; 99500-99607,Medicine,96150-96155,Health and behavior assessment/intervention,,96150,96155
+110,1,90281-99099; 99151-99199; 99500-99607,Medicine,96360-96549,"Hydration, therapeutic, prophylactic, diagnostic injections and infusions, and chemotherapy and other highly complex drug or highly complex biologic agent administration",,96360,96549
+111,1,90281-99099; 99151-99199; 99500-99607,Medicine,96567-96571,Photodynamic therapy,,96567,96571
+112,1,90281-99099; 99151-99199; 99500-99607,Medicine,96900-96999,Special dermatological procedures,,96900,96999
+113,1,90281-99099; 99151-99199; 99500-99607,Medicine,97001-97799,Physical medicine and rehabilitation,,97001,97799
+114,1,90281-99099; 99151-99199; 99500-99607,Medicine,97802-97804,Medical nutrition therapy,,97802,97804
+115,1,90281-99099; 99151-99199; 99500-99607,Medicine,97810-97814,Acupuncture,,97810,97814
+116,1,90281-99099; 99151-99199; 99500-99607,Medicine,98925-98929,Osteopathic manipulative treatment,,98925,98929
+117,1,90281-99099; 99151-99199; 99500-99607,Medicine,98940-98943,Chiropractic manipulative treatment,,98940,98943
+118,1,90281-99099; 99151-99199; 99500-99607,Medicine,98960-98962,Education and training for patient self-management,,98960,98962
+119,1,90281-99099; 99151-99199; 99500-99607,Medicine,98966-98969,Non-face-to-face nonphysician services,,98966,98969
+120,1,90281-99099; 99151-99199; 99500-99607,Medicine,99000-99091,"Special services, procedures and reports",,99000,99091
+121,1,90281-99099; 99151-99199; 99500-99607,Medicine,99170-99199,Other services and procedures,,99170,99199
+122,1,90281-99099; 99151-99199; 99500-99607,Medicine,99500-99602,Home health procedures/services,,99500,99602
+123,1,90281-99099; 99151-99199; 99500-99607,Medicine,99605-99607,Medication therapy management services,,99605,99607
+124,2,0001F-7025F,Performance measurement,0001F-0015F,Composite measures,F,1,15
+125,2,0001F-7025F,Performance measurement,0500F-0575F,Patient management,F,500,575
+126,2,0001F-7025F,Performance measurement,1000F-1220F,Patient history,F,1000,1220
+127,2,0001F-7025F,Performance measurement,2000F-2050F,Physical examination,F,2000,2050
+128,2,0001F-7025F,Performance measurement,3006F-3573F,Diagnostic/screening processes or results,F,3006,3573
+129,2,0001F-7025F,Performance measurement,4000F-4306F,"Therapeutic, preventive or other interventions",F,4000,4306
+130,2,0001F-7025F,Performance measurement,5005F-5100F,Follow-up or other outcomes,F,5005,5100
+131,2,0001F-7025F,Performance measurement,6005F-6045F,Patient safety,F,6005,6045
+132,2,0001F-7025F,Performance measurement,7010F-7025F,Structural Measures,F,7010,7025
+133,3,0016T-0207T,Emerging technology,0016T-0207T,Temporary codes,T,16,207
+134,3,0256T-0259T,Emerging technology,0256T-0259T,Temporary codes,T,256,259
