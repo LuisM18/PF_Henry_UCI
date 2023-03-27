@@ -283,68 +283,9 @@ if microbiologyevents.shape[0] > 0:
 else: st.text('None')
 
 
-########################################################
 
 
-@st.cache_data
-def load_unpkg(src: str) -> str:
-    return requests.get(src).text
 
-
-HTML_2_CANVAS = load_unpkg("https://unpkg.com/html2canvas@1.4.1/dist/html2canvas.js")
-JSPDF = load_unpkg("https://unpkg.com/jspdf@latest/dist/jspdf.umd.min.js")
-BUTTON_TEXT = "Download"
-
-if st.button(BUTTON_TEXT):
-  NOMBRE = "{id_paciente}_{fecha}".format(id_paciente=paciente,fecha=dt.datetime.now().strftime('%Y%m%d_%I:%M%p'))
-  components.html(
-            f"""
-<script>{HTML_2_CANVAS}</script>
-<script>{JSPDF}</script>
-<script>
-const html2canvas = window.html2canvas
-const {{ jsPDF }} = window.jspdf
-
-const streamlitDoc = window.parent.document;
-const stApp = streamlitDoc.querySelector('.main > .block-container');
-
-const buttons = Array.from(streamlitDoc.querySelectorAll('.stButton > button'));
-const pdfButton = buttons.find(el => el.innerText === '{BUTTON_TEXT}');
-const docHeight = stApp.scrollHeight ;
-const docWidth = stApp.scrollWidth ;
-
-let topLeftMargin = 1.5;
-let pdfWidth = docHeight + (topLeftMargin * 2);
-let pdfHeight = (pdfWidth * 1.5) + (topLeftMargin * 2);
-let canvasImageWidth = docWidth;
-let canvasImageHeight = docHeight;
-
-let totalPDFPages = Math.ceil(docHeight / pdfHeight)-1;
-
-pdfButton.innerText = '{NOMBRE}';
-
-html2canvas(stApp, {{ allowTaint: true }}).then(function (canvas) {{
-
-    canvas.getContext('2d');
-    let imgData = canvas.toDataURL("image/jpeg", 1.0);
-
-    let pdf = new jsPDF('p', 'px', [pdfWidth, pdfHeight]);
-    pdf.addImage(imgData, 'JPG', topLeftMargin, topLeftMargin, canvasImageWidth, canvasImageHeight);
-
-    for (var i = 1; i <= totalPDFPages; i++) {{
-        pdf.addPage();
-        pdf.addImage(imgData, 'JPG', topLeftMargin, -(pdfHeight * i) + (topLeftMargin*4), canvasImageWidth, canvasImageHeight);
-    }}
-
-    pdf.save('{NOMBRE}.pdf');
-    pdfButton.innerText = '{NOMBRE}';
-}})
-
-</script>
-""",
-            height=0,
-            width=0,
-        )
 
 
 
