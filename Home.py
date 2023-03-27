@@ -72,9 +72,8 @@ placeholder = st.empty()
 def tasa_mortalidad(admissions):
 
     admissions['dischtime_year'] = admissions['DISCHTIME'].dt.year
-    admissions['dischtime_month'] = admissions['DISCHTIME'].dt.month
 
-    tasa = pd.DataFrame(admissions.groupby(['dischtime_year','dischtime_month'])['HOSPITAL_EXPIRE_FLAG'].apply(lambda x: (x.sum()/x.count())))
+    tasa = pd.DataFrame(admissions.groupby(['dischtime_year'])['HOSPITAL_EXPIRE_FLAG'].apply(lambda x: (x.sum()/x.count())))
     tasa.rename(columns={'HOSPITAL_EXPIRE_FLAG':'tasa_mortalidad'},inplace=True)
 
     return tasa
@@ -82,9 +81,9 @@ def tasa_mortalidad(admissions):
 ## Tasa Reingreso
 def tasa_reingreso(admissions):
     admissions['ADMITTIME_YEAR'] = admissions['ADMITTIME'].dt.year
-    admissions['ADMITTIME_MONTH'] = admissions['ADMITTIME'].dt.month
+   
 
-    tasa = pd.DataFrame(admissions.groupby(['ADMITTIME_YEAR','ADMITTIME_MONTH'])['SUBJECT_ID'].apply(lambda x: (x.count()-1)/x.count()))
+    tasa = pd.DataFrame(admissions.groupby(['ADMITTIME_YEAR'])['SUBJECT_ID'].apply(lambda x: (x.count()-1)/x.count()))
     tasa.rename(columns={'SUBJECT_ID':'tasa_reingreso'},inplace=True)
 
     return tasa
@@ -132,18 +131,20 @@ with placeholder.container():
 
 
     kpi1.metric(
-        label = "Mortality rate last month",
+        label = "Mortality rate last year",
         value = f"{round(mortalidad.iloc[-1,-1]*100,2)} % ",
         delta = delta(f"{round((mortalidad.iloc[-1,-1]-mortalidad.iloc[-2,-1]/mortalidad.iloc[-2,-1])*100,2)} % "),
-        help = 'The goal is to reduce or maintain the mortality rate by up to 20%'
+        delta_color = 'inverse',
+        help = 'The goal is to reduce or maintain the mortality rate under to 11%'
     )
 
 
     kpi2.metric(
-        label = "Readmissions rate last month",
+        label = "Readmissions rate last year",
         value = f" {round(reingreso.iloc[-1,-1],2)} %",
         delta = delta(f"{round((reingreso.iloc[-1,-1]-reingreso.iloc[-2,-1]/reingreso.iloc[-2,-1])*100,2)} % "),
-        help = 'The goal is to reduce readmissions as much as possible.'
+        delta_color = 'inverse',
+        help = 'The goal is to reduce readmissions rate under to 10%'
     )
 
 
@@ -151,7 +152,8 @@ kpi3.metric(
             label="Average length of stay in the ICU last month",
             value= f"{round(tiempo.iloc[-1,-1])} days",
             delta= f"{round((tiempo.iloc[-1,-1]-tiempo.iloc[-2,-1]/tiempo.iloc[-2,-1])*100,2)} % ",
-            help = 'The objective is to reduce and/or maintain the stay time of 5 days'
+            delta_color = 'inverse',
+            help = 'The objective is to reduce and/or maintain the stay time under 5 days'
         )    
 
 ####################################################################Top 5################################
@@ -162,7 +164,7 @@ fig.update_layout(showlegend=False)
 st.plotly_chart(fig,use_container_width=True)       
 
 ########################################################################## Mortalidad #######################################
-st.markdown("<h3 style='text-align: center; color: white;'>Mortality rate by month and year</h3>", unsafe_allow_html=True)
+st.markdown("<h3 style='text-align: center; color: white;'>Mortality rate by year</h3>", unsafe_allow_html=True)
 max_value = admissions['DISCHTIME'].max().to_pydatetime()
 min_value = admissions['DISCHTIME'].min().to_pydatetime()
 mind, maxd = st.slider('Select date range',value=(min_value,max_value))
@@ -170,7 +172,7 @@ admissions = admissions[(admissions['DISCHTIME'] > mind) & (admissions['DISCHTIM
 
 tasa = tasa_mortalidad(admissions)
 y = tasa['tasa_mortalidad']
-yearmonth = tasa.index.to_series().apply(lambda x: '{0}-{1}'.format(*x))
+yearmonth = tasa.index.to_series()
 
 fig3 = px.line(x = yearmonth.values,y = y,labels=dict(y='Mortality rate',x='Date'))
 fig3.update_yaxes(tickformat=".2%")
@@ -194,7 +196,7 @@ fig4.update_xaxes(tickformat='%b\n%Y')
 st.plotly_chart(fig4,use_container_width=True)
 
 ###################################################### Tasa Reingreso ########################
-st.markdown("<h3 style='text-align: center; color: white;'>Readmissions rate by month and year</h3>", unsafe_allow_html=True)
+st.markdown("<h3 style='text-align: center; color: white;'>Readmissions rate by year</h3>", unsafe_allow_html=True)
 max_value = admissions['ADMITTIME'].max().to_pydatetime()
 min_value = admissions['ADMITTIME'].min().to_pydatetime()
 mind, maxd = st.slider('Select date range',value=(min_value,max_value))
@@ -202,7 +204,7 @@ admissions = admissions[(admissions['ADMITTIME'] > mind) & (admissions['ADMITTIM
 
 reingreso = tasa_reingreso(admissions)
 y = reingreso['tasa_reingreso']
-yearmonth = reingreso.index.to_series().apply(lambda x: '{0}-{1}'.format(*x))
+yearmonth = reingreso.index.to_series()
 
 fig5 = px.line(x = yearmonth.values,y = y,labels=dict(y='Readmission rate',x='Date'))
 fig5.update_yaxes(tickformat=".2%")
