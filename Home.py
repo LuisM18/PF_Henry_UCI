@@ -80,12 +80,12 @@ def tasa_mortalidad(admissions):
     return tasa
 
 ## Tasa Reingreso
-def reingresos(admissions):
+def tasa_reingreso(admissions):
     admissions['ADMITTIME_YEAR'] = admissions['ADMITTIME'].dt.year
     admissions['ADMITTIME_MONTH'] = admissions['ADMITTIME'].dt.month
 
-    tasa = pd.DataFrame(admissions.groupby(['ADMITTIME_YEAR','ADMITTIME_MONTH'])['SUBJECT_ID'].apply(lambda x: x.count()-1))
-    tasa.rename(columns={'SUBJECT_ID':'reingresos'},inplace=True)
+    tasa = pd.DataFrame(admissions.groupby(['ADMITTIME_YEAR','ADMITTIME_MONTH'])['SUBJECT_ID'].apply(lambda x: (x.count()-1)/x.count()))
+    tasa.rename(columns={'SUBJECT_ID':'tasa_reingreso'},inplace=True)
 
     return tasa
 
@@ -109,18 +109,28 @@ def delta(expresion):
         return "0 %"
     else: 
         return expresion
-        
+
+############################################################
+admissions = pd.read_sql("""SELECT *
+                            FROM admissions_hechos""",mydb,parse_dates=['ADMITTIME','DISCHTIME'])
+
+mortalidad = tasa_mortalidad(admissions)
+
+reingreso = tasa_reingreso(admissions)
+
+icustays = pd.read_sql("""SELECT *
+                            FROM icustay_hechos""",mydb,parse_dates=['INTIME','OUTTIME'])
+
+tiempo = tiempo_estancia_promedio(icustays)
+
+##########################################################
 
 with placeholder.container():
 
     # creando los kpis
     kpi1, kpi2, kpi3 = st.columns(3)
 
-    admissions = pd.read_sql("""SELECT *
-                             FROM admissions_hechos""",mydb,parse_dates=['ADMITTIME','DISCHTIME'])
 
-
-    mortalidad = tasa_mortalidad(admissions)
     kpi1.metric(
         label = "Mortality rate last month",
         value = f"{round(mortalidad.iloc[-1,-1]*100,2)} % ",
@@ -128,24 +138,22 @@ with placeholder.container():
         help = 'The goal is to reduce or maintain the mortality rate by up to 20%'
     )
 
-    reingresos = reingresos(admissions)
+
     kpi2.metric(
         label = "Number of readmissions",
-        value = f" {round(reingresos.iloc[-1,-1],2)} patients",
-        delta = delta(f"{round((reingresos.iloc[-1,-1]-reingresos.iloc[-2,-1]/reingresos.iloc[-2,-1])*100,2)} % "),
+        value = f" {round(reingreso.iloc[-1,-1],2)} patients",
+        delta = delta(f"{round((reingreso.iloc[-1,-1]-reingreso.iloc[-2,-1]/reingreso.iloc[-2,-1])*100,2)} % "),
         help = 'The goal is to reduce readmissions as much as possible.'
     )
 
-icustays = pd.read_sql("""SELECT *
-                            FROM icustay_hechos""",mydb,parse_dates=['INTIME','OUTTIME'])
 
-tiempo = tiempo_estancia_promedio(icustays)
 kpi3.metric(
             label="Average length of stay in the ICU last month",
             value= f"{round(tiempo.iloc[-1,-1])} days",
             delta= f"{round((tiempo.iloc[-1,-1]-tiempo.iloc[-2,-1]/tiempo.iloc[-2,-1])*100,2)} % ",
             help = 'The objective is to reduce and/or maintain the stay time of 5 days'
         )    
+
 ####################################################################Top 5################################
 st.markdown("<h3 style='text-align: center; color: white;'>Top 5 most frequent diagnoses</h3>", unsafe_allow_html=True)
 top5 = top5_diagnostico(admissions)
@@ -185,3 +193,18 @@ fig4 = px.line(x = yearmonth.values,y = y,labels=dict(x='Date',y='Average time(d
 fig4.update_xaxes(tickformat='%b\n%Y')
 st.plotly_chart(fig4,use_container_width=True)
 
+###################################################### Tasa Reingreso ########################
+st.markdown("<h3 style='text-align: center; color: white;'>Readmissions rate by month and year</h3>", unsafe_allow_html=True)
+max_value = admissions['ADMITTIME'].max().to_pydatetime()
+min_value = admissions['ADMITTIME'].min().to_pydatetime()
+mind, maxd = st.slider('Select date range',value=(min_value,max_value))
+admissions = admissions[(admissions['ADMITTIME'] > mind) & (admissions['ADMITTIME'] < maxd)]
+
+reingreso = tasa_reingreso(admissions)
+y = reingreso['tasa_reingreso']
+yearmonth = reingreso.index.to_series().apply(lambda x: '{0}-{1}'.format(*x))
+
+fig5 = px.line(x = yearmonth.values,y = y,labels=dict(y='Readmission rate',x='Date'))
+fig5.update_yaxes(tickformat=".2%")
+fig5.update_xaxes(tickformat='%b\n%Y')
+st.plotly_chart(fig5,use_container_width=True)
