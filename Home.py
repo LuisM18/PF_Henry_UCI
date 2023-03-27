@@ -140,8 +140,8 @@ with placeholder.container():
 
 
     kpi2.metric(
-        label = "Number of readmissions",
-        value = f" {round(reingreso.iloc[-1,-1],2)} patients",
+        label = "Readmissions rate last month",
+        value = f" {round(reingreso.iloc[-1,-1],2)} %",
         delta = delta(f"{round((reingreso.iloc[-1,-1]-reingreso.iloc[-2,-1]/reingreso.iloc[-2,-1])*100,2)} % "),
         help = 'The goal is to reduce readmissions as much as possible.'
     )
