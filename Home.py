@@ -13,7 +13,7 @@ st.set_page_config(
     layout="wide",
 )
 
-st.sidebar.markdown('###Links related to the database')
+st.sidebar.markdown('### Links related to the database')
 
 url = 'https://github.com/LuisM18/PF_Henry_UCI'
 url2 = 'https://drive.google.com/drive/folders/19I8VMpCp3ylpVTRGGG0W4aGKt-4f664X'
